@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_player_state_normal",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_player_state_normal",
+  "parent":{
+    "name":"Grounded",
+    "path":"folders/Scripts/Player/States/Grounded.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
