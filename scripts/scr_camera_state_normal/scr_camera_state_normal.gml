@@ -8,18 +8,11 @@ function scr_camera_state_normal()
     var camera = view_camera[0]
     var cameraWidth = camera_get_view_width(camera)
     var cameraHeight = camera_get_view_height(camera)
-    var cameraX = targetX
-    var cameraY = targetY
+    var cameraX = targetX - (cameraWidth / 2)
+    var cameraY = targetY - (cameraHeight / 2)
     
-    
-    centerX = cameraX + (cameraWidth / 2)
-    centerY = cameraY + (cameraHeight / 2)
-    
-    if cameraWidth > room_width
-        cameraX += ((cameraWidth - room_width) / 2)
-    
-    if cameraHeight > room_height
-        cameraY += ((cameraHeight - room_height) / 2)
+    cameraX = clamp(cameraX, 0, room_width  - cameraWidth);
+    cameraY = clamp(cameraY, 0, room_height - cameraHeight);
     
     camera_set_view_pos(camera, cameraX, cameraY)
     return

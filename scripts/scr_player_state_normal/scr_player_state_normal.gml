@@ -15,10 +15,31 @@ function scr_player_state_normal_exit()
 function scr_player_state_normal_step()
 {
     var move = check_input("right", true) - check_input("left", true)
+    var walkSpeed = 6;
+    var accel = 0.5;
+    var deccel = 0.1;
     
-    velocityX = move * 8
+    velocityX = (move * moveSpeed)
+    
+    if move != 0
+    {
+        if moveSpeed < walkSpeed
+            moveSpeed += accel
+        else if floor(moveSpeed) == moveSpeed
+            moveSpeed = walkSpeed
+    }
+    else {
+    	moveSpeed = 0
+    }
+    
+    if moveSpeed > walkSpeed
+        moveSpeed -= deccel
     
     if check_input("jump", false)
-        velocityY = -10
+    {
+        stateSwitch(PlayerStates.JUMP, "jump")
+        return
+    }
+    
     return;
 }

@@ -3,7 +3,8 @@ function scr_enums()
     
     enum PlayerStates {
         UNINITIALIZED,
-        NORMAL
+        NORMAL,
+        JUMP
     }
     
     enum CameraStates {
