@@ -86,7 +86,7 @@ function scr_collide()
         continue
     }
     
-    if velocityY < 10
+    if velocityY < gravMax
         velocityY += grav
     
     grounded |= scr_solid(x, y + 1)

@@ -11,7 +11,12 @@ if grounded && velocityY > 0
 if velocityY < 0
     coyoteTime = 0
 
-if (coyoteTime > 0)
-    coyoteTime--;
+if coyoteTime > 0
+    coyoteTime--
+
+if bufferVertical > 0
+    bufferVertical--
 
 jumpAllow = (grounded && velocityY > 0) || (coyoteTime && velocityY > 0)
+
+scr_collide()

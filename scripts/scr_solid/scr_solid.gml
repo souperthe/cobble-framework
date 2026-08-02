@@ -56,21 +56,6 @@ function scr_solid(positionX, positionY)
     return false
 }
 
-/// @self object
-/// @returns {bool}
-function scr_slope()
-{
-    y++
-    
-    var slope = instance_place(x, y, obj_slope)
-    
-    if slope
-        return scr_collided_slope(slope, 0, 0)
-    
-    y--;
-    return false
-}
-
 function scr_get_collided_map()
 {
     var collidedMap = {}

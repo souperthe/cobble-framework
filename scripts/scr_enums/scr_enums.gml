@@ -12,11 +12,11 @@ function scr_enums()
         MACH2,
         MACH3,
         SLIPBANAN,
-        CLIMBWALL,
         SJUMP,
         SJUMPPREP,
         SJUMPLAND,
-        TAUNT
+        TAUNT,
+        WALLCLIMB
     }
     
     enum CameraStates {

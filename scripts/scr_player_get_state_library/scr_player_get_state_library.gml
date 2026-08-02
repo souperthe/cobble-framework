@@ -37,6 +37,7 @@ function scr_player_get_state_library()
     stateLibrary[PlayerStates.MACH3] = new PlayerState("mach3")
     stateLibrary[PlayerStates.MACHROLL] = new PlayerState("machroll")
     stateLibrary[PlayerStates.MACHSLIDE] = new PlayerState("machslide")
+    stateLibrary[PlayerStates.WALLCLIMB] = new PlayerState("wallclimb")
     
     
     return stateLibrary;

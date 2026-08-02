@@ -43,6 +43,10 @@ function scr_player_state_machslide_step()
         spriteGet("machslideboost"),
         spriteGet("machslideboostfall")
     ]
+    static instaTurn = [
+        spriteGet("machslideboost3fall"),
+        spriteGet("machslideboostfall")
+    ]
     
     velocityX = scaleX * moveSpeed
     moveSpeed = approach(moveSpeed, 0, 0.4)
@@ -73,13 +77,17 @@ function scr_player_state_machslide_step()
     }
     
     
-    if is_sprite_finished() && array_contains(mach3Animations, sprite_index) && grounded
+    var inMach3 = array_contains(mach3Animations, sprite_index) 
+    var inMach2 = array_contains(mach2Animations, sprite_index) 
+    var inInsta = array_contains(instaTurn, sprite_index) 
+    
+    if ((is_sprite_finished() && inMach3) || inInsta) && grounded
     {
         stateSwitch(PlayerStates.MACH3, "turn")
         return
     }
     
-    if is_sprite_finished() && array_contains(mach2Animations, sprite_index) && grounded
+    if ((is_sprite_finished() && inMach2) || inInsta) && grounded
     {
         stateSwitch(PlayerStates.MACH2, "turn")
         return

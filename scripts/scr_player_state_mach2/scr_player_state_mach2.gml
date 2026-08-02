@@ -22,6 +22,22 @@ function scr_player_state_mach2_enter(enterMessage)
         image_index = 0;
         scaleX *= -1
         moveSpeed = 8
+        soundMach = super_sound_loop_emitter(emitter, sfx_mach2)
+        return
+    }
+    else if enterMessage == "longjump"
+    {
+        velocityY = -11
+        super_sound_oneshot_emitter(emitter, sfx_rollgetup, random_pitch())
+        sprite_index = spriteGet("longjump")
+        image_index = 0
+        return
+    }
+    
+    if moveSpeed >= 8
+    {
+        sprite_index = spriteGet("mach")
+        soundMach = super_sound_loop_emitter(emitter, sfx_mach2)
         return
     }
     
@@ -32,6 +48,7 @@ function scr_player_state_mach2_enter(enterMessage)
 /// @self obj_player
 function scr_player_state_mach2_exit()
 {
+    audio_stop_sound(soundMach)
     return;
 }
 
@@ -47,7 +64,8 @@ function scr_player_state_mach2_step()
         spriteGet("rollgetup"), 
         spriteGet("longjumpend"), 
         spriteGet("longjump"),
-        spriteGet("suplexdash")
+        spriteGet("suplexdash"),
+        spriteGet("longjumpend")
     ]
     
     velocityX = (scaleX * moveSpeed)
@@ -86,10 +104,22 @@ function scr_player_state_mach2_step()
         scr_player_attack()
         return
     }
+    
+    if scr_player_wallcheck()
+    {
+        stateSwitch(PlayerStates.WALLCLIMB, "start")
+        return
+    }
 
     if is_sprite_finished() && sprite_index == spriteGet("secondjump1")
     {
         sprite_index = spriteGet("secondjump2")
+        image_index = 0
+    }
+    
+    if is_sprite_finished() && sprite_index == spriteGet("longjump")
+    {
+        sprite_index = spriteGet("longjumpend")
         image_index = 0
     }
     
@@ -99,7 +129,7 @@ function scr_player_state_mach2_step()
         soundMach = super_sound_loop_emitter(emitter, sfx_mach2)
     }
     
-    if check_input("jump", false) && jumpAllow && move == scaleX
+    if check_input("jump", false) && jumpAllow
     {
         super_sound_oneshot_emitter(emitter, sfx_jump)
         velocityY = -11

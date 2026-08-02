@@ -25,12 +25,15 @@ function scr_player_state_mach3_enter(enterMessage)
         soundMach = super_sound_loop_emitter(emitter, soundMachIndex)
         return
     }
+    
     return;
 }
 
 /// @self obj_player
 function scr_player_state_mach3_exit()
 {
+    machMode = false
+    audio_stop_sound(soundMach)
     return;
 }
 
@@ -96,6 +99,12 @@ function scr_player_state_mach3_step()
         scr_player_taunt()
         return
     }   
+    
+    if scr_player_wallcheck()
+    {
+        stateSwitch(PlayerStates.WALLCLIMB, "begin")
+        return
+    }
     
     if is_sprite_finished() && sprite_index == spriteGet("mach3jump")
     {

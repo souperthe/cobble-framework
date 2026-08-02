@@ -14,6 +14,8 @@ stepTime = 0;
 jumpStop = false;
 jumpAllow = true;
 
+gravMax = 20
+
 tauntState = PlayerStates.UNINITIALIZED
 tauntVelocityX = 0;
 tauntVelocityY = 0;
@@ -30,6 +32,9 @@ soundSuplex = 0;
 soundMach = 0;
 soundMachIndex = sfx_mach3
 
+wallSpeed = 0;
+bufferVertical = 0;
+
 /// @param {enum.PlayerStates} targetState
 /// @param {string} enterMessage
 stateSwitch = function(targetState, enterMessage = "")
@@ -41,7 +46,7 @@ stateSwitch = function(targetState, enterMessage = "")
         return
     
     if stateOld != undefined
-        script_execute(stateNew.stateExit)
+        script_execute(stateOld.stateExit)
     
     
     script_execute(stateNew.stateEnter, enterMessage)

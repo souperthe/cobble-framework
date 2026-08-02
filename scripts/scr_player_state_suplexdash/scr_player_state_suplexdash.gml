@@ -10,8 +10,8 @@ function scr_player_state_suplexdash_enter(enterMessage)
     
     image_index = 0
     
-    if moveSpeed < 8
-        moveSpeed = 8
+    if moveSpeed < 12
+        moveSpeed = 12
     
     soundSuplex = super_sound_oneshot_emitter(emitter, sfx_suplexdash, random_pitch())
 
@@ -21,13 +21,14 @@ function scr_player_state_suplexdash_enter(enterMessage)
 /// @self obj_player
 function scr_player_state_suplexdash_exit()
 {
+    audio_stop_sound(soundSuplex)
     return;
 }
 
 /// @self obj_player
 function scr_player_state_suplexdash_step()
 {
-    var move = check_input("right", false) - check_input("left", false)
+    var move = check_input("right", true) - check_input("left", true)
     image_speed = 0.35;
     
     velocityX = scaleX * moveSpeed;
@@ -35,17 +36,28 @@ function scr_player_state_suplexdash_step()
     if move == -scaleX
     {
         
-        audio_stop_sound(soundSuplex)
         
         if grounded
             stateSwitch(PlayerStates.NORMAL)
         else
         {
             sprite_index = spriteGet("suplexcancel")
-            super_sound_oneshot_emitter(emitter, sfx_suplexcancel, random_pitch())
+            super_sound_oneshot_emitter(emitter, sfx_suplexcancel, random_pitch() + .5)
             stateSwitch(PlayerStates.JUMP, "fromsprite")
         }
         
+        return
+    }
+    
+    if check_input("jump", false) && jumpAllow
+    {
+        stateSwitch(PlayerStates.MACH2, "longjump")
+        return
+    }
+    
+    if scr_player_wallcheck()
+    {
+        stateSwitch(PlayerStates.WALLCLIMB, "start")
         return
     }
         
