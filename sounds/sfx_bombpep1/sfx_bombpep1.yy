@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"sfx_bombpep1",
+  "audioGroupId":{
+    "name":"audiogroup_sfx",
+    "path":"audiogroups/audiogroup_sfx",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":3.096644,
+  "exportDir":"",
+  "name":"sfx_bombpep1",
+  "parent":{
+    "name":"Bomb",
+    "path":"folders/Sound/SFX/Player/Transformations/Bomb.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"sfx_bombpep1.wav",
+  "volume":1.0,
+}

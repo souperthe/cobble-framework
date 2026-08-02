@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"sfx_collectgiantpizza",
+  "audioGroupId":{
+    "name":"audiogroup_sfx",
+    "path":"audiogroups/audiogroup_sfx",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":2.0924037,
+  "exportDir":"",
+  "name":"sfx_collectgiantpizza",
+  "parent":{
+    "name":"Collect",
+    "path":"folders/Sound/SFX/Collect.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"sfx_collectgiantpizza.wav",
+  "volume":1.0,
+}
