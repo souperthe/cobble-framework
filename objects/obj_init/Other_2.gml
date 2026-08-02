@@ -1,3 +1,5 @@
+audio_group_load(audiogroup_sfx)
+audio_group_load(audiogroup_music)
 instances = [obj_input_manager, obj_screensizer, obj_camera]
 scr_globals();
 

@@ -16,6 +16,7 @@ inputLibrary[$ "up"] = new InputData(global.keyUp)
 inputLibrary[$ "down"] = new InputData(global.keyDown)
 inputLibrary[$ "left"] = new InputData(global.keyLeft)
 inputLibrary[$ "right"] = new InputData(global.keyRight)
+inputLibrary[$ "taunt"] = new InputData(global.keyTaunt)
 
 
 inputCheck = function(inputName, held)

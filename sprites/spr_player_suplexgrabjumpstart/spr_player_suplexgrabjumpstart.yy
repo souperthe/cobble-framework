@@ -27,7 +27,7 @@
   ],
   "name":"spr_player_suplexgrabjumpstart",
   "nineSlice":null,
-  "origin":4,
+  "origin":9,
   "parent":{
     "name":"Peppino",
     "path":"folders/Sprites/Player/Peppino.yy",
@@ -91,7 +91,7 @@
     ],
     "visibleRange":null,
     "volume":1.0,
-    "xorigin":100,
+    "xorigin":50,
     "yorigin":50,
   },
   "swatchColours":null,

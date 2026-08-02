@@ -31,10 +31,10 @@ stateSwitch = function(targetState, enterMessage = "")
     return
 }
 
-spriteGet = function(spriteName)
+spriteGet = function(targetSpriteName)
 {
     var spritePrefix = "spr_player_"
-    var spritePath = spritePrefix + spriteName
+    var spritePath = spritePrefix + targetSpriteName
     var spriteIndex = asset_get_index(spritePath)
     
     return spriteIndex

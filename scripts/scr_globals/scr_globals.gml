@@ -20,6 +20,7 @@ function scr_globals_keys()
     global.keyPause = vk_escape
     global.keyJump = ord("Z")
     global.keyAttack = ord("X")
+    global.keyTaunt = ord("C")
     global.keyLeft = vk_left
     global.keyRight = vk_right
     global.keyUp = vk_up

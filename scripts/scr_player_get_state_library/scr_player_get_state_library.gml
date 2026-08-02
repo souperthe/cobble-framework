@@ -31,6 +31,8 @@ function scr_player_get_state_library()
     stateLibrary[PlayerStates.NORMAL] = new PlayerState("normal")
     stateLibrary[PlayerStates.JUMP] = new PlayerState("jump")
     stateLibrary[PlayerStates.CLIMB] = new PlayerState("climb")
+    stateLibrary[PlayerStates.SUPLEXDASH] = new PlayerState("suplexdash")
+    
     
     return stateLibrary;
 }

@@ -12,8 +12,13 @@ function scr_player_state_jump_enter(enterMessage)
         velocityY = -11
         return
     }
+    else if enterMessage == "fromsprite"
+    {
+        return
+    }
     
     sprite_index = spriteGet("fall")
+    
     return;
 }
 
@@ -27,6 +32,7 @@ function scr_player_state_jump_exit()
 function scr_player_state_jump_step()
 {
     
+    static jumpAnimations = [spriteGet("jump"), spriteGet("suplexcancel")]
     var move = check_input("right", true) - check_input("left", true)
     var airSpeed = 6;
     var airSpeedMax = 8;
@@ -35,7 +41,7 @@ function scr_player_state_jump_step()
     var deccel = 0.1;
     var jumpSpeed = -11;
     
-    if sprite_index == spriteGet("jump") && is_sprite_finished()
+    if array_contains(jumpAnimations, sprite_index) && is_sprite_finished()
         sprite_index = spriteGet("fall")
     
     if (!momemtum)
@@ -69,12 +75,24 @@ function scr_player_state_jump_step()
     	moveSpeed = 0
     }
     
+    if check_input("attack", false)
+    {
+        scr_player_attack()
+        return
+    }
+    
     if moveSpeed > airSpeed
         moveSpeed -= deccel
     
     if grounded
     {
-        stateSwitch(PlayerStates.NORMAL)
+        
+        if move != 0
+            sprite_index = spriteGet("land2")
+        else
+            sprite_index = spriteGet("land")
+        
+        stateSwitch(PlayerStates.NORMAL, "fromsprite")
         return
     }
     return;
