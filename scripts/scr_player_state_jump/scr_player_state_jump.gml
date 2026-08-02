@@ -88,6 +88,14 @@ function scr_player_state_jump_step()
         return
     }
     
+    if check_input("jump", false) && jumpAllow
+    {
+        stateSwitch(PlayerStates.JUMP, "jump")
+        return
+    }
+    
+    scr_player_jump_stop()
+    
     if moveSpeed > airSpeed
         moveSpeed -= deccel
     

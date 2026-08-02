@@ -19,6 +19,17 @@ function super_sound_oneshot(positionX, positionY, sound, pitch = 1)
     return soundInstance
 }
 
+/// @param {Real} positionX
+/// @param {Real} positionY
+/// @param {Array} sounds
+/// @param {Real} pitch
+/// @returns {Id.Sound}
+function super_sound_oneshot_list(positionX, positionY, sounds, pitch = 1)
+{
+    var soundTarget = array_random(sounds)
+    return super_sound_oneshot(positionX, positionY, soundTarget, pitch)
+}
+
 /// @param {Id.AudioEmitter} emitter
 /// @param {Asset.GMSound} sound
 /// @param {Real} pitch
@@ -26,6 +37,28 @@ function super_sound_oneshot(positionX, positionY, sound, pitch = 1)
 function super_sound_oneshot_emitter(emitter, sound, pitch = 1)
 {
     var soundInstance = audio_play_sound_on(emitter, sound, false, 0)
+    audio_sound_pitch(soundInstance, pitch)
+    
+    return soundInstance
+}
+
+/// @param {Id.AudioEmitter} emitter
+/// @param {Array} sounds
+/// @param {Real} pitch
+/// @returns {Id.Sound}
+function super_sound_oneshot_emitter_list(emitter, sounds, pitch = 1)
+{
+    var soundTarget = array_random(sounds)
+    return super_sound_oneshot_emitter(emitter, soundTarget, pitch)
+}
+
+/// @param {Id.AudioEmitter} emitter
+/// @param {Asset.GMSound} sound
+/// @param {Real} pitch
+/// @returns {Id.Sound}
+function super_sound_loop_emitter(emitter, sound, pitch = 1)
+{
+    var soundInstance = audio_play_sound_on(emitter, sound, true, 0)
     audio_sound_pitch(soundInstance, pitch)
     
     return soundInstance

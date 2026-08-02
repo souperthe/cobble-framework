@@ -8,6 +8,7 @@ function scr_enums()
         CLIMB,
         SUPLEXDASH,
         MACHROLL,
+        MACHSLIDE,
         MACH2,
         MACH3,
         SLIPBANAN,

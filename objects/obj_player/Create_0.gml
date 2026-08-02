@@ -11,7 +11,8 @@ dir = 1;
 momemtum = false;
 emitter = super_sound_create_emitter();
 stepTime = 0;
-soundSuplex = 0;
+jumpStop = false;
+jumpAllow = true;
 
 tauntState = PlayerStates.UNINITIALIZED
 tauntVelocityX = 0;
@@ -21,6 +22,13 @@ tauntSprite = 0;
 tauntImageSpeed = 0;
 tauntImageIndex = 0;
 tauntTimer = 0;
+machMode = false;
+
+coyoteTime = 0;
+
+soundSuplex = 0;
+soundMach = 0;
+soundMachIndex = sfx_mach3
 
 /// @param {enum.PlayerStates} targetState
 /// @param {string} enterMessage

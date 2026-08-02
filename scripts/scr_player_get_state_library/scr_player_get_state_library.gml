@@ -33,6 +33,10 @@ function scr_player_get_state_library()
     stateLibrary[PlayerStates.CLIMB] = new PlayerState("climb")
     stateLibrary[PlayerStates.SUPLEXDASH] = new PlayerState("suplexdash")
     stateLibrary[PlayerStates.TAUNT] = new PlayerState("taunt")
+    stateLibrary[PlayerStates.MACH2] = new PlayerState("mach2")
+    stateLibrary[PlayerStates.MACH3] = new PlayerState("mach3")
+    stateLibrary[PlayerStates.MACHROLL] = new PlayerState("machroll")
+    stateLibrary[PlayerStates.MACHSLIDE] = new PlayerState("machslide")
     
     
     return stateLibrary;

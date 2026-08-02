@@ -14,8 +14,8 @@
   "exportDir":"",
   "name":"sfx_machslide",
   "parent":{
-    "name":"SFX",
-    "path":"folders/Sound/SFX.yy",
+    "name":"Mach",
+    "path":"folders/Sound/SFX/Player/Mach.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

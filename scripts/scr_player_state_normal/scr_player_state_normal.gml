@@ -96,7 +96,13 @@ function scr_player_state_normal_step()
         return
     }
     
-    if check_input("jump", false)
+    if check_input("dash", true) && !place_meeting(x + scaleX, y, obj_solid)
+    {
+        scr_player_entermach()
+        return
+    }
+    
+    if check_input("jump", false) && jumpAllow
     {
         stateSwitch(PlayerStates.JUMP, "jump")
         return

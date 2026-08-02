@@ -9,7 +9,9 @@ function scr_player_state_suplexdash_enter(enterMessage)
         sprite_index = spriteGet("suplexgrabjumpstart")
     
     image_index = 0
-    moveSpeed = 8
+    
+    if moveSpeed < 8
+        moveSpeed = 8
     
     soundSuplex = super_sound_oneshot_emitter(emitter, sfx_suplexdash, random_pitch())
 

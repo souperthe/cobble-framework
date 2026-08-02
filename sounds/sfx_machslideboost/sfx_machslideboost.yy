@@ -14,13 +14,13 @@
   "exportDir":"",
   "name":"sfx_machslideboost",
   "parent":{
-    "name":"SFX",
-    "path":"folders/Sound/SFX.yy",
+    "name":"Mach",
+    "path":"folders/Sound/SFX/Player/Mach.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"sfx_machslideboost.wav",
-  "volume":1.0,
+  "volume":0.43,
 }
