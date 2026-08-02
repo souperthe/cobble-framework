@@ -52,6 +52,13 @@ function scr_player_state_normal_step()
         
         if !landing
         {
+            if stepTime > 0
+                stepTime--;
+            else {
+                stepTime = 12;
+                super_sound_oneshot_emitter(emitter, sfx_step, random_pitch())
+            }
+            
             if (moveSpeed < (floor(walkSpeedMax) / 2) && move != 0)
                 image_speed = 0.35
             else if (moveSpeed < (floor(walkSpeedMax) / 2) && moveSpeed < walkSpeedMax)
@@ -65,6 +72,7 @@ function scr_player_state_normal_step()
     }
     else {
     	moveSpeed = 0
+        stepTime = 12;
         if !landing
         { 
             sprite_index = spriteGet("idle")
@@ -74,6 +82,12 @@ function scr_player_state_normal_step()
     
     if moveSpeed > walkSpeed
         moveSpeed -= deccel
+    
+    if check_input("taunt", false)
+    {
+        scr_player_taunt()
+        return
+    }
     
         
     if check_input("attack", false)

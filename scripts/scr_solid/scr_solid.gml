@@ -1,6 +1,6 @@
 /// @self object
-/// @param {float} positionX
-/// @param {float} positionY
+/// @param {Real} positionX
+/// @param {Real} positionY
 /// @returns {bool}
 function scr_solid(positionX, positionY)
 {
@@ -68,8 +68,8 @@ function scr_get_collided_map()
 
 /// @self object
 /// @param {Asset.GMObject} object
-/// @param {float} oldX
-/// @param {float} oldY
+/// @param {Real} oldX
+/// @param {Real} oldY
 /// @returns {bool}
 function scr_collided_platform(object, oldX, oldY)
 {
@@ -82,8 +82,8 @@ function scr_collided_platform(object, oldX, oldY)
 
 /// @self object
 /// @param {Asset.GMObject} object
-/// @param {float} oldX
-/// @param {float} oldY
+/// @param {Real} oldX
+/// @param {Real} oldY
 /// @returns {bool}
 function scr_collided_slope(object, oldX, oldY)
 {

@@ -10,6 +10,7 @@ function scr_player_state_jump_enter(enterMessage)
         image_speed = 0.35;
         sprite_ = 0;
         velocityY = -11
+        super_sound_oneshot_emitter(emitter, sfx_jump)
         return
     }
     else if enterMessage == "fromsprite"
@@ -81,12 +82,18 @@ function scr_player_state_jump_step()
         return
     }
     
+    if check_input("taunt", false)
+    {
+        scr_player_taunt()
+        return
+    }
+    
     if moveSpeed > airSpeed
         moveSpeed -= deccel
     
     if grounded
     {
-        
+        super_sound_oneshot_emitter(emitter, sfx_step, random_pitch())
         if move != 0
             sprite_index = spriteGet("land2")
         else

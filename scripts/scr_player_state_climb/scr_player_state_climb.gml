@@ -25,6 +25,12 @@ function scr_player_state_climb_step()
         return
     }
     
+    if check_input("jump", false)
+    {
+        stateSwitch(PlayerStates.JUMP, "jump")
+        return
+    }
+    
     if check_input("up", true)
     {
         sprite_index = spriteGet("laddermove")

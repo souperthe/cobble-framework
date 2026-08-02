@@ -10,6 +10,8 @@ function scr_player_state_suplexdash_enter(enterMessage)
     
     image_index = 0
     moveSpeed = 8
+    
+    soundSuplex = super_sound_oneshot_emitter(emitter, sfx_suplexdash, random_pitch())
 
     return;
 }
@@ -31,11 +33,14 @@ function scr_player_state_suplexdash_step()
     if move == -scaleX
     {
         
+        audio_stop_sound(soundSuplex)
+        
         if grounded
             stateSwitch(PlayerStates.NORMAL)
         else
         {
             sprite_index = spriteGet("suplexcancel")
+            super_sound_oneshot_emitter(emitter, sfx_suplexcancel, random_pitch())
             stateSwitch(PlayerStates.JUMP, "fromsprite")
         }
         

@@ -9,6 +9,18 @@ scaleY = 1;
 angle = 0;
 dir = 1;
 momemtum = false;
+emitter = super_sound_create_emitter();
+stepTime = 0;
+soundSuplex = 0;
+
+tauntState = PlayerStates.UNINITIALIZED
+tauntVelocityX = 0;
+tauntVelocityY = 0;
+tauntMoveSpeed = 0;
+tauntSprite = 0;
+tauntImageSpeed = 0;
+tauntImageIndex = 0;
+tauntTimer = 0;
 
 /// @param {enum.PlayerStates} targetState
 /// @param {string} enterMessage
