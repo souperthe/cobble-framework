@@ -14,8 +14,8 @@
   "exportDir":"",
   "name":"sfx_superjumphold",
   "parent":{
-    "name":"Player",
-    "path":"folders/Sound/SFX/Player.yy",
+    "name":"SuperJump",
+    "path":"folders/Sound/SFX/Player/SuperJump.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

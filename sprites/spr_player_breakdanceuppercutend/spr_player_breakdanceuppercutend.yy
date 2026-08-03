@@ -23,7 +23,7 @@
   ],
   "name":"spr_player_breakdanceuppercutend",
   "nineSlice":null,
-  "origin":4,
+  "origin":9,
   "parent":{
     "name":"Peppino",
     "path":"folders/Sprites/Player/Peppino.yy",
@@ -76,7 +76,7 @@
     "visibleRange":null,
     "volume":1.0,
     "xorigin":75,
-    "yorigin":68,
+    "yorigin":93,
   },
   "swatchColours":null,
   "swfPrecision":0.5,

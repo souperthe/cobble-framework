@@ -62,10 +62,12 @@ function scr_player_state_machslide_step()
     
     if is_sprite_finished() && array_contains(slideStarters, sprite_index)
     {
-        if !grounded
+        if !(grounded && velocityY > 0) 
         {
             if sprite_index == spriteGet("machslideboost3")
                 sprite_index = spriteGet("machslideboost3fall")
+            else if sprite_index == spriteGet("machslideboost")
+                sprite_index = spriteGet("machslideboostfall")
         }
         else 
         {

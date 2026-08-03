@@ -2,7 +2,7 @@
 /// @param {String} enterMessage
 function scr_player_state_mach3_enter(enterMessage)
 {
-    
+    soundMachIndex = sfx_mach3
     if enterMessage == "enter"
     {
         
@@ -23,6 +23,15 @@ function scr_player_state_mach3_enter(enterMessage)
         moveSpeed = 12
         soundMachIndex = sfx_mach3
         soundMach = super_sound_loop_emitter(emitter, soundMachIndex)
+        return
+    }
+    else if enterMessage == "sjumpcancel"
+    {
+        moveSpeed = 13
+        soundMachIndex = sfx_mach3
+        velocityY = -4
+        sprite_index = spriteGet("Sjumpcancel")
+        image_index = 0
         return
     }
     
@@ -49,6 +58,17 @@ function scr_player_state_mach3_step()
     var accel = 0.025
     var accelMach4 = 0.1
     var machRollSpeed = 10;
+    static overrideAnimations = [spriteGet("rollgetup")]
+    
+    if is_sprite_finished() && array_contains(overrideAnimations, sprite_index)
+    {
+        
+        if machMode
+            sprite_index = spriteGet("crazyrun")
+        else
+            sprite_index = spriteGet("mach4")
+        
+    }
     
     if sprite_index == spriteGet("mach4")
         image_speed = 0.4;
@@ -70,6 +90,9 @@ function scr_player_state_mach3_step()
     {
         var withinThreshold = moveSpeed > 10 && moveSpeed < 18
         var onSlope = (scr_slope() && velocityX != 0)
+        
+        if sprite_index == spriteGet("Sjumpcancel")
+            sprite_index = spriteGet("mach4")
         
         if (onSlope && withinThreshold)
             scr_player_apply_slope_momentum(slopeAccel, slopeDeccel)
@@ -98,11 +121,29 @@ function scr_player_state_mach3_step()
         audio_stop_sound(soundMach)
         scr_player_taunt()
         return
-    }   
+    }
     
     if scr_player_wallcheck()
     {
         stateSwitch(PlayerStates.WALLCLIMB, "begin")
+        return
+    }
+    
+    if scr_player_wallcheck_bump_mach()
+    {
+        stateSwitch(PlayerStates.BUMP, "ramwall")
+        return
+    }
+    
+    if check_input("down", true)
+    {
+        stateSwitch(PlayerStates.MACHROLL)
+        return
+    }
+    
+    if check_input("up", false) && grounded
+    {
+        stateSwitch(PlayerStates.SJUMPPREP)
         return
     }
     

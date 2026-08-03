@@ -13,6 +13,7 @@ emitter = super_sound_create_emitter();
 stepTime = 0;
 jumpStop = false;
 jumpAllow = true;
+velocitySuperJump = 0;
 
 gravMax = 20
 
@@ -28,12 +29,13 @@ machMode = false;
 
 coyoteTime = 0;
 
-soundSuplex = 0;
 soundMach = 0;
 soundMachIndex = sfx_mach3
 
 wallSpeed = 0;
 bufferVertical = 0;
+uppercutAllow = true;
+freeFallProgress = 0
 
 /// @param {enum.PlayerStates} targetState
 /// @param {string} enterMessage
@@ -61,6 +63,9 @@ spriteGet = function(targetSpriteName)
     var spritePrefix = "spr_player_"
     var spritePath = spritePrefix + targetSpriteName
     var spriteIndex = asset_get_index(spritePath)
+    
+    if spriteIndex == -1
+        return spr_baddie
     
     return spriteIndex
 }

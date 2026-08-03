@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"sfx_groundpoundstart",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":1.2120181,
+  "exportDir":"",
+  "name":"sfx_groundpoundstart",
+  "parent":{
+    "name":"GroundPound",
+    "path":"folders/Sound/SFX/Player/GroundPound.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"sfx_groundpoundstart.ogg",
+  "volume":1.0,
+}

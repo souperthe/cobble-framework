@@ -41,7 +41,7 @@ function scr_player_state_jump_step()
     var accel = 0.5;
     var deccel = 0.1;
     var jumpSpeed = -11;
-    
+
     if array_contains(jumpAnimations, sprite_index) && is_sprite_finished()
         sprite_index = spriteGet("fall")
     
@@ -91,6 +91,12 @@ function scr_player_state_jump_step()
     if check_input("jump", false) && jumpAllow
     {
         stateSwitch(PlayerStates.JUMP, "jump")
+        return
+    }
+    
+    if check_input("down", false)
+    {
+        stateSwitch(PlayerStates.FREEFALL, "bodyslam")
         return
     }
     

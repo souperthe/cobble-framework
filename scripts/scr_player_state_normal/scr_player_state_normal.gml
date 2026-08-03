@@ -2,7 +2,7 @@
 /// @param {String} enterMessage
 function scr_player_state_normal_enter(enterMessage)
 {
-    
+    uppercutAllow = true
     if enterMessage == "fromsprite"
     {
         image_index = 0
@@ -36,6 +36,11 @@ function scr_player_state_normal_step()
         landing = !is_sprite_finished()
     }
          
+    if check_input("dash", true) && !place_meeting(x + scaleX, y, obj_solid)
+    {
+        scr_player_entermach()
+        return
+    }
     
     velocityX = (move * moveSpeed)
     
@@ -96,11 +101,6 @@ function scr_player_state_normal_step()
         return
     }
     
-    if check_input("dash", true) && !place_meeting(x + scaleX, y, obj_solid)
-    {
-        scr_player_entermach()
-        return
-    }
     
     if check_input("jump", false) && jumpAllow
     {

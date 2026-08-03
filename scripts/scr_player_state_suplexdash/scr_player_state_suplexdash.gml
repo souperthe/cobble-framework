@@ -3,6 +3,7 @@
 function scr_player_state_suplexdash_enter(enterMessage)
 {
     
+    
     if grounded
         sprite_index = spriteGet("suplexdash")
     else
@@ -49,6 +50,12 @@ function scr_player_state_suplexdash_step()
         return
     }
     
+    if check_input("down", true) && grounded
+    {
+        stateSwitch(PlayerStates.MACHROLL, "crouchslip")
+        return
+    }
+    
     if check_input("jump", false) && jumpAllow
     {
         stateSwitch(PlayerStates.MACH2, "longjump")
@@ -60,6 +67,12 @@ function scr_player_state_suplexdash_step()
         stateSwitch(PlayerStates.WALLCLIMB, "start")
         return
     }
+    
+    if scr_player_wallcheck_bump_mach()
+    {
+        stateSwitch(PlayerStates.BUMP, "suplex")
+        return
+    }
         
     
     if (is_sprite_finished())
@@ -67,6 +80,7 @@ function scr_player_state_suplexdash_step()
         
         if sprite_index == spriteGet("suplexdash")
         {
+            uppercutAllow = true
             stateSwitch(PlayerStates.NORMAL)
             return
         }

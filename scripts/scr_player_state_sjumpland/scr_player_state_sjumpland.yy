@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_player_state_sjumpland",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_player_state_sjumpland",
+  "parent":{
+    "name":"SuperJump",
+    "path":"folders/Scripts/Player/States/SuperJump.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

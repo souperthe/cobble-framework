@@ -1,6 +1,7 @@
 function scr_globals()
 {
     scr_enums()
+    scr_globals_warp()
     global.instanceList = ds_list_create();
     global.collect = 0;
     global.treasure = 0;
@@ -13,6 +14,18 @@ function scr_globals()
     return;
 }
 
+function scr_globals_warp()
+{
+    global.warpDoor = "A"
+    global.warpHallwayDirection = 1;
+    global.warpHallway = false;
+    global.warpBox = false
+    global.warpVerticalHallway = false;
+    global.warpVerticalFlip = 1;
+    global.warpVerticalHallwayPosition = 0
+    global.warpVerticalHallwaySide = 1
+    return;
+}
 
 function scr_globals_keys()
 {

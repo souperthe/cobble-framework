@@ -38,7 +38,13 @@ function scr_player_get_state_library()
     stateLibrary[PlayerStates.MACHROLL] = new PlayerState("machroll")
     stateLibrary[PlayerStates.MACHSLIDE] = new PlayerState("machslide")
     stateLibrary[PlayerStates.WALLCLIMB] = new PlayerState("wallclimb")
-    
+    stateLibrary[PlayerStates.UPPERCUT] = new PlayerState("uppercut")
+    stateLibrary[PlayerStates.BUMP] = new PlayerState("bump")
+    stateLibrary[PlayerStates.SJUMPPREP] = new PlayerState("sjumpprep")
+    stateLibrary[PlayerStates.SJUMPLAND] = new PlayerState("sjumpland")
+    stateLibrary[PlayerStates.SJUMP] = new PlayerState("sjump")
+    stateLibrary[PlayerStates.FREEFALL] = new PlayerState("freefall")
+    stateLibrary[PlayerStates.FREEFALLLAND] = new PlayerState("freefallland")
     
     return stateLibrary;
 }

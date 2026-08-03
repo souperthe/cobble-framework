@@ -10,6 +10,8 @@ function scr_player_state_wallclimb_enter(enterMessage)
         moveSpeed = wallSpeed
     
     soundMach = super_sound_loop_emitter(emitter, sfx_mach2)
+    bufferWallClimb = 10
+    uppercutAllow = true
     return;
 }
 
@@ -35,6 +37,27 @@ function scr_player_state_wallclimb_step()
             moveSpeed += 0.2
         else
             moveSpeed += 0.4
+    }
+    
+    bufferWallClimb--
+    
+    if !check_input("dash", true) && bufferWallClimb <= 0
+    {
+        moveSpeed = 0
+        stateSwitch(PlayerStates.NORMAL)
+        return
+    }
+    
+    if check_input("jump", false)
+    {
+        stateSwitch(PlayerStates.MACH2, "walljump")
+        return
+    }
+    
+    if bufferVertical <= 0 && place_meeting(x, y - 1, obj_solid)
+    {
+        stateSwitch(PlayerStates.SJUMPLAND)
+        return
     }
     
     if bufferVertical <= 0 && wallSpeed > 0 && !scr_solid(x + scaleX, y)

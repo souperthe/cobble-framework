@@ -16,7 +16,11 @@ function scr_enums()
         SJUMPPREP,
         SJUMPLAND,
         TAUNT,
-        WALLCLIMB
+        WALLCLIMB,
+        UPPERCUT,
+        BUMP,
+        FREEFALL,
+        FREEFALLLAND
     }
     
     enum CameraStates {

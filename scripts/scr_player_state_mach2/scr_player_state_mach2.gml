@@ -8,12 +8,24 @@ function scr_player_state_mach2_enter(enterMessage)
         sprite_index = spriteGet("mach1")
         image_index = 0
         
+        soundMach = super_sound_loop_emitter(emitter, sfx_mach1)
+        
         if moveSpeed < 6 && moveSpeed >= 0
             moveSpeed = 6
         
         if moveSpeed > -6 && moveSpeed < 0
             moveSpeed = 6
-        
+        return
+    }
+    else if enterMessage == "walljump"
+    {
+        moveSpeed = 10
+        super_sound_oneshot_emitter(emitter, sfx_jump)
+        velocityY = -11
+        scaleX *= -1
+        sprite_index = spriteGet("walljumpstart")
+        image_index = 0
+        return
     }
     else if enterMessage == "turn"
     {
@@ -34,14 +46,9 @@ function scr_player_state_mach2_enter(enterMessage)
         return
     }
     
-    if moveSpeed >= 8
-    {
-        sprite_index = spriteGet("mach")
-        soundMach = super_sound_loop_emitter(emitter, sfx_mach2)
-        return
-    }
-    
-    soundMach = super_sound_loop_emitter(emitter, sfx_mach1)
+    if sprite_index != spriteGet("rollgetup") 
+        sprite_index = spriteGet("mach") 
+    soundMach = super_sound_loop_emitter(emitter, sfx_mach2)
     return;
 }
 
@@ -60,6 +67,8 @@ function scr_player_state_mach2_step()
     var accel = 0.1;
     var accelMach = 0.4;
     var maxMoveSpeed = 12;
+    var slopeAccel = 0.1;
+    var slopeDeccel = 0.2;
     static fixedSpeedSprites = [
         spriteGet("rollgetup"), 
         spriteGet("longjumpend"), 
@@ -67,11 +76,31 @@ function scr_player_state_mach2_step()
         spriteGet("suplexdash"),
         spriteGet("longjumpend")
     ]
+    static wallJumpSprites = [
+        spriteGet("walljumpstart"),
+        spriteGet("walljumpend")
+    ]
     
     velocityX = (scaleX * moveSpeed)
     
+    if is_sprite_finished() && sprite_index == spriteGet("walljumpstart")
+    {
+        sprite_index = spriteGet("walljumpend")
+        image_index = 0
+    }
+        
+    
     if grounded
     {
+        
+        if array_contains(wallJumpSprites, sprite_index)
+        {
+            sprite_index = spriteGet("mach")
+            soundMach = super_sound_loop_emitter(emitter, sfx_mach2)
+        }
+        
+        if scr_slope() && velocityY != 0 && moveSpeed > 8
+            scr_player_apply_slope_momentum(slopeAccel, slopeDeccel)
         
         if moveSpeed < maxMoveSpeed
         {
@@ -91,7 +120,7 @@ function scr_player_state_mach2_step()
         }
     }
     
-    if move == -scaleX && grounded
+    if move == -scaleX && grounded && velocityY > 0
     {
         audio_stop_sound(soundMach)
         stateSwitch(PlayerStates.MACHSLIDE, "2")
@@ -110,6 +139,12 @@ function scr_player_state_mach2_step()
         stateSwitch(PlayerStates.WALLCLIMB, "start")
         return
     }
+    
+    if scr_player_wallcheck_bump_mach()
+    {
+        stateSwitch(PlayerStates.BUMP, "wallsplat")
+        return
+    }
 
     if is_sprite_finished() && sprite_index == spriteGet("secondjump1")
     {
@@ -123,11 +158,14 @@ function scr_player_state_mach2_step()
         image_index = 0
     }
     
-    if grounded && (sprite_index == spriteGet("secondjump2") || sprite_index == spriteGet("secondjump1"))
+    if (grounded && velocityY > 0) && (sprite_index == spriteGet("secondjump2") || sprite_index == spriteGet("secondjump1"))
     {
         sprite_index = spriteGet("mach")
         soundMach = super_sound_loop_emitter(emitter, sfx_mach2)
     }
+    
+    if !(grounded && velocityY > 0)  && audio_is_playing(soundMach)
+        audio_stop_sound(soundMach)
     
     if check_input("jump", false) && jumpAllow
     {
@@ -139,7 +177,19 @@ function scr_player_state_mach2_step()
         return
     }
     
-    if !check_input("dash", true) && moveSpeed >= 8 && grounded
+    if check_input("taunt", false)
+    {
+        scr_player_taunt()
+        return
+    }   
+    
+    if check_input("down", true)
+    {
+        stateSwitch(PlayerStates.MACHROLL)
+        return
+    }
+    
+    if !check_input("dash", true) && moveSpeed >= 8 && (grounded && velocityY > 0) 
     {
         audio_stop_sound(soundMach)
         stateSwitch(PlayerStates.MACHSLIDE, "brake")
