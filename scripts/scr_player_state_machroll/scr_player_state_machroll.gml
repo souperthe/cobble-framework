@@ -60,6 +60,7 @@ function scr_player_state_machroll_step()
     {
         audio_sound_gain(soundRoll, 0)
         sprite_index = spriteGet("dive")
+        image_speed = 0.8
         var diveSpeed = 10
         var speedCurrent = abs(velocityX)
         
@@ -78,6 +79,7 @@ function scr_player_state_machroll_step()
     {
         audio_sound_gain(soundRoll, 0.5)
         sprite_index = spriteGet("machroll")
+        image_speed = abs(moveSpeed) / 15
     }
     
     if sprite_index == spriteGet("dive") and check_input("jump", false)
@@ -86,7 +88,6 @@ function scr_player_state_machroll_step()
         return
     }
     
-    image_speed = 0.8
     
     
     if scr_slope()
