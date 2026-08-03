@@ -2,6 +2,7 @@ sprite_index = spr_tv_open
 image_speed = 0.4
 tvTargetPlayer = obj_player
 tvTransition = 0;
+tvIdleTime = 200;
 tvExpressionSprite = spr_tv_idle
 tvExpressionSpriteFrame = 0
 tvExpressionSpriteSpeed = 0.25
@@ -17,7 +18,7 @@ tvTransition = function(targetSprite)
     tvTransitionTarget = targetSprite
     sprite_index = spr_tv_whitenoise
     image_index = 0
-    image_speed = 0.4
+    image_speed = 0.6
     stateCurrent = TvStates.transition
     return
 }
