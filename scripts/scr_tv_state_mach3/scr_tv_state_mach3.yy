@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_tv_state_mach3",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_tv_state_mach3",
+  "parent":{
+    "name":"TV",
+    "path":"folders/Scripts/HUD/TV.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,3 +1,10 @@
 
-if is_sprite_finished() && sprite_index == spr_tv_open
-    sprite_index = spr_tv_empty
+var stateFunction = stateLibrary[stateCurrent]
+
+tvExpressionSpriteFrame += tvExpressionSpriteSpeed
+tvClipTransparency = approach(tvClipTransparency, 0, 0.1)
+
+if is_undefined(stateFunction)
+    exit
+
+script_execute(stateFunction)

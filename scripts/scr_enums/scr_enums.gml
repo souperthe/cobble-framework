@@ -20,7 +20,14 @@ function scr_enums()
         UPPERCUT,
         BUMP,
         FREEFALL,
-        FREEFALLLAND
+        FREEFALLLAND,
+        _length
+    }
+    
+    enum TvStates {
+        enter,
+        normal,
+        transition
     }
     
     enum CameraStates {
