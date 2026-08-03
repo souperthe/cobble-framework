@@ -3,7 +3,7 @@ function get_door_offset_x()
 {
     
     if global.warpHallway
-        return global.warpHallwayDirection * 100
+        return global.warpHallwayDirection * 50
     
     if global.warpBox
         return 32

@@ -1,6 +1,6 @@
 audio_group_load(audiogroup_sfx)
 audio_group_load(audiogroup_music)
-instances = [obj_input_manager, obj_screensizer, obj_camera, obj_tv]
+instances = [obj_input_manager, obj_screensizer, obj_camera, obj_tv, obj_music]
 scr_globals();
 
 for (var index = 0; index < array_length(instances); index++)

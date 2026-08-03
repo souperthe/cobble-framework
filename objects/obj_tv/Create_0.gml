@@ -9,17 +9,21 @@ tvExpressionSpriteSpeed = 0.25
 tvExpressionStates = scr_tv_get_state_expressions()
 tvBackroundFrame = 0
 tvTransitionTarget = tvExpressionSprite
-tvClipTransparency = 0
+tvWhiteFade = 0
 tvTransition = function(targetSprite)
 {
     if tvTransitionTarget == targetSprite
         exit
     
+    if stateCurrent == TvStates.transition
+        exit
+    
     tvTransitionTarget = targetSprite
     sprite_index = spr_tv_whitenoise
     image_index = 0
-    image_speed = 0.6
+    image_speed = 0.4
     stateCurrent = TvStates.transition
+    tvWhiteFade = 0
     return
 }
 trace(tvExpressionStates)
@@ -31,7 +35,7 @@ stateLibrary[TvStates.enter] = function()
     {
         sprite_index = spr_tv_empty
         stateCurrent = TvStates.normal
-        tvClipTransparency = 1
+        tvWhiteFade = 1
     }
     
     return
@@ -60,7 +64,7 @@ stateLibrary[TvStates.transition] = function()
         tvExpressionSprite = tvTransitionTarget
         stateCurrent = TvStates.normal
         sprite_index = spr_tv_empty
-        tvClipTransparency = 1
+        tvWhiteFade = 1
         tvExpressionSpriteFrame = 0
     }
     return

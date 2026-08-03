@@ -26,7 +26,7 @@
   "origin":0,
   "parent":{
     "name":"Doors",
-    "path":"folders/Sprites/Doors.yy",
+    "path":"folders/Sprites/LevelStructure/Doors.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

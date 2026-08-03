@@ -17,6 +17,7 @@ function scr_globals()
 function scr_globals_warp()
 {
     global.warpDoor = "A"
+    global.warpRoom = rm_test
     global.warpHallwayDirection = 1;
     global.warpHallway = false;
     global.warpBox = false

@@ -1,0 +1,2 @@
+targetDoor = ""
+visited = false

@@ -2,7 +2,7 @@
 var stateFunction = stateLibrary[stateCurrent]
 
 tvExpressionSpriteFrame += tvExpressionSpriteSpeed
-tvClipTransparency = approach(tvClipTransparency, 0, 0.08)
+tvWhiteFade = approach(tvWhiteFade, 0, 0.1)
 
 if is_undefined(stateFunction)
     exit
