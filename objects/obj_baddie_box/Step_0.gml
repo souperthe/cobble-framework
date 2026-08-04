@@ -13,6 +13,9 @@ image_xscale = baddieInstance.image_xscale
 var playerTouching = instance_place(x, y, obj_player)
 var baddieTouching = instance_place(x, y, obj_baddie)
 
+if baddieInstance.invincibleTimer > 0
+    exit
+
 if baddieTouching != noone && baddieTouching != baddieInstance
 {
     
@@ -34,6 +37,27 @@ if playerTouching == noone
 if array_contains(playerInstaKillStates, playerTouching.stateCurrentEnum)
 {
     scr_baddie_instakill(playerTouching, baddieInstance)
+    exit
+}
+
+if array_contains(playerBumpStates, playerTouching.stateCurrentEnum)
+{
+    baddieInstance.stateCurrent = BaddieStates.STAGGERED
+    baddieInstance.staggeredTimer = 200
+    baddieInstance.velocityX = playerTouching.velocityX
+    baddieInstance.velocityY = -5
+    baddieInstance.sprite_index = baddieInstance.spriteStun
+    baddieInstance.scaleX = -playerTouching.scaleX
+    baddieInstance.bumpScaleX = 0.6
+    baddieInstance.bumpScaleY = 1.4
+    baddieInstance.staggeredTimer = 200
+    baddieInstance.invincibleTimer = 30
+    super_sound_oneshot_emitter_list(
+        baddieInstance.emitter, 
+        [sfx_mach2bump_1, sfx_mach2bump_2, sfx_mach2bump_3, sfx_mach2bump_4],
+        random_pitch()
+        )
+    obj_camera.shake(2, 2)
     exit
 }
 

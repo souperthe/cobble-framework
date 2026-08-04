@@ -10,13 +10,15 @@ function scr_baddie_state_walk()
     velocityX = scaleX * moveSpeed
     sprite_index = spriteWalk
     
+    if scr_baddie_scream_check()
+        return
+    
     
     if turnTimer > 0 && turnForce == true
         turnTimer--
     
     if --turnBuffer > 0
     {
-        trace(turnBuffer)
         return
     }
     

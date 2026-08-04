@@ -32,10 +32,23 @@ function scr_baddie_create()
     scaleY = 1
     angle = 0
     
+    bumpScaleXTarget = scaleX
+    bumpScaleYTarget = scaleY
+    bumpScaleX = 1
+    bumpScaleY = 1
+    
     stunX = 0
     stunY = 0
     
     grabbedBy = obj_player
+    emitter = super_sound_create_emitter()
+    
+    screamSound = -1
+    screamTimer = 0
+    
+    staggeredTimer = 0
+    
+    invincibleTimer = 0
     return
 }
 
@@ -47,6 +60,9 @@ function scr_baddie_define_states()
     stateLibrary[BaddieStates.STUN] = scr_baddie_state_stun
     stateLibrary[BaddieStates.GRABBED] = scr_baddie_state_grabbed
     stateLibrary[BaddieStates.THROWN] = scr_baddie_state_thrown
+    stateLibrary[BaddieStates.SCREAM] = scr_baddie_state_scream
+    stateLibrary[BaddieStates.STAGGERED] = scr_baddie_state_staggered
+    
     return
 }
 
@@ -54,13 +70,65 @@ function scr_baddie_define_states()
 function scr_baddie_step()
 {
     var stateFunction = stateLibrary[stateCurrent]
+    audio_emitter_position(emitter, x, y, 0)
 
     if !is_undefined(stateFunction)
     {
         stateFunction()
     }
     
+    var alpha = 0.08
+    
+    bumpScaleX = lerp(bumpScaleX, bumpScaleXTarget, alpha)
+    bumpScaleY = lerp(bumpScaleY, bumpScaleYTarget, alpha)
+    
+    invincibleTimer--
+    
     return
+}
+
+/// @self obj_baddie
+function scr_baddie_scream(player)
+{
+    stateCurrent = BaddieStates.SCREAM
+    velocityY = -5
+    velocityX = 0
+    scaleX = -sign(x - player.x);
+    sprite_index = spriteScared
+    image_index = 0
+    
+    screamTimer = 100
+    
+    var screams = [sfx_enemyscream1, sfx_enemyscream2]
+    
+    if (irandom(100) <= 5)
+        screamSound = super_sound_oneshot_emitter_list(emitter, screams, random_pitch())
+    return
+}
+
+/// @self obj_baddie
+function scr_baddie_scream_check()
+{
+    
+    
+    var screamInstance = collision_circle(x, y, 400, obj_player, false, true)
+    
+    if screamInstance == noone
+        return false
+    
+    
+    var positionYDiffrence = abs(y - screamInstance.y)
+
+    if positionYDiffrence > 100
+        return false
+    
+    if screamInstance.stateCurrentEnum == PlayerStates.MACH3
+    {
+        scr_baddie_scream(screamInstance)
+        return true
+    }
+    
+    return false
 }
 
 /// @self obj_baddie
@@ -89,6 +157,7 @@ function scr_get_hit_animations()
     return hitAnimations
 }
 
+
 /// @param {Asset.GMObject} player
 /// @param {Asset.GMObject} baddie
 function scr_baddie_throw(player, baddie)
@@ -96,7 +165,15 @@ function scr_baddie_throw(player, baddie)
     instance_destroy(baddie.boundingBox)
     baddie.stateCurrent = BaddieStates.THROWN
     baddie.scaleX = -player.scaleX
-    baddie.velocityX = player.scaleX * 30
+    baddie.grav = 0
+    
+    var throwSpeed = 40
+    
+    if player.sprite_index == player.spriteGet("uppercutfinishingblow")
+        baddie.velocityY = -throwSpeed
+    else
+        baddie.velocityX = player.scaleX * throwSpeed
+    
     baddie.killedFromX = player.x
     baddie.killedFromY = player.y
     return

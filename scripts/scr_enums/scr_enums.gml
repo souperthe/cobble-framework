@@ -39,6 +39,7 @@ function scr_enums()
         PUMMEL,
         STAGGERED,
         RAGE,
+        SCREAM,
         THROWN
     }
     

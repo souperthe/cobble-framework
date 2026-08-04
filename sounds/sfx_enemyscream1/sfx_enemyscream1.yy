@@ -1,18 +1,18 @@
 {
   "$GMSound":"v2",
-  "%Name":"sfx_scream8",
+  "%Name":"sfx_enemyscream1",
   "audioGroupId":{
-    "name":"audiogroup_sfx",
-    "path":"audiogroups/audiogroup_sfx",
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
   },
   "bitDepth":1,
   "channelFormat":0,
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":7.3839455,
+  "duration":1.6973469,
   "exportDir":"",
-  "name":"sfx_scream8",
+  "name":"sfx_enemyscream1",
   "parent":{
     "name":"Screams",
     "path":"folders/Sound/SFX/Enemy/Screams.yy",
@@ -21,6 +21,6 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"sfx_scream8.wav",
+  "soundFile":"sfx_enemyscream1.ogg",
   "volume":1.0,
 }

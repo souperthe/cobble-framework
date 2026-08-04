@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"sfx_mach2bump_1",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":0.46154195,
+  "exportDir":"",
+  "name":"sfx_mach2bump_1",
+  "parent":{
+    "name":"Mach2Bump",
+    "path":"folders/Sound/SFX/Player/Mach2Bump.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"sfx_mach2bump_1.wav",
+  "volume":0.56,
+}
