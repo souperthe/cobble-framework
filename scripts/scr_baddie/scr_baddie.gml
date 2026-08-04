@@ -35,74 +35,17 @@ function scr_baddie_create()
     stunX = 0
     stunY = 0
     
-    
-    
-    stateLibrary[BaddieStates.WALK] = function() 
-    {
-        
-        velocityX = scaleX * moveSpeed
-        
-        
-        if turnTimer > 0 && turnForce == true
-            turnTimer--
-        
-        sprite_index = spriteWalk
-        
-        turnBuffer--
-        
-        if turnBuffer > 0
-        {
-            trace(turnBuffer)
-            return
-        }
-        
-        var touchingSolid = scr_solid(x + velocityX, y - 31)
-        var touchingHallway = place_meeting(x + velocityX, y, obj_hallway)
-        var touchingRoomRight = (x + velocityX) > (room_width + 50)
-        var touchingRoomLeft = (x + velocityX < -50)
-        var touching = touchingSolid || touchingHallway || touchingRoomRight || touchingRoomLeft
-        var turnForced = turnTimer <= 0 && turnForce
-        
-        
-        if !(touching || turnForced)
-            return
-        
-        if spriteTurn != -1
-        {
-            image_index = 0
-            sprite_index = spriteTurn
-            stateCurrent = BaddieStates.TURN
-            return
-        }
-        
-        scaleX = scaleX * -1
-        image_xscale = scaleX
-        return
-    }
-    
-    stateLibrary[BaddieStates.TURN] = function() 
-    {
-        
-        if !is_sprite_finished()
-            return
-        
-        scaleX = scaleX * -1
-        image_xscale = scaleX
-        stateCurrent = BaddieStates.WALK
-        turnBuffer = 50
-        
-        return
-    }
-    
-    stateLibrary[BaddieStates.STUN] = function()
-    {
+    grabbedBy = obj_player
+    return
+}
 
-        sprite_index = spriteStun
-        x = stunX + random_range(-global.hitstunShake, global.hitstunShake)
-        y = stunY + random_range(-global.hitstunShake, global.hitstunShake)
-        return
-    }
-    
+/// @self obj_baddie
+function scr_baddie_define_states()
+{
+    stateLibrary[BaddieStates.WALK] = scr_baddie_state_walk
+    stateLibrary[BaddieStates.TURN] = scr_baddie_state_turn
+    stateLibrary[BaddieStates.STUN] = scr_baddie_state_stun
+    stateLibrary[BaddieStates.GRABBED] = scr_baddie_state_grabbed
     return
 }
 

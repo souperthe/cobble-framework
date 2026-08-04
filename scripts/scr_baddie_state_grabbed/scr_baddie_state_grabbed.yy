@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_baddie_state_grabbed",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_baddie_state_grabbed",
+  "parent":{
+    "name":"Baddie",
+    "path":"folders/Scripts/Baddie.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -22,6 +22,7 @@ function scr_enums()
         FREEFALL,
         FREEFALLLAND,
         HITSUN,
+        HAULING,
         _length
     }
     
@@ -36,7 +37,8 @@ function scr_enums()
         GRABBED,
         PUMMEL,
         STAGGERED,
-        RAGE
+        RAGE,
+        THROWN
     }
     
     enum TvStates {

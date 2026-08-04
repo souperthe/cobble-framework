@@ -18,10 +18,15 @@ if playerTouching == noone
 
 if array_contains(playerInstaKillStates, playerTouching.stateCurrentEnum)
 {
-    //baddieInstance.killedFromX = playerTouching.x
-    //baddieInstance.killedFromY = playerTouching.y
-    //instance_destroy(baddieInstance)
-    
     scr_baddie_instakill(playerTouching, baddieInstance)
+    exit
+}
+
+if place_meeting(x - playerTouching.scaleX, y, playerTouching) && playerTouching.stateCurrentEnum == PlayerStates.SUPLEXDASH
+{
+    playerTouching.grabbedBaddie = baddieInstance
+    playerTouching.stateSwitch(PlayerStates.HAULING)
+    baddieInstance.grabbedBy = playerTouching
+    baddieInstance.stateCurrent = BaddieStates.GRABBED
     exit
 }

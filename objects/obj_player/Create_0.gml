@@ -43,6 +43,8 @@ hitstunY = 0
 hitstunTime = 0
 hitstunBaddie = -1
 
+grabbedBaddie = -1
+
 /// @param {enum.PlayerStates} targetState
 /// @param {string} enterMessage
 stateSwitch = function(targetState, enterMessage = "")
