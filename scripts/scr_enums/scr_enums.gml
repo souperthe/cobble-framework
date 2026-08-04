@@ -21,10 +21,26 @@ function scr_enums()
         BUMP,
         FREEFALL,
         FREEFALLLAND,
+        HITSUN,
         _length
     }
     
+    enum BaddieStates {
+        IDLE,
+        TURN,
+        WALK,
+        LAND,
+        HIT,
+        STUN,
+        THROWOBJECT,
+        GRABBED,
+        PUMMEL,
+        STAGGERED,
+        RAGE
+    }
+    
     enum TvStates {
+        off,
         enter,
         normal,
         transition

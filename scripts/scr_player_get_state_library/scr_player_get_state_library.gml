@@ -1,8 +1,8 @@
 
-/// @param {String} stateName
-function PlayerState(stateName) constructor 
+/// @param {String} targetStateName
+function PlayerState(targetStateName) constructor 
 {
-    var statePrefix = "scr_player_state_" + stateName
+    var statePrefix = "scr_player_state_" + targetStateName
     var stateEnterPath = statePrefix + "_enter"
     var stateStepPath = statePrefix + "_step"
     var stateExitPath = statePrefix + "_exit"
@@ -10,6 +10,7 @@ function PlayerState(stateName) constructor
     stateEnter = asset_get_index(stateEnterPath);
     stateStep = asset_get_index(stateStepPath);
     stateExit = asset_get_index(stateExitPath);
+    stateName = targetStateName
     
     if stateEnter == -1
         show_error(stateEnterPath + " is not a valid script!", true)
@@ -45,6 +46,7 @@ function scr_player_get_state_library()
     stateLibrary[PlayerStates.SJUMP] = new PlayerState("sjump")
     stateLibrary[PlayerStates.FREEFALL] = new PlayerState("freefall")
     stateLibrary[PlayerStates.FREEFALLLAND] = new PlayerState("freefallland")
+    stateLibrary[PlayerStates.HITSUN] = new PlayerState("hitstun")
     
     return stateLibrary;
 }

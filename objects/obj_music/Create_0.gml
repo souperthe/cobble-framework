@@ -13,4 +13,4 @@ musicLibraryAddEntry = function(targetRoom, targetSong, songFade)
 }
 
 musicLibraryAddEntry(rm_test, mu_examplelevel, true)
-musicLibraryAddEntry(rm_test_2, mu_dungeon, true)
+musicLibraryAddEntry(rm_test_2, mu_medieval, true)

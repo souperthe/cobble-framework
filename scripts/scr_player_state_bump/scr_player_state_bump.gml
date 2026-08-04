@@ -8,6 +8,7 @@ function scr_player_state_bump_enter(enterMessage)
     if enterMessage == "suplex"
     {
         sprite_index = spriteGet("suplexbump")
+        image_speed = 0.35
         velocityY = -4
         super_sound_oneshot_emitter(emitter, sfx_splat)
         return
@@ -17,6 +18,7 @@ function scr_player_state_bump_enter(enterMessage)
         velocityX = -6 * scaleX
         velocityY = -6
         sprite_index = spriteGet("mach3hitwall")
+        image_speed = 0.4
         image_index = 0
         super_sound_oneshot_emitter(emitter, sfx_bumpwall)
         super_sound_oneshot_emitter(emitter, sfx_groundpound)

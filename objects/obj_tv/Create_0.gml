@@ -1,4 +1,4 @@
-sprite_index = spr_tv_open
+sprite_index = spr_tv_off
 image_speed = 0.4
 tvTargetPlayer = obj_player
 tvTransition = 0;
@@ -26,8 +26,22 @@ tvTransition = function(targetSprite)
     tvWhiteFade = 0
     return
 }
-trace(tvExpressionStates)
-stateCurrent = TvStates.enter
+tvTurnOff = function()
+{
+    sprite_index = spr_tv_off
+    image_speed = 0.4
+    stateCurrent = TvStates.off
+    return
+}
+tvTurnOn = function()
+{
+    sprite_index = spr_tv_open
+    image_speed = 0.4
+    stateCurrent = TvStates.enter
+    return
+}
+
+stateCurrent = TvStates.off
 stateLibrary = []
 stateLibrary[TvStates.enter] = function() 
 {
@@ -45,6 +59,13 @@ stateLibrary[TvStates.normal] = function()
     
     var playerState = tvTargetPlayer.stateCurrentEnum
     var expressionState = tvExpressionStates[playerState]
+    
+    
+    if !(stateCurrent >= 0 && stateCurrent < array_length(tvExpressionStates))
+    {
+        scr_tv_state_normal(tvTargetPlayer)
+        return
+    }
     
     if (!is_undefined(expressionState))
     {
@@ -69,3 +90,7 @@ stateLibrary[TvStates.transition] = function()
     }
     return
 }
+
+tvTurnOff()
+
+alarm[0] = 60

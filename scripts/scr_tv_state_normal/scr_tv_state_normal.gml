@@ -6,7 +6,8 @@ function scr_tv_state_normal(targetPlayer)
         PlayerStates.JUMP, 
         PlayerStates.SJUMPPREP, 
         PlayerStates.FREEFALL,
-        PlayerStates.MACHSLIDE
+        PlayerStates.MACHSLIDE,
+        PlayerStates.BUMP
     ]
     
     if !array_contains(allowedStates, targetPlayer.stateCurrentEnum)

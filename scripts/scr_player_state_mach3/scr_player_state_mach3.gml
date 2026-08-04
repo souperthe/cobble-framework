@@ -58,7 +58,7 @@ function scr_player_state_mach3_step()
     var accel = 0.025
     var accelMach4 = 0.1
     var machRollSpeed = 10;
-    static overrideAnimations = [spriteGet("rollgetup")]
+    static overrideAnimations = [spriteGet("rollgetup"), spriteGet("mach3hit")]
     
     if is_sprite_finished() && array_contains(overrideAnimations, sprite_index)
     {
@@ -181,12 +181,16 @@ function scr_player_state_mach3_step()
     if move == scaleX && grounded
     {
         
-        if moveSpeed < speedMach4
+        if machMode
+        {
+            var targetAccel = accelMach4
+            
+            if moveSpeed < speedMach4 || mach4Capped
+                moveSpeed += accel
+        }
+        else if moveSpeed < speedMach4
         {
             var targetAccel = accel
-            
-            if machMode
-                targetAccel = accelMach4
             
             moveSpeed += accel
         }

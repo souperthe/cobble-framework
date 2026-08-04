@@ -1,2 +1,1 @@
-if moveAndCollide
-    scr_collide()
+scr_rigid_body_step()

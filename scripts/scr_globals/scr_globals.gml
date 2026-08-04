@@ -11,6 +11,7 @@ function scr_globals()
     global.panic = 0;
     global.levelName = "";
     global.levelSaveRoom = [];
+    global.hitstunShake = 4
     return;
 }
 

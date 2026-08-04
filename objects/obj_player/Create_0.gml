@@ -26,6 +26,7 @@ tauntImageSpeed = 0;
 tauntImageIndex = 0;
 tauntTimer = 0;
 machMode = false;
+mach4Capped = true;
 
 coyoteTime = 0;
 
@@ -36,6 +37,11 @@ wallSpeed = 0;
 bufferVertical = 0;
 uppercutAllow = true;
 freeFallProgress = 0
+
+hitstunX = 0
+hitstunY = 0
+hitstunTime = 0
+hitstunBaddie = -1
 
 /// @param {enum.PlayerStates} targetState
 /// @param {string} enterMessage
