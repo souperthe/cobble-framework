@@ -46,6 +46,7 @@ function scr_baddie_define_states()
     stateLibrary[BaddieStates.TURN] = scr_baddie_state_turn
     stateLibrary[BaddieStates.STUN] = scr_baddie_state_stun
     stateLibrary[BaddieStates.GRABBED] = scr_baddie_state_grabbed
+    stateLibrary[BaddieStates.THROWN] = scr_baddie_state_thrown
     return
 }
 
@@ -62,6 +63,21 @@ function scr_baddie_step()
     return
 }
 
+/// @self obj_baddie
+function scr_baddie_turn()
+{
+    if spriteTurn != -1
+    {
+        image_index = 0
+        sprite_index = spriteTurn
+        stateCurrent = BaddieStates.TURN
+        return
+    }
+    
+    scaleX = scaleX * -1
+    image_xscale = scaleX
+    return
+}
 
 function scr_get_hit_animations()
 {
@@ -73,6 +89,18 @@ function scr_get_hit_animations()
     return hitAnimations
 }
 
+/// @param {Asset.GMObject} player
+/// @param {Asset.GMObject} baddie
+function scr_baddie_throw(player, baddie)
+{
+    instance_destroy(baddie.boundingBox)
+    baddie.stateCurrent = BaddieStates.THROWN
+    baddie.scaleX = -player.scaleX
+    baddie.velocityX = player.scaleX * 30
+    baddie.killedFromX = player.x
+    baddie.killedFromY = player.y
+    return
+}
 
 /// @param {Asset.GMObject} player
 /// @param {Asset.GMObject} baddie

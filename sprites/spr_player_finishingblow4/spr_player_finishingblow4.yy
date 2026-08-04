@@ -33,7 +33,7 @@
   ],
   "name":"spr_player_finishingblow4",
   "nineSlice":null,
-  "origin":4,
+  "origin":9,
   "parent":{
     "name":"Peppino",
     "path":"folders/Sprites/Player/Peppino.yy",
@@ -115,7 +115,7 @@
     ],
     "visibleRange":null,
     "volume":1.0,
-    "xorigin":100,
+    "xorigin":70,
     "yorigin":50,
   },
   "swatchColours":null,

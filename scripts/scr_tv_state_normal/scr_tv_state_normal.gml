@@ -1,16 +1,17 @@
 /// @self obj_tv
 function scr_tv_state_normal(targetPlayer)
 {
-    var allowedStates = [
-        PlayerStates.NORMAL, 
-        PlayerStates.JUMP, 
-        PlayerStates.SJUMPPREP, 
-        PlayerStates.FREEFALL,
-        PlayerStates.MACHSLIDE,
-        PlayerStates.BUMP
+    var blacklistStates = [
+        PlayerStates.SJUMP,
+        PlayerStates.MACHROLL,
+        PlayerStates.HITSUN,
+        PlayerStates.SUPLEXDASH,
+        PlayerStates.WALLCLIMB,
+        PlayerStates.MACH2,
+        PlayerStates.TAUNT
     ]
     
-    if !array_contains(allowedStates, targetPlayer.stateCurrentEnum)
+    if array_contains(blacklistStates, targetPlayer.stateCurrentEnum)
         return
     
     var idleAnimations = [spr_tv_idleanim1, spr_tv_idleanim2]

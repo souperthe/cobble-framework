@@ -48,6 +48,7 @@ function scr_player_get_state_library()
     stateLibrary[PlayerStates.FREEFALLLAND] = new PlayerState("freefallland")
     stateLibrary[PlayerStates.HITSUN] = new PlayerState("hitstun")
     stateLibrary[PlayerStates.HAULING] = new PlayerState("hauling")
+    stateLibrary[PlayerStates.FINISHINGBLOW] = new PlayerState("finishingblow")
     
     return stateLibrary;
 }

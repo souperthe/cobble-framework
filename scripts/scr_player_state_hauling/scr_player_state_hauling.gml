@@ -5,6 +5,7 @@ function scr_player_state_hauling_enter(enterMessage)
     image_index = 0
     sprite_index = spriteGet("haulingstart")
     haulStep = false
+    moveSpeed = 0
     return;
 }
 
@@ -25,6 +26,7 @@ function scr_player_state_hauling_step()
         
         if is_sprite_finished()
             sprite_index = spriteGet("haulingidle")
+        
         return
     }
     
@@ -57,7 +59,9 @@ function scr_player_state_hauling_step()
         else
         {
             
-            if sprite_index != spriteGet("haulingfall") && sprite_index != spriteGet("haulingland")
+            var landSprites = [spriteGet("haulingfall"), spriteGet("haulingland"), spriteGet("haulingjump")]
+            
+            if !array_contains(landSprites, sprite_index)
                 sprite_index = spriteGet("haulingidle")
             else{
                 
@@ -78,7 +82,6 @@ function scr_player_state_hauling_step()
         
     }
     else {
-    	scr_player_jump_stop()
         
         if sprite_index == spriteGet("haulingjump") && is_sprite_finished()
         {
@@ -86,7 +89,14 @@ function scr_player_state_hauling_step()
         }
     }
     
-        
+    if check_input("attack", false)
+    {
+        stateSwitch(PlayerStates.FINISHINGBLOW)
+        return
+    }
+    
+    scr_player_jump_stop()
+    
     if check_input("jump", false) && jumpAllow
     {
         sprite_index = spriteGet("haulingjump")

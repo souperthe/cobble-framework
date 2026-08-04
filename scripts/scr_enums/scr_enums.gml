@@ -23,6 +23,7 @@ function scr_enums()
         FREEFALLLAND,
         HITSUN,
         HAULING,
+        FINISHINGBLOW,
         _length
     }
     

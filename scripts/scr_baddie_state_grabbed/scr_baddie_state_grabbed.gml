@@ -5,6 +5,13 @@ function scr_baddie_state_grabbed()
     velocityX = 0
     velocityY = 0
     
+    if grabbedBy.stateCurrentEnum == PlayerStates.FINISHINGBLOW
+    {
+        x = grabbedBy.x + (grabbedBy.scaleX * 60);
+        y = grabbedBy.y - 10
+        return
+    }
+    
     static grabbedYOffset = [0, 10, 20, 30]
     
     x = grabbedBy.x
