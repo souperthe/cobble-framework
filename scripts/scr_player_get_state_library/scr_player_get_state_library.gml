@@ -24,31 +24,44 @@ function PlayerState(targetStateName) constructor
     return
 }
 
+/// @param {enum.PlayerStates} stateEnum
+/// @param {string} stateName
+/// @self obj_player
+function scr_player_register_state(stateEnum, stateName)
+{
+    stateLibrary[stateEnum] = new PlayerState(stateName)
+    return
+}
+
+/// @self obj_player
 function scr_player_get_state_library()
 {
-    var stateLibrary = []
+    /// @param {enum.PlayerStates} stateEnum
+    /// @param {string} stateName
+    var stateRegister = scr_player_register_state
     
-    stateLibrary[PlayerStates.UNINITIALIZED] = new PlayerState("blank")
-    stateLibrary[PlayerStates.NORMAL] = new PlayerState("normal")
-    stateLibrary[PlayerStates.JUMP] = new PlayerState("jump")
-    stateLibrary[PlayerStates.CLIMB] = new PlayerState("climb")
-    stateLibrary[PlayerStates.SUPLEXDASH] = new PlayerState("suplexdash")
-    stateLibrary[PlayerStates.TAUNT] = new PlayerState("taunt")
-    stateLibrary[PlayerStates.MACH2] = new PlayerState("mach2")
-    stateLibrary[PlayerStates.MACH3] = new PlayerState("mach3")
-    stateLibrary[PlayerStates.MACHROLL] = new PlayerState("machroll")
-    stateLibrary[PlayerStates.MACHSLIDE] = new PlayerState("machslide")
-    stateLibrary[PlayerStates.WALLCLIMB] = new PlayerState("wallclimb")
-    stateLibrary[PlayerStates.UPPERCUT] = new PlayerState("uppercut")
-    stateLibrary[PlayerStates.BUMP] = new PlayerState("bump")
-    stateLibrary[PlayerStates.SJUMPPREP] = new PlayerState("sjumpprep")
-    stateLibrary[PlayerStates.SJUMPLAND] = new PlayerState("sjumpland")
-    stateLibrary[PlayerStates.SJUMP] = new PlayerState("sjump")
-    stateLibrary[PlayerStates.FREEFALL] = new PlayerState("freefall")
-    stateLibrary[PlayerStates.FREEFALLLAND] = new PlayerState("freefallland")
-    stateLibrary[PlayerStates.HITSUN] = new PlayerState("hitstun")
-    stateLibrary[PlayerStates.HAULING] = new PlayerState("hauling")
-    stateLibrary[PlayerStates.FINISHINGBLOW] = new PlayerState("finishingblow")
+    stateRegister(PlayerStates.UNINITIALIZED, "blank")
+    stateRegister(PlayerStates.NORMAL, "normal")
+    stateRegister(PlayerStates.JUMP, "jump")
+    stateRegister(PlayerStates.CLIMB, "climb")
+    stateRegister(PlayerStates.SUPLEXDASH, "suplexdash")
+    stateRegister(PlayerStates.TAUNT, "taunt")
+    stateRegister(PlayerStates.MACH2, "mach2")
+    stateRegister(PlayerStates.MACH3, "mach3")
+    stateRegister(PlayerStates.MACHROLL, "machroll")
+    stateRegister(PlayerStates.MACHSLIDE, "machslide")
+    stateRegister(PlayerStates.WALLCLIMB, "wallclimb")
+    stateRegister(PlayerStates.UPPERCUT, "uppercut")
+    stateRegister(PlayerStates.BUMP, "bump")
+    stateRegister(PlayerStates.SJUMPPREP, "sjumpprep")
+    stateRegister(PlayerStates.SJUMPLAND, "sjumpland")
+    stateRegister(PlayerStates.SJUMP, "sjump")
+    stateRegister(PlayerStates.FREEFALL, "freefall")
+    stateRegister(PlayerStates.FREEFALLLAND, "freefallland")
+    stateRegister(PlayerStates.HITSUN, "hitstun")
+    stateRegister(PlayerStates.HAULING, "hauling")
+    stateRegister(PlayerStates.FINISHINGBLOW, "finishingblow")
+    stateRegister(PlayerStates.PILEDRIVER, "piledriver")
     
-    return stateLibrary;
+    return;
 }

@@ -6,10 +6,12 @@ function scr_baddie_create()
     stateLibrary = []
     killedFromX = 0
     killedFromY = 0
+    
     boundingBox = instance_create_depth(x, y, depth, obj_baddie_box)
     boundingBox.sprite_index = sprite_index
     boundingBox.mask_index = sprite_index
     boundingBox.baddieInstance = id
+    
     moveAndCollide = true
     turnAllow = false
     turnTimer = 0

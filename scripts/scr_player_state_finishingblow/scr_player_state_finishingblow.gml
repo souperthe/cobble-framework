@@ -20,7 +20,6 @@ function scr_player_state_finishingblow_enter(enterMessage)
     image_speed = 0.4
     thrown = false
     
-    super_sound_oneshot_emitter(emitter, sfx_killingblow)
     return;
 }
 
@@ -44,6 +43,8 @@ function scr_player_state_finishingblow_step()
             velocityY = -5
             thrown = true
             scr_baddie_throw(self, grabbedBaddie)
+            super_sound_oneshot_emitter(emitter, sfx_killingblow)
+            super_sound_oneshot_emitter(emitter, sfx_punch)
         }
         
         velocityX = approach(velocityX, -scaleX * 4, 0.5)

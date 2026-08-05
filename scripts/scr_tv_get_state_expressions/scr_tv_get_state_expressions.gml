@@ -1,7 +1,7 @@
 
 
 
-/// @self obj_tv
+/// @self obj_hud_tv
 function scr_tv_get_state_expressions()
 {
     

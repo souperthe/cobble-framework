@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_player_state_piledriver",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_player_state_piledriver",
+  "parent":{
+    "name":"Airborne",
+    "path":"folders/Scripts/Player/States/Airborne.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

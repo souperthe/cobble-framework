@@ -13,6 +13,7 @@ function scr_player_state_sjump_enter(enterMessage)
 /// @self obj_player
 function scr_player_state_sjump_exit()
 {
+    audio_stop_sound(soundSuperJump)
     return;
 }
 

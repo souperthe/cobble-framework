@@ -24,6 +24,7 @@ function scr_enums()
         HITSUN,
         HAULING,
         FINISHINGBLOW,
+        PILEDRIVER,
         _length
     }
     

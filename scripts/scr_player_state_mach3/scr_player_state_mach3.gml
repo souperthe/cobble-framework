@@ -165,7 +165,6 @@ function scr_player_state_mach3_step()
         { 
             sprite_index = spriteGet("mach3jump")
             image_index = 0
-            audio_stop_sound(soundMach)
         }
         
         return

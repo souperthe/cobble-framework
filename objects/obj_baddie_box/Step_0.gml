@@ -13,6 +13,7 @@ image_xscale = baddieInstance.image_xscale
 var playerTouching = instance_place(x, y, obj_player)
 var baddieTouching = instance_place(x, y, obj_baddie)
 
+
 if baddieInstance.invincibleTimer > 0
     exit
 
@@ -31,6 +32,9 @@ if baddieTouching != noone && baddieTouching != baddieInstance
 }
 
 if playerTouching == noone
+    exit
+
+if playerTouching.grabbedBaddie == baddieInstance
     exit
 
 
@@ -64,8 +68,16 @@ if array_contains(playerBumpStates, playerTouching.stateCurrentEnum)
 if place_meeting(x - playerTouching.scaleX, y, playerTouching) && playerTouching.stateCurrentEnum == PlayerStates.SUPLEXDASH
 {
     playerTouching.grabbedBaddie = baddieInstance
-    playerTouching.stateSwitch(PlayerStates.HAULING)
     baddieInstance.grabbedBy = playerTouching
+    
+    if check_input("up", true)
+    {
+        playerTouching.stateSwitch(PlayerStates.PILEDRIVER, "frommovespeed")
+        baddieInstance.stateCurrent = BaddieStates.GRABBED
+        exit
+    }
+    
+    playerTouching.stateSwitch(PlayerStates.HAULING)
     baddieInstance.stateCurrent = BaddieStates.GRABBED
     exit
 }

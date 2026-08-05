@@ -18,6 +18,13 @@ function scr_player_state_hauling_exit()
 /// @self obj_player
 function scr_player_state_hauling_step()
 {
+    
+    if check_input("attack", false)
+    {
+        stateSwitch(PlayerStates.FINISHINGBLOW)
+        return
+    }
+    
     image_speed = 0.35
     
     if sprite_index == spriteGet("haulingstart")
@@ -89,11 +96,6 @@ function scr_player_state_hauling_step()
         }
     }
     
-    if check_input("attack", false)
-    {
-        stateSwitch(PlayerStates.FINISHINGBLOW)
-        return
-    }
     
     scr_player_jump_stop()
     

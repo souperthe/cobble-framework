@@ -1,4 +1,4 @@
-/// @self obj_tv
+/// @self obj_hud_tv
 function scr_tv_state_normal(targetPlayer)
 {
     var blacklistStates = [

@@ -1,8 +1,12 @@
 event_inherited();
 depth = -10;
-stateLibrary = scr_player_get_state_library()
+stateLibrary = []
 stateCurrentEnum = PlayerStates.UNINITIALIZED
 stateCurrent = undefined
+
+scr_player_get_state_library()
+
+
 moveSpeed = 0;
 scaleX = 1;
 scaleY = 1;

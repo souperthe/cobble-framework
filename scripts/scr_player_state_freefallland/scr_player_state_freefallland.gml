@@ -10,6 +10,8 @@ function scr_player_state_freefallland_enter(enterMessage)
     
     if sprite_index == spriteGet("poundcancel1")
         sprite_index = spriteGet("poundcancel2")
+    else if sprite_index == spriteGet("piledriver")
+        sprite_index = spriteGet("piledriverland")
     else
         sprite_index = spriteGet("bodyslamland")
     
