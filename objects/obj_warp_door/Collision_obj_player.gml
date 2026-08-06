@@ -9,6 +9,7 @@ if !check_input("up", false)
 
 global.warpDoor = targetDoor
 global.warpRoom = targetRoom
+global.warpHallway = false
 playerTouching.stateSwitch(PlayerStates.DOOR, "enter")
 audio_play_sound(sfx_door, 0, false)
 

@@ -1,5 +1,8 @@
 sprite_index = spr_tv_off
 image_speed = 0.4
+
+paletteIndex = 0
+
 tvTargetPlayer = obj_player
 tvTransition = 0;
 tvIdleTime = 200;
@@ -11,6 +14,8 @@ tvBackroundFrame = 0
 tvTransitionTarget = tvExpressionSprite
 tvWhiteFade = 0
 tvYOffset = 0
+tvX = 0
+tvY = 0
 tvTransition = function(targetSprite)
 {
     if tvTransitionTarget == targetSprite
@@ -96,3 +101,6 @@ stateLibrary[TvStates.transition] = function()
 tvTurnOff()
 
 alarm[0] = 60
+
+instance_create_depth(0, 0, 9999, obj_hud_combo)
+obj_hud_combo.playerTarget = tvTargetPlayer

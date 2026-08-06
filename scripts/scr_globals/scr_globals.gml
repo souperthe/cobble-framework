@@ -2,17 +2,30 @@ function scr_globals()
 {
     scr_enums()
     scr_globals_warp()
+    scr_globals_combo()
+    scr_globals_fonts()
+    pal_swap_init()
     global.instanceList = ds_list_create();
-    global.collect = 0;
-    global.treasure = 0;
-    global.comboTime = 0;
-    global.combo = 0;
-    global.comboMilestone = 5;
     global.panic = 0;
     global.levelName = "";
     global.levelSaveRoom = [];
     global.hitstunShake = 4
     return;
+}
+
+function scr_globals_combo()
+{
+    global.collect = 0;
+    global.treasure = 0;
+    global.comboTime = 0;
+    global.comboTimeMax = 60;
+    global.comboTimePause = 0
+    global.comboSaved = 0
+    global.comboBreaks = 0
+    global.comboDropped = false
+    global.combo = 0;
+    global.comboMilestone = 5;
+    return
 }
 
 function scr_globals_warp()
@@ -27,6 +40,14 @@ function scr_globals_warp()
     global.warpVerticalHallwayPosition = 0
     global.warpVerticalHallwaySide = 1
     return;
+}
+
+function scr_globals_fonts()
+{
+    global.fontCombo = font_add_sprite_ext(spr_tv_combobubbletext, "0123456789", true, 0)
+    global.fontBig = font_add_sprite_ext(spr_font, "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ!¡¿?.1234567890:ÁÄÃÀÂÉÈÊËÍÌÎÏÓÖÕÔÒÚÙÛÜÇ+", true, 0)
+    global.fontSmall = font_add_sprite_ext(spr_smallerfont, "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ!¡.:?¿1234567890ÁÄÃÀÂÉÈÊËÍÌÎÏÓÖÕÔÒÚÙÛÜÇ+", true, 0)
+    return
 }
 
 function scr_globals_keys()

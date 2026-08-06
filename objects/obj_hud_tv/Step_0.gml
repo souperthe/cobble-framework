@@ -3,7 +3,7 @@ var playerGuiPositionY = get_gui_position_y(tvTargetPlayer)
 var tvYOffsetTarget = 0
 
 if playerGuiPositionX > (obj_screensizer.hudWidth - 210) && playerGuiPositionY < 120
-    tvYOffsetTarget = -160
+    tvYOffsetTarget = -300
 
 tvYOffset = approach(tvYOffset, tvYOffsetTarget, 20)
 

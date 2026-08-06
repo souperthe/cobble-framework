@@ -55,6 +55,12 @@ function scr_enums()
     enum CameraStates {
         normal
     }
+    
+    enum ComboStates {
+        DROPIN,
+        SETTLE,
+        HOLD
+    }
 
     return;
 }

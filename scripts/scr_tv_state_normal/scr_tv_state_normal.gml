@@ -10,11 +10,16 @@ function scr_tv_state_normal(targetPlayer)
         PlayerStates.MACH2,
         PlayerStates.TAUNT
     ]
+    var allIdleAnimations = [spr_tv_idleanim1, spr_tv_idleanim2, spr_tv_idle]
     
-    if array_contains(blacklistStates, targetPlayer.stateCurrentEnum)
+    if array_contains(blacklistStates, targetPlayer.stateCurrentEnum) && !array_contains(allIdleAnimations, tvExpressionSprite)
         return
     
     var idleAnimations = [spr_tv_idleanim1, spr_tv_idleanim2]
+    var targetIdleAnimation = spr_tv_idle
+    
+    if global.comboTime > 0
+        targetIdleAnimation = spr_tv_exprcombo
     
     tvExpressionSpriteSpeed = 0.4
     
@@ -42,7 +47,7 @@ function scr_tv_state_normal(targetPlayer)
         
     }
 
-    if tvTransitionTarget != spr_tv_idle
-        tvTransition(spr_tv_idle)
+    if tvTransitionTarget != targetIdleAnimation
+        tvTransition(targetIdleAnimation)
     return
 }

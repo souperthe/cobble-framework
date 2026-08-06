@@ -77,17 +77,21 @@ function scr_player_state_machroll_step()
     }
     else if sprite_index == spriteGet("dive")
     {
-        var spriteSpeed = abs(moveSpeed) / 10
-        audio_sound_gain(soundRoll, 0.5)
-        audio_sound_pitch(soundRoll, spriteSpeed)
         sprite_index = spriteGet("machroll")
-        image_speed = spriteSpeed
     }
     
     if sprite_index == spriteGet("dive") and check_input("jump", false)
     {
         stateSwitch(PlayerStates.FREEFALL, "divebomb")
         return
+    }
+    
+    if sprite_index == spriteGet("machroll")
+    {
+        var spriteSpeed = abs(moveSpeed) / 10
+        audio_sound_gain(soundRoll, 0.5)
+        audio_sound_pitch(soundRoll, spriteSpeed)
+        image_speed = spriteSpeed
     }
     
     

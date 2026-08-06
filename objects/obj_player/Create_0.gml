@@ -49,6 +49,9 @@ hitstunBaddie = -1
 
 grabbedBaddie = -1
 
+paletteSprite = spr_peppalette
+paletteIndex = 7
+
 /// @param {enum.PlayerStates} targetState
 /// @param {string} enterMessage
 stateSwitch = function(targetState, enterMessage = "")
