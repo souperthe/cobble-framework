@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_warp_utils",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_warp_utils",
+  "parent":{
+    "name":"Utilities",
+    "path":"folders/Scripts/Utilities.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

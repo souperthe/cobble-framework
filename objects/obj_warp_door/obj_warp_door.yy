@@ -1,17 +1,18 @@
 {
   "$GMObject":"",
-  "%Name":"obj_hallway",
+  "%Name":"obj_warp_door",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":4,"eventType":7,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_hallway",
+  "name":"obj_warp_door",
   "overriddenProperties":[],
   "parent":{
-    "name":"LevelStructure",
-    "path":"folders/Objects/LevelStructure.yy",
+    "name":"Warp",
+    "path":"folders/Objects/LevelStructure/Warp.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -36,8 +37,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_hallway",
-    "path":"sprites/spr_hallway/spr_hallway.yy",
+    "name":"spr_doorvisited",
+    "path":"sprites/spr_doorvisited/spr_doorvisited.yy",
   },
   "spriteMaskId":null,
   "visible":true,

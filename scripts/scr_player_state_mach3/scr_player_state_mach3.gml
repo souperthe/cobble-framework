@@ -141,7 +141,7 @@ function scr_player_state_mach3_step()
         return
     }
     
-    if check_input("up", false) && grounded
+    if check_input("up", false) && grounded && !place_meeting(x, y, obj_warp_door)
     {
         stateSwitch(PlayerStates.SJUMPPREP)
         return

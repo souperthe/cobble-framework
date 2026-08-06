@@ -4,6 +4,7 @@ function scr_player_state_climb_enter(enterMessage)
 {
     sprite_index = spriteGet("ladder")
     image_index =  0;
+    moveSpeed = 0
     return;
 }
 

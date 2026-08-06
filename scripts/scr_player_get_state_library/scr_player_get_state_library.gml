@@ -62,6 +62,7 @@ function scr_player_get_state_library()
     stateRegister(PlayerStates.HAULING, "hauling")
     stateRegister(PlayerStates.FINISHINGBLOW, "finishingblow")
     stateRegister(PlayerStates.PILEDRIVER, "piledriver")
+    stateRegister(PlayerStates.DOOR, "door")
     
     return;
 }

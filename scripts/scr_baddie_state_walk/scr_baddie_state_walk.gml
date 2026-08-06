@@ -28,7 +28,7 @@ function scr_baddie_state_walk()
     
     
     var touchingSolid = scr_solid(probeX, y - sensorY) 
-    var touchingHallway = place_meeting(probeX, y, obj_hallway) 
+    var touchingHallway = place_meeting(probeX, y, obj_warp_hallway) 
     var touchingRoomRight = probeX > room_width + roomMargin
     var touchingRoomLeft = probeX < -roomMargin
     var notTouchingFloorAhead = !scr_solid(probeX, footY)

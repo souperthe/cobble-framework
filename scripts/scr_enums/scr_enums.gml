@@ -25,6 +25,7 @@ function scr_enums()
         HAULING,
         FINISHINGBLOW,
         PILEDRIVER,
+        DOOR,
         _length
     }
     

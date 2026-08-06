@@ -1,0 +1,1 @@
+targetDoor = get_touching_door()
