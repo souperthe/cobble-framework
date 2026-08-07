@@ -4,15 +4,29 @@ function scr_globals()
     scr_globals_warp()
     scr_globals_combo()
     scr_globals_fonts()
+    scr_global_collect()
     pal_swap_init()
     global.instanceList = ds_list_create();
     global.panic = 0;
     global.levelName = "";
     global.levelSaveRoom = [];
     global.hitstunShake = 4
-    global.collect = 0;
-    global.treasure = 0;
     return;
+}
+
+function scr_global_collect()
+{
+    global.collect = 0
+    global.treasure = 0
+    
+    
+    global.collectRankS = 0
+    global.collectRankA = 0
+    global.collectRankB = 0
+    global.collectRankC = 0
+    
+    scr_set_collect_requirements(1000)
+    return
 }
 
 function scr_globals_combo()

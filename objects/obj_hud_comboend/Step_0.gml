@@ -9,9 +9,18 @@ if comboDelete
     
     comboDeleteTime--
     
-    if comboDeleteTime < 0
-        instance_destroy()
     
+}
+
+if comboDeleteTime < 0
+{
+    alpha = approach(alpha, 0, 0.05)
+    
+    if alpha == 0
+        instance_destroy()
+}
+else {
+	alpha = approach(alpha, 1, 0.2)
 }
 
 var titleOffsetTarget = 0

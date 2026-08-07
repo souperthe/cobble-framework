@@ -56,3 +56,12 @@ for (var index = 0; index < lengthCurrent; index++)
 }
 
 collectPrevious = collectVisual
+
+var playerGuiPositionX = get_gui_position_x(obj_hud_tv.tvTargetPlayer)
+var playerGuiPositionY = get_gui_position_y(obj_hud_tv.tvTargetPlayer)
+var offsetTarget = 0
+
+if playerGuiPositionX < 210 && playerGuiPositionY < 120
+    offsetTarget = -300
+
+scoreYOffset = approach(scoreYOffset, offsetTarget, 20)

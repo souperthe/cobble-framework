@@ -71,9 +71,10 @@ function scr_player_state_normal_step()
             else
                 image_speed = 0.6
                 
-            
             sprite_index = spriteGet("move")
         }
+            
+            
     }
     else {
     	moveSpeed = 0

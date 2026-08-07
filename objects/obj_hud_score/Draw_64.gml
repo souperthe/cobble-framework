@@ -1,7 +1,22 @@
-var scoreX = 131 + random_range(-collectShake, collectShake)
-var scoreY = 70 + random_range(-collectShake, collectShake)
+scoreX = 131 + random_range(-collectShake, collectShake)
+scoreY = (70 + scoreYOffset) + random_range(-collectShake, collectShake)
+collectReal = real(collectVisual)
 
-draw_sprite(spr_pizzascore, 0, scoreX, scoreY)
+var collectIndex = 0
+
+draw_sprite(spr_pizzascore, collectIndex, scoreX, scoreY)
+
+if collectReal >= global.collectRankS
+    draw_sprite(spr_pizzascore_shroom, collectIndex, scoreX, scoreY)
+
+if collectReal >= global.collectRankA
+    draw_sprite(spr_pizzascore_olive, collectIndex, scoreX, scoreY)
+
+if collectReal >= global.collectRankB
+    draw_sprite(spr_pizzascore_pepperoni, collectIndex, scoreX, scoreY)
+
+if collectReal >= global.collectRankC
+    draw_sprite(spr_pizzascore_pepper, collectIndex, scoreX, scoreY)
 
 
 draw_set_valign(fa_top)
@@ -19,7 +34,7 @@ var textY = scoreY
 for (var index = 0; index < textLength; index++)
 {
     var progress = (textLength > 1) ? (index / (textLength - 1)) : 0.5;
-    var indexOffset = -5 + (5 * sin(progress * pi));
+    var indexOffset = -8 + (8 * sin(progress * pi));
     var character = string_char_at(textTarget, index + 1)
     var characterX = floor(textX)
     var characterY = floor((scoreY - 56) + indexOffset)

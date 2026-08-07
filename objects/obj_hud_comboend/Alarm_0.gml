@@ -24,7 +24,7 @@ obj_hud_score.collectCreate(
 //audio_play_sound(sfx_collect, 0, false, volume, 0, random_pitch())
 
 if comboAmount >= 0
-    alarm[0] = 3
+    alarm[0] = 2
 else
 {
     global.comboScore = 0

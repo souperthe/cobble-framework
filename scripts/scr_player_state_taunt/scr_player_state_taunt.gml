@@ -3,11 +3,11 @@
 function scr_player_state_taunt_enter(enterMessage)
 {
     var tauntSprite = spriteGet("taunt")
-    var tauntSounds = [sfx_taunt_1, sfx_taunt_2, sfx_taunt_3, sfx_taunt_4, sfx_taunt_5, sfx_taunt_6]
+    var tauntSounds = [sfx_taunt_1]
     sprite_index = tauntSprite
     image_index = irandom(sprite_get_number(tauntSprite) - 1)
     image_speed = 0;
-    soundTaunt = super_sound_oneshot_emitter_list(emitter, tauntSounds)
+    soundTaunt = super_sound_oneshot_emitter_list(emitter, tauntSounds, random_pitch())
     audio_sound_gain(soundTaunt, 0.5)
     return;
 }

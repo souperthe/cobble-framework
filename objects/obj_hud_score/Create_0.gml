@@ -4,6 +4,10 @@ collectVisual = string(global.collect)
 collectPrevious = collectVisual
 collectOffsets = []
 
+scoreX = 0
+scoreY = 0
+scoreYOffset = 0
+
 collectCreate = function(positionX, positionY, sprite, value)
 {
     var camera = view_camera[0]

@@ -114,7 +114,7 @@ stateLibrary[TvStates.transition] = function()
         tvExpressionSprite = tvTransitionTarget
         stateCurrent = TvStates.normal
         sprite_index = spr_tv_empty
-        tvWhiteFade = 1
+        tvWhiteFade = 0
         tvExpressionSpriteFrame = 0
     }
     return

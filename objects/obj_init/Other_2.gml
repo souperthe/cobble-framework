@@ -22,7 +22,9 @@ onAudioGroupsLoaded = function()
         obj_music, 
         obj_hud_tv, 
         obj_hud_score,
-        obj_hud_combo
+        obj_hud_combo,
+        obj_hud_rank,
+        obj_hud_timer
     ]
     var instancesLength = array_length(instances)
     scr_globals();

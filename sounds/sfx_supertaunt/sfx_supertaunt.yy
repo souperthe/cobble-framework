@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"sfx_supertaunt",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":1,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":2.204195,
+  "exportDir":"",
+  "name":"sfx_supertaunt",
+  "parent":{
+    "name":"Taunt",
+    "path":"folders/Sound/SFX/Player/Taunt.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"sfx_supertaunt.ogg",
+  "volume":1.0,
+}
