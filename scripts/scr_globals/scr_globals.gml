@@ -10,24 +10,25 @@ function scr_globals()
     global.levelName = "";
     global.levelSaveRoom = [];
     global.hitstunShake = 4
+    global.collect = 0;
+    global.treasure = 0;
     return;
 }
 
 function scr_globals_combo()
 {
-    global.collect = 0;
-    global.treasure = 0;
     global.comboTime = 0;
     global.comboTimeMax = 60;
     global.comboTimePause = 0
     global.comboSaved = 0
     global.comboBreaks = 0
     global.comboDropped = false
+    global.comboScore = 0
     global.combo = 0;
     global.comboMilestone = 5;
     return
 }
-
+ 
 function scr_globals_warp()
 {
     global.warpDoor = "A"
@@ -45,6 +46,7 @@ function scr_globals_warp()
 function scr_globals_fonts()
 {
     global.fontCombo = font_add_sprite_ext(spr_tv_combobubbletext, "0123456789", true, 0)
+    global.fontCollect = font_add_sprite_ext(spr_font_collect, "0123456789", true, 0)
     global.fontBig = font_add_sprite_ext(spr_font, "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ!¡¿?.1234567890:ÁÄÃÀÂÉÈÊËÍÌÎÏÓÖÕÔÒÚÙÛÜÇ+", true, 0)
     global.fontSmall = font_add_sprite_ext(spr_smallerfont, "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ!¡.:?¿1234567890ÁÄÃÀÂÉÈÊËÍÌÎÏÓÖÕÔÒÚÙÛÜÇ+", true, 0)
     return

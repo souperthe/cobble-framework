@@ -15,7 +15,15 @@ for (var index = 0; index < audioGroupsLength; index++)
 
 onAudioGroupsLoaded = function()
 {
-    var instances = [obj_input_manager, obj_screensizer, obj_camera, obj_hud_tv, obj_music]
+    var instances = [
+        obj_input_manager, 
+        obj_screensizer, 
+        obj_camera, 
+        obj_music, 
+        obj_hud_tv, 
+        obj_hud_score,
+        obj_hud_combo
+    ]
     var instancesLength = array_length(instances)
     scr_globals();
 

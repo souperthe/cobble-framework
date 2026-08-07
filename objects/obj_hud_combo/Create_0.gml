@@ -1,3 +1,4 @@
+depth = 1
 playerTarget = obj_player
 
 comboPositionX = 0

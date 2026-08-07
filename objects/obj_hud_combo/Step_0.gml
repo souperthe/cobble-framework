@@ -42,6 +42,7 @@ if global.comboTime <= 0 && global.combo >= 1
     global.comboDropped = true
     
     audio_play_sound(sfx_combocash, 0, false)
+    instance_create_depth(0, 0, depth, obj_hud_comboend)
 }
 
 if global.comboTime > 0 && global.combo > 0

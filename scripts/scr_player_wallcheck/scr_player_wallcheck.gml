@@ -48,10 +48,12 @@ function scr_player_wallcheck_bump()
 function scr_player_wallcheck_bump_mach()
 {
     
+    var xStep = x + sign(velocityX)
+    
     var velocityXDirection = sign(velocityX)
     var facingSolid = scr_solid(x + scaleX, y);
-    var meetingSolid = scr_solid_slope(x + velocityXDirection, y) || place_meeting(x + velocityXDirection, y, obj_solid);
-    var meetingSlope = instance_place(x, y, obj_slope)
+    var meetingSolid = scr_solid_slope(x + velocityXDirection, y) || place_meeting(x + velocityXDirection, y - 30, obj_solid);
+    var meetingSlope = instance_place(xStep, y, obj_slope)
     
     return grounded && facingSolid && meetingSolid && !meetingSlope
 }

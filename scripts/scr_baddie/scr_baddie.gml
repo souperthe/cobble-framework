@@ -7,10 +7,7 @@ function scr_baddie_create()
     killedFromX = 0
     killedFromY = 0
     
-    boundingBox = instance_create_depth(x, y, depth, obj_baddie_box)
-    boundingBox.sprite_index = sprite_index
-    boundingBox.mask_index = sprite_index
-    boundingBox.baddieInstance = id
+    boundingBox = undefined
     
     moveAndCollide = true
     turnAllow = false
@@ -55,6 +52,18 @@ function scr_baddie_create()
 }
 
 /// @self obj_baddie
+function scr_baddie_create_bounding_box()
+{
+    boundingBox = instance_create_depth(x, y, depth, obj_baddie_box)
+    boundingBox.sprite_index = sprite_index
+    boundingBox.mask_index = sprite_index
+    boundingBox.image_speed = 0
+    boundingBox.baddieInstance = id
+    boundingBox.depth = id.depth - 1
+    return
+}
+
+/// @self obj_baddie
 function scr_baddie_define_states()
 {
     stateLibrary[BaddieStates.WALK] = scr_baddie_state_walk
@@ -85,6 +94,9 @@ function scr_baddie_step()
     bumpScaleY = lerp(bumpScaleY, bumpScaleYTarget, alpha)
     
     invincibleTimer--
+    
+    if boundingBox == undefined
+        scr_baddie_create_bounding_box()
     
     return
 }

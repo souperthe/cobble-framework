@@ -47,13 +47,14 @@ for (var index = comboTextLength; index > 0; index--)
     var characterWidth = string_width(character)
     var characterHeight = string_height(character)
     var characterScale = comboCharacterScales[index - 1]
+    var characterScaleFloored = round(characterScale * 10) / 10
     
     var offsetX = (characterWidth * (1 - characterScale)) / 2
     var offsetY = (characterHeight * (1 - characterScale)) / 2
     var drawX = (comboTextX + comboShakeGet()) + offsetX
     var drawY = (comboTextY + comboShakeGet()) + offsetY
     
-    draw_text_transformed(drawX, drawY, character, characterScale, characterScale, 0)
+    draw_text_transformed(drawX, drawY, character, characterScaleFloored, characterScaleFloored, 0)
     
     comboTextX -= 22
     comboTextY -= 8

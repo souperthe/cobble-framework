@@ -1,8 +1,12 @@
 var playerGuiPositionX = get_gui_position_x(tvTargetPlayer)
 var playerGuiPositionY = get_gui_position_y(tvTargetPlayer)
 var tvYOffsetTarget = 0
+var tvYRadius = 120
 
-if playerGuiPositionX > (obj_screensizer.hudWidth - 210) && playerGuiPositionY < 120
+if global.comboTime > 0
+    tvYRadius = 220
+
+if playerGuiPositionX > (obj_screensizer.hudWidth - 210) && playerGuiPositionY < tvYRadius
     tvYOffsetTarget = -300
 
 tvYOffset = approach(tvYOffset, tvYOffsetTarget, 20)

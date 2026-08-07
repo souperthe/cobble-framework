@@ -16,6 +16,11 @@ tvWhiteFade = 0
 tvYOffset = 0
 tvX = 0
 tvY = 0
+
+
+tvExpressionForce = spr_tv_exprcollect
+tvExpressionForceTime = 0
+
 tvTransition = function(targetSprite)
 {
     if tvTransitionTarget == targetSprite
@@ -47,6 +52,12 @@ tvTurnOn = function()
     audio_play_sound(sfx_tvon, 0, false, 0.5, 0, random_pitch())
     return
 }
+tvForceExpression = function(sprite, time)
+{
+    tvExpressionForce = sprite
+    tvExpressionForceTime = time
+    return
+}
 
 stateCurrent = TvStates.off
 stateLibrary = []
@@ -71,6 +82,17 @@ stateLibrary[TvStates.normal] = function()
     if !(stateCurrent >= 0 && stateCurrent < array_length(tvExpressionStates))
     {
         scr_tv_state_normal(tvTargetPlayer)
+        return
+    }
+    
+    if tvExpressionForceTime > 0
+    {
+        
+        tvExpressionForceTime--
+        
+        if tvTransitionTarget != tvExpressionForce
+            tvTransition(tvExpressionForce)
+        
         return
     }
     
@@ -101,6 +123,3 @@ stateLibrary[TvStates.transition] = function()
 tvTurnOff()
 
 alarm[0] = 60
-
-instance_create_depth(0, 0, 9999, obj_hud_combo)
-obj_hud_combo.playerTarget = tvTargetPlayer
