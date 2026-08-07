@@ -19,4 +19,4 @@ var titleOffsetTarget = 0
 if global.comboTime > 0
     titleOffsetTarget = 80
 
-titleOffset = approach(titleOffset, titleOffsetTarget, 15)
+titleOffset = lerp(titleOffset, titleOffsetTarget, 0.05)

@@ -14,7 +14,7 @@ if (title > (sprite_get_number(spr_comboend_title1) / 2))
 if titleCombo >= 80
     titleVery += 1
 
-draw_sprite(spr_comboend, 0, titleX, titleY - 30)
+draw_sprite(spr_comboend, 0, titleX, titleY - 40)
 
 
 for (var index = 0; index < titleVery; index++)
