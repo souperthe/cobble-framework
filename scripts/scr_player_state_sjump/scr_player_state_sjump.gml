@@ -7,6 +7,8 @@ function scr_player_state_sjump_enter(enterMessage)
     sprite_index = spriteGet("superjump")
     image_speed = 0.5
     soundSuperJump = super_sound_oneshot_emitter(emitter, sfx_superjumprelease)
+    effectPiledriverTimer = 0
+    scr_effect_create("explosion", x, y)
     return;
 }
 
@@ -40,7 +42,17 @@ function scr_player_state_sjump_step()
     }
         
     if sprite_index == spriteGet("superjump")
+    {
         velocityY = velocitySuperJump
+        
+        effectPiledriverTimer--
+        
+        if effectPiledriverTimer < 0
+        {
+            scr_effect_create("piledriver", x, y, 1, -1)
+            effectPiledriverTimer = 15
+        }
+    }
     
     velocitySuperJump -= 0.1
     

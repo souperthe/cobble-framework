@@ -79,6 +79,7 @@ function scr_player_state_machslide_step()
     }
     
     
+    
     var inMach3 = array_contains(mach3Animations, sprite_index) 
     var inMach2 = array_contains(mach2Animations, sprite_index) 
     var inInsta = array_contains(instaTurn, sprite_index) 

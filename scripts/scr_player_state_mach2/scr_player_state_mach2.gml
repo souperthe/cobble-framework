@@ -2,6 +2,8 @@
 /// @param {String} enterMessage
 function scr_player_state_mach2_enter(enterMessage)
 {
+    effectDashCloudTimer = 0
+    speedlinesActive = false
     
     if enterMessage == "start"
     {
@@ -35,6 +37,7 @@ function scr_player_state_mach2_enter(enterMessage)
         scaleX *= -1
         moveSpeed = 8
         soundMach = super_sound_loop_emitter(emitter, sfx_mach2)
+        speedlinesActive = true
         return
     }
     else if enterMessage == "longjump"
@@ -56,6 +59,7 @@ function scr_player_state_mach2_enter(enterMessage)
 function scr_player_state_mach2_exit()
 {
     audio_stop_sound(soundMach)
+    speedlinesActive = false
     return;
 }
 
@@ -78,7 +82,9 @@ function scr_player_state_mach2_step()
     ]
     static wallJumpSprites = [
         spriteGet("walljumpstart"),
-        spriteGet("walljumpend")
+        spriteGet("walljumpend"),
+        spriteGet("longjump"),
+        spriteGet("longjumpend")
     ]
     
     velocityX = (scaleX * moveSpeed)
@@ -97,6 +103,7 @@ function scr_player_state_mach2_step()
         {
             sprite_index = spriteGet("mach")
             soundMach = super_sound_loop_emitter(emitter, sfx_mach2)
+            speedlinesActive = true
         }
         
         if scr_slope() && velocityY != 0 && moveSpeed > 8
@@ -162,6 +169,7 @@ function scr_player_state_mach2_step()
     {
         sprite_index = spriteGet("mach")
         soundMach = super_sound_loop_emitter(emitter, sfx_mach2)
+        speedlinesActive = true
     }
     
     if !(grounded && velocityY > 0)  && audio_is_playing(soundMach)
@@ -203,12 +211,26 @@ function scr_player_state_mach2_step()
         audio_stop_sound(soundMach)
         sprite_index = spriteGet("mach")
         soundMach = super_sound_loop_emitter(emitter, sfx_mach2)
+        speedlinesActive = true
     }
     
     if array_contains(fixedSpeedSprites, sprite_index)
         image_speed = 0.4;
     else
         image_speed = abs(moveSpeed) / 15
+
+    
+    if grounded
+    {
+        
+        effectDashCloudTimer--
+        
+        if effectDashCloudTimer < 0
+        {
+            scr_effect_create("smalldashcloud", x, y, scaleX)
+            effectDashCloudTimer = 10
+        }
+    }
         
     return;
 }

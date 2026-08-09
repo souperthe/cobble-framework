@@ -11,8 +11,8 @@ function scr_player_state_suplexdash_enter(enterMessage)
     
     image_index = 0
     
-    if moveSpeed < 12
-        moveSpeed = 12
+    if moveSpeed < 10
+        moveSpeed = 10
     
     soundSuplex = super_sound_oneshot_emitter(emitter, sfx_suplexdash, random_pitch())
 

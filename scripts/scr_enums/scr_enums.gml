@@ -26,6 +26,7 @@ function scr_enums()
         FINISHINGBLOW,
         PILEDRIVER,
         DOOR,
+        ENTERLEVEL,
         _length
     }
     

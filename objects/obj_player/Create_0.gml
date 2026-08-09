@@ -52,6 +52,12 @@ grabbedBaddie = -1
 paletteSprite = spr_peppalette
 paletteIndex = 1
 
+chargeActive = false
+chargeFrame = 0
+
+speedlinesActive = false
+speedlinesFrame = 0
+
 /// @param {enum.PlayerStates} targetState
 /// @param {string} enterMessage
 stateSwitch = function(targetState, enterMessage = "")

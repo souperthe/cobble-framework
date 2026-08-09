@@ -7,6 +7,13 @@ function scr_collide()
     var tempVelocityY = velocityY
     var tempVelocityX = velocityX
     
+    if !collide
+    {
+        y += velocityY
+        x += velocityX
+        return
+    }
+    
     repeat (ceil(abs(tempVelocityY)))
     {
         var velocityDirection = clamp(tempVelocityY, -1, 1)

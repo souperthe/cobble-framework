@@ -30,15 +30,18 @@ shader_reset()
 shader_set(global.shaderPalette)
 pal_swap_set(spr_tv_combopalette, comboPaletteIndex)
 
-draw_sprite(spr_tv_combobubble, 0, comboX + comboShakeGet(), comboY + comboShakeGet())
+var comboRealX = comboX + comboShakeGet()
+var comboRealY = comboY + comboShakeGet()
+
+draw_sprite(spr_tv_combobubble, 0, comboRealX, comboRealY)
 
 draw_set_font(global.fontCombo)
 draw_set_halign(fa_left)
 draw_set_valign(fa_top)
 
 
-var comboTextX = comboX - 64
-var comboTextY = comboY - 12
+var comboTextX = comboRealX - 64
+var comboTextY = comboRealY - 12
 var comboTextLength = string_length(comboVisual)
 
 for (var index = comboTextLength; index > 0; index--)
@@ -51,8 +54,8 @@ for (var index = comboTextLength; index > 0; index--)
     
     var offsetX = (characterWidth * (1 - characterScale)) / 2
     var offsetY = (characterHeight * (1 - characterScale)) / 2
-    var drawX = (comboTextX + comboShakeGet()) + offsetX
-    var drawY = (comboTextY + comboShakeGet()) + offsetY
+    var drawX = (comboTextX) + offsetX
+    var drawY = (comboTextY) + offsetY
     
     draw_text_transformed(drawX, drawY, character, characterScaleFloored, characterScaleFloored, 0)
     

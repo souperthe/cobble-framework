@@ -56,3 +56,14 @@ collectProcess = function(collect)
     
     return
 }
+
+
+smallNumber = function(targetX, targetY, targetAmount)
+{
+    
+    var smallNumber = instance_create_depth(targetX + 16, targetY, 0, obj_smallnumber)
+    smallNumber.number = targetAmount
+    
+    return
+}
+

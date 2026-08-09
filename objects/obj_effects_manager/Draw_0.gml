@@ -1,0 +1,1 @@
+effectFunctionLoop(effectDraw)

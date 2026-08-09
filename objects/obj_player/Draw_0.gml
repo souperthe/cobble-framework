@@ -1,7 +1,18 @@
+if speedlinesActive
+    draw_sprite_ext(spr_effect_speedlines, speedlinesFrame, x, y, scaleX, 1, 0, c_white, 1)
+
 shader_set(global.shaderPalette)
 pal_swap_set(paletteSprite, paletteIndex)
 draw_sprite_ext(sprite_index, image_index, x, y, scaleX, scaleY, angle, c_white, 1)
 shader_reset()
+
+
+if chargeActive
+{
+    var chargeOffset = scaleX * 8
+    draw_sprite_ext(spr_effect_charge, chargeFrame, x + chargeOffset, y, scaleX, 1, 0, c_white, 1)
+}
+
 
 
 

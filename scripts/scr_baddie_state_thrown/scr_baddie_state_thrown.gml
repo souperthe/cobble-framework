@@ -2,8 +2,12 @@
 function scr_baddie_state_thrown()
 {
     sprite_index = spriteDead
+    var stepX = x + sign(velocityX)
+    var stepY = y + sign(velocityY)
     
-    if scr_solid(x + velocityX, y + velocityY)
+    collide = false
+    
+    if scr_solid(stepX, stepY)
     {
         killedFromX = x + velocityX
         instance_destroy()

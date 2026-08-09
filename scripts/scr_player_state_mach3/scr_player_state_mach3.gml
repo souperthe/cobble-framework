@@ -3,6 +3,10 @@
 function scr_player_state_mach3_enter(enterMessage)
 {
     soundMachIndex = sfx_mach3
+    effectDashCloudTimer = 0
+    effectCrazyRunTimer = 0
+    effectFlameTimer = 0
+    
     if enterMessage == "enter"
     {
         
@@ -31,6 +35,7 @@ function scr_player_state_mach3_enter(enterMessage)
         soundMachIndex = sfx_mach3
         velocityY = -4
         sprite_index = spriteGet("Sjumpcancel")
+        scr_effect_create("crazyrun", x, y, scaleX)
         image_index = 0
         return
     }
@@ -43,6 +48,8 @@ function scr_player_state_mach3_exit()
 {
     machMode = false
     audio_stop_sound(soundMach)
+    chargeActive = false
+    speedlinesActive = false
     return;
 }
 
@@ -60,6 +67,10 @@ function scr_player_state_mach3_step()
     var machRollSpeed = 10;
     static overrideAnimations = [spriteGet("rollgetup"), spriteGet("mach3hit")]
     
+    chargeActive = true
+    speedlinesActive = true
+    
+
     if is_sprite_finished() && array_contains(overrideAnimations, sprite_index)
     {
         
@@ -104,6 +115,25 @@ function scr_player_state_mach3_step()
             sprite_index = spriteGet("crazyrun")
             soundMachIndex = sfx_mach4
             audio_stop_sound(soundMach)
+        }
+    }
+    
+    if grounded && sprite_index == spriteGet("crazyrun")
+    {
+        effectDashCloudTimer--
+        
+        if effectDashCloudTimer < 0
+        {
+            scr_effect_create("flamecloud", x, y, scaleX)
+            effectDashCloudTimer = 10
+        }
+        
+        effectCrazyRunTimer--
+        
+        if effectCrazyRunTimer < 0
+        {
+            effectCrazyRunTimer = 15
+            scr_effect_create("crazyrun", x, y, scaleX)
         }
     }
     
@@ -156,7 +186,7 @@ function scr_player_state_mach3_step()
     if grounded and !audio_is_playing(soundMach)
         soundMach = super_sound_loop_emitter(emitter, soundMachIndex)
     
-    if check_input("jump", false) && jumpAllow && sprite_index != spriteGet("mach3jump") && move == scaleX
+    if check_input("jump", false) && jumpAllow && sprite_index != spriteGet("mach3jump")
     {
         super_sound_oneshot_emitter(emitter, sfx_jump)
         velocityY = -11
@@ -175,6 +205,17 @@ function scr_player_state_mach3_step()
         audio_stop_sound(soundMach)
         stateSwitch(PlayerStates.MACHSLIDE, "brake")
         return
+    }
+    
+    if grounded
+    {
+        effectDashCloudTimer--
+        
+        if effectDashCloudTimer < 0
+        {
+            scr_effect_create("dashcloud", x, y, scaleX)
+            effectDashCloudTimer = 22
+        }
     }
      
     if move == scaleX && grounded

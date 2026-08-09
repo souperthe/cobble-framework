@@ -7,6 +7,7 @@ function scr_player_state_machroll_enter(enterMessage)
     soundRoll = 0
     diving = false
     mask_index = spr_player_crouchmask
+    effectDashCloudTimer = 0
     
     if enterMessage == "crouchslip"
     {
@@ -107,8 +108,20 @@ function scr_player_state_machroll_step()
         return
     }
     
+    if grounded
+    {
+        
+        effectDashCloudTimer--
+        
+        if effectDashCloudTimer < 0
+        {
+            scr_effect_create("smalldashcloud", x, y, scaleX)
+            effectDashCloudTimer = 10
+        }
+    }
     
-    if !check_input("down", true) && ((grounded && velocityY > 0)  && velocityY > 0)  && bufferGetup <= 0
+    
+    if !check_input("down", true) && ((grounded && velocityY > 0)  && velocityY > 0)  && bufferGetup <= 0 && !scr_solid(x, y - 16) && !scr_solid(x, y - 32)
     {
         image_index = 0
         

@@ -76,7 +76,7 @@ for (var index = 1; index <= lengthCurrent; index++)
     if characterCurrent == characterPrevious
         continue
     
-    comboCharacterScales[index - 1] = 1.4
+    comboCharacterScales[index - 1] = 1.5
     continue
 }
 

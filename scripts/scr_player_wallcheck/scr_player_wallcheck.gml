@@ -4,6 +4,14 @@ function scr_player_wallcheck()
 {
     var xCheck = x + velocityX
     var xStep = x + sign(velocityX)
+    var touchingMetalBlock = place_meeting(xCheck, y, obj_metalblock)
+    var touchingDestructible = place_meeting(xCheck, y, obj_destructible)
+    
+    if touchingMetalBlock && stateCurrentEnum == PlayerStates.MACH3
+        return false
+    
+    if touchingDestructible
+        return false
     
     if !grounded
     {
@@ -50,10 +58,13 @@ function scr_player_wallcheck_bump_mach()
     
     var xStep = x + sign(velocityX)
     
-    var velocityXDirection = sign(velocityX)
     var facingSolid = scr_solid(x + scaleX, y);
-    var meetingSolid = scr_solid_slope(x + velocityXDirection, y) || place_meeting(x + velocityXDirection, y - 30, obj_solid);
+    var meetingSolid = scr_solid_slope(xStep, y) || place_meeting(xStep, y - 30, obj_solid);
     var meetingSlope = instance_place(xStep, y, obj_slope)
+    var touchingDestructible = place_meeting(xStep, y, obj_destructible)
+    
+    if touchingDestructible
+        return false
     
     return grounded && facingSolid && meetingSolid && !meetingSlope
 }

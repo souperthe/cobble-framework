@@ -9,6 +9,7 @@ function scr_rigid_body_create()
     grav = 0.5
     gravMax = 20;
     moveAndCollide = true
+    collide = true
     return
 }
 

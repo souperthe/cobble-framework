@@ -40,6 +40,11 @@ function scr_player_state_door_step()
         return
     }
     
+    if instance_place(x, y, obj_gate_exit)
+    {
+        return
+    }
+    
     moveAndCollide = true
     
     if is_sprite_finished()

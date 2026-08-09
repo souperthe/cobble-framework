@@ -5,13 +5,27 @@ function scr_globals()
     scr_globals_combo()
     scr_globals_fonts()
     scr_global_collect()
+    scr_global_hub()
     pal_swap_init()
     global.instanceList = ds_list_create();
     global.panic = 0;
     global.levelName = "";
-    global.levelSaveRoom = [];
+    global.levelCurrent = undefined
+    global.levelSaveRoom = {};
+    global.levelEntering = false
     global.hitstunShake = 4
+    global.soundBlockBreak = -4
+    
+    scr_level_data_init()
     return;
+}
+
+function scr_global_hub()
+{
+    global.hubRoom = undefined
+    global.hubX = 0
+    global.hubY = 0
+    return
 }
 
 function scr_global_collect()
@@ -63,6 +77,7 @@ function scr_globals_fonts()
     global.fontCollect = font_add_sprite_ext(spr_font_collect, "0123456789", true, 0)
     global.fontBig = font_add_sprite_ext(spr_font, "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ!¡¿?.1234567890:ÁÄÃÀÂÉÈÊËÍÌÎÏÓÖÕÔÒÚÙÛÜÇ+", true, 0)
     global.fontSmall = font_add_sprite_ext(spr_smallerfont, "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ!¡.:?¿1234567890ÁÄÃÀÂÉÈÊËÍÌÎÏÓÖÕÔÒÚÙÛÜÇ+", true, 0)
+    global.fontSmallNumber = font_add_sprite_ext(spr_smallnumber, "1234567890-+", true, 0)
     return
 }
 

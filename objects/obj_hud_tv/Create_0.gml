@@ -121,5 +121,3 @@ stateLibrary[TvStates.transition] = function()
 }
 
 tvTurnOff()
-
-alarm[0] = 60

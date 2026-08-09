@@ -1,0 +1,2 @@
+surface_free(backroundSurfaceMask)
+surface_free(backroundSurfaceClip)

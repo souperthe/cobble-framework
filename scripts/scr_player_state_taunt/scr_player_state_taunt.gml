@@ -9,6 +9,7 @@ function scr_player_state_taunt_enter(enterMessage)
     image_speed = 0;
     soundTaunt = super_sound_oneshot_emitter_list(emitter, tauntSounds, random_pitch())
     audio_sound_gain(soundTaunt, 0.5)
+    effectTaunt = scr_effect_create("taunt", x, y)
     return;
 }
 
@@ -25,6 +26,8 @@ function scr_player_state_taunt_step()
     velocityY = 0
     
     tauntTimer--;
+    effectTaunt.x = x
+    effectTaunt.y = y
     
     if tauntTimer > 0
         return
@@ -39,5 +42,6 @@ function scr_player_state_taunt_step()
     stateCurrentEnum = tauntState
     stateCurrent = stateLibrary[tauntState]
     audio_stop_sound(soundTaunt)
+    obj_effects_manager.effectDelete(effectTaunt)
     return;
 }
