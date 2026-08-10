@@ -6,7 +6,7 @@ repeat (8)
 {
     var debrisPositionX = x + random_range(0, 64)
     var debrisPositionY = y + random_range(0, 64)
-    var debris = scr_debris_create(debrisPositionX, debrisPositionY, scr_debris_metalblock)
+    var debris = scr_debris_create(debrisPositionX, debrisPositionY, spr_debris_metalblock)
     
     debris.velocityY = random_range(-5, -10)
     debris.velocityX = random_range(-5, 5)

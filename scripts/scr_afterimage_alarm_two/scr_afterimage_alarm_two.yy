@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_afterimage_alarm_two",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_afterimage_alarm_two",
+  "parent":{
+    "name":"Alarm",
+    "path":"folders/Scripts/AfterImage/Alarm.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -31,6 +31,8 @@ function scr_effects_get()
     effectsLibrary[$ "charge"] = new Effect(spr_effect_charge, 0.5, true)
     effectsLibrary[$ "deadjohnsmoke"] = new Effect(spr_effect_deadjohnsmoke, 0.35)
     effectsLibrary[$ "taunt"] = new Effect(spr_effect_taunt, 0.5, false, true)
+    effectsLibrary[$ "spikehurt"] = new Effect(spr_effect_spikehurt, 0.5)
+    effectsLibrary[$ "genericpoof"] = new Effect(spr_effect_genericpoof, 1)
     
     return effectsLibrary
 }

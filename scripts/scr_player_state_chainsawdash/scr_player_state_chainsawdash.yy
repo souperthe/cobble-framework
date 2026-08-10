@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_player_state_chainsawdash",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_player_state_chainsawdash",
+  "parent":{
+    "name":"Chainsaw",
+    "path":"folders/Scripts/Player/States/Chainsaw.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -21,6 +21,7 @@ jumpAllow = (grounded && velocityY > 0) || (coyoteTime && velocityY > 0)
 
 scr_collide()
 scr_player_destructibles()
+scr_player_spikecheck()
 
 if chargeActive
     chargeFrame += 0.5
@@ -31,3 +32,25 @@ if speedlinesActive
     speedlinesFrame += 0.5
 else
     speedlinesFrame = 0
+
+if array_contains(machAfterImageStates, stateCurrentEnum)
+{
+    machAfterImageTime -= 1
+    
+    if machAfterImageTime < 0
+    {
+        scr_afterimage_mach()
+        machAfterImageTime = 4.5
+    }
+}
+
+if array_contains(blurAfterImageStates, stateCurrentEnum)
+{
+    blurAfterImageTime -= 1
+    
+    if blurAfterImageTime < 0
+    {
+        scr_afterimage_blur()
+        blurAfterImageTime = 2
+    }
+}

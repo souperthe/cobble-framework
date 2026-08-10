@@ -3,7 +3,16 @@ function scr_player_destructibles()
 {
     
     var metalBlockStates = [PlayerStates.MACH3, PlayerStates.FREEFALL]
-    var destructibleStates = [PlayerStates.MACH3, PlayerStates.SUPLEXDASH, PlayerStates.MACH2, PlayerStates.MACHROLL]
+    var destructibleStates = [
+        PlayerStates.MACH3, 
+        PlayerStates.SUPLEXDASH, 
+        PlayerStates.MACH2, 
+        PlayerStates.MACHROLL,
+        PlayerStates.CHAINSAWDASH,
+        PlayerStates.CHAINSAWJUMP,
+        PlayerStates.CHAINSAWNORMAL,
+        PlayerStates.CHAINSAWATTACK
+    ]
     
     if array_contains(metalBlockStates, stateCurrentEnum)
     {

@@ -6,6 +6,7 @@ function scr_globals()
     scr_globals_fonts()
     scr_global_collect()
     scr_global_hub()
+    scr_global_colors()
     pal_swap_init()
     global.instanceList = ds_list_create();
     global.panic = 0;
@@ -25,6 +26,13 @@ function scr_global_hub()
     global.hubRoom = undefined
     global.hubX = 0
     global.hubY = 0
+    return
+}
+
+function scr_global_colors()
+{
+    global.colorMach1 = make_colour_rgb(96, 208, 72)
+    global.colorMach2 = make_colour_rgb(248, 0, 0)
     return
 }
 

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_afterimage_step_blur",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_afterimage_step_blur",
+  "parent":{
+    "name":"Step",
+    "path":"folders/Scripts/AfterImage/Step.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

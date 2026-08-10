@@ -58,6 +58,21 @@ chargeFrame = 0
 speedlinesActive = false
 speedlinesFrame = 0
 
+machAfterImageTime = 6
+machAfterImageStates = [PlayerStates.MACH2, PlayerStates.MACH3, PlayerStates.SJUMP, PlayerStates.UPPERCUT]
+
+blurAfterImageTime = 6
+blurAfterImageStates = [
+    PlayerStates.SUPLEXDASH, 
+    PlayerStates.MACHROLL, 
+    PlayerStates.CHAINSAWDASH,
+    PlayerStates.CHAINSAWATTACK,
+    PlayerStates.CHAINSAWPOGO
+]
+
+transformationDebris = undefined
+transformationCurrent = ""
+
 /// @param {enum.PlayerStates} targetState
 /// @param {string} enterMessage
 stateSwitch = function(targetState, enterMessage = "")

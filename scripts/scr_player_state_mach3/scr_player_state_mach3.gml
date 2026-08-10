@@ -61,7 +61,7 @@ function scr_player_state_mach3_step()
     var slopeAccel = 0.1
     var slopeDeccel = 0.2
     var speedMach4 = 20
-    var speedMach3 = 16
+    var speedMach3 = 18
     var accel = 0.025
     var accelMach4 = 0.1
     var machRollSpeed = 10;

@@ -10,6 +10,7 @@ function scr_player_state_taunt_enter(enterMessage)
     soundTaunt = super_sound_oneshot_emitter_list(emitter, tauntSounds, random_pitch())
     audio_sound_gain(soundTaunt, 0.5)
     effectTaunt = scr_effect_create("taunt", x, y)
+    scr_afterimage_mach()
     return;
 }
 

@@ -87,3 +87,12 @@ if place_meeting(x, y + 5, playerTouching) && playerTouching.stateCurrentEnum ==
     scr_baddie_instakill(playerTouching, baddieInstance)
     exit
 }
+
+if place_meeting(x, y - 5, playerTouching) && playerTouching.stateCurrentEnum == PlayerStates.CHAINSAWPOGO && !playerTouching.grounded
+{
+    scr_baddie_instakill(playerTouching, baddieInstance)
+    playerTouching.velocityY = -12
+    playerTouching.sprite_index = playerTouching.spriteGet("chainsaw_pogobounce")
+    super_sound_oneshot_emitter(playerTouching.emitter, sfx_killingblow, random_pitch())
+    exit
+}

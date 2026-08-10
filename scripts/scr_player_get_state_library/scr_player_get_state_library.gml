@@ -64,6 +64,15 @@ function scr_player_get_state_library()
     stateRegister(PlayerStates.PILEDRIVER, "piledriver")
     stateRegister(PlayerStates.DOOR, "door")
     stateRegister(PlayerStates.ENTERLEVEL, "enterlevel")
+    stateRegister(PlayerStates.CHAINSAWSTART, "chainsawstart")
+    stateRegister(PlayerStates.CHAINSAWNORMAL, "chainsawnormal")
+    stateRegister(PlayerStates.CHAINSAWPOGO, "chainsawpogo")
+    stateRegister(PlayerStates.CHAINSAWATTACK, "chainsawattack")
+    stateRegister(PlayerStates.CHAINSAWDASH, "chainsawdash")
+    stateRegister(PlayerStates.CHAINSAWJUMP, "chainsawjump")
+    stateRegister(PlayerStates.CHAINSAWBUMP, "chainsawbump")
+    stateRegister(PlayerStates.CHAINSAWTURN, "chainsawturn")
+    stateRegister(PlayerStates.HURT, "hurt")
     
     return;
 }

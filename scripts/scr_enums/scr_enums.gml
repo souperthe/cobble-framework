@@ -27,6 +27,15 @@ function scr_enums()
         PILEDRIVER,
         DOOR,
         ENTERLEVEL,
+        CHAINSAWSTART,
+        CHAINSAWNORMAL,
+        CHAINSAWPOGO,
+        CHAINSAWATTACK,
+        CHAINSAWDASH,
+        CHAINSAWJUMP,
+        CHAINSAWBUMP,
+        CHAINSAWTURN,
+        HURT,
         _length
     }
     
@@ -44,6 +53,12 @@ function scr_enums()
         RAGE,
         SCREAM,
         THROWN
+    }
+    
+    enum AfterImageType {
+        MACH,
+        BLUR,
+        _length
     }
     
     enum TvStates {
