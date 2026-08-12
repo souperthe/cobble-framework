@@ -13,6 +13,7 @@ if fadeAlpha > fadeMax
 }
 
 fadeAlpha += (!fadeIn ? fadeAdd : -fadeAdd)
+global.comboTimePause = 1
 
 if fadeIn && fadeAlpha < 0
     instance_destroy()

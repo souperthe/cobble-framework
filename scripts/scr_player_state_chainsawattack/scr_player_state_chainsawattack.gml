@@ -4,7 +4,8 @@ function scr_player_state_chainsawattack_enter(enterMessage)
 {
     sprite_index = spriteGet("chainsaw_swing")
     image_speed = 0.5
-    velocityX = scaleX * 12
+    image_index = 0
+    chainsawAttackSpeed = scaleX * 12
     
     if !grounded
         velocityY = -4
@@ -23,7 +24,9 @@ function scr_player_state_chainsawattack_step()
 {
     
     if grounded
-        velocityX = approach(velocityX, 0, 0.2)
+        chainsawAttackSpeed = approach(chainsawAttackSpeed, 0, 0.2)
+    
+    velocityX = chainsawAttackSpeed
     
     if is_sprite_finished()
     {

@@ -37,7 +37,7 @@ function scr_player_state_chainsawpogo_step()
         return
     }
     
-    if grounded
+    if grounded && velocityY > 0
     {
         if !check_input("jump", true)
         {
@@ -48,6 +48,7 @@ function scr_player_state_chainsawpogo_step()
         velocityY = -12
         sprite_index = spriteGet("chainsaw_pogobounce")
         super_sound_oneshot_emitter(emitter, sfx_killingblow, random_pitch())
+        scr_effect_create("bangeffect", x, y + 50)
     }
     else 
     {

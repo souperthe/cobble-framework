@@ -14,8 +14,8 @@
   "exportDir":"",
   "name":"mu_chase",
   "parent":{
-    "name":"Music",
-    "path":"folders/Sound/Music.yy",
+    "name":"Escape",
+    "path":"folders/Sound/Music/Escape.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

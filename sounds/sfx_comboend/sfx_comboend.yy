@@ -14,8 +14,8 @@
   "exportDir":"",
   "name":"sfx_comboend",
   "parent":{
-    "name":"Player",
-    "path":"folders/Sound/SFX/Player.yy",
+    "name":"UI",
+    "path":"folders/Sound/SFX/UI.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

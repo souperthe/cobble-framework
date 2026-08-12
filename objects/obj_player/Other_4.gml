@@ -12,7 +12,11 @@ if !instance_exists(doorObject)
 var doorInstance = instance_find(doorObject, 0)
 var doorOffsetX = get_door_offset_x()
 var doorOffsetY = get_door_offset_y()
+var doorTargetX = doorInstance.x + doorOffsetX
+var doorTargetY = doorInstance.y + doorOffsetY
 
-x = doorInstance.x + doorOffsetX
-y = doorInstance.y + doorOffsetY
+x = doorTargetX
+y = doorTargetY
+global.roomStartX = doorTargetX
+global.roomStartY = doorTargetY
 

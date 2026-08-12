@@ -1,9 +1,17 @@
 if speedlinesActive
     draw_sprite_ext(spr_effect_speedlines, speedlinesFrame, x, y, scaleX, 1, 0, c_white, 1)
 
+var spriteAlpha = 1
+
+if invincibleTimer >= 0
+{
+    if invincibleFlash
+        spriteAlpha = 0.2
+}
+
 shader_set(global.shaderPalette)
 pal_swap_set(paletteSprite, paletteIndex)
-draw_sprite_ext(sprite_index, image_index, x, y, scaleX, scaleY, angle, c_white, 1)
+draw_sprite_ext(sprite_index, image_index, x, y, scaleX, scaleY, angle, c_white, spriteAlpha)
 shader_reset()
 
 

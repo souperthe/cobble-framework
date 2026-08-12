@@ -5,6 +5,9 @@ function scr_player_hurt(hazard)
     if stateCurrentEnum == PlayerStates.CHAINSAWPOGO
         return
     
+    if invincibleTimer > 0
+        return
+    
     var scaleXOld = scaleX
     var hurtMessage = ""
     
@@ -30,5 +33,6 @@ function scr_player_hurt(hazard)
     scr_debris_explosion(5, x, y, spr_debris_slapstar, 10, 10)
     super_sound_oneshot_emitter(emitter, sfx_pephurt, random_pitch())
     stateSwitch(PlayerStates.HURT, hurtMessage)
+    invincibleTimer = 300
     return
 }

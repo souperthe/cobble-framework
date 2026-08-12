@@ -40,6 +40,7 @@ function scr_player_state_chainsawdash_step()
     var move = check_input("right", true) - check_input("left", true)
     chainsawDashVelocity = approach(chainsawDashVelocity, scaleX * 15, 0.3)
     velocityX = chainsawDashVelocity
+    moveSpeed = abs(velocityX)
     
     if check_input("down", true) && grounded
     {

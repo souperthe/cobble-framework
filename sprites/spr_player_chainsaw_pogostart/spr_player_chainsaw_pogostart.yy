@@ -26,7 +26,7 @@
   ],
   "name":"spr_player_chainsaw_pogostart",
   "nineSlice":null,
-  "origin":4,
+  "origin":9,
   "parent":{
     "name":"Chainsaw",
     "path":"folders/Sprites/Player/Peppino/Chainsaw.yy",
@@ -88,7 +88,7 @@
     "visibleRange":null,
     "volume":1.0,
     "xorigin":50,
-    "yorigin":100,
+    "yorigin":80,
   },
   "swatchColours":null,
   "swfPrecision":0.5,

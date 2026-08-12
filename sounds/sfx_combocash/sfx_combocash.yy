@@ -2,8 +2,8 @@
   "$GMSound":"v2",
   "%Name":"sfx_combocash",
   "audioGroupId":{
-    "name":"audiogroup_default",
-    "path":"audiogroups/audiogroup_default",
+    "name":"audiogroup_sfx",
+    "path":"audiogroups/audiogroup_sfx",
   },
   "bitDepth":1,
   "channelFormat":1,
@@ -14,8 +14,8 @@
   "exportDir":"",
   "name":"sfx_combocash",
   "parent":{
-    "name":"Player",
-    "path":"folders/Sound/SFX/Player.yy",
+    "name":"UI",
+    "path":"folders/Sound/SFX/UI.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

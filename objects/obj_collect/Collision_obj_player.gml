@@ -1,12 +1,16 @@
+if image_alpha != 1
+    exit
+
 
 audio_stop_sound(collectSound)
 
 var soundPitch = 1
 
 if collectSoundUseRandomPitch
-    soundPitch = random_pitch()
+    soundPitch = random_range(1 - collectSoundPitchRange, 1 + collectSoundPitchRange)
 
-audio_play_sound(collectSound, 0, false, 0.5, 0, soundPitch)
+super_sound_oneshot(x, y, collectSound, soundPitch)
+audio_sound_gain(collectSound, 0.5)
 
 global.collect += collectAmount
 

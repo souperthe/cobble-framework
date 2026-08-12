@@ -22,6 +22,8 @@ jumpAllow = (grounded && velocityY > 0) || (coyoteTime && velocityY > 0)
 scr_collide()
 scr_player_destructibles()
 scr_player_spikecheck()
+scr_player_technicaldifficulty()
+scr_player_ratblock()
 
 if chargeActive
     chargeFrame += 0.5
@@ -32,6 +34,12 @@ if speedlinesActive
     speedlinesFrame += 0.5
 else
     speedlinesFrame = 0
+
+if invincibleTimer > 0
+{
+    invincibleTimer--
+    invincibleFlash = !invincibleFlash
+}
 
 if array_contains(machAfterImageStates, stateCurrentEnum)
 {

@@ -17,6 +17,7 @@ function scr_player_state_chainsawnormal_step()
 {
     var move = check_input("right", true) - check_input("left", true)
     chainsawMove = approach(chainsawMove, move, 0.07)
+    moveSpeed = 0
     
     if move != 0
     {

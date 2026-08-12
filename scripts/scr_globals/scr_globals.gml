@@ -16,6 +16,8 @@ function scr_globals()
     global.levelEntering = false
     global.hitstunShake = 4
     global.soundBlockBreak = -4
+    global.roomStartX = 0
+    global.roomStartY = 0
     
     scr_level_data_init()
     return;

@@ -4,14 +4,13 @@ if fake
     exit
 }
 
-for (var indexX = 0; indexX < startScaleX; indexX++)
+var drawPointsLength = array_length(drawPoints)
+
+for (var index = 0; index < drawPointsLength; index++)
 {
+    var drawData = drawPoints[index]
     
-    for (var indexY = 0; indexY < startScaleY; indexY++)
-    {
-        spriteDraw(indexX, indexY)
-        continue
-    }
+    draw_sprite(sprite_index, image_index, drawData.drawX, drawData.drawY)
     
     continue
 }

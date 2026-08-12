@@ -30,7 +30,7 @@ function scr_player_state_door_exit()
 /// @self obj_player
 function scr_player_state_door_step()
 {
-    
+    global.comboTimePause = 1
     if sprite_index == spriteGet("lookdoor")
     {
         x = approach(x, doorX, 5)

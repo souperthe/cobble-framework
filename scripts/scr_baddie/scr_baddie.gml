@@ -48,6 +48,10 @@ function scr_baddie_create()
     staggeredTimer = 0
     
     invincibleTimer = 0
+    
+    thrownX = 0
+    thrownY = 0
+    thrownAfterImageTimer = 0
     return
 }
 
@@ -55,8 +59,8 @@ function scr_baddie_create()
 function scr_baddie_create_bounding_box()
 {
     boundingBox = instance_create_depth(x, y, depth, obj_baddie_box)
-    boundingBox.sprite_index = sprite_index
-    boundingBox.mask_index = sprite_index
+    boundingBox.sprite_index = spriteIdle
+    boundingBox.mask_index = spriteIdle
     boundingBox.image_speed = 0
     boundingBox.baddieInstance = id
     boundingBox.depth = id.depth - 1
@@ -184,9 +188,10 @@ function scr_baddie_throw(player, baddie)
     var throwSpeed = 40
     
     if player.sprite_index == player.spriteGet("uppercutfinishingblow")
-        baddie.velocityY = -throwSpeed
+        baddie.thrownY = -throwSpeed
     else
-        baddie.velocityX = player.scaleX * throwSpeed
+        baddie.thrownX = player.scaleX * throwSpeed
+    
     
     baddie.killedFromX = player.x
     baddie.killedFromY = player.y
