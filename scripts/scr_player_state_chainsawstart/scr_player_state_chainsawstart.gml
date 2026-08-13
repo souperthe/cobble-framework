@@ -5,8 +5,10 @@ function scr_player_state_chainsawstart_enter(enterMessage)
     sprite_index = spriteGet("chainsaw_start")
     image_index = 0
     image_speed = 0.1
+    
     transformationDebris = spr_pickup_chainsaw
     transformationCurrent = "chainsaw"
+    
     super_sound_oneshot_emitter(emitter, sfx_transform_enter, random_pitch())
     scr_effect_create("genericpoof", x, y)
     return;

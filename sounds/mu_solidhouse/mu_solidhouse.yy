@@ -1,18 +1,18 @@
 {
   "$GMSound":"v2",
-  "%Name":"mu_examplelevel",
+  "%Name":"mu_solidhouse",
   "audioGroupId":{
-    "name":"audiogroup_music",
-    "path":"audiogroups/audiogroup_music",
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
   },
   "bitDepth":1,
   "channelFormat":1,
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":45.0,
+  "duration":85.76,
   "exportDir":"",
-  "name":"mu_examplelevel",
+  "name":"mu_solidhouse",
   "parent":{
     "name":"Music",
     "path":"folders/Sound/Music.yy",
@@ -21,6 +21,6 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"mu_examplelevel.mp3",
+  "soundFile":"mu_solidhouse.mp3",
   "volume":1.0,
 }
