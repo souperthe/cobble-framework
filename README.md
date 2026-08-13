@@ -1,2 +1,3 @@
 # Pizza Tower - Cobble Framework
-Pizza Tower base for fangames and stuff :)
+
+## IF YOU CANNOT PROGRAM IN GML, AND OR USE GMS2, I CANNOT RECCOMEND THIS TO YOU!
