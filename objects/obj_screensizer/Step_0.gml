@@ -7,8 +7,15 @@ if !(windowHeight > 0 && windowWidth > 0)
 
 
 var scale = ((windowWidth / baseWidth) + (windowHeight / baseHeight)) / 2
+
+scale = round(scale * 5) / 5
+
+
 var viewWidth = windowWidth / scale
 var viewHeight =  windowHeight / scale
+
+viewWidth = round(viewWidth)
+viewHeight = round(viewHeight)
 
 currentWidth = windowWidth
 currentHeight = windowHeight
