@@ -36,7 +36,7 @@ function scr_player_state_machroll_enter(enterMessage)
     velocityY = 10
     
     if !(grounded && velocityY > 0) 
-        sprite_index = spriteGet("mach2jump")
+        sprite_index = spriteGet("dive")
     else
         sprite_index = spriteGet("machroll")
     
@@ -95,6 +95,19 @@ function scr_player_state_machroll_step()
         image_speed = spriteSpeed
     }
     
+    
+    /// BACKSLIDE STUFF - IF FOR WHATEVER REASON YOU WANT IT
+    //if (is_sprite_finished() && sprite_index == spriteGet("machroll") && moveSpeed > 12)
+    //{
+        //sprite_index = spriteGet("backslideland")
+        //image_index = 0
+        //image_speed = 0.35
+    //}
+    //
+    //if sprite_index == spriteGet("backslideland") && is_sprite_finished()
+    //{
+        //sprite_index = spriteGet("backslide")
+    //}
     
     
     if scr_slope()

@@ -11,6 +11,7 @@ function scr_player_state_jump_enter(enterMessage)
         sprite_ = 0;
         velocityY = -11
         super_sound_oneshot_emitter(emitter, sfx_jump)
+        scr_effect_create("jump", x, y, scaleX)
         return
     }
     else if enterMessage == "fromsprite"
@@ -107,13 +108,7 @@ function scr_player_state_jump_step()
     
     if grounded
     {
-        super_sound_oneshot_emitter(emitter, sfx_step, random_pitch())
-        if move != 0
-            sprite_index = spriteGet("land2")
-        else
-            sprite_index = spriteGet("land")
-        
-        stateSwitch(PlayerStates.NORMAL, "fromsprite")
+        stateSwitch(PlayerStates.NORMAL, "land")
         return
     }
     return;

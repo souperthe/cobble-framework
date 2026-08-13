@@ -8,6 +8,20 @@ function scr_player_state_normal_enter(enterMessage)
         image_index = 0
         return
     }
+    else if enterMessage == "land"
+    { 
+        var move = check_input("right", true) - check_input("left", true)
+        super_sound_oneshot_emitter(emitter, sfx_step, random_pitch())
+        
+        if move != 0
+            sprite_index = spriteGet("land2")
+        else
+            sprite_index = spriteGet("land")
+        
+        image_index = 0
+        scr_effect_create("land", x, y, scaleX)
+        return
+    }
     
     sprite_index = spriteGet("idle")
     image_index = 0
@@ -62,6 +76,7 @@ function scr_player_state_normal_step()
             else {
                 stepTime = 12;
                 super_sound_oneshot_emitter(emitter, sfx_step, random_pitch())
+                scr_effect_create("stepcloud", x, y + 43)
             }
             
             if (moveSpeed < (floor(walkSpeedMax) / 2) && move != 0)

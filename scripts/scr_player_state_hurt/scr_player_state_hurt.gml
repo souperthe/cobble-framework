@@ -31,15 +31,7 @@ function scr_player_state_hurt_step()
     
     if grounded && velocityY > 0
     {
-        var move = check_input("right", true) - check_input("left", true)   
-        super_sound_oneshot_emitter(emitter, sfx_step, random_pitch()) 
-          
-        if move != 0
-            sprite_index = spriteGet("land2")
-        else
-            sprite_index = spriteGet("land")
-        
-        stateSwitch(PlayerStates.NORMAL, "fromsprite")
+        stateSwitch(PlayerStates.NORMAL, "land")
         return
     }
     return;

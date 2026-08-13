@@ -33,6 +33,9 @@ function scr_effects_get()
     effectsLibrary[$ "taunt"] = new Effect(spr_effect_taunt, 0.5, false, true)
     effectsLibrary[$ "spikehurt"] = new Effect(spr_effect_spikehurt, 0.5)
     effectsLibrary[$ "genericpoof"] = new Effect(spr_effect_genericpoof, 1)
+    effectsLibrary[$ "jump"] = new Effect(spr_effect_jump, 0.4)
+    effectsLibrary[$ "land"] = new Effect(spr_effect_land, 0.4)
+    effectsLibrary[$ "stepcloud"] = new Effect(spr_effect_cloud, 0.7)
     
     return effectsLibrary
 }
@@ -51,7 +54,7 @@ function scr_effect_create(effectName, targetX, targetY, targetScaleX = 1, targe
     var effectManager = obj_effects_manager
     
     if !struct_exists(effectManager.effectsLibrary, effectName)
-        return undefined
+        return scr_effect_create("bangeffect", targetScaleX, targetScaleY, targetScaleX, targetScaleY)
     
     var effectTarget = struct_get(effectManager.effectsLibrary, effectName)
     var effectCloned = variable_clone(effectTarget)

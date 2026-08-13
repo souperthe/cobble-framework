@@ -30,7 +30,9 @@ function scr_player_hurt(hazard)
     
     scr_effect_create("bangeffect", x, y)
     scr_effect_create("spikehurt", x, y)
+    
     scr_debris_explosion(5, x, y, spr_debris_slapstar, 10, 10)
+    
     super_sound_oneshot_emitter(emitter, sfx_pephurt, random_pitch())
     stateSwitch(PlayerStates.HURT, hurtMessage)
     invincibleTimer = 300

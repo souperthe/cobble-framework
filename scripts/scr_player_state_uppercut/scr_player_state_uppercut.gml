@@ -51,14 +51,7 @@ function scr_player_state_uppercut_step()
             scaleX = sign(velocityX)
         
         moveSpeed = abs(velocityX)
-        super_sound_oneshot_emitter(emitter, sfx_step, random_pitch())
-        
-        if move != 0
-            sprite_index = spriteGet("land2")
-        else
-            sprite_index = spriteGet("land")
-        
-        stateSwitch(PlayerStates.NORMAL, "fromsprite")
+        stateSwitch(PlayerStates.NORMAL, "land")
         return
     }
     
