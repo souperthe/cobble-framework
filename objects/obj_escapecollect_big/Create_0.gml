@@ -8,3 +8,5 @@ collectSoundPitchRange = .15
 collectExpression = spr_tv_exprcollect
 image_alpha = 0.35
 
+global.signalPanic.connect(scr_escapecollect_check, true)
+

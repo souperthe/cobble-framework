@@ -14,4 +14,10 @@ audio_listener_orientation(0, 0, 1, 0, -1, 0);
     
 offsetX = approach(offsetX, 0, offsetSpeed);
 offsety = approach(offsetY, 0, offsetSpeed);
-shakeAmount = approach(shakeAmount, 0, shakeAlpha)
+
+var shakeAmountTarget = 0
+
+if global.panic
+    shakeAmountTarget = 1
+
+shakeAmount = approach(shakeAmount, shakeAmountTarget, shakeAlpha)

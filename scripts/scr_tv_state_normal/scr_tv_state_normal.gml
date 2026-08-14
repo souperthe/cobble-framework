@@ -21,6 +21,9 @@ function scr_tv_state_normal(targetPlayer)
     if global.comboTime > 0
         targetIdleAnimation = spr_tv_exprcombo
     
+    if global.panic
+        targetIdleAnimation = spr_tv_exprpanic
+    
     tvExpressionSpriteSpeed = 0.4
     
     if tvExpressionSprite == spr_tv_idle

@@ -33,7 +33,6 @@ function scr_player_state_machroll_enter(enterMessage)
     
     soundRoll = super_sound_loop_emitter(emitter, sfx_roll)
     audio_sound_gain(soundRoll, 0.5)
-    velocityY = 10
     
     if !(grounded && velocityY > 0) 
         sprite_index = spriteGet("dive")

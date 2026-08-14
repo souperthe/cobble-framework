@@ -6,6 +6,8 @@ stateCurrent = undefined
 
 scr_player_get_state_library()
 
+signalStateChanged = new Signal()
+
 
 moveSpeed = 0;
 scaleX = 1;
@@ -93,6 +95,8 @@ stateSwitch = function(targetState, enterMessage = "")
     script_execute(stateNew.stateEnter, enterMessage)
     stateCurrent = stateNew
     stateCurrentEnum = targetState
+    
+    signalStateChanged.fire(stateCurrent)
     
     return
 }

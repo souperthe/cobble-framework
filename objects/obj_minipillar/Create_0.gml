@@ -6,6 +6,22 @@ spriteHeight = sprite_get_height(sprite_index)
 startScaleX = 0
 startScaleY = 0
 
+disableCheck = function()
+{
+    
+    var reverseTemp = reverse
+    
+    if global.panic
+        reverseTemp = !reverseTemp
+    
+    if reverseTemp
+        disable()
+    else
+        enable()
+    
+    return
+}
+
 
 /// @param {Real} indexX
 /// @param {Real} indexY
@@ -38,3 +54,5 @@ disable = function()
     sprite_index = spr_minipillar_sleep
     return
 }
+
+global.signalPanic.connect(disableCheck, true)

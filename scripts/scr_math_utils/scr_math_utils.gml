@@ -24,6 +24,15 @@ function approach(current, target, step)
     return current
 }
 
+/// @param {Real} minutes
+/// @param {Real} seconds
+/// @return {Real}
+function time_in_frames(minutes, seconds)
+{
+    return (((minutes * 60) + seconds) * 60)
+}
+
+
 /// @param {Real} minimum 
 /// @param {Real} maximum
 /// @param {Real} period

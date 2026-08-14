@@ -25,6 +25,7 @@ comboAdd = function(comboTime)
     global.combo += 1
     global.comboTime = comboTime
     comboShake = 2.5
+    comboLostVisual = global.comboDropped
     return
 }
 

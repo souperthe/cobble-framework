@@ -7,9 +7,11 @@ function scr_globals()
     scr_global_collect()
     scr_global_hub()
     scr_global_colors()
+    scr_global_signals()
+    
     pal_swap_init()
+    
     global.instanceList = ds_list_create();
-    global.panic = 0;
     global.levelName = "";
     global.levelCurrent = undefined
     global.levelSaveRoom = {};
@@ -18,6 +20,10 @@ function scr_globals()
     global.soundBlockBreak = -4
     global.roomStartX = 0
     global.roomStartY = 0
+    
+    global.panic = false;
+    global.panicTime = 0
+    global.panicTimeMax = 0
     
     scr_level_data_init()
     return;
@@ -28,6 +34,14 @@ function scr_global_hub()
     global.hubRoom = undefined
     global.hubX = 0
     global.hubY = 0
+    return
+}
+
+function scr_global_signals()
+{
+    
+    global.signalPanic = new Signal()
+    
     return
 }
 

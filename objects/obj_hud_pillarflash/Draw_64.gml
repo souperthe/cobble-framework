@@ -1,0 +1,5 @@
+draw_set_alpha(fade)
+draw_set_colour(c_white)
+draw_rectangle(0, 0, obj_screensizer.hudWidth, obj_screensizer.hudHeight, false)
+draw_set_alpha(1)
+draw_set_colour(c_white)

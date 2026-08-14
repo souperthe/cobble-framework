@@ -9,6 +9,8 @@ var soundPitch = 1
 if collectSoundUseRandomPitch
     soundPitch = random_range(1 - collectSoundPitchRange, 1 + collectSoundPitchRange)
 
+soundPitch += collectSoundAddition
+
 super_sound_oneshot(x, y, collectSound, soundPitch)
 audio_sound_gain(collectSound, 0.5)
 

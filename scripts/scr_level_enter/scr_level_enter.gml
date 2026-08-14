@@ -8,3 +8,19 @@ function scr_level_enter(levelData)
     global.levelEntering = false
     return
 }
+
+function scr_level_panic()
+{
+    var levelCurrent = global.levelCurrent
+
+    global.panic = true
+    global.panicTime = time_in_frames(levelCurrent.escapeMinutes, levelCurrent.escapeSeconds)
+    global.panicTimeMax = global.panicTime
+    
+    global.signalPanic.fire()
+    
+    instance_create_depth(0, 0, -5, obj_hud_pizzatime)
+    
+    obj_music.musicPanicStart()
+    return
+}

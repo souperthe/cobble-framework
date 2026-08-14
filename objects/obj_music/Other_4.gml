@@ -4,6 +4,9 @@ var roomMusic = struct_get(musicLibrary, roomName)
 if roomMusic == undefined
     exit
 
+if global.panic
+    exit
+
 if !roomMusic.fade || !audio_is_playing(musicInstanceCurrent)
 {
     audio_stop_sound(musicInstanceCurrent)

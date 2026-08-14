@@ -14,3 +14,12 @@ musicLibraryAddEntry = function(targetRoom, targetSong, songFade)
 
 musicLibraryAddEntry(rm_example_1, mu_solidhouse, true)
 musicLibraryAddEntry(rm_test, mu_hub, true)
+
+
+musicPanicStart = function()
+{
+    audio_stop_sound(musicInstanceCurrent)
+    
+    musicInstanceCurrent = audio_play_sound(mu_pizzatime, 0, true)
+    return
+}
