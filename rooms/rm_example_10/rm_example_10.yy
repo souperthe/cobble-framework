@@ -89,6 +89,7 @@
     {"name":"inst_7DA1566D","path":"rooms/rm_example_10/rm_example_10.yy",},
     {"name":"inst_5B8EFD66","path":"rooms/rm_example_10/rm_example_10.yy",},
     {"name":"inst_56483F9E","path":"rooms/rm_example_10/rm_example_10.yy",},
+    {"name":"inst_67763568","path":"rooms/rm_example_10/rm_example_10.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -180,6 +181,9 @@
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_warp_hallway","path":"objects/obj_warp_hallway/obj_warp_hallway.yy",},"propertyId":{"name":"targetRoom","path":"objects/obj_warp_hallway/obj_warp_hallway.yy",},"resource":{"name":"rm_example_11","path":"rooms/rm_example_11/rm_example_11.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"rm_example_11",},
           ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":2.0,"scaleY":2.0,"x":2976.0,"y":64.0,},
         {"$GMRInstance":"v4","%Name":"inst_56483F9E","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_56483F9E","objectId":{"name":"obj_door_b","path":"objects/obj_door_b/obj_door_b.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":2976.0,"y":160.0,},
+        {"$GMRInstance":"v4","%Name":"inst_67763568","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_67763568","objectId":{"name":"obj_object_cage","path":"objects/obj_object_cage/obj_object_cage.yy",},"properties":[
+            {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_object_cage","path":"objects/obj_object_cage/obj_object_cage.yy",},"propertyId":{"name":"object","path":"objects/obj_object_cage/obj_object_cage.yy",},"resource":{"name":"obj_toppin_tomato","path":"objects/obj_toppin_tomato/obj_toppin_tomato.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"obj_toppin_tomato",},
+          ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":2240.0,"y":256.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRBackgroundLayer":"","%Name":"Background","animationFPS":15.0,"animationSpeedType":0,"colour":4278190080,"depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"hspeed":0.0,"htiled":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Background","properties":[],"resourceType":"GMRBackgroundLayer","resourceVersion":"2.0","spriteId":null,"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":false,"visible":true,"vspeed":0.0,"vtiled":false,"x":0,"y":0,},
   ],

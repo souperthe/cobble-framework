@@ -22,3 +22,7 @@ obj_hud_combo.comboAdd(60)
 obj_camera.shake(6, 0.3)
 
 scr_save_room_register(id)
+
+audio_stop_sound(sniffSound)
+
+delete emitter

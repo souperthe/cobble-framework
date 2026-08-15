@@ -21,6 +21,8 @@ function scr_reset()
     with obj_player
     {
         moveSpeed = 0
+        instance_destroy_list(followers)
+        followers = []
     }
     
     obj_hud_rank.rankPrevious = 0
@@ -34,6 +36,7 @@ function scr_reset()
     global.comboScore = 0
     global.comboTimePause = 0
     global.levelSaveRoom = {}
+    global.toppinFollowers = []
 
     return
 }

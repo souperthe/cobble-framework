@@ -21,6 +21,8 @@ function scr_globals()
     global.roomStartX = 0
     global.roomStartY = 0
     
+    global.toppinFollowers = []
+    
     global.panic = false;
     global.panicTime = 0
     global.panicTimeMax = 0

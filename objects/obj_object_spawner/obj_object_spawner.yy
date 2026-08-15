@@ -10,8 +10,8 @@
   "name":"obj_object_spawner",
   "overriddenProperties":[],
   "parent":{
-    "name":"Baddie",
-    "path":"folders/Objects/Baddie.yy",
+    "name":"Spawners",
+    "path":"folders/Objects/LevelStructure/Spawners.yy",
   },
   "parentObjectId":{
     "name":"obj_rigid_body",

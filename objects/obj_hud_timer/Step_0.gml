@@ -15,4 +15,6 @@ barFillX -= 0.2
 if barFillX < -173
     barFillX = 0
 
-global.panicTime--
+
+if global.panicTime > 0
+    global.panicTime--

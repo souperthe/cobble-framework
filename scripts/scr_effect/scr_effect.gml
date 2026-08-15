@@ -11,6 +11,7 @@ function Effect(targetSprite, targetSpeed, loop = false, targetPersistent = fals
     scaleY = 1
     loops = loop
     persistent = targetPersistent
+    depth = 0
     return
 }
 
@@ -63,6 +64,7 @@ function scr_effect_create(effectName, targetX, targetY, targetScaleX = 1, targe
     effectCloned.y = targetY
     effectCloned.scaleX = targetScaleX
     effectCloned.scaleY = targetScaleY
+    effectCloned.depth = depth + 1
     
     array_push(effectManager.effectsActive, effectCloned)
     

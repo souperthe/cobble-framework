@@ -11,6 +11,19 @@ function scr_player_state_taunt_enter(enterMessage)
     audio_sound_gain(soundTaunt, 0.5)
     effectTaunt = scr_effect_create("taunt", x, y)
     scr_afterimage_mach()
+    
+    var followerLength = array_length(followers)
+    
+    for (var index = 0; index < followerLength; index++)
+    {
+        var follower = followers[index]
+        follower.locked = true
+        follower.sprite_index = follower.spriteTaunt
+        follower.image_index = irandom(sprite_get_number(follower.spriteTaunt) - 1)
+        follower.image_speed = 0
+        
+        continue
+    }
     return;
 }
 
@@ -44,5 +57,17 @@ function scr_player_state_taunt_step()
     stateCurrent = stateLibrary[tauntState]
     audio_stop_sound(soundTaunt)
     obj_effects_manager.effectDelete(effectTaunt)
+    
+    var followerLength = array_length(followers)
+    
+    for (var index = 0; index < followerLength; index++)
+    {
+        var follower = followers[index]
+        follower.locked = false
+        follower.image_speed = follower.imageSpeedTarget
+        
+        continue
+    }
+    
     return;
 }

@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Collect",
-    "path":"folders/Objects/Collect.yy",
+    "path":"folders/Objects/LevelStructure/Collect.yy",
   },
   "parentObjectId":{
     "name":"obj_collect",

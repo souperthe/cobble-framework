@@ -10,9 +10,5 @@ climbEnter = function(player)
     
     player.stateSwitch(PlayerStates.CLIMB)
     player.x = x + 16;
-    player.y = floor(player.y);
-    
-    if (player.y % 2) == 1
-        player.y -= 1
     return true
 }

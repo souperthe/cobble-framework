@@ -22,7 +22,7 @@ function scr_level_data_init()
 {
     var levelData = {}
     
-    levelData[$ "example_level"] = new LevelEntry(1, 0, 2, 35, rm_example_1, 3615)
+    levelData[$ "example_level"] = new LevelEntry(1, 0, 2, 35, rm_example_1, 10945)
     
     global.levelData = levelData
     return

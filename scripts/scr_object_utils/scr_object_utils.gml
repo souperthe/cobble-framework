@@ -29,3 +29,19 @@ function get_gui_position_y(object)
     
     return (object.y - cameraPositionY) * (displaySizeY / cameraSizeY)
 }
+
+
+/// @param {Array} objects
+function instance_destroy_list(objects)
+{
+    var objectsLength = array_length(objects)
+    
+    for (var index = 0; index < objectsLength; index++)
+    {
+        var object = objects[index]
+        
+        instance_destroy(object)
+        continue
+    }
+    return
+}

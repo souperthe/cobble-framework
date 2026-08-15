@@ -78,6 +78,8 @@ transformationCurrent = ""
 invincibleTimer = 0
 invincibleFlash = false
 
+followers = []
+
 /// @param {enum.PlayerStates} targetState
 /// @param {string} enterMessage
 stateSwitch = function(targetState, enterMessage = "")

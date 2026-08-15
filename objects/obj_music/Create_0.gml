@@ -13,7 +13,7 @@ musicLibraryAddEntry = function(targetRoom, targetSong, songFade)
 }
 
 musicLibraryAddEntry(rm_example_1, mu_solidhouse, true)
-musicLibraryAddEntry(rm_test, mu_hub, true)
+//musicLibraryAddEntry(rm_test, mu_hub, true)
 
 
 musicPanicStart = function()

@@ -39,7 +39,13 @@ effectStep = function(effect)
 /// @param {Struct.Effect} effect
 effectDraw = function(effect)
 {
+    var depthOld = depth
+    
+    gpu_set_depth(effect.depth)
+    
     draw_sprite_ext(effect.spriteIndex, effect.spriteFrame, effect.x, effect.y, effect.scaleX, effect.scaleY, 0, c_white, 1)
+    
+    gpu_set_depth(depthOld)
     return
 }
 

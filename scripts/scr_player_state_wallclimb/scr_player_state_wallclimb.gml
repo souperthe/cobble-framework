@@ -2,6 +2,8 @@
 /// @param {String} enterMessage
 function scr_player_state_wallclimb_enter(enterMessage)
 {
+    
+    
     wallSpeed = moveSpeed
     
     if moveSpeed < 1
