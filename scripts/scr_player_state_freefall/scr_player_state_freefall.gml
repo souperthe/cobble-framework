@@ -5,12 +5,14 @@ function scr_player_state_freefall_enter(enterMessage)
     soundGroundPound = super_sound_loop_emitter(emitter, sfx_groundpoundloop)
     audio_sound_gain(soundGroundPound, 0)
     
+    freeFallVelocity = 0
+    
     if enterMessage == "bodyslam"
     {
         sprite_index = spriteGet("bodyslamstart")
         image_index = 0
         image_speed = 0.4
-        velocityY = -4
+        freeFallVelocity = -4
         freeFallProgress = 0
         super_sound_oneshot_emitter(emitter, sfx_groundpoundstart)
         return
@@ -18,9 +20,16 @@ function scr_player_state_freefall_enter(enterMessage)
     else if enterMessage == "divebomb"
     {
         super_sound_oneshot_emitter(emitter, sfx_groundpoundstart)
-        velocityY = -4
+        freeFallVelocity = -5.5
         sprite_index = spriteGet("poundcancel1")
         image_speed = 0.4
+        return
+    }
+    else if enterMessage == "fromsecret"
+    {
+        sprite_index = spriteGet("bodyslamstart")
+        image_index = 0
+        freeFallVelocity = -5
         return
     }
     
@@ -45,37 +54,31 @@ function scr_player_state_freefall_step()
         image_speed = 0.35
     }
     
-    if velocityY >= 2
-        velocityY += 0.5
+    if freeFallVelocity >= 2
+        freeFallVelocity += 0.5
+    
+    velocityY = freeFallVelocity
+    freeFallVelocity += grav * 1.5
     
     var move = check_input("right", true) - check_input("left", true)
     
     if !grounded
     {
-        velocityX = move * moveSpeed
+        var targetSpeed = move * moveSpeed
+        var targetStep = 0.5
         
-        if (move != scaleX && momemtum == true && moveSpeed != 0)
-            moveSpeed -= 0.5
+        if move == -scaleX
+            targetStep = 0.8
         
-        if moveSpeed == 0
-            momemtum = false
+        if move == 0
+            targetStep = 0.7
         
-        if (move != dir && move != 0)
-        {
-            dir = move
-            moveSpeed = 0
-        }
-        
-        if (move != 0 && moveSpeed < 7)
-            moveSpeed += 0.25
-        
-        if (moveSpeed > 7)
-            moveSpeed -= 0.05
+        velocityX = approach(velocityX, targetSpeed, targetStep)
     }
     
-    if velocityY > 0
+    if freeFallVelocity > 0
         freeFallProgress++
-    else if velocityY < 0
+    else if freeFallVelocity < 0
         freeFallProgress = -14
     
     if freeFallProgress > 10

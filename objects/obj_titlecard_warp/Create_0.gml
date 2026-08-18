@@ -5,4 +5,4 @@ start = false
 music = false
 
 songs = {}
-songs[$ "example_level"] = mus_titlecard_example
+songs[$ "example_level"] = mu_titlecard_example

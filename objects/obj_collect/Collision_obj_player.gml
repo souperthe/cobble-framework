@@ -28,4 +28,5 @@ if collectExpression != undefined
 
 
 scr_save_room_register(id)
+global.signalCollected.fire(id)
 instance_destroy()

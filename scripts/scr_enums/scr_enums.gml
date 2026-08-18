@@ -55,6 +55,16 @@ function scr_enums()
         THROWN
     }
     
+    enum BackgroundType {
+        BACKGROUND,
+        FOREGROUND,
+        BACKROUNDZIGZAG,
+        BACKROUNDSTILL,
+        BACKGROUNDSCROLL,
+        UNDEFINED,
+        _length
+    }
+    
     enum AfterImageType {
         MACH,
         BLUR,

@@ -11,7 +11,7 @@ sprite_index = choose(
 
 collectSound = sfx_collect
 collectSoundUseRandomPitch = true
-collectSoundPitchRange = .10
+collectSoundPitchRange = 0.1
 collectSoundAddition = 0
 collectAmount = 10
 collectExpression = undefined

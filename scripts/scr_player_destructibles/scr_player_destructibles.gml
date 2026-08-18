@@ -13,6 +13,15 @@ function scr_player_destructibles()
         PlayerStates.CHAINSAWNORMAL,
         PlayerStates.CHAINSAWATTACK
     ]
+    var destructibleStatesUp = [
+        PlayerStates.JUMP,
+        PlayerStates.UPPERCUT,
+        PlayerStates.SJUMP,
+        PlayerStates.WALLCLIMB
+    ]
+    var destructibleStatesDown = [
+        PlayerStates.FREEFALL,
+    ]
     
     if array_contains(metalBlockStates, stateCurrentEnum)
     {
@@ -30,6 +39,25 @@ function scr_player_destructibles()
         if touchingDestructible
             instance_destroy(touchingDestructible)
     }
-
+    
+    if array_contains(destructibleStatesUp, stateCurrentEnum)
+    {
+        
+        var touchingDestructible = instance_place(x, y - 1, obj_destructible)
+        
+        if touchingDestructible
+            instance_destroy(touchingDestructible)
+        
+    }
+    
+    if array_contains(destructibleStatesDown, stateCurrentEnum)
+    {
+        
+        var touchingDestructible = instance_place(x, y + 1, obj_destructible)
+        
+        if touchingDestructible
+            instance_destroy(touchingDestructible)
+        
+    }
     return
 }

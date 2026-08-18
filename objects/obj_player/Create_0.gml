@@ -69,7 +69,8 @@ blurAfterImageStates = [
     PlayerStates.MACHROLL, 
     PlayerStates.CHAINSAWDASH,
     PlayerStates.CHAINSAWATTACK,
-    PlayerStates.CHAINSAWPOGO
+    PlayerStates.CHAINSAWPOGO,
+    PlayerStates.FREEFALL
 ]
 
 transformationDebris = undefined
@@ -77,6 +78,9 @@ transformationCurrent = ""
 
 invincibleTimer = 0
 invincibleFlash = false
+
+
+scaleVisual = 1
 
 followers = []
 

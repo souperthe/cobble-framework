@@ -10,6 +10,7 @@ offsetXTarget = 0
 offsetYTarget = 0
 centerX = 0;
 centerY = 0;
+lock = false;
 
 /// @param {Real} amount
 /// @param {Real} alpha
@@ -28,6 +29,9 @@ audio_listener_orientation(0, -1, 0, 0, 0, -1);
 runStates = function()
 {
     var stateFunction = stateLibrary[stateCurrent]
+    
+    if lock
+        return
 
     if !is_undefined(stateFunction)
         stateFunction()

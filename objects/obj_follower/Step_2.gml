@@ -58,13 +58,21 @@ if array_length(followHistory) > lagSteps
 }
 
 var moveSpeed = point_distance(previousX, 0, x, 0)
-var moving = moveSpeed > 5
 var spriteIdleTarget = spriteIdle
+
+moving = moveSpeed > 1
+
+var movingBufferTarget = 0
+
+if moving
+    movingBufferTarget = 1
+
+movingBuffer = approach(movingBuffer, movingBufferTarget, 0.3)
 
 if global.panic
     spriteIdleTarget = spriteIdlePanic
 
-if moving
+if movingBuffer >= 0.5
     sprite_index = spriteMove
 else
     sprite_index = spriteIdleTarget

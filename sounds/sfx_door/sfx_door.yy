@@ -14,8 +14,8 @@
   "exportDir":"",
   "name":"sfx_door",
   "parent":{
-    "name":"SFX",
-    "path":"folders/Sound/SFX.yy",
+    "name":"Misc",
+    "path":"folders/Sound/SFX/Misc.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

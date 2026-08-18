@@ -10,7 +10,6 @@ instaKilled = false
 imageOffsetX = 0
 imageOffsetY = 0
 
-persistent = true
 
 lagSteps = 10
 
@@ -37,6 +36,15 @@ spriteTaunt = spr_player_barrelroll
 spriteIdlePanic = spr_player_barrelfloat
 spriteIntro = spr_player_supertaunt4
 
+tauntEffect = "taunt"
+
+
 introPerformed = false
 
+moving = false
+movingBuffer = 0
+
 image_speed = imageSpeedTarget
+depth = followerObject.depth + 1
+persistent = true
+

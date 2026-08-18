@@ -37,6 +37,13 @@ function scr_reset()
     global.comboTimePause = 0
     global.levelSaveRoom = {}
     global.toppinFollowers = []
+    
+    global.panic = false
+    global.panicLap = 0
+    global.panicTime = 5
+    global.panicTimeMax = 5
+    
+    global.secretsFound = 0
 
     return
 }

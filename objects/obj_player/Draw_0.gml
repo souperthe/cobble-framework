@@ -11,7 +11,7 @@ if invincibleTimer >= 0
 
 shader_set(global.shaderPalette)
 pal_swap_set(paletteSprite, paletteIndex)
-draw_sprite_ext(sprite_index, image_index, x, y, scaleX, scaleY, angle, c_white, spriteAlpha)
+draw_sprite_ext(sprite_index, image_index, x, y, scaleX * scaleVisual, scaleY * scaleVisual, angle, c_white, spriteAlpha)
 shader_reset()
 
 

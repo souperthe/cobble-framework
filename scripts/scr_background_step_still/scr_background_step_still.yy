@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_background_step_still",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_background_step_still",
+  "parent":{
+    "name":"BackgroundSteps",
+    "path":"folders/Scripts/BackgroundSteps.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

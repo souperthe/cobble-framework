@@ -3,8 +3,8 @@ draw_sprite_ext(
     image_index,
     x + imageOffsetX,
     y + imageOffsetY,
-    scaleX,
-    image_yscale,
+    scaleX * playerFollowing.scaleVisual,
+    image_yscale * playerFollowing.scaleVisual,
     image_angle,
     image_blend,
     image_alpha

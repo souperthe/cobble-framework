@@ -14,8 +14,8 @@
   "exportDir":"",
   "name":"sfx_breakblock1",
   "parent":{
-    "name":"SFX",
-    "path":"folders/Sound/SFX.yy",
+    "name":"Misc",
+    "path":"folders/Sound/SFX/Misc.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

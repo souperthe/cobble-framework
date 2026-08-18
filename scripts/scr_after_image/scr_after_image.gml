@@ -35,7 +35,7 @@ function scr_afterimage_mach()
     afterImageNew.blend = choose(global.colorMach1, global.colorMach2)
     afterImageNew.shader = shd_binary_threshold
     afterImageNew.depth = depth + 1
-    afterImageNew.alarm[0] = 17
+    afterImageNew.alarm[0] = 62
     afterImageNew.alarm[1] = 6
     afterImageNew.alarm[2] = -1
     

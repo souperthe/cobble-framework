@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"mu_titlecard_example",
+  "audioGroupId":{
+    "name":"audiogroup_music",
+    "path":"audiogroups/audiogroup_music",
+  },
+  "bitDepth":1,
+  "channelFormat":1,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":3.0638323,
+  "exportDir":"",
+  "name":"mu_titlecard_example",
+  "parent":{
+    "name":"TitleCard",
+    "path":"folders/Sound/Music/TitleCard.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"mu_titlecard_example.wav",
+  "volume":1.0,
+}

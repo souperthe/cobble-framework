@@ -14,13 +14,23 @@ function scr_player_state_taunt_enter(enterMessage)
     
     var followerLength = array_length(followers)
     
+    followerTaunts = []
+    
     for (var index = 0; index < followerLength; index++)
     {
         var follower = followers[index]
+        
+        if !follower.introPerformed
+            continue
+        
+        var followerTaunt = scr_effect_create(follower.tauntEffect, follower.x, follower.y)
+        
         follower.locked = true
         follower.sprite_index = follower.spriteTaunt
         follower.image_index = irandom(sprite_get_number(follower.spriteTaunt) - 1)
         follower.image_speed = 0
+        
+        followerTaunts[index] = followerTaunt
         
         continue
     }
@@ -58,13 +68,17 @@ function scr_player_state_taunt_step()
     audio_stop_sound(soundTaunt)
     obj_effects_manager.effectDelete(effectTaunt)
     
-    var followerLength = array_length(followers)
+    var followerLength = array_length(followerTaunts)
     
     for (var index = 0; index < followerLength; index++)
     {
         var follower = followers[index]
+        var followerTaunt = followerTaunts[index]
+        
         follower.locked = false
         follower.image_speed = follower.imageSpeedTarget
+        
+        obj_effects_manager.effectDelete(followerTaunt)
         
         continue
     }

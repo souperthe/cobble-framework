@@ -42,9 +42,16 @@ function scr_player_state_finishingblow_step()
         {
             velocityY = -5
             thrown = true
-            scr_baddie_throw(self, grabbedBaddie)
-            super_sound_oneshot_emitter(emitter, sfx_killingblow)
-            super_sound_oneshot_emitter(emitter, sfx_punch)
+            
+            if instance_exists(grabbedBaddie)
+            { 
+                
+                if object_is_ancestor(grabbedBaddie.object_index, obj_baddie)
+                    scr_baddie_throw(self, grabbedBaddie)
+                
+                super_sound_oneshot_emitter(emitter, sfx_killingblow)
+                super_sound_oneshot_emitter(emitter, sfx_punch)
+            }
         }
         
         velocityX = approach(velocityX, -scaleX * 4, 0.5)

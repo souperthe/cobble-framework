@@ -20,3 +20,15 @@ y = doorTargetY
 global.roomStartX = doorTargetX
 global.roomStartY = doorTargetY
 
+
+var followerLength = array_length(followers)
+for (var index = 0; index < followerLength; index++)
+{
+    var follower = followers[index]
+    follower.x = x
+    follower.y = y
+    follower.followHistory = []
+    follower.interp = 0
+    continue
+}
+

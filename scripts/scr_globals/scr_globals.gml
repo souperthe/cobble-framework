@@ -26,6 +26,9 @@ function scr_globals()
     global.panic = false;
     global.panicTime = 0
     global.panicTimeMax = 0
+    global.panicLap = 0
+    
+    global.secretsFound = 0
     
     scr_level_data_init()
     return;
@@ -43,6 +46,7 @@ function scr_global_signals()
 {
     
     global.signalPanic = new Signal()
+    global.signalCollected = new Signal()
     
     return
 }
@@ -94,6 +98,8 @@ function scr_globals_warp()
     global.warpVerticalFlip = 1;
     global.warpVerticalHallwayPosition = 0
     global.warpVerticalHallwaySide = 1
+    global.warpSecretId = -1
+    global.warpSecretLastRoom = rm_test
     return;
 }
 
