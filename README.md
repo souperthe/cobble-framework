@@ -1,10 +1,12 @@
 # Pizza Tower - Cobble Framework
 
-### !! IF YOU CANNOT PROGRAM IN GML, AND OR USE GMS2, I CANNOT RECCOMEND THIS TO YOU! !!
+### !! IF YOU CANNOT PROGRAM IN GML, AND OR USE GMS2, I CANNOT RECCOMEND THIS TO YOU !!
 
 If you are looking to create a very basic level, with basic sprite changes and base game objects, please use [Create Your Own Pizza](https://gamebanana.com/mods/443629) by srPerez, your needs are better fulfilled there.
 
 BUT, if you are creating a fangame, advanced custom levels with custom objects and gimmicks, or anything along the lines of those two I CAN recommend Cobble-Framework to you!
+
+What I'm trying to say is this framework will not hold your hand, if you aren't okay with that use something else.
 
 ---
 
