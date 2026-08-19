@@ -1,6 +1,6 @@
 # Pizza Tower - Cobble Framework
 
-### !! IF YOU CANNOT PROGRAM IN GML, AND OR USE GMS2, I CANNOT RECCOMEND THIS TO YOU! !!
+### !! IF YOU CANNOT PROGRAM IN GML, AND OR USE GMS2, I CANNOT RECCOMEND THIS TO YOU !!
 
 If you are looking to create a very basic level, with basic sprite changes and base game objects, please use [Create Your Own Pizza](https://gamebanana.com/mods/443629) by srPerez, your needs are better fulfilled there.
 
