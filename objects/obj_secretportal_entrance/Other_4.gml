@@ -18,6 +18,7 @@ if global.warpDoor == "SECRET" && global.warpSecretId == id
     start = true
     instance_destroy(other)
     instance_create_depth(x, y, depth, obj_secretportal_exit)
+    obj_music.secretEntering = false
     
 }
 

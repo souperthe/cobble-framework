@@ -18,7 +18,7 @@ var timerY = hudY + timerYOffset
 
 var barCurrentPosition = global.panicTimeMax - global.panicTime
 var barPercentage = barCurrentPosition / global.panicTimeMax
-var barMaxX = 200
+var barMaxX = 299
 var barPosition = barMaxX * barPercentage
 var barFillPosition = floor(barPosition) + 13
 
@@ -49,6 +49,9 @@ draw_sprite(pizzaFaceSprite, pizzaFaceIndex, timerX + 320, timerY + 10)
 var panicTime = floor(global.panicTime / 60)
 var panicMinutes = panicTime div 60
 var panicSeconds = panicTime mod 60
+
+global.panicMinutes = panicMinutes
+global.panicSeconds = panicSeconds
 
 var stringPanicSeconds = string_replace_all(string_format(panicSeconds, 2, 0), " ", "0")
 var stringPanicMinutes = string(panicMinutes)

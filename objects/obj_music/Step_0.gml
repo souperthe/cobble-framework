@@ -1,0 +1,34 @@
+if !audio_exists(musicInstanceCurrent)
+    exit
+
+var pitchStep = 0.01
+var pitchTarget = 1
+
+if secretEntering
+    pitchTarget = 0.1
+
+musicInstancePitch = approach(musicInstancePitch, pitchTarget, pitchStep)
+
+audio_sound_pitch(musicInstanceCurrent, musicInstancePitch)
+
+
+var musicIndex = audio_sound_get_asset(musicInstanceCurrent)
+
+if !struct_exists(musicMagnetLibrary, string(musicIndex))
+    exit
+
+var musicMagnets = musicMagnetLibrary[$ musicIndex]
+var musicMagnetCurrent = musicMagnets[musicMagnetState]
+
+var musicPosition = audio_sound_get_track_position(musicInstanceCurrent)
+
+
+if musicPosition < musicMagnetCurrent.positionEnd && musicPosition > musicMagnetCurrent.positionStart
+    exit
+
+var musicInstanceOld = musicInstanceCurrent
+musicInstanceCurrent = audio_play_sound(musicIndex, 0, false, 0)
+
+audio_sound_gain(musicInstanceOld, 0, musicMagnetCurrent.transitionTime)
+audio_sound_gain(musicInstanceCurrent, 1, musicMagnetCurrent.transitionTime)
+audio_sound_set_track_position(musicInstanceCurrent, musicMagnetCurrent.positionStart)

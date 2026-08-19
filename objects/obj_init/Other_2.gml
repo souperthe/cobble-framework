@@ -28,8 +28,10 @@ onAudioGroupsLoaded = function()
         obj_effects_manager,
         obj_debris_manager,
         obj_afterimage_manager,
-        obj_parrallax
+        obj_parrallax,
+        obj_pause
     ]
+    
     var instancesLength = array_length(instances)
     scr_globals();
 

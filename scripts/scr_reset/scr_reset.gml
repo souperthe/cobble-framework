@@ -42,6 +42,8 @@ function scr_reset()
     global.panicLap = 0
     global.panicTime = 5
     global.panicTimeMax = 5
+    global.panicMinutes = 0
+    global.panicSeconds = 0
     
     global.secretsFound = 0
 

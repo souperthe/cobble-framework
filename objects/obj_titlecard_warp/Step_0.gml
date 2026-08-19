@@ -24,3 +24,14 @@ else {
     }
     
 }
+
+if fadeOut
+{
+    fadeOutAlpha = approach(fadeOutAlpha, 1, 0.03)
+    
+    if !ending && fadeOutAlpha == 1
+    {
+        alarm[1] = 10
+        ending = true
+    }
+}

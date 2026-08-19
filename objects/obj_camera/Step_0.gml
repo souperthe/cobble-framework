@@ -17,7 +17,7 @@ offsety = approach(offsetY, 0, offsetSpeed);
 
 var shakeAmountTarget = 0
 
-if global.panic
+if global.panic && !instance_exists(obj_ghostcollectibles)
     shakeAmountTarget = 1
 
 shakeAmount = approach(shakeAmount, shakeAmountTarget, shakeAlpha)

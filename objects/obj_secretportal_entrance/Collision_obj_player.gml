@@ -31,7 +31,9 @@ if !secret
     global.warpSecretId = id
 }
 else
+{
     targetRoom = global.warpSecretLastRoom
+}
 
 trace(global.warpSecretLastRoom)
 

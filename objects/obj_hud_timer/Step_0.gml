@@ -30,3 +30,14 @@ if instance_exists(obj_ghostcollectibles)
 
 if global.panicTime > 0
     global.panicTime--
+
+if global.panicLap != 0
+    exit
+
+if global.panicMinutes != 0
+    exit
+
+if global.panicSeconds <= 57
+    exit
+
+obj_music.musicMagnetState = 1

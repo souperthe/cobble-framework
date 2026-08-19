@@ -54,3 +54,4 @@ var newMusixTrackLength = audio_sound_length(musicInstanceCurrent)
 
 audio_sound_gain(musicInstanceCurrent, 1, musicFadeTime)
 audio_sound_set_track_position(musicInstanceCurrent, musicTrackAveragePosition * newMusixTrackLength)
+musicMagnetState = 0

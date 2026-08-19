@@ -27,6 +27,8 @@ function scr_globals()
     global.panicTime = 0
     global.panicTimeMax = 0
     global.panicLap = 0
+    global.panicMinutes = 0
+    global.panicSeconds = 0
     
     global.secretsFound = 0
     

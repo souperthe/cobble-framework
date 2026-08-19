@@ -12,6 +12,8 @@ touchedPlayer.velocityX = 0
 touchedPlayer.velocityY = 0
 touchedPlayer.x = lerp(touchedPlayer.x, x, 0.1)
 touchedPlayer.y = lerp(touchedPlayer.y, y, 0.1)
+global.comboTimePause = 2
+obj_music.secretEntering = true
 
 
 if !is_sprite_finished()
