@@ -6,6 +6,8 @@ If you are looking to create a very basic level, with basic sprite changes and b
 
 BUT, if you are creating a fangame, advanced custom levels with custom objects and gimmicks, or anything along the lines of those two I CAN recommend Cobble-Framework to you!
 
+What I'm trying to say is this framework will not hold your hand, if you aren't okay with that use something else.
+
 ---
 
 Have you ever tried creating something with a Pizza Tower decomp? Ever got tied up in the base games spaghetti code? Ever got frustrated with how much unused fluff and filler populate the games files?
