@@ -4,7 +4,12 @@ function scr_player_state_uppercut_enter(enterMessage)
 {
     sprite_index = spriteGet("breakdanceuppercut")
     image_index = 0
-    velocityY = -10
+    
+    if grounded
+        velocityY = -14
+    else
+        velocityY = -10
+    
     moveSpeed = abs(velocityX)
     scaleX = 1
     image_speed = 0.35

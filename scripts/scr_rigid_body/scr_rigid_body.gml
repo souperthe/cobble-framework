@@ -11,6 +11,9 @@ function scr_rigid_body_create()
     moveAndCollide = true
     collide = true
     ignoreObjects = []
+    snapPrecision = 0.25
+    snapMaxUp = 2.27
+    snapMaxDown = 3
     return
 }
 
@@ -18,7 +21,9 @@ function scr_rigid_body_create()
 function scr_rigid_body_step()
 {
     if moveAndCollide
+    {
         scr_collide()
+    }
     return
 }
 

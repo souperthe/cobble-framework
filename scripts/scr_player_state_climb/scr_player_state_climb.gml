@@ -38,7 +38,7 @@ function scr_player_state_climb_step()
         image_speed = 0.35;
         velocityY = -6
     }
-    else if check_input("down", true)
+    else if check_input("down", true) && !grounded
     {
     	velocityY = 10
         sprite_index = spriteGet("ladderdown")

@@ -1,4 +1,6 @@
 
+/// TODO: rewrite this at some point, this works but it's also pizza towers shitty scr_collide
+
 /// @self obj_rigid_body
 function scr_collide()
 {
@@ -14,7 +16,10 @@ function scr_collide()
         return
     }
     
-    repeat (ceil(abs(tempVelocityY)))
+    var tempAbsoluteVelocityY = abs(tempVelocityY)
+    var tempAbsoluteVelocityX = abs(tempVelocityX)
+    
+    repeat (ceil(tempAbsoluteVelocityY))
     {
         var velocityDirection = clamp(tempVelocityY, -1, 1)
         
@@ -32,14 +37,11 @@ function scr_collide()
         continue
     }
     
-    repeat (ceil(abs(tempVelocityX)))
+    repeat (ceil(tempAbsoluteVelocityX))
     {
         var velocityDirection = clamp(tempVelocityX, -1, 1);
         var collisionDefault = scr_solid(x + velocityDirection, y)
         var collisionSkip = false
-        var snapPrecision = 0.25
-        var snapMaxUp = 2.27
-        var snapMaxDown = 3
         var snap = 0
         var originalY = y;
         

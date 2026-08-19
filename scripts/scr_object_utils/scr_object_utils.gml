@@ -30,6 +30,19 @@ function get_gui_position_y(object)
     return (object.y - cameraPositionY) * (displaySizeY / cameraSizeY)
 }
 
+/// @param {Asset.GMAsset | Id.instance} object 
+/// @return {Bool}
+function is_in_camera(object)
+{
+    var camera = view_camera[0]
+    var cameraX = camera_get_view_x(camera)
+    var cameraY = camera_get_view_y(camera)
+    var cameraWidth = camera_get_view_width(camera)
+    var cameraHeight = camera_get_view_height(camera)
+    
+    
+    return point_in_rectangle(object.x, object.y, cameraX, cameraY, cameraX + cameraWidth, cameraY + cameraHeight)
+}
 
 /// @param {Array} objects
 function instance_destroy_list(objects)

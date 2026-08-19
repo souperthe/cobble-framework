@@ -24,6 +24,8 @@ audio_play_sound(sfx_johnimpact, 0, false)
 
 instance_create_depth(0, 0, depth, obj_hud_pillarflash)
 obj_camera.shake(8, 0.2)
+audio_sound_gain(obj_music.musicInstanceCurrent, 1, 0)
+audio_sound_gain(obj_music.musicInstanceJohn, 0, 0)
 
 
 scr_save_room_register(id)

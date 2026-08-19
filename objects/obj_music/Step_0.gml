@@ -1,15 +1,18 @@
 if !audio_exists(musicInstanceCurrent)
     exit
 
+
 var pitchStep = 0.01
 var pitchTarget = 1
 
 if secretEntering
     pitchTarget = 0.1
 
-musicInstancePitch = approach(musicInstancePitch, pitchTarget, pitchStep)
+musicInstanceSecretPitch = approach(musicInstanceSecretPitch, pitchTarget, pitchStep)
 
-audio_sound_pitch(musicInstanceCurrent, musicInstancePitch)
+var musicFinalPitch = musicInstancePitch * musicInstanceSecretPitch
+
+audio_sound_pitch(musicInstanceCurrent, musicFinalPitch)
 
 
 var musicIndex = audio_sound_get_asset(musicInstanceCurrent)

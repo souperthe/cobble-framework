@@ -12,3 +12,4 @@ scaredStates = [
     PlayerStates.CHAINSAWDASH
 ]
 playerX = 0
+inCamera = false
