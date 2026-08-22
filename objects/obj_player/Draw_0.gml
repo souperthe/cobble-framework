@@ -9,17 +9,18 @@ if invincibleTimer >= 0
         spriteAlpha = 0.2
 }
 
+if chargeActive
+{
+    var chargeOffset = scaleX * 5
+    draw_sprite_ext(spr_effect_charge, chargeFrame, x + chargeOffset, y, scaleX, 1, 0, c_white, 1)
+}
+
+
 shader_set(global.shaderPalette)
 pal_swap_set(paletteSprite, paletteIndex)
 draw_sprite_ext(sprite_index, image_index, x, y, scaleX * scaleVisual, scaleY * scaleVisual, angle, c_white, spriteAlpha)
 shader_reset()
 
-
-if chargeActive
-{
-    var chargeOffset = scaleX * 8
-    draw_sprite_ext(spr_effect_charge, chargeFrame, x + chargeOffset, y, scaleX, 1, 0, c_white, 1)
-}
 
 
 

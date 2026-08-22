@@ -1,6 +1,4 @@
 
-/// TODO: rewrite this at some point, this works but it's also pizza towers shitty scr_collide
-
 /// @self obj_rigid_body
 function scr_collide()
 {
@@ -92,6 +90,7 @@ function scr_collide()
         	velocityX = 0
             break
         }
+        
         continue
     }
     

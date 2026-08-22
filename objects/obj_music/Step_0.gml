@@ -32,7 +32,7 @@ if musicPosition < musicMagnetCurrent.positionEnd && musicPosition > musicMagnet
     exit
 
 var musicInstanceOld = musicInstanceCurrent
-musicInstanceCurrent = audio_play_sound_on(musicEmitter, musicIndex, 0, false, 0)
+musicInstanceCurrent = audio_play_sound_on(musicEmitter, musicIndex, false, 0)
 
 audio_sound_gain(musicInstanceOld, 0, musicMagnetCurrent.transitionTime)
 audio_sound_gain(musicInstanceCurrent, 1, musicMagnetCurrent.transitionTime)

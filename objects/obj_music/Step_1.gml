@@ -1,0 +1,1 @@
+audio_emitter_position(musicEmitter, obj_camera.centerX, obj_camera.centerY, 0)

@@ -9,5 +9,13 @@ for (var index = 0; index < inputLibraryNamesLength; index++)
     
     inputData.held = keyboard_check(inputKey)
     inputData.pressed = keyboard_check_pressed(inputKey)
+    inputData.released = keyboard_check_released(inputKey)
+    
+    if inputData.pressed
+        inputData.signalPressed.fire()
+    
+    if inputData.released
+        inputData.signalReleased.fire()
+    
     continue;
 }

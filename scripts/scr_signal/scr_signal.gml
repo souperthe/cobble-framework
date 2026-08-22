@@ -64,14 +64,15 @@ function Listener(targetCallable) constructor
     {
         
         if parent == undefined
+        {
             return
+        }
         
         var listenerIndex = array_get_index(parent.listeners, self)
-        
-        if listenerIndex == -1
-            return
+        var listener = self
         
         array_delete(parent.listeners, listenerIndex, 1)
+        delete listener
         return
     }
     

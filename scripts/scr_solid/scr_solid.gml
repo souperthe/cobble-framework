@@ -31,10 +31,9 @@ function scr_solid(positionX, positionY)
             var collidedFunction = collidedMap[$ string(collidedIndex)]
             
             if (!is_undefined(collidedFunction))
-                collided = collidedFunction(collidedInstance, oldPositionX, oldPositionY)
-            else {
-            	collided = true
-            }
+                collided = collided || collidedFunction(collidedInstance, oldPositionX, oldPositionY)
+            else
+                collided = true
             
             continue
         }
@@ -92,8 +91,8 @@ function scr_collided_slope(object, oldX, oldY)
     {
 
         var objectSide = 0
-        var slopeStart = 0;
-        var slopeEnd = 0;
+        var slopeStart = 0
+        var slopeEnd = 0
         
         if (image_xscale > 0)
         {
@@ -107,6 +106,8 @@ function scr_collided_slope(object, oldX, oldY)
             slopeStart = bbox_top
             slopeEnd = bbox_bottom
         }
+        
+        objectSide = clamp(objectSide, bbox_left, bbox_right)
         
         var slopeGradient = (sign(image_xscale) * (bbox_bottom - bbox_top)) / (bbox_right - bbox_left);
         var slopeY = slopeStart - round(slopeGradient * (objectSide - bbox_left));

@@ -3,7 +3,11 @@ function InputData(targetKey) constructor
 {
     pressed = false
     held = false
+    released = false
     key = targetKey
+    
+    signalPressed = new Signal()
+    signalReleased = new Signal()
     return
 }
 
@@ -17,6 +21,7 @@ inputLibrary[$ "down"] = new InputData(global.keyDown)
 inputLibrary[$ "left"] = new InputData(global.keyLeft)
 inputLibrary[$ "right"] = new InputData(global.keyRight)
 inputLibrary[$ "taunt"] = new InputData(global.keyTaunt)
+inputLibrary[$ "pause"] = new InputData(global.keyPause)
 
 
 inputCheck = function(inputName, held)

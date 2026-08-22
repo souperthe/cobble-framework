@@ -62,3 +62,5 @@ if array_contains(blurAfterImageStates, stateCurrentEnum)
         blurAfterImageTime = 2
     }
 }
+
+audio_emitter_position(obj_music.musicEmitter, obj_camera.centerX, obj_camera.centerY, 0)
