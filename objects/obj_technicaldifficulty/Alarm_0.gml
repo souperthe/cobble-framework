@@ -1,7 +1,7 @@
 staticUse = true
 staticIndex = sprite_get_number(staticSprite) - 1
 staticDirection = -1
-audio_play_sound(sfx_tvswitch_exit, 0, false, 1, 0, random_pitch())
+super_sound_oneshot_global(sfx_tvswitch_exit, random_pitch())
 
 with (obj_player)
 {

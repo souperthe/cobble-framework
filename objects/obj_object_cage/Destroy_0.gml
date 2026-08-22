@@ -23,7 +23,7 @@ repeat 5
     debrisIndex += 1
 }
 
-super_sound_oneshot_list(x, y, [sfx_breakblock1, sfx_breakblock2])
+helpSound = super_sound_oneshot_list(x, y, [sfx_breakblock1, sfx_breakblock2])
 
 
 

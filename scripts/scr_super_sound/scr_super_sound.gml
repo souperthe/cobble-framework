@@ -1,20 +1,59 @@
 /// @returns {Id.AudioEmitter}
 function super_sound_create_emitter()
 {
-    var emitter = audio_emitter_create();
-    audio_emitter_falloff(emitter, 240, 820, 1);
+    var emitter = audio_emitter_create()
+    
+    audio_emitter_falloff(emitter, 240, 820, 1)
+    audio_emitter_bus(emitter, global.busSound)
+    
     return emitter;
 }
 
 /// @param {Real} positionX
 /// @param {Real} positionY
+/// @param {Asset.GMSound} targetSound
+/// @param {Real} pitch
+/// @returns {Id.Sound}
+function super_sound_oneshot(positionX, positionY, targetSound, pitch = 1)
+{
+    var soundEmitter = super_sound_create_emitter()
+    
+    audio_emitter_position(soundEmitter, positionX, positionY, 0)
+    
+    var soundInstance = audio_play_sound_on(soundEmitter, targetSound, false, 0)
+    audio_sound_pitch(soundInstance, pitch)
+    
+    var soundTempEmitter = {
+        emitter : soundEmitter,
+        sound : soundInstance,
+        global : false
+    }
+    
+    array_push(obj_temp_emitters.tempEmitters, soundTempEmitter)
+    
+    return soundInstance
+}
+
+
 /// @param {Asset.GMSound} sound
 /// @param {Real} pitch
 /// @returns {Id.Sound}
-function super_sound_oneshot(positionX, positionY, sound, pitch = 1)
+function super_sound_oneshot_global(sound, pitch = 1)
 {
-    var soundInstance = audio_play_sound_at(sound, positionX, positionY, 0, 200, 900, 1, false, 1)
+    var soundEmitter = audio_emitter_create()
+    audio_emitter_falloff(soundEmitter, 100, 10000000, 1)
+    
+    var soundInstance = audio_play_sound(sound, 0, false, 1, 0)
+    
     audio_sound_pitch(soundInstance, pitch)
+    
+    var soundTempEmitter = {
+        emitter : soundEmitter,
+        sound : soundInstance,
+        global : true
+    }
+    
+    array_push(obj_temp_emitters.tempEmitters, soundTempEmitter)
     
     return soundInstance
 }

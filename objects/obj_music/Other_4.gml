@@ -3,7 +3,7 @@ var roomMusic = struct_get(musicLibrary, roomName)
 var roomSecretMusic = struct_get(musicSecretLibrary, roomName)
 
 if instance_exists(obj_hungryjohn)
-    musicInstanceJohn = audio_play_sound(mu_dungeondepth, 0, true, 0)
+    musicInstanceJohn = audio_play_sound_on(musicEmitter, mu_dungeondepth, 0, true, 0)
 else
     audio_stop_sound(musicInstanceJohn)
 
@@ -14,7 +14,7 @@ if roomSecretMusic != undefined
     musicLastAsset = audio_sound_get_asset(musicInstanceCurrent)
     musicLastLoop = audio_sound_get_loop(musicInstanceCurrent)
     
-    musicInstanceSecret = audio_play_sound(roomSecretMusic.song, 0, true, 0)
+    musicInstanceSecret = audio_play_sound_on(musicEmitter, roomSecretMusic.song, 0, true, 0)
     
     var musicSoundAveragePosition = audio_sound_get_average_position(musicInstanceCurrent)
     var secretLength = audio_sound_length(roomSecretMusic.song)
@@ -30,7 +30,7 @@ if roomSecretMusic != undefined
 
 if musicInstanceSecret != undefined
 {
-    musicInstanceCurrent = audio_play_sound(musicLastAsset, 0, musicLastLoop, 0)
+    musicInstanceCurrent = audio_play_sound_on(musicEmitter, musicLastAsset, 0, musicLastLoop, 0)
     
     audio_sound_set_track_position(musicInstanceCurrent, musicLastPosition)
     audio_sound_gain(musicInstanceSecret, 0, musicFadeTime / 2)
@@ -56,7 +56,7 @@ if audio_sound_get_asset(musicInstanceCurrent) == roomMusic.song
 if !roomMusic.fade || !audio_is_playing(musicInstanceCurrent)
 {
     audio_stop_sound(musicInstanceCurrent)
-    musicInstanceCurrent = audio_play_sound(roomMusic.song, 0, true)
+    musicInstanceCurrent = audio_play_sound_on(musicEmitter, roomMusic.song, 0, true)
     exit
 }
 
@@ -65,7 +65,7 @@ var musicTrackAveragePosition = audio_sound_get_average_position(musicInstanceOl
 
 musicDebris.add(musicInstanceOld)
 audio_sound_gain(musicInstanceOld, 0, musicFadeTime)
-musicInstanceCurrent = audio_play_sound(roomMusic.song, 0, true, 0)
+musicInstanceCurrent = audio_play_sound_on(musicEmitter, roomMusic.song, 0, true, 0)
 var newMusixTrackLength = audio_sound_length(musicInstanceCurrent)
 
 audio_sound_gain(musicInstanceCurrent, 1, musicFadeTime)

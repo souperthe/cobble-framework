@@ -19,8 +19,8 @@ scr_debris_explosion(6 * 3, centerX, centerY, spr_debris_baddie, 5, 10)
 scr_debris_explosion(5 * 3, centerX, centerY, spr_debris_slapstar, 5, 10)
 
 super_sound_oneshot(centerX, centerY, sfx_killenemy)
-audio_play_sound(sfx_escaperumble, 0, false)
-audio_play_sound(sfx_johnimpact, 0, false)
+super_sound_oneshot_global(sfx_escaperumble)
+super_sound_oneshot_global(sfx_johnimpact)
 
 instance_create_depth(0, 0, depth, obj_hud_pillarflash)
 obj_camera.shake(8, 0.2)

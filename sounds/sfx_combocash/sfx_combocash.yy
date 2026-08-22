@@ -22,5 +22,5 @@
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"sfx_combocash.wav",
-  "volume":0.36,
+  "volume":0.13,
 }

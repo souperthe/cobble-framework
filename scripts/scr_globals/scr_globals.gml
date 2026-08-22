@@ -31,6 +31,10 @@ function scr_globals()
     global.panicSeconds = 0
     
     global.secretsFound = 0
+    
+    
+    global.busMusic = audio_bus_create()
+    global.busSound = audio_bus_create()
 
     scr_level_data_init()
     return;

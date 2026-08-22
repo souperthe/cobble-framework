@@ -11,6 +11,6 @@ global.warpDoor = targetDoor
 global.warpRoom = targetRoom
 global.warpHallway = false
 playerTouching.stateSwitch(PlayerStates.DOOR, "enter")
-audio_play_sound(sfx_door, 0, false)
+super_sound_oneshot_global(sfx_door)
 
 instance_create_depth(x, y, -999, obj_room_warp)

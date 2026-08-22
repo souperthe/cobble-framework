@@ -25,7 +25,7 @@ if global.warpDoor == "SECRET" && global.warpSecretId == id
 if secret
 {
     global.secretsFound++
-    audio_play_sound(sfx_secretfound, 0, false)
+    super_sound_oneshot_global(sfx_secretfound)
     instance_create_depth(0, 0, depth, obj_ghostcollectibles)
 }
 

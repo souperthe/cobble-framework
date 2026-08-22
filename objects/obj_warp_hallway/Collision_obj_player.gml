@@ -10,4 +10,4 @@ global.warpHallway = true
 global.warpHallwayDirection = image_xscale
 visited = true
 instance_create_depth(x, y, -999999, obj_room_warp)
-audio_play_sound(sfx_door, 0, false)
+super_sound_oneshot_global(sfx_door)

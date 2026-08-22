@@ -198,6 +198,7 @@
     {"id":{"name":"obj_solid","path":"objects/obj_solid/obj_solid.yy",},},
     {"id":{"name":"obj_spike","path":"objects/obj_spike/obj_spike.yy",},},
     {"id":{"name":"obj_technicaldifficulty","path":"objects/obj_technicaldifficulty/obj_technicaldifficulty.yy",},},
+    {"id":{"name":"obj_temp_emitters","path":"objects/obj_temp_emitters/obj_temp_emitters.yy",},},
     {"id":{"name":"obj_titlecard_warp","path":"objects/obj_titlecard_warp/obj_titlecard_warp.yy",},},
     {"id":{"name":"obj_toppin_cheese","path":"objects/obj_toppin_cheese/obj_toppin_cheese.yy",},},
     {"id":{"name":"obj_toppin_pineapple","path":"objects/obj_toppin_pineapple/obj_toppin_pineapple.yy",},},

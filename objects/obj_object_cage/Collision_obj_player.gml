@@ -11,7 +11,7 @@ repeat amount
     
     if object_is_ancestor(content.object_index, obj_toppin)
     {
-        audio_play_sound(sfx_collecttoppin, 0, false)
+        super_sound_oneshot_global(sfx_collecttoppin)
         global.comboTime = 60
         global.collect += 1000
         obj_hud_score.smallNumber(x, y, 1000)

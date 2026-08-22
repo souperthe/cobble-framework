@@ -22,7 +22,7 @@ if rankPrevious != rankIndex
         audio_stop_sound(rankSoundInstance)
     
     var rankSound = rankSounds[rankIndex]
-    rankSoundInstance = audio_play_sound(rankSound, 0, false)
+    rankSoundInstance = super_sound_oneshot_global(rankSound)
     audio_sound_gain(rankSoundInstance, 0.5)
     
     rankPrevious = rankIndex

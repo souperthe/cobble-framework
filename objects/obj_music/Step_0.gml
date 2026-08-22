@@ -1,3 +1,5 @@
+audio_emitter_position(musicEmitter, obj_camera.centerX, obj_camera.centerY, 0)
+
 if !audio_exists(musicInstanceCurrent)
     exit
 
@@ -30,7 +32,7 @@ if musicPosition < musicMagnetCurrent.positionEnd && musicPosition > musicMagnet
     exit
 
 var musicInstanceOld = musicInstanceCurrent
-musicInstanceCurrent = audio_play_sound(musicIndex, 0, false, 0)
+musicInstanceCurrent = audio_play_sound_on(musicEmitter, musicIndex, 0, false, 0)
 
 audio_sound_gain(musicInstanceOld, 0, musicMagnetCurrent.transitionTime)
 audio_sound_gain(musicInstanceCurrent, 1, musicMagnetCurrent.transitionTime)

@@ -1,0 +1,1 @@
+tempEmitterLoop(tempEmitterRoomStart)

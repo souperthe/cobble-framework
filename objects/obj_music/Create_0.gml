@@ -12,6 +12,9 @@ musicLastPosition = 0
 musicLastAsset = -1
 musicLastLoop = false
 musicInstanceSecret = undefined
+musicEmitter = audio_emitter_create()
+audio_emitter_falloff(musicEmitter, 100, 10000000, 1)
+audio_emitter_bus(musicEmitter, global.busMusic)
 
 secretEntering = false
 
@@ -54,7 +57,7 @@ musicPanicStart = function()
     
     var panicMusic = lapMusic[0]
     
-    musicInstanceCurrent = audio_play_sound(panicMusic, 0, false)
+    musicInstanceCurrent = audio_play_sound_on(musicEmitter, panicMusic, 0, false)
     musicMagnetState = 0
     return
 }

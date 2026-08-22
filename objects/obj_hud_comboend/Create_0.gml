@@ -1,6 +1,7 @@
 depth = 0
 comboAmount = global.comboSaved
 comboAmountStart = comboAmount
+
 comboDelete = false
 comboDeleteTime = 300
 comboScoreCollects = []
@@ -56,7 +57,7 @@ comboCollectRecieved = function(collect)
     var collectPitchOffset = comboCollects / 300
     var collectPitchRandom = random_range(0.9, 1.1)
     var collectPitch = (collectPitchRandom) + collectPitchOffset
-    comboCollectSound = audio_play_sound(sfx_collect, 0, false, 0.8, 0, collectPitch)
+    comboCollectSound = super_sound_oneshot_global(sfx_collect, collectPitch)
     return
 }
 

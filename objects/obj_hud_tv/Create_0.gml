@@ -49,7 +49,7 @@ tvTurnOn = function()
     sprite_index = spr_tv_open
     image_speed = 0.4
     stateCurrent = TvStates.enter
-    audio_play_sound(sfx_tvon, 0, false, 0.5, 0, random_pitch())
+    super_sound_oneshot_global(sfx_tvon, random_pitch())
     return
 }
 tvForceExpression = function(sprite, time)

@@ -1,13 +1,14 @@
 if scr_save_room_contains(id)
     exit
 
-var killedPitch = global.combo / 80
+var killedPitch = global.combo / 150
 
 super_sound_oneshot(x, y, sfx_killenemy, 1 + killedPitch)
 
 var deadObject = instance_create_depth(x, y, depth, obj_baddie_dead)
+var deadDirection = sign(x - killedFromX)
 deadObject.sprite_index = spriteDead
-deadObject.velocityX = (sign(x - killedFromX) * random_range(10, 15))
+deadObject.velocityX = deadDirection * random_range(10, 15)
 obj_camera.shake(6, 6)
 
 audio_stop_sound(screamSound)
