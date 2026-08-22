@@ -31,7 +31,7 @@ function scr_globals()
     global.panicSeconds = 0
     
     global.secretsFound = 0
-    
+
     scr_level_data_init()
     return;
 }

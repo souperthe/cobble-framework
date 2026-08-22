@@ -94,6 +94,8 @@ function scr_player_state_chainsawdash_step()
         return
     }
     
+    var wallCheck = scr_player_wallcheck()
+    
     if scr_player_wallcheck() && sign(velocityX) == scaleX
     {
         stateSwitch(PlayerStates.CHAINSAWBUMP)

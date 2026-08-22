@@ -38,17 +38,19 @@ function scr_player_state_climb_step()
         image_speed = 0.35;
         velocityY = -6
     }
-    else if check_input("down", true) && !grounded
+    else if check_input("down", true)
     {
-    	velocityY = 10
-        sprite_index = spriteGet("ladderdown")
-        image_speed = 0.35;
         
         if grounded && !place_meeting(x, y, obj_platform)
         {
             stateSwitch(PlayerStates.NORMAL)
             return
         }
+        
+    	velocityY = 10
+        sprite_index = spriteGet("ladderdown")
+        image_speed = 0.35;
+        
     }
     else {
     	velocityY = 0

@@ -2,6 +2,16 @@ scoreX = 131 + random_range(-collectShake, collectShake)
 scoreY = (70 + scoreYOffset) + random_range(-collectShake, collectShake)
 collectReal = real(collectVisual)
 
+
+for (var index = 0; index < array_length(collectList); index++)
+{
+    
+    var collect = collectList[index]
+    
+    draw_sprite(collect.spriteIndex, collect.imageIndex, collect.x, collect.y)
+    continue
+}
+
 var collectIndex = 0
 
 draw_sprite(spr_pizzascore, collectIndex, scoreX, scoreY)
@@ -51,12 +61,3 @@ for (var index = 0; index < textLength; index++)
     continue
 }
 
-
-for (var index = 0; index < array_length(collectList); index++)
-{
-    
-    var collect = collectList[index]
-    
-    draw_sprite(collect.spriteIndex, collect.imageIndex, collect.x, collect.y)
-    continue
-}

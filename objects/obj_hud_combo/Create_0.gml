@@ -18,6 +18,7 @@ comboVisual = "0"
 comboPrevious = ""
 comboCharacterScales = []
 comboLostVisual = false
+comboMilestone = undefined
 
 /// @param {Real} comboTime
 comboAdd = function(comboTime)
@@ -26,6 +27,20 @@ comboAdd = function(comboTime)
     global.comboTime = comboTime
     comboShake = 2.5
     comboLostVisual = global.comboDropped
+    
+    if global.combo < global.comboMilestone
+    {
+        return
+    }
+    
+    if instance_exists(comboMilestone)
+    {
+        instance_destroy(comboMilestone)
+    }
+    
+    comboMilestone = instance_create_depth(x, y, depth, obj_hud_combomilestone)
+    comboMilestone.combo = global.combo
+    global.comboMilestone = global.combo + 10
     return
 }
 

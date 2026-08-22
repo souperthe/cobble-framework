@@ -25,9 +25,11 @@ if chargeActive
 
 
 var debugData = {
-    MOVESPEED : floor(moveSpeed),
-    STATE : stateCurrent.stateName,
-    SPRITE : sprite_get_name(sprite_index),
+    "STATE" : stateCurrent.stateName,
+    "SPRITE" : sprite_get_name(sprite_index),
+    "MOVESPEED" : floor(moveSpeed),
+    "VELOCITY X": string_real(floor(velocityX)),
+    "VELOCITY Y": string_real(floor(velocityY))
 }
 var debugString = ""
 var debugDataKeys = struct_get_names(debugData)

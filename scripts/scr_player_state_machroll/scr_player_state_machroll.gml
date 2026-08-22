@@ -61,8 +61,12 @@ function scr_player_state_machroll_step()
         audio_sound_gain(soundRoll, 0)
         sprite_index = spriteGet("dive")
         image_speed = 0.8
+        
+        if moveSpeed < 12
+            moveSpeed = 12
+        
         var diveSpeed = 10
-        var speedCurrent = abs(velocityX)
+        var speedCurrent = moveSpeed
         
         if speedCurrent > diveSpeed
             diveSpeed = speedCurrent

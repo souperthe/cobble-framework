@@ -2,23 +2,22 @@ var title = floor(titleCombo / 2)
 var titleX = obj_hud_tv.tvX
 var titleY = (obj_hud_tv.tvY + 148) + titleOffset
 var titleVery = 0
- 
+var titleLength = sprite_get_number(spr_comboend_title1)
 
 
-if (title > (sprite_get_number(spr_comboend_title1) / 2))
+if (title > titleLength / 2)
 {
-    title -= (sprite_get_number(spr_comboend_title1) / 2);
+    title -= titleLength / 2
     titleVery += 1
 }
 
-if titleCombo >= 80
-    titleVery += 1
+titleVery += titleCombo div 80
 
 draw_set_alpha(alpha)
 draw_sprite(spr_comboend, 0, titleX, titleY - 40)
 
 
-for (var index = 0; index < titleVery; index++)
+for (var index = titleVery - 1; index >= 0; index--)
 {
     draw_set_alpha(alpha)
     draw_sprite(

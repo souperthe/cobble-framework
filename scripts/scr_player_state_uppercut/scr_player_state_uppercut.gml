@@ -11,7 +11,6 @@ function scr_player_state_uppercut_enter(enterMessage)
         velocityY = -10
     
     moveSpeed = abs(velocityX)
-    scaleX = 1
     image_speed = 0.35
     soundUppercut = super_sound_oneshot_emitter(emitter, sfx_uppercut, random_pitch() + .2)
     return;
@@ -37,18 +36,18 @@ function scr_player_state_uppercut_step()
         velocityX = approach(velocityX, move * moveSpeed, 0.4)
     else
         velocityX = approach(velocityX, 0, 0.2)
-    
-    if check_input("attack", false)
-    {
-        
-        if move != 0
-            scaleX = move
-        
-        stateSwitch(PlayerStates.SUPLEXDASH)
-        uppercutAllow = false
-        return
-    }
-    
+    //
+    //if check_input("attack", false)
+    //{
+        //
+        //if move != 0
+            //scaleX = move
+        //
+        //stateSwitch(PlayerStates.SUPLEXDASH)
+        //uppercutAllow = false
+        //return
+    //}
+    //
     if grounded && velocityY >= 0
     {
         

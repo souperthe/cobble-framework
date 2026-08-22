@@ -6,6 +6,10 @@ function scr_player_ratblock()
         return
     
     var ratTouching = instance_place(x + scaleX, y, obj_ratblock)
+    
+    if !ratTouching
+        ratTouching = instance_place(x + (scaleX * moveSpeed), y, obj_ratblock)
+    
     var ratStates = [PlayerStates.CHAINSAWDASH, PlayerStates.CHAINSAWATTACK]
     
     if !array_contains(ratStates, stateCurrentEnum)

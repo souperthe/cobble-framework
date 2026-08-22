@@ -100,8 +100,8 @@
   "swatchColours":null,
   "swfPrecision":0.5,
   "textureGroupId":{
-    "name":"Default",
-    "path":"texturegroups/Default",
+    "name":"Debug",
+    "path":"texturegroups/Debug",
   },
   "type":0,
   "VTile":false,

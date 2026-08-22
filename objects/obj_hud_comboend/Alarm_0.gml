@@ -1,32 +1,27 @@
-global.collect += 1
-comboAmount -= 1
+comboCollect()
 
-var collectSprite = choose(
-    spr_shroomcollect, 
-    spr_tomatocollect, 
-    spr_cheesecollect, 
-    spr_sausagecollect, 
-    spr_pineapplecollect
-)
-var collectXOffset = random_range(-60, 60)
-var collectYOffset = random_range(-60, 60)
-
-obj_hud_score.collectCreate(
-    obj_hud_combo.playerTarget.x + collectXOffset,
-    obj_hud_combo.playerTarget.y + collectXOffset,
-    collectSprite,
-    1
-)
-
-//var volume = random_range(0.3, 0.5)
-//
-//audio_stop_sound(sfx_collect)
-//audio_play_sound(sfx_collect, 0, false, volume, 0, random_pitch())
-
-if comboAmount >= 0
-    alarm[0] = 2
-else
+if comboAmount > 0
 {
-    global.comboScore = 0
-    comboDelete = true
+    if comboCollectTime < 1
+        comboCollectTime = 1
+    
+    alarm[0] = comboCollectTime
+    comboCollectTime -= 1
+    exit
 }
+
+for (var index = 0; index < array_length(obj_hud_score.collectList); index++)
+{
+    var collectScore = obj_hud_score.collectList[index]
+    
+    if collectScore != 1
+        continue
+    
+    array_delete(obj_hud_score.collectList, index, 1)
+    
+    continue
+}
+
+comboDelete = true
+
+global.comboScore = 0

@@ -2,11 +2,13 @@ collectList = []
 collectShake = 0
 collectVisual = string(global.collect)
 collectPrevious = collectVisual
+collectReceived = new Signal()
 collectOffsets = []
 
 scoreX = 0
 scoreY = 0
 scoreYOffset = 0
+
 
 collectCreate = function(positionX, positionY, sprite, value)
 {
@@ -21,14 +23,14 @@ collectCreate = function(positionX, positionY, sprite, value)
     
     array_push(collectList, collect)
     
-    return
+    return collect
 }
 
 /// @param {Struct.Collect} collect
 collectProcess = function(collect)
 {
     
-    var dir = point_direction(collect.x, collect.y, 110, 80)
+    var dir = point_direction(collect.x, collect.y, 110, 60)
     var floatSpeed = 25
     var outOfX = collect.x < 140
     var outOfY = collect.y < 120
@@ -47,6 +49,8 @@ collectProcess = function(collect)
         return
     
     var collectIndex = array_get_index(collectList, collect)
+    
+    collectReceived.fire(collect)
     
     array_delete(collectList, collectIndex, 1)
     collectShake += 10

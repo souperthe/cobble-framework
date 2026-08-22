@@ -33,6 +33,17 @@ function time_in_frames(minutes, seconds)
 }
 
 
+/// @param {Real} target
+/// @return {String}
+function string_real(target)
+{
+    if target < 0
+        return "M" + string(target)
+    else
+        return string(target)
+}
+
+
 /// @param {Real} minimum 
 /// @param {Real} maximum
 /// @param {Real} period
