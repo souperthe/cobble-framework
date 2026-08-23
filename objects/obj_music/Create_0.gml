@@ -46,9 +46,10 @@ musicLibraryAddSecretEntry = function(targetRoom, targetSong, songFade)
 scr_music_data()
 scr_music_magnets_data()
 
-lapMusic = []
-lapMusic[0] = mu_pizzatime
-lapMusic[1] = mu_chase
+lapMusic = [
+    mu_pizzatime,
+    mu_chase
+]
 
 musicPanicStart = function()
 {
