@@ -77,10 +77,11 @@ musicPanicStartLap = function()
     
     var musicInstanceOld = musicInstanceCurrent
     
-    audio_sound_gain(musicInstanceCurrent, 0, 500)
+    audio_sound_gain(musicInstanceOld, 0, 500)
     musicDebris.add(musicInstanceOld)
     
-    musicInstanceCurrent = audio_play_sound_on(musicEmitter, lapSong, true, 0)
+    musicInstanceCurrent = audio_play_sound_on(musicEmitter, lapSong, true, 0, 0)
+    audio_sound_gain(musicInstanceCurrent, 1, 500)
     
     return
 }

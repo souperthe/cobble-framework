@@ -15,11 +15,13 @@ onEnter = function()
     
     global.levelCurrent = level
     global.levelName = levelTarget
-    global.warpRoom = level.roomFirst
-    global.warpDoor = "A"
+    
     global.levelEntering = true
+    
+    global.warpDoor = "A"
     global.warpHallway = false
     global.warpVerticalHallway = false
+    global.warpRoom = level.roomFirst
     
     instance_create_depth(x, y, -8, obj_titlecard_warp)
     return

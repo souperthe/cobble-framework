@@ -123,6 +123,7 @@ function scr_globals_keys()
 {
     global.keyDash = vk_shift
     global.keyPause = vk_escape
+    global.keyEnter = vk_enter
     global.keyJump = ord("Z")
     global.keyAttack = ord("X")
     global.keyTaunt = ord("C")

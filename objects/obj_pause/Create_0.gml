@@ -4,9 +4,11 @@
 pauseInputEnter = obj_input_manager.inputLibrary[$ "pause"]
 pauseInputDown = obj_input_manager.inputLibrary[$ "down"]
 pauseInputUp = obj_input_manager.inputLibrary[$ "up"]
+pauseInputSelect = obj_input_manager.inputLibrary[$ "enter"]
 
 pauseInputUpListener = -1
 pauseInputDownListener = -1
+pauseInputEnterListener = -1
 
 paused = false
 
@@ -25,7 +27,7 @@ pauseOptionsLevelNames = ["resume", "options", "restart level", "chef tasks", "e
 pauseOptionsLevel = {
     "resume" : scr_pause_resume,
     "options" : scr_pause_resume,
-    "restart level" : scr_pause_resume,
+    "restart level" : scr_pause_restart,
     "chef tasks" : scr_pause_resume,
     "exit level" : scr_pause_resume
 }
@@ -168,8 +170,10 @@ pauseEnter = function()
     
     pauseResetOptions()
     
-    pauseInputUpListener = pauseInputUp.signalPressed.connect(pauseUp)
-    pauseInputDownListener = pauseInputDown.signalPressed.connect(pauseDown)
+    pauseInputUpListener = pauseInputUp.signalPressed.connect(pauseUp, false, id)
+    pauseInputDownListener = pauseInputDown.signalPressed.connect(pauseDown, false, id)
+    pauseInputEnterListener = pauseInputSelect.signalPressed.connect(pauseSelect, false, id)
+    
     pauseOptionSelected = 0
     iconCurrent = 0
     iconLast = 0
@@ -187,6 +191,7 @@ pauseExit = function()
     
     pauseInputUpListener.disconnect()
     pauseInputDownListener.disconnect()
+    pauseInputEnterListener.disconnect()
     
     var pauseOptionsLength = array_length(pauseOptionNames)
     
@@ -243,23 +248,33 @@ menuMoveSound = function()
 
 pauseDown = function()
 {
-    obj_pause.pauseOptionSelected++
+    pauseOptionSelected++
     
-    obj_pause.menuMoveSound()
+    menuMoveSound()
     
-    if obj_pause.pauseOptionSelected > array_length(obj_pause.pauseOptionNames) - 1
-        obj_pause.pauseOptionSelected = 0
+    if pauseOptionSelected > array_length(pauseOptionNames) - 1
+        pauseOptionSelected = 0
     return
 }
 pauseUp = function()
 {
-    obj_pause.pauseOptionSelected--
+    pauseOptionSelected--
     
-    obj_pause.menuMoveSound()
+    menuMoveSound()
     
-    if obj_pause.pauseOptionSelected < 0
-        obj_pause.pauseOptionSelected = array_length(obj_pause.pauseOptionNames) - 1
+    if pauseOptionSelected < 0
+        pauseOptionSelected = array_length(pauseOptionNames) - 1
     
+    return
+}
+
+/// @self obj_pause
+pauseSelect = function()
+{
+    var optionCurrent = pauseOptionNames[pauseOptionSelected]
+    var optionFunction = pauseOptions[$ optionCurrent]
+    
+    optionFunction()
     return
 }
 

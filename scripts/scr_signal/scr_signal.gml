@@ -4,13 +4,13 @@ function Signal() constructor
     listeners = []
     
     /// @param {Function} targetCallable
-    static connect = function(targetCallable, once = false)
+    static connect = function(targetCallable, once = false, context = other)
     {
-        var bindedMethod = method(other, targetCallable)
+        var bindedMethod = method(context, targetCallable)
         var listener = new Listener(bindedMethod)
         listener.once = once
         listener.parent = self
-        listener.context = other
+        listener.context = context
         
         array_push(listeners, listener)
         

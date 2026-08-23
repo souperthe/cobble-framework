@@ -32,10 +32,14 @@ if baddieTouching != noone && baddieTouching != baddieInstance
 }
 
 if playerTouching == noone
+{
     exit
+}
 
 if playerTouching.grabbedBaddie == baddieInstance
+{
     exit
+}
 
 
 if array_contains(playerInstaKillStates, playerTouching.stateCurrentEnum)
