@@ -61,16 +61,37 @@ for (var index = 0; index < pauseOptionsLength; index++)
 {
     var optionName = pauseOptionNames[index]
     var optionData = pauseOptionsData[$ optionName]
+    var optionIcon = pauseOptionsIcons[$ optionName]
     
     var optionY = (startY - (optionsHeight / 2)) + (index * optionSpacing)
     var optionColor = c_white
     
+    optionName = string_upper(optionName)
+    
+    var optionNameWidth = string_width(optionName)
+    
     if index != pauseOptionSelected
         optionColor = c_gray
-    
-    
-    optionName = string_upper(optionName)
+    else if paused
+    {
+        cursorTargetX = startX - (optionNameWidth / 2) - 30
+        cursorTargetY = optionY
+        
+        iconCurrent = optionIcon
+        
+        if iconLast != iconCurrent
+        {
+            iconLast = iconCurrent
+            iconScale = 1.2
+        }
+        
+        var iconX = startX + (optionNameWidth / 2) + 55 + random_range(-1, 1)
+        var iconY = (optionY - 4) + random_range(-1, 1)
+        draw_sprite_ext(spr_pause_icons, iconCurrent, iconX, iconY, iconScale, iconScale, 0, c_white, pauseOverlayAlpha)
+    }
     
     draw_text_colour(startX, optionY * optionData.positionModifer, optionName, optionColor, optionColor, optionColor, optionColor, optionData.alpha)
     continue
 }
+
+draw_sprite_ext(spr_pause_pizzaangle, cursorIndex, cursorX, cursorY, 1, 1, 0, c_white, pauseOverlayAlpha)

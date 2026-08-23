@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"sfx_pizzaface_laugh",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":1,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":5.029524,
+  "exportDir":"",
+  "name":"sfx_pizzaface_laugh",
+  "parent":{
+    "name":"Pizzaface",
+    "path":"folders/Sound/SFX/Pizzaface.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"sfx_pizzaface_laugh.wav",
+  "volume":1.0,
+}

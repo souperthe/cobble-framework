@@ -10,7 +10,7 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":84.21877,
+  "duration":176.90123,
   "exportDir":"",
   "name":"mu_chase",
   "parent":{

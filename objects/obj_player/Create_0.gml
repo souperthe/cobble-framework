@@ -7,6 +7,7 @@ stateCurrent = undefined
 scr_player_get_state_library()
 
 signalStateChanged = new Signal()
+signalPlacedAtDoor = new Signal()
 
 
 moveSpeed = 0;

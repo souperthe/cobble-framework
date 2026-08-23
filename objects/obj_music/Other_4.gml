@@ -30,11 +30,15 @@ if roomSecretMusic != undefined
 
 if musicInstanceSecret != undefined
 {
-    musicInstanceCurrent = audio_play_sound_on(musicEmitter, musicLastAsset, musicLastLoop, 0, 0)
     
-    audio_sound_set_track_position(musicInstanceCurrent, musicLastPosition)
+    if musicLastAsset != -1
+    {
+        musicInstanceCurrent = audio_play_sound_on(musicEmitter, musicLastAsset, musicLastLoop, 0, 0)
+        audio_sound_set_track_position(musicInstanceCurrent, musicLastPosition)
+        audio_sound_gain(musicInstanceCurrent, 1, musicFadeTime / 2)
+    } 
+    
     audio_sound_gain(musicInstanceSecret, 0, musicFadeTime / 2)
-    audio_sound_gain(musicInstanceCurrent, 1, musicFadeTime / 2)
     
     musicDebris.add(musicInstanceSecret)
     

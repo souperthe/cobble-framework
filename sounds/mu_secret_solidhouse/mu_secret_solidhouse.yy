@@ -2,8 +2,8 @@
   "$GMSound":"v2",
   "%Name":"mu_secret_solidhouse",
   "audioGroupId":{
-    "name":"audiogroup_default",
-    "path":"audiogroups/audiogroup_default",
+    "name":"audiogroup_music",
+    "path":"audiogroups/audiogroup_music",
   },
   "bitDepth":1,
   "channelFormat":1,

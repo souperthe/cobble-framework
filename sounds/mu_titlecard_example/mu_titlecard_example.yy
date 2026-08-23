@@ -10,7 +10,7 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":3.0638323,
+  "duration":4.0771203,
   "exportDir":"",
   "name":"mu_titlecard_example",
   "parent":{

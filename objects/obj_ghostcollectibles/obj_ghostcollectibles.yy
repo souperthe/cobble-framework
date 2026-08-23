@@ -9,8 +9,8 @@
   "name":"obj_ghostcollectibles",
   "overriddenProperties":[],
   "parent":{
-    "name":"SecretPortal",
-    "path":"folders/Objects/LevelStructure/SecretPortal.yy",
+    "name":"LevelStructure",
+    "path":"folders/Objects/LevelStructure.yy",
   },
   "parentObjectId":null,
   "persistent":false,

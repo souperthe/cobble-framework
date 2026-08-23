@@ -36,12 +36,32 @@ pauseOptionsHub = {
     "options" : scr_pause_resume,
     "main menu" : scr_pause_resume
 }
+pauseOptionsIcons = {
+    "resume" : 0,
+    "options" : 1,
+    "restart level" : 2,
+    "exit level" : 3,
+    "main menu" : 3,
+    "chef tasks" : 8
+}
 
 pauseOptionNames = pauseOptionsLevelNames
 pauseOptions = pauseOptionsLevel
 
 pauseOptionsData = {}
 pauseOptionSelected = 0
+
+cursorTargetX = 0
+cursorTargetY = 0
+cursorX = 0
+cursorY = 0
+cursorIndex = 0
+
+iconLast = 0
+iconCurrent = 0
+iconScale = 1
+
+moveSoundMenu = -1
 
 getSpriteApplication = function()
 {
@@ -151,6 +171,8 @@ pauseEnter = function()
     pauseInputUpListener = pauseInputUp.signalPressed.connect(pauseUp)
     pauseInputDownListener = pauseInputDown.signalPressed.connect(pauseDown)
     pauseOptionSelected = 0
+    iconCurrent = 0
+    iconLast = 0
     
     return
 }
@@ -180,6 +202,9 @@ pauseExit = function()
     pauseSprite = -1
     pauseSpriteGui = -1
     
+    cursorTargetX = -60
+    cursorTargetY = -300
+    
     audio_sound_gain(pauseMusicInstance, 0, pauseMusicFade / 2)
     obj_music_debris.add(pauseMusicInstance)
     return
@@ -205,10 +230,22 @@ pausePressed = function()
     return
 }
 
+menuMoveSound = function()
+{
+    
+    if moveSoundMenu != -1
+        audio_stop_sound(moveSoundMenu)
+    
+    audio_play_sound(sfx_step, 0, false)
+    moveSoundMenu = audio_play_sound(sfx_menumove, 0, false, 1, 0, random_range(0.8, 1.2))
+    return
+}
+
 pauseDown = function()
 {
-    trace("hi")
     obj_pause.pauseOptionSelected++
+    
+    obj_pause.menuMoveSound()
     
     if obj_pause.pauseOptionSelected > array_length(obj_pause.pauseOptionNames) - 1
         obj_pause.pauseOptionSelected = 0
@@ -217,6 +254,8 @@ pauseDown = function()
 pauseUp = function()
 {
     obj_pause.pauseOptionSelected--
+    
+    obj_pause.menuMoveSound()
     
     if obj_pause.pauseOptionSelected < 0
         obj_pause.pauseOptionSelected = array_length(obj_pause.pauseOptionNames) - 1

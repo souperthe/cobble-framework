@@ -12,7 +12,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"SecretPortal",
-    "path":"folders/Objects/LevelStructure/SecretPortal.yy",
+    "path":"folders/Objects/LevelStructure/Warp/SecretPortal.yy",
   },
   "parentObjectId":null,
   "persistent":false,

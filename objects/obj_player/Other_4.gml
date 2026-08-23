@@ -20,6 +20,8 @@ y = doorTargetY
 global.roomStartX = doorTargetX
 global.roomStartY = doorTargetY
 
+signalPlacedAtDoor.fire()
+
 
 var followerLength = array_length(followers)
 for (var index = 0; index < followerLength; index++)

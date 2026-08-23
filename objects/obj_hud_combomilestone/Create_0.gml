@@ -14,13 +14,6 @@ titleGetShake = function()
 }
 
 
-audio_play_sound(
-    array_random(sounds),
-    0,
-    false,
-    0.5,
-    0,
-    1
-)
+super_sound_oneshot_global(array_random(sounds))
 
 alarm[0] = 60 * 3

@@ -19,7 +19,14 @@ if pauseOverlayAlpha == 0
     exit
 }
 
+iconScale = approach(iconScale, 1, 0.6)
+cursorIndex += 0.35
+
 pauseSpriteGuiAlpha = approach(pauseSpriteGuiAlpha, 0, 0.05)
+
+var cursorStep = 0.1
+cursorX = lerp(cursorX, cursorTargetX, cursorStep)
+cursorY = lerp(cursorY, cursorTargetY, cursorStep)
 
 
 var pauseOptionsLength = array_length(pauseOptionNames)
