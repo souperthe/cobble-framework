@@ -10,7 +10,7 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":253.85216,
+  "duration":253.29062,
   "exportDir":"",
   "name":"mu_showtime",
   "parent":{
@@ -21,6 +21,6 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"mu_showtime.mp3",
-  "volume":0.81,
+  "soundFile":"mu_showtime.wav",
+  "volume":1.0,
 }

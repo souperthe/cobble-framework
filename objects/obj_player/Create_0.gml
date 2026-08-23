@@ -32,7 +32,7 @@ tauntSprite = 0;
 tauntImageSpeed = 0;
 tauntImageIndex = 0;
 tauntTimer = 0;
-machMode = false;
+machCrazy = false;
 mach4Capped = true;
 
 coyoteTime = 0;

@@ -46,7 +46,7 @@ function scr_player_state_mach3_enter(enterMessage)
 /// @self obj_player
 function scr_player_state_mach3_exit()
 {
-    machMode = false
+    machCrazy = false
     audio_stop_sound(soundMach)
     chargeActive = false
     speedlinesActive = false
@@ -74,7 +74,7 @@ function scr_player_state_mach3_step()
     if is_sprite_finished() && array_contains(overrideAnimations, sprite_index)
     {
         
-        if machMode
+        if machCrazy
             sprite_index = spriteGet("crazyrun")
         else
             sprite_index = spriteGet("mach4")
@@ -111,7 +111,7 @@ function scr_player_state_mach3_step()
         
         if moveSpeed > speedMach3 && sprite_index != spriteGet("crazyrun") && sprite_index != spriteGet("spr_player_Sjumpcancelstart")
         {
-            machMode = true;
+            machCrazy = true;
             sprite_index = spriteGet("crazyrun")
             soundMachIndex = sfx_mach4
             audio_stop_sound(soundMach)
@@ -191,7 +191,7 @@ function scr_player_state_mach3_step()
         super_sound_oneshot_emitter(emitter, sfx_jump)
         velocityY = -11
         
-        if !machMode
+        if !machCrazy
         { 
             sprite_index = spriteGet("mach3jump")
             image_index = 0
@@ -221,7 +221,7 @@ function scr_player_state_mach3_step()
     if move == scaleX && grounded
     {
         
-        if machMode
+        if machCrazy
         {
             var targetAccel = accelMach4
             

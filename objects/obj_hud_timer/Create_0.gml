@@ -25,4 +25,5 @@ panicStarted = function()
     return
 }
 
+
 global.signalPanic.connect(panicStarted)

@@ -35,7 +35,7 @@ function scr_player_state_wallclimb_step()
     
     if wallSpeed < 0
     {
-        if !machMode
+        if !machCrazy
             moveSpeed += 0.2
         else
             moveSpeed += 0.4

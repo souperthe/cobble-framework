@@ -112,7 +112,7 @@ function scr_player_state_mach2_step()
         if moveSpeed < maxMoveSpeed
         {
             
-            if machMode == false
+            if machCrazy == false
                 moveSpeed += accel
             else
                 moveSpeed += accelMach

@@ -27,7 +27,6 @@ var musicMagnetCurrent = musicMagnets[musicMagnetState]
 
 var musicPosition = audio_sound_get_track_position(musicInstanceCurrent)
 
-
 if musicPosition < musicMagnetCurrent.positionEnd && musicPosition > musicMagnetCurrent.positionStart
     exit
 

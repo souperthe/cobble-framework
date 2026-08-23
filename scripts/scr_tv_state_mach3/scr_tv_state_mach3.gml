@@ -3,7 +3,7 @@ function scr_tv_state_mach3(targetPlayer)
 {
     var targetTv = spr_tv_exprmach3
     
-    if targetPlayer.machMode
+    if targetPlayer.machCrazy
         targetTv = spr_tv_exprmach4
     
     tvExpressionSpriteSpeed = 0.35

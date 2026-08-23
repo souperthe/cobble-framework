@@ -30,7 +30,7 @@ function scr_camera_state_normal()
     {
         
         var offsetTarget = 80
-        if target.machMode
+        if target.machCrazy
         {
             offsetTarget = 150
         }
