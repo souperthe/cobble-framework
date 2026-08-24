@@ -21,6 +21,7 @@ jumpAllow = (grounded && velocityY > 0) || (coyoteTime && velocityY > 0)
 
 scr_collide()
 scr_player_destructibles()
+scr_player_metalblock()
 scr_player_spikecheck()
 scr_player_technicaldifficulty()
 scr_player_ratblock()

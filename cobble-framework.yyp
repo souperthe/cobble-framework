@@ -292,6 +292,7 @@
     {"id":{"name":"scr_player_get_state_library","path":"scripts/scr_player_get_state_library/scr_player_get_state_library.yy",},},
     {"id":{"name":"scr_player_hurt","path":"scripts/scr_player_hurt/scr_player_hurt.yy",},},
     {"id":{"name":"scr_player_jump_stop","path":"scripts/scr_player_jump_stop/scr_player_jump_stop.yy",},},
+    {"id":{"name":"scr_player_metalblock","path":"scripts/scr_player_metalblock/scr_player_metalblock.yy",},},
     {"id":{"name":"scr_player_ratblock","path":"scripts/scr_player_ratblock/scr_player_ratblock.yy",},},
     {"id":{"name":"scr_player_spikecheck","path":"scripts/scr_player_spikecheck/scr_player_spikecheck.yy",},},
     {"id":{"name":"scr_player_state_blank","path":"scripts/scr_player_state_blank/scr_player_state_blank.yy",},},

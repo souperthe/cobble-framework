@@ -2,8 +2,7 @@
 function scr_player_destructibles()
 {
     
-    var metalBlockStates = [PlayerStates.MACH3, PlayerStates.FREEFALL]
-    var destructibleStates = [
+    static destructibleStates = [
         PlayerStates.MACH3, 
         PlayerStates.SUPLEXDASH, 
         PlayerStates.MACH2, 
@@ -13,24 +12,12 @@ function scr_player_destructibles()
         PlayerStates.CHAINSAWNORMAL,
         PlayerStates.CHAINSAWATTACK
     ]
-    var destructibleStatesUp = [
+    static destructibleStatesUp = [
         PlayerStates.UPPERCUT,
         PlayerStates.SJUMP,
         PlayerStates.WALLCLIMB,
         PlayerStates.FREEFALL
     ]
-    
-    if array_contains(metalBlockStates, stateCurrentEnum)
-    {
-            
-        var touchingMetalBlock = instance_place(x + scaleX, y, obj_metalblock)
-        
-        if !touchingMetalBlock
-            touchingMetalBlock = instance_place(x + (scaleX * moveSpeed), y, obj_destructible)
-    
-        if touchingMetalBlock
-            instance_destroy(touchingMetalBlock)
-    }
     
     static destructibleCheckDefault = [0, 0]
     var destructibleCheck = destructibleCheckDefault

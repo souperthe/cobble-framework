@@ -58,7 +58,7 @@ function scr_player_state_freefall_step()
         freeFallVelocity += 0.5
     
     velocityY = freeFallVelocity
-    freeFallVelocity += grav * 1.5
+    freeFallVelocity += grav * 1.1
     
     var move = check_input("right", true) - check_input("left", true)
     
