@@ -72,7 +72,7 @@
     {"$GMFolder":"","%Name":"Enemy","folderPath":"folders/Sound/SFX/Enemy.yy","name":"Enemy","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Screams","folderPath":"folders/Sound/SFX/Enemy/Screams.yy","name":"Screams","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Misc","folderPath":"folders/Sound/SFX/Misc.yy","name":"Misc","resourceType":"GMFolder","resourceVersion":"2.0",},
-    {"$GMFolder":"","%Name":"Pizzaface","folderPath":"folders/Sound/SFX/Pizzaface.yy","name":"Pizzaface","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Pizzaface","folderPath":"folders/Sound/SFX/Enemy/Pizzaface.yy","name":"Pizzaface","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Player","folderPath":"folders/Sound/SFX/Player.yy","name":"Player","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"GroundPound","folderPath":"folders/Sound/SFX/Player/GroundPound.yy","name":"GroundPound","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Mach","folderPath":"folders/Sound/SFX/Player/Mach.yy","name":"Mach","resourceType":"GMFolder","resourceVersion":"2.0",},

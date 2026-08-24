@@ -15,7 +15,7 @@
   "name":"sfx_pizzaface_moving",
   "parent":{
     "name":"Pizzaface",
-    "path":"folders/Sound/SFX/Pizzaface.yy",
+    "path":"folders/Sound/SFX/Enemy/Pizzaface.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
