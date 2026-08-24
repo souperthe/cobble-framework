@@ -3,12 +3,16 @@ scr_baddie_create()
 
 
 stateCurrent = BaddieStates.WALK
+
+
 spriteIdle = spr_slimeidle
 spriteWalk = spr_slimemove
 spriteDead = spr_slimedead
 spriteGrabbed = spr_slimegrabbed
 spriteStun = spr_slimestun
 spriteScared = spr_slime_scared
+
+
 image_speed = 0.3
 scaleX = -1
 

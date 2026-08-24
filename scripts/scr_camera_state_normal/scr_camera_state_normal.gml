@@ -2,6 +2,12 @@
 function scr_camera_state_normal()
 {
     var target = obj_player
+    
+    if !instance_exists(target)
+    {
+        return
+    }
+    
     var shakeX = random_range(-shakeAmount, shakeAmount)
     var shakeY = random_range(-shakeAmount, shakeAmount)
     var targetX = (target.x + offsetX) + machOffsetX

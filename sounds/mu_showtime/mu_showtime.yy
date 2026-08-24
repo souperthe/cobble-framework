@@ -14,13 +14,13 @@
   "exportDir":"",
   "name":"mu_showtime",
   "parent":{
-    "name":"Music",
-    "path":"folders/Sound/Music.yy",
+    "name":"Escape",
+    "path":"folders/Sound/Music/Escape.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"mu_showtime.wav",
-  "volume":1.0,
+  "volume":0.59,
 }

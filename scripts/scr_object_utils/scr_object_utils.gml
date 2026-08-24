@@ -7,6 +7,11 @@ function is_sprite_finished(){
 function get_gui_position_x(object)
 {
     
+    if (!instance_exists(object))
+    {
+        return 0
+    }
+    
     var camera = view_camera[0]
     var cameraPositionX = camera_get_view_x(camera)
     var cameraSizeX = camera_get_view_width(camera)
@@ -20,6 +25,11 @@ function get_gui_position_x(object)
 /// @return {Real}
 function get_gui_position_y(object)
 {
+    
+    if (!instance_exists(object))
+    {
+        return 0
+    }
     
     var camera = view_camera[0]
     var cameraPositionY = camera_get_view_y(camera)

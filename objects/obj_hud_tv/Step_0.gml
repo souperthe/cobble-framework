@@ -1,3 +1,8 @@
+if tvTargetPlayer == noone
+{
+    exit
+}
+
 var playerGuiPositionX = get_gui_position_x(tvTargetPlayer)
 var playerGuiPositionY = get_gui_position_y(tvTargetPlayer)
 var tvYOffsetTarget = 0

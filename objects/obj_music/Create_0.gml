@@ -68,7 +68,7 @@ musicPanicStartLap = function()
     var lapIndex = global.panicLap
     var lapMusicLength = array_length(lapMusic)
     
-    if lapIndex > lapMusicLength
+    if lapIndex >= lapMusicLength
     {
         return
     }

@@ -13,7 +13,9 @@ function scr_tv_state_normal(targetPlayer)
     var allIdleAnimations = [spr_tv_idleanim1, spr_tv_idleanim2, spr_tv_idle]
     
     if array_contains(blacklistStates, targetPlayer.stateCurrentEnum) && !array_contains(allIdleAnimations, tvExpressionSprite)
+    {
         return
+    }
     
     var idleAnimations = [spr_tv_idleanim1, spr_tv_idleanim2]
     var targetIdleAnimation = spr_tv_idle

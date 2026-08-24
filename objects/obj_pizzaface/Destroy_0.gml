@@ -1,0 +1,2 @@
+audio_stop_sound(soundMoving)
+audio_stop_sound(soundLaugh)

@@ -36,6 +36,6 @@ draw_set_font(global.fontSmall)
 draw_set_alpha(alpha)
 draw_set_halign(fa_center)
 draw_set_valign(fa_top)
-draw_text(titleX, titleY + 40, comboAmount);
+draw_text(titleX, titleY + 40, comboAmountVisual);
 
 draw_set_alpha(1)

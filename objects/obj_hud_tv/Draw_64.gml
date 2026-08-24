@@ -2,7 +2,7 @@ tvX = obj_screensizer.hudWidth - 115
 tvY = 80 + tvYOffset
 
 
-if stateCurrent != TvStates.enter
+if stateCurrent != TvStates.enter && stateCurrent != TvStates.off
 {
     draw_sprite(spr_tv_bgfinal, tvBackroundFrame, tvX, tvY)
     

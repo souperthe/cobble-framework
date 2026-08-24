@@ -94,6 +94,7 @@ function scr_player_state_normal_step()
     else {
     	moveSpeed = 0
         stepTime = 12;
+        machCrazy = false
         if !landing
         { 
             sprite_index = spriteGet("idle")

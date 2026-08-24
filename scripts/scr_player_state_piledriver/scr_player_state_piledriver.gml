@@ -18,7 +18,9 @@ function scr_player_state_piledriver_enter(enterMessage)
 function scr_player_state_piledriver_exit()
 {
     audio_stop_sound(soundGroundPound)
-    instance_destroy(grabbedBaddie)
+    
+    if grabbedBaddie != -1
+        instance_destroy(grabbedBaddie)
     return;
 }
 

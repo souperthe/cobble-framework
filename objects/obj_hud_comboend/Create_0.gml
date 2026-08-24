@@ -1,5 +1,6 @@
 depth = 0
 comboAmount = global.comboSaved
+comboAmountVisual = comboAmount
 comboAmountStart = comboAmount
 
 comboDelete = false
@@ -50,6 +51,7 @@ comboCollectRecieved = function(collect)
     }
     
     comboCollects += 1
+    comboAmountVisual -= 1
     
     if audio_is_playing(comboCollectSound)
         audio_stop_sound(comboCollectSound)

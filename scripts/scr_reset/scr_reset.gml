@@ -1,8 +1,27 @@
 function scr_reset()
 {
     
+    
     audio_stop_sound(obj_music.musicInstanceCurrent)
     audio_group_stop_all(audiogroup_sfx)
+    
+    var destroyIfExists = [obj_pizzaface, obj_hud_comboend, obj_hud_combomilestone]
+    var destroyIfExistsLength = array_length(destroyIfExists)
+    
+    for (var index = 0; index < destroyIfExistsLength; index++)
+    {
+        var instance = destroyIfExists[index]
+        var instanceCount = instance_number(instance)
+        
+        trace(instance, " : ", instanceCount)
+        
+        with instance
+        {
+            instance_destroy()
+        }
+        continue
+        
+    }
     
     if obj_music.musicInstanceSecret != undefined
     {
@@ -12,6 +31,7 @@ function scr_reset()
     
     obj_music.secretEntering = false
     obj_music.musicInstancePitch = 1
+    obj_music.musicInstanceSecretPitch = 1
     
     obj_camera.lock = false
     
@@ -37,8 +57,14 @@ function scr_reset()
         moveSpeed = 0
         instance_destroy_list(followers)
         followers = []
-        grabbedBaddie = -1
+        
+        if grabbedBaddie != -1
+        {
+            grabbedBaddie = -1
+        }
+        
         scaleVisual = 1
+        visible = true
     }
     
     obj_hud_rank.rankPrevious = 0

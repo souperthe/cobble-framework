@@ -57,8 +57,10 @@ for (var index = 0; index < lengthCurrent; index++)
 
 collectPrevious = collectVisual
 
-var playerGuiPositionX = get_gui_position_x(obj_hud_tv.tvTargetPlayer)
-var playerGuiPositionY = get_gui_position_y(obj_hud_tv.tvTargetPlayer)
+var player = obj_hud_tv.tvTargetPlayer
+
+var playerGuiPositionX = get_gui_position_x(player)
+var playerGuiPositionY = get_gui_position_y(player)
 var offsetTarget = 0
 
 if playerGuiPositionX < 210 && playerGuiPositionY < 120

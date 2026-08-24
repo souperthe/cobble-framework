@@ -1,16 +1,21 @@
-audio_emitter_position(emitter, x, y, 0)
+ audio_emitter_position(emitter, x, y, 0)
 
 
-if freeze
+if freeze || instance_exists(obj_ghostcollectibles)
 {
     x = -200
     y = -200
     exit
 }
 
+if array_contains(freezePlayerStates, targetPlayer.stateCurrentEnum)
+{
+    exit
+}
+
 if image_alpha <= 1
 {
-     image_alpha += 0.01
+    image_alpha += 0.01
     exit
 }
 
