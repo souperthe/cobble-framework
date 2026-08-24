@@ -61,6 +61,7 @@ function scr_get_collided_map()
     
     collidedMap[$ string(obj_platform)] = scr_collided_platform
     collidedMap[$ string(obj_slope)] = scr_collided_slope
+    collidedMap[$ string(obj_ramp)] = scr_collided_slope
     
     return collidedMap;
 }

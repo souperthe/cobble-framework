@@ -16,6 +16,7 @@ if global.warpDoor == "LAP"
     {
         x = other.x
         y = other.y
+        collide = false
         other.player = id
         other.paletteSprite = paletteSprite
         other.paletteIndex = paletteIndex

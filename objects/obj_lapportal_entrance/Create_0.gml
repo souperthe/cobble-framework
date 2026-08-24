@@ -74,6 +74,9 @@ states[1] = function()
         exit
     }
     
+    scr_save_room_remove_type_all(obj_escapecollect)
+    scr_save_room_remove_type_all(obj_escapecollect_big)
+    
     global.warpDoor = "LAP"
     global.warpRoom = targetRoom
     global.panicLap++

@@ -1,18 +1,21 @@
 {
   "$GMObject":"",
-  "%Name":"obj_gate_exit",
+  "%Name":"obj_ramp",
   "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":4,"eventType":7,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_gate_exit",
+  "name":"obj_ramp",
   "overriddenProperties":[],
   "parent":{
-    "name":"Gates",
-    "path":"folders/Objects/Gates.yy",
+    "name":"LevelStructure",
+    "path":"folders/Objects/LevelStructure.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_slope",
+    "path":"objects/obj_slope/obj_slope.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -31,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_exitgate",
-    "path":"sprites/spr_exitgate/spr_exitgate.yy",
+    "name":"spr_ramp",
+    "path":"sprites/spr_ramp/spr_ramp.yy",
   },
   "spriteMaskId":null,
   "visible":true,

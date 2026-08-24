@@ -73,6 +73,7 @@ function scr_player_get_state_library()
     stateRegister(PlayerStates.CHAINSAWBUMP, "chainsawbump")
     stateRegister(PlayerStates.CHAINSAWTURN, "chainsawturn")
     stateRegister(PlayerStates.HURT, "hurt")
+    stateRegister(PlayerStates.TRICKJUMP, "trickjump")
     
     return;
 }

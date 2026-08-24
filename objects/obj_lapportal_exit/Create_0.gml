@@ -20,6 +20,16 @@ states[0] = function()
     sprite_index = spr_pizzaportal_exit_p
     image_index = 0
     
+    with obj_player
+    {
+        velocityX = 0
+        velocityY = 0
+        x = other.x
+        y = other.y
+        collide = false
+    }
+    
+    
     state = 1
     
     super_sound_oneshot(x, y, sfx_secretexit)
@@ -40,6 +50,7 @@ states[1] = function()
         velocityX = 0
         velocityY = 0
         stateSwitch(PlayerStates.NORMAL)
+        collide = true
     }
     
     state = 2
@@ -62,3 +73,5 @@ states[2] = function()
     
     return
 }
+
+image_speed = 0.35
