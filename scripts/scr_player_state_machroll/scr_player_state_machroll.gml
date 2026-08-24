@@ -136,8 +136,9 @@ function scr_player_state_machroll_step()
         }
     }
     
+    var solidAbove = scr_solid(x + velocityX, y - 16) || scr_solid(x + velocityY, y - 32)
     
-    if !check_input("down", true) && ((grounded && velocityY > 0)  && velocityY > 0)  && bufferGetup <= 0 && !scr_solid(x, y - 16) && !scr_solid(x, y - 32)
+    if !check_input("down", true) && ((grounded && velocityY > 0)  && velocityY > 0)  && bufferGetup <= 0 && !solidAbove
     {
         image_index = 0
         

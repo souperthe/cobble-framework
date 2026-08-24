@@ -61,6 +61,9 @@ chargeFrame = 0
 speedlinesActive = false
 speedlinesFrame = 0
 
+superslamActive = false
+superslamFrame = 0
+
 machAfterImageTime = 6
 machAfterImageStates = [PlayerStates.MACH2, PlayerStates.MACH3, PlayerStates.SJUMP, PlayerStates.UPPERCUT]
 
@@ -93,7 +96,9 @@ stateSwitch = function(targetState, enterMessage = "")
     var stateNew = stateLibrary[targetState]
     
     if (is_undefined(stateNew))
+    {
         return
+    }
     
     if stateOld != undefined
         script_execute(stateOld.stateExit)

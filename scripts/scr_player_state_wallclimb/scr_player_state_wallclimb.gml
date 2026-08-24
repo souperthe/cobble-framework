@@ -14,6 +14,7 @@ function scr_player_state_wallclimb_enter(enterMessage)
     soundMach = super_sound_loop_emitter(emitter, sfx_mach2)
     bufferWallClimb = 10
     uppercutAllow = true
+    stepTime = 0
     return;
 }
 
@@ -66,6 +67,7 @@ function scr_player_state_wallclimb_step()
     {
         
         find_ground()
+        scr_effect_create("jump", x, y)
         
         if wallSpeed < 6
             wallSpeed = 6
@@ -94,6 +96,16 @@ function scr_player_state_wallclimb_step()
         sprite_index = spriteGet("clingwall")
     
     image_speed = 0.6;
+    
+    stepTime--
+    
+    if stepTime < 0
+    {
+        scr_effect_create("stepcloud", x + (scaleX * 10), y + 43)
+        stepTime = 10
+    }
+    
+    
     
     return;
 }

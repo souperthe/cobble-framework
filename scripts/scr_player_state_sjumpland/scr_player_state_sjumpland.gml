@@ -6,6 +6,7 @@ function scr_player_state_sjumpland_enter(enterMessage)
     sprite_index = spriteGet("superjumpland")
     image_speed = 0.5
     image_index = 0
+    scr_effect_create("bangeffect", x, y)
     return;
 }
 

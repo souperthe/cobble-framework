@@ -508,6 +508,7 @@
     {"id":{"name":"spr_effect_smalldashcloud","path":"sprites/spr_effect_smalldashcloud/spr_effect_smalldashcloud.yy",},},
     {"id":{"name":"spr_effect_speedlines","path":"sprites/spr_effect_speedlines/spr_effect_speedlines.yy",},},
     {"id":{"name":"spr_effect_spikehurt","path":"sprites/spr_effect_spikehurt/spr_effect_spikehurt.yy",},},
+    {"id":{"name":"spr_effect_superslam","path":"sprites/spr_effect_superslam/spr_effect_superslam.yy",},},
     {"id":{"name":"spr_effect_taunt","path":"sprites/spr_effect_taunt/spr_effect_taunt.yy",},},
     {"id":{"name":"spr_effect_tinytaunt","path":"sprites/spr_effect_tinytaunt/spr_effect_tinytaunt.yy",},},
     {"id":{"name":"spr_escapecollect_big","path":"sprites/spr_escapecollect_big/spr_escapecollect_big.yy",},},

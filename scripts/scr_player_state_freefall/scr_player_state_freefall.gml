@@ -6,6 +6,8 @@ function scr_player_state_freefall_enter(enterMessage)
     audio_sound_gain(soundGroundPound, 0)
     
     freeFallVelocity = 0
+    pileDriverTime = 15
+    superslamActive = false
     
     if enterMessage == "bodyslam"
     {
@@ -41,6 +43,7 @@ function scr_player_state_freefall_exit()
 {
     
     audio_stop_sound(soundGroundPound)
+    superslamActive = false
     return;
 }
 
@@ -59,6 +62,16 @@ function scr_player_state_freefall_step()
     
     velocityY = freeFallVelocity
     freeFallVelocity += grav * 1.1
+    
+    stepTime--
+    
+    if stepTime < 0
+    {
+        var randomX = irandom_range(-25, 25)
+        var randomY = irandom_range(-10, 35)
+        scr_effect_create(x + randomX, y + randomY, "cloudeffect")
+        stepTime = 8
+    }
     
     var move = check_input("right", true) - check_input("left", true)
     
@@ -82,9 +95,24 @@ function scr_player_state_freefall_step()
         freeFallProgress = -14
     
     if freeFallProgress > 10
+    {
         audio_sound_gain(soundGroundPound, 1, 200)
+        superslamActive = true
+        
+        freeFallVelocity--
+        
+        if freeFallVelocity < 0
+        {
+            scr_effect_create("piledriver", x, y)
+            freeFallVelocity = 15
+        }
+    }
     
-    if (grounded && velocityY > 0)
+    var touchingDestructible = !place_meeting(x, y + 1, obj_destructible) 
+    && !place_meeting(x, y + velocityY, obj_destructible) 
+    && !place_meeting(x, y + velocityY + 6, obj_destructible)
+    
+    if (grounded && velocityY > 0 && touchingDestructible)
     {
         
         if scr_slope()

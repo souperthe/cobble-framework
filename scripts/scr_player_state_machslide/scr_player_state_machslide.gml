@@ -2,7 +2,7 @@
 /// @param {String} enterMessage
 function scr_player_state_machslide_enter(enterMessage)
 {
-    
+    machCrazy = false
     if enterMessage == "3"
         sprite_index = spriteGet("machslideboost3")
     else if enterMessage == "2"
@@ -47,6 +47,10 @@ function scr_player_state_machslide_step()
         spriteGet("machslideboost3fall"),
         spriteGet("machslideboostfall")
     ]
+    static brakes = [
+        spriteGet("machslidestart"),
+        spriteGet("machslide")
+    ]
     
     velocityX = scaleX * moveSpeed
     moveSpeed = approach(moveSpeed, 0, 0.4)
@@ -57,6 +61,12 @@ function scr_player_state_machslide_step()
     if (floor(moveSpeed) <= 0 && sprite_index == spriteGet("machslide"))
     {
         stateSwitch(PlayerStates.NORMAL)
+        return
+    }
+    
+    if place_meeting(x + scaleX, y, obj_solid) && array_contains(brakes, sprite_index)
+    {
+        stateSwitch(PlayerStates.BUMP, "wallsplat")
         return
     }
     

@@ -1,6 +1,9 @@
 if speedlinesActive
     draw_sprite_ext(spr_effect_speedlines, speedlinesFrame, x, y, scaleX, 1, 0, c_white, 1)
 
+if superslamActive
+    draw_sprite_ext(spr_effect_superslam, superslamFrame, x, y, 1, 1, 0, c_white, 1)
+
 var spriteAlpha = 1
 
 if invincibleTimer >= 0

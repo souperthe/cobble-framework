@@ -10,13 +10,16 @@ function scr_player_destructibles()
         PlayerStates.CHAINSAWDASH,
         PlayerStates.CHAINSAWJUMP,
         PlayerStates.CHAINSAWNORMAL,
-        PlayerStates.CHAINSAWATTACK
+        PlayerStates.CHAINSAWATTACK,
     ]
-    static destructibleStatesUp = [
-        PlayerStates.UPPERCUT,
+    static destructibleStatesVerical = [
         PlayerStates.SJUMP,
         PlayerStates.WALLCLIMB,
         PlayerStates.FREEFALL
+    ]
+    static destructibleStatesUp = [
+        PlayerStates.JUMP,
+        PlayerStates.UPPERCUT
     ]
     
     static destructibleCheckDefault = [0, 0]
@@ -27,12 +30,12 @@ function scr_player_destructibles()
         destructibleCheck = [x + (scaleX * moveSpeed), y]
     }
     
-    if array_contains(destructibleStatesUp, stateCurrentEnum)
+    if array_contains(destructibleStatesVerical, stateCurrentEnum)
     {
         destructibleCheck = [x, y + velocityY]
     }
     
-    if stateCurrentEnum == PlayerStates.JUMP
+    if array_contains(destructibleStatesUp, stateCurrentEnum)
     {
         destructibleCheck = [x, y - 1]
     }

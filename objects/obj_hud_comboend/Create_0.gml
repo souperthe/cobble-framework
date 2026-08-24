@@ -56,7 +56,7 @@ comboCollectRecieved = function(collect)
     if audio_is_playing(comboCollectSound)
         audio_stop_sound(comboCollectSound)
     
-    var collectPitchOffset = comboCollects / 300
+    var collectPitchOffset = comboCollects / 700
     var collectPitchRandom = random_range(0.9, 1.1)
     var collectPitch = (collectPitchRandom) + collectPitchOffset
     comboCollectSound = super_sound_oneshot_global(sfx_collect, collectPitch)
