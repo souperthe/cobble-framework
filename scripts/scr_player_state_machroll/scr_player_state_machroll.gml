@@ -118,7 +118,7 @@ function scr_player_state_machroll_step()
     
     bufferGetup--
     
-    if scr_player_wallcheck_bump()
+    if scr_player_wallcheck_bump() && !place_meeting(x + scaleX, y , obj_destructible)
     {
         stateSwitch(PlayerStates.BUMP, "wallsplat")
         return

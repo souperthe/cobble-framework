@@ -52,7 +52,7 @@ function scr_player_state_freefall_step()
 {
     
     if is_sprite_finished() && sprite_index == spriteGet("bodyslamstart")
-    {
+    { 
         sprite_index = spriteGet("bodyslamfall")
         image_speed = 0.35
     }
@@ -69,7 +69,7 @@ function scr_player_state_freefall_step()
     {
         var randomX = irandom_range(-25, 25)
         var randomY = irandom_range(-10, 35)
-        scr_effect_create(x + randomX, y + randomY, "cloudeffect")
+        scr_effect_create("cloudeffect", x + randomX, y + randomY)
         stepTime = 8
     }
     
