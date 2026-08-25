@@ -31,8 +31,9 @@ function scr_level_rank()
     
     audio_stop_sound(sfx_escaperumble)
     
+    var saveDirectory = global.saveFile + "/levels/"
     var saveName = string_lower(global.levelName)
-    var savePath = saveName + ".cobbledata"
+    var savePath = saveDirectory + saveName + ".cobbledata"
     var saveAttempts = 1
     var saveLevelTime = (get_timer() - global.levelTimeStart) / 1000000
     

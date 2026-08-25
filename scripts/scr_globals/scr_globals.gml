@@ -38,6 +38,8 @@ function scr_globals()
     
     global.secretsFound = 0
     
+    global.saveFile = "save_0"
+    
     
     global.busMusic = audio_bus_create()
     global.busSound = audio_bus_create()
