@@ -70,6 +70,7 @@ function scr_reset()
     obj_hud_rank.rankPrevious = 0
     
     global.collect = 0
+    
     global.combo = 0
     global.comboTime = 0
     global.comboBreaks = 0
@@ -78,7 +79,10 @@ function scr_reset()
     global.comboSaved = 0
     global.comboScore = 0
     global.comboTimePause = 0
+    global.comboHighest = 0
+    
     global.levelSaveRoom = {}
+    global.levelBaddiesKilled = 0
     global.toppinFollowers = []
     
     global.panic = false

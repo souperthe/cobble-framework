@@ -22,6 +22,8 @@ function scr_player_state_enterlevel_step()
     
     var touchingGate = instance_place(x, y, obj_gate)
     
+    global.comboTimePause = 1
+    
     if is_sprite_finished() && sprite_index == spriteGet("entergate")
     {
         

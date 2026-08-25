@@ -28,6 +28,9 @@ comboAdd = function(comboTime)
     comboShake = 2.5
     comboLostVisual = global.comboDropped
     
+    if global.combo > global.comboHighest
+        global.comboHighest = global.combo
+    
     if global.combo < global.comboMilestone
     {
         return

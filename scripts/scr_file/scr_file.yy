@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"scr_level_enter",
+  "%Name":"scr_file",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scr_level_enter",
+  "name":"scr_file",
   "parent":{
     "name":"Utilities",
     "path":"folders/Scripts/Utilities.yy",

@@ -19,6 +19,14 @@ rankSoundsDown = [
     sfx_rankdown_2,
     sfx_rankdown_1
 ]
+rankLetters = [
+    "d",
+    "c",
+    "b",
+    "a",
+    "s",
+    "p"
+]
 
 rankSoundInstance = -1
 

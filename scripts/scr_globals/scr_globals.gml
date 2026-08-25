@@ -12,10 +12,16 @@ function scr_globals()
     pal_swap_init()
     
     global.instanceList = ds_list_create();
+    
     global.levelName = "";
     global.levelCurrent = undefined
     global.levelSaveRoom = {};
     global.levelEntering = false
+    global.levelRankIndex = 0
+    global.levelRankLetter = 0
+    global.levelBaddiesKilled = 0
+    global.levelTimeStart = 0
+    
     global.hitstunShake = 4
     global.soundBlockBreak = -4
     global.roomStartX = 0
@@ -90,6 +96,7 @@ function scr_globals_combo()
     global.comboScore = 0
     global.combo = 0;
     global.comboMilestone = 5;
+    global.comboHighest = 0
     return
 }
  

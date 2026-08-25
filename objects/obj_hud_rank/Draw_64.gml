@@ -27,6 +27,9 @@ if rankPrevious != rankIndex
     
     rankPrevious = rankIndex
     rankScale = 3
+    
+    global.levelRankIndex = rankIndex
+    global.levelRankLetter = rankLetters[rankIndex]
 }
 
 var fillSprite = spr_ranks_hudfill
