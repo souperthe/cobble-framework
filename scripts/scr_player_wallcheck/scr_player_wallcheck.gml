@@ -27,9 +27,8 @@ function scr_player_wallcheck()
         
         var onSlope = place_meeting(x, y + 1, obj_slope)
         var groundedSolid = place_meeting(xStep, y - 16, obj_solid)
-        var groundedSlope = scr_solid_slope(xStep, y - 16)
         
-        return onSlope && (groundedSolid || groundedSlope)
+        return onSlope && (groundedSolid)
     }
     
     return false

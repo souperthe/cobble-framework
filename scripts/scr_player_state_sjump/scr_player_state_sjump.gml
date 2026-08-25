@@ -52,7 +52,18 @@ function scr_player_state_sjump_step()
             scr_effect_create("piledriver", x, y, 1, -1)
             effectPiledriverTimer = 15
         }
+        
+        stepTime--
+    
+        if stepTime < 0
+        {
+            var randomX = irandom_range(-25, 25)
+            var randomY = irandom_range(-10, 35)
+            scr_effect_create("cloudeffect", x + randomX, y + randomY)
+            stepTime = 8
+        }
     }
+    
     
     velocitySuperJump -= 0.1
     

@@ -74,7 +74,8 @@ blurAfterImageStates = [
     PlayerStates.CHAINSAWDASH,
     PlayerStates.CHAINSAWATTACK,
     PlayerStates.CHAINSAWPOGO,
-    PlayerStates.FREEFALL
+    PlayerStates.FREEFALL,
+    PlayerStates.TRICKJUMP
 ]
 
 transformationDebris = undefined

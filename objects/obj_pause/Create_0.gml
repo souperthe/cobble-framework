@@ -178,6 +178,9 @@ pauseEnter = function()
     iconCurrent = 0
     iconLast = 0
     
+    cursorTargetX = -60
+    cursorTargetY = -300
+    
     return
 }
 
@@ -207,8 +210,9 @@ pauseExit = function()
     pauseSprite = -1
     pauseSpriteGui = -1
     
-    cursorTargetX = -60
+    cursorTargetX = 0
     cursorTargetY = -300
+    
     
     audio_sound_gain(pauseMusicInstance, 0, pauseMusicFade / 2)
     obj_music_debris.add(pauseMusicInstance)

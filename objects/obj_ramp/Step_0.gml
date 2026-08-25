@@ -6,6 +6,11 @@ if !touchingPlayer
     exit
 }
 
+if !touchingPlayer.grounded
+{
+    exit
+}
+
 if touchingPlayer.scaleX != sign(image_xscale)
 {
     exit
@@ -34,9 +39,6 @@ if !place_meeting(x, y - touchOffsetY, touchingPlayer)
 {
     return
 }
-
-var playerGhost = scr_effect_create("playerghost", touchingPlayer.x, touchingPlayer.y)
-playerGhost.scaleX = touchingPlayer.scaleX
 
 touchingPlayer.velocityY = -12
 touchingPlayer.moveSpeed = 14
