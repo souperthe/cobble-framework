@@ -20,4 +20,4 @@ All art assets, and characters from Pizza Tower belong entirely to Tour de Pizza
 
 # Dependencies
 - [GameMaker LTS 2026](https://gamemaker.io/en/blog/lts-2026-release)
-![or get it through steam](readme_images/lts_2026_steam.png)
+![you can also get it through steam](readme_images/lts_2026_steam.PNG)
