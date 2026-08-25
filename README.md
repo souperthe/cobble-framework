@@ -15,3 +15,5 @@ Have you ever tried creating something with a Pizza Tower decomp? Ever got tied 
 Well, Cobble-Framework is the thing just for you!
 
 Cobble-Framework is a open source rewrite of Pizza Tower built to be a starting point for your fan creation needs, no more speghetti, no fluff and filler, no more fighting against the base games horrible and unorganized codebase.
+
+All art assets, and characters from Pizza Tower belong entirely to Tour de Pizza. No copyright infringement is intended.
