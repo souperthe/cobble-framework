@@ -40,6 +40,9 @@ function scr_effects_get()
     effectsLibrary[$ "land"] = new Effect(spr_effect_land, 0.4)
     effectsLibrary[$ "stepcloud"] = new Effect(spr_effect_cloud, 0.7)
     
+    effectsLibrary[$ "pizzablockdead_big"] = new Effect(spr_pizzablock_big_die, 0.35)
+    effectsLibrary[$ "pizzablocksmall_dead"] = new Effect(spr_pizzablock_small_die, 0.35)
+    
     return effectsLibrary
 }
 

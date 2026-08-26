@@ -1,10 +1,16 @@
 scr_globals_keys();
-function InputData(targetKey) constructor
+
+/// @param {Array<Constant.VirtualKey|Real>} targetKeys
+/// @param {Array<Constant.GamepadButton>} targetButtons
+/// @param {Real} targetIndex
+function InputData(targetKeys, targetButtons = [], targetIndex = 0) constructor
 {
     pressed = false
     held = false
     released = false
-    key = targetKey
+    keys = targetKeys
+    buttons = targetButtons
+    buttonIndex = targetIndex
     
     signalPressed = new Signal()
     signalReleased = new Signal()
@@ -12,18 +18,20 @@ function InputData(targetKey) constructor
 }
 
 
-inputLibrary = {}
-inputLibrary[$ "jump"] = new InputData(global.keyJump)
-inputLibrary[$ "dash"] = new InputData(global.keyDash)
-inputLibrary[$ "attack"] = new InputData(global.keyAttack)
-inputLibrary[$ "up"] = new InputData(global.keyUp)
-inputLibrary[$ "down"] = new InputData(global.keyDown)
-inputLibrary[$ "left"] = new InputData(global.keyLeft)
-inputLibrary[$ "right"] = new InputData(global.keyRight)
-inputLibrary[$ "taunt"] = new InputData(global.keyTaunt)
-inputLibrary[$ "pause"] = new InputData(global.keyPause)
-inputLibrary[$ "enter"] = new InputData(global.keyEnter)
 
+inputLibrary = {}
+
+/// @param {String} name
+/// @param {Array<Constant.VirtualKey>} inputs
+inputRegister = function(name, inputs)
+{
+    var inputData = new InputData(inputs)
+    
+    inputLibrary[$ name] = inputData
+    return
+}
+
+scr_input_entry()
 
 inputCheck = function(inputName, held)
 {

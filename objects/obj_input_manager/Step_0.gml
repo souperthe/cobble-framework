@@ -5,11 +5,11 @@ for (var index = 0; index < inputLibraryNamesLength; index++)
 {
     var inputName = inputLibraryNames[index]
     var inputData = inputLibrary[$ inputName]
-    var inputKey = inputData.key
+    var inputKeys = inputData.keys
     
-    inputData.held = keyboard_check(inputKey)
-    inputData.pressed = keyboard_check_pressed(inputKey)
-    inputData.released = keyboard_check_released(inputKey)
+    inputData.held = keyboard_check_array(inputKeys, keyboard_check)
+    inputData.pressed = keyboard_check_array(inputKeys, keyboard_check_pressed)
+    inputData.released = keyboard_check_array(inputKeys, keyboard_check_released)
     
     if inputData.pressed
         inputData.signalPressed.fire()
