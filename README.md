@@ -19,5 +19,5 @@ Cobble-Framework is a open source rewrite of Pizza Tower built to be a starting 
 **All art assets and characters from Pizza Tower belong entirely to Tour de Pizza. No copyright infringement is intended.**
 
 # Dependencies
-- [GameMaker LTS 2026](https://gamemaker.io/en/blog/lts-2026-release)
+- [GameMaker LTS 2026](https://gms.yoyogames.com/GameMaker-Installer-2026.0.0.16.exe)
 ![you can also get it through steam](readme_images/lts_2026_steam.PNG)
