@@ -83,10 +83,11 @@ for (var index = 0; index < pauseOptionsLength; index++)
         {
             iconLast = iconCurrent
             iconScale = 1.2
+            iconShake = 3
         }
         
-        var iconX = startX + (optionNameWidth / 2) + 55 + random_range(-1, 1)
-        var iconY = (optionY - 4) + random_range(-1, 1)
+        var iconX = startX + (optionNameWidth / 2) + 55 + random_range(-iconShake, iconShake)
+        var iconY = (optionY - 4) + random_range(-iconShake, iconShake)
         draw_sprite_ext(spr_pause_icons, iconCurrent, iconX, iconY, iconScale, iconScale, 0, c_white, pauseOverlayAlpha)
     }
     

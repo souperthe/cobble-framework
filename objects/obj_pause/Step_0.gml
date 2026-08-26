@@ -19,7 +19,8 @@ if pauseOverlayAlpha == 0
     exit
 }
 
-iconScale = approach(iconScale, 1, 0.6)
+iconScale = approach(iconScale, 1, 0.35)
+iconShake = approach(iconShake, 0, 0.1)
 cursorIndex += 0.35
 
 pauseSpriteGuiAlpha = approach(pauseSpriteGuiAlpha, 0, 0.05)

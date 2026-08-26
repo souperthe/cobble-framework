@@ -1,4 +1,4 @@
-statesAllowed = [PlayerStates.NORMAL, PlayerStates.JUMP, PlayerStates.MACH2]
+statesAllowed = [PlayerStates.NORMAL, PlayerStates.JUMP, PlayerStates.MACH2, PlayerStates.UPPERCUT]
 climbEnter = function(player)
 {
     

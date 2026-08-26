@@ -62,6 +62,7 @@ cursorIndex = 0
 iconLast = 0
 iconCurrent = 0
 iconScale = 1
+iconShake = 0
 
 moveSoundMenu = -1
 
@@ -178,9 +179,6 @@ pauseEnter = function()
     iconCurrent = 0
     iconLast = 0
     
-    cursorTargetX = -60
-    cursorTargetY = -300
-    
     return
 }
 
@@ -210,7 +208,7 @@ pauseExit = function()
     pauseSprite = -1
     pauseSpriteGui = -1
     
-    cursorTargetX = 0
+    cursorTargetX = -60
     cursorTargetY = -300
     
     
