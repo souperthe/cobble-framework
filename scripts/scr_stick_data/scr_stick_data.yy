@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"scr_keyboard",
+  "%Name":"scr_stick_data",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scr_keyboard",
+  "name":"scr_stick_data",
   "parent":{
-    "name":"Utilities",
-    "path":"folders/Scripts/Utilities.yy",
+    "name":"Structs",
+    "path":"folders/Scripts/Structs.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

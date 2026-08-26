@@ -30,7 +30,8 @@ onAudioGroupsLoaded = function()
         obj_afterimage_manager,
         obj_parrallax,
         obj_pause,
-        obj_temp_emitters
+        obj_temp_emitters,
+        obj_controllerwatcher
     ]
     
     var instancesLength = array_length(instances)

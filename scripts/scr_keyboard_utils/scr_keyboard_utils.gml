@@ -1,3 +1,8 @@
+function check_input(inputName, held)
+{
+    return obj_input_manager.inputCheck(inputName, held)
+}
+
 /// @param {Array<Constant.VirtualKey | Real>} keys
 /// @param {Function} keyboardFunction
 /// @return {Bool}

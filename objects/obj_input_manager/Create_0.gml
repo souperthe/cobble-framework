@@ -20,12 +20,20 @@ function InputData(targetKeys, targetButtons = [], targetIndex = 0) constructor
 
 
 inputLibrary = {}
+inputStickDeadzone = 0.4
+inputStickPrevious = {}
+inputStickButtons = [gp_stick_left_left, gp_stick_left_right, gp_stick_left_down, gp_stick_left_up]
+inputStickButtonsLength = array_length(inputStickButtons)
+
+inputGamepadDevices = [0]
 
 /// @param {String} name
-/// @param {Array<Constant.VirtualKey>} inputs
-inputRegister = function(name, inputs)
+/// @param {Array<Constant.VirtualKey>} inputsKeyboard
+/// @param {Array<Constant.GamepadButton>} inputsController
+/// @param {Real} inputIndex
+inputRegister = function(name, inputsKeyboard, inputsController = [], inputIndex = 0)
 {
-    var inputData = new InputData(inputs)
+    var inputData = new InputData(inputsKeyboard, inputsController, inputIndex)
     
     inputLibrary[$ name] = inputData
     return

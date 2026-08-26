@@ -160,6 +160,7 @@ pauseEnter = function()
     instance_activate_object(obj_input_manager)
     instance_activate_object(obj_pause)
     instance_activate_object(obj_screensizer)
+    instance_activate_object(obj_controllerwatcher)
     instance_activate_object(obj_music_debris)
     
     
@@ -225,6 +226,11 @@ pausePressed = function()
         return
     }
     
+    if obj_controllerwatcher.pause
+    {
+        return
+    }
+    
     paused = !paused
     
     if paused
@@ -250,6 +256,10 @@ menuMoveSound = function()
 
 pauseDown = function()
 {
+    if obj_controllerwatcher.pause
+    {
+        return
+    }
     pauseOptionSelected++
     
     menuMoveSound()
@@ -260,6 +270,10 @@ pauseDown = function()
 }
 pauseUp = function()
 {
+    if obj_controllerwatcher.pause
+    {
+        return
+    }
     pauseOptionSelected--
     
     menuMoveSound()
@@ -273,6 +287,11 @@ pauseUp = function()
 /// @self obj_pause
 pauseSelect = function()
 {
+    if obj_controllerwatcher.pause
+    {
+        return
+    }
+    
     var optionCurrent = pauseOptionNames[pauseOptionSelected]
     var optionFunction = pauseOptions[$ optionCurrent]
     

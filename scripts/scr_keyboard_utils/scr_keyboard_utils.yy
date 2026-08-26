@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"scr_input",
+  "%Name":"scr_keyboard_utils",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scr_input",
+  "name":"scr_keyboard_utils",
   "parent":{
     "name":"Utilities",
     "path":"folders/Scripts/Utilities.yy",
