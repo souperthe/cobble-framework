@@ -79,7 +79,6 @@
     {"$GMFolder":"","%Name":"Mach2Bump","folderPath":"folders/Sound/SFX/Player/Mach2Bump.yy","name":"Mach2Bump","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"SuperJump","folderPath":"folders/Sound/SFX/Player/SuperJump.yy","name":"SuperJump","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Taunt","folderPath":"folders/Sound/SFX/Player/Taunt.yy","name":"Taunt","resourceType":"GMFolder","resourceVersion":"2.0",},
-    {"$GMFolder":"","%Name":"Transformation","folderPath":"folders/Sound/SFX/Player/Transformation.yy","name":"Transformation","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Transformations","folderPath":"folders/Sound/SFX/Player/Transformations.yy","name":"Transformations","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Bomb","folderPath":"folders/Sound/SFX/Player/Transformations/Bomb.yy","name":"Bomb","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Knight","folderPath":"folders/Sound/SFX/Player/Transformations/Knight.yy","name":"Knight","resourceType":"GMFolder","resourceVersion":"2.0",},

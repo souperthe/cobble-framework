@@ -14,8 +14,8 @@
   "exportDir":"",
   "name":"sfx_transform_enter",
   "parent":{
-    "name":"Transformation",
-    "path":"folders/Sound/SFX/Player/Transformation.yy",
+    "name":"Transformations",
+    "path":"folders/Sound/SFX/Player/Transformations.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
