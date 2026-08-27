@@ -488,6 +488,7 @@
     {"id":{"name":"spr_comboend_title1","path":"sprites/spr_comboend_title1/spr_comboend_title1.yy",},},
     {"id":{"name":"spr_comboend","path":"sprites/spr_comboend/spr_comboend.yy",},},
     {"id":{"name":"spr_combovery","path":"sprites/spr_combovery/spr_combovery.yy",},},
+    {"id":{"name":"spr_controller","path":"sprites/spr_controller/spr_controller.yy",},},
     {"id":{"name":"spr_debris_baddie","path":"sprites/spr_debris_baddie/spr_debris_baddie.yy",},},
     {"id":{"name":"spr_debris_cage","path":"sprites/spr_debris_cage/spr_debris_cage.yy",},},
     {"id":{"name":"spr_debris_eye","path":"sprites/spr_debris_eye/spr_debris_eye.yy",},},

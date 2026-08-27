@@ -22,6 +22,11 @@ draw_set_font(global.fontSmall)
 draw_set_halign(fa_center)
 draw_set_valign(fa_center)
 
+var controllerOffset = 140
+
+draw_sprite(spr_controller, 0, controllerOffset, centerY)
+draw_sprite(spr_controller, 0, hudWidth - controllerOffset, centerY)
+
 for (var index = 0; index < gamepadsLostLength; index++)
 {
     var gamepadIndex = gamepadsLost[index]
