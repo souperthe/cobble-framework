@@ -88,7 +88,7 @@ for (var index = 0; index < pauseOptionsLength; index++)
         
         var iconX = startX + (optionNameWidth / 2) + 55 + random_range(-iconShake, iconShake)
         var iconY = (optionY - 4) + random_range(-iconShake, iconShake)
-        draw_sprite_ext(spr_pause_icons, iconCurrent, iconX, iconY, iconScale, iconScale, 0, c_white, pauseOverlayAlpha)
+        draw_sprite_ext(spr_pause_icons, iconCurrent, iconX, iconY * optionData.positionModifer, iconScale, iconScale, 0, c_white, optionData.alpha)
     }
     
     draw_text_colour(startX, optionY * optionData.positionModifer, optionName, optionColor, optionColor, optionColor, optionColor, optionData.alpha)

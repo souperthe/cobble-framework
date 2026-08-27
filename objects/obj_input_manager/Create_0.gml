@@ -20,7 +20,7 @@ function InputData(targetKeys, targetButtons = [], targetIndex = 0) constructor
 
 
 inputLibrary = {}
-inputStickDeadzone = 0.4
+inputStickDeadzone = 0.6
 inputStickPrevious = {}
 inputStickButtons = [gp_stick_left_left, gp_stick_left_right, gp_stick_left_down, gp_stick_left_up]
 inputStickButtonsLength = array_length(inputStickButtons)

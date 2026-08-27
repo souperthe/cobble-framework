@@ -18,12 +18,19 @@ function scr_player_state_door_enter(enterMessage)
     moveAndCollide = false
     moveSpeed = 0
     
+    
     return;
 }
 
 /// @self obj_player
 function scr_player_state_door_exit()
 {
+    
+    var move = check_input("right", true) - check_input("left", true)
+    
+    if move != 0
+        scaleX = move
+    
     return;
 }
 

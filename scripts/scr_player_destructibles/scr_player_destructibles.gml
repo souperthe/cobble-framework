@@ -40,6 +40,9 @@ function scr_player_destructibles()
         destructibleCheck = [x, y - 1]
     }
     
+    if sprite_index = spriteGet("dive") || stateCurrentEnum == PlayerStates.TRICKJUMP
+        destructibleCheck = [x + velocityX, y + velocityY]
+    
     if destructibleCheck == destructibleCheckDefault
     {
         return

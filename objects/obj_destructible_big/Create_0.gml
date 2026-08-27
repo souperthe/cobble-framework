@@ -3,3 +3,4 @@ event_inherited();
 
 debrisAmount = 7
 breakEffectAmount = 3
+breakEffect = "deadjohnsmoke"

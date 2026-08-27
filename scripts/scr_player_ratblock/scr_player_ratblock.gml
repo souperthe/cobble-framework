@@ -2,13 +2,13 @@
 function scr_player_ratblock()
 {
     
-    if distance_to_object(obj_ratblock) > 200
+    if distance_to_object(obj_ratblock) > 600
         return
     
-    var ratTouching = instance_place(x + scaleX, y, obj_ratblock)
+    var ratTouching = instance_place(x + velocityX, y, obj_ratblock)
     
     if !ratTouching
-        ratTouching = instance_place(x + (scaleX * moveSpeed), y, obj_ratblock)
+        ratTouching = instance_place(x + scaleX, y, obj_ratblock)
     
     var ratStates = [PlayerStates.CHAINSAWDASH, PlayerStates.CHAINSAWATTACK]
     
