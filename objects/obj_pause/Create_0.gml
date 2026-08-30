@@ -1,10 +1,10 @@
 
 
 
-pauseInputEnter = obj_input_manager.inputLibrary[$ "pause"]
-pauseInputDown = obj_input_manager.inputLibrary[$ "down"]
-pauseInputUp = obj_input_manager.inputLibrary[$ "up"]
-pauseInputSelect = obj_input_manager.inputLibrary[$ "enter"]
+pauseInputEnter = obj_input_manager.inputGet("pause")
+pauseInputDown = obj_input_manager.inputGet("down")
+pauseInputUp = obj_input_manager.inputGet("up")
+pauseInputSelect = obj_input_manager.inputGet("enter")
 
 pauseInputUpListener = -1
 pauseInputDownListener = -1
@@ -23,10 +23,12 @@ pauseMusicAsset = mu_pause
 pauseMusicInstance = -1
 pauseMusicFade = 800
 
+optionBuffer = 0
+
 pauseOptionsLevelNames = ["resume", "options", "restart level", "chef tasks", "exit level"]
 pauseOptionsLevel = {
     "resume" : scr_pause_resume,
-    "options" : scr_pause_resume,
+    "options" : scr_pause_options,
     "restart level" : scr_pause_restart,
     "chef tasks" : scr_pause_resume,
     "exit level" : scr_pause_resume
@@ -35,7 +37,7 @@ pauseOptionsLevel = {
 pauseOptionsHubNames = ["resume", "options", "main menu"]
 pauseOptionsHub = {
     "resume" : scr_pause_resume,
-    "options" : scr_pause_resume,
+    "options" : scr_pause_options,
     "main menu" : scr_pause_resume
 }
 pauseOptionsIcons = {
@@ -119,6 +121,30 @@ getSpriteGui = function()
     surface_free(surfaceTemp)
     
     return guiSprite
+}
+
+pauseCanInput = function()
+{
+    
+    static nonoObjects = [obj_room_warp, obj_titlecard_warp, obj_option]
+    static nonoObjectsLength = array_length(nonoObjects)
+    
+    for (var index = 0; index < nonoObjectsLength; index++)
+    {
+        var nonoObject = nonoObjects[index]
+        
+        if instance_exists(nonoObject)
+            return false
+        
+        continue
+    }
+    
+    if optionBuffer > 0
+    {
+        return false
+    }
+    
+    return true
 }
 
 pauseResetOptions = function(targetPositionModifier = 3, targetAlpha = 0)
@@ -221,10 +247,11 @@ pauseExit = function()
 pausePressed = function()
 {
     
-    if instance_exists(obj_room_warp)
+    if !pauseCanInput()
     {
         return
     }
+    
     
     if obj_controllerwatcher.pause
     {
@@ -256,7 +283,7 @@ menuMoveSound = function()
 
 pauseDown = function()
 {
-    if obj_controllerwatcher.pause
+    if !pauseCanInput()
     {
         return
     }
@@ -270,7 +297,7 @@ pauseDown = function()
 }
 pauseUp = function()
 {
-    if obj_controllerwatcher.pause
+    if !pauseCanInput()
     {
         return
     }
@@ -284,9 +311,14 @@ pauseUp = function()
     return
 }
 
-/// @self obj_pause
 pauseSelect = function()
 {
+    
+    if !pauseCanInput()
+    {
+        return
+    }
+    
     if obj_controllerwatcher.pause
     {
         return

@@ -11,6 +11,11 @@ var decorStep = 0.1
 if !paused
     decorStep = 0.02
 
+if instance_exists(obj_option)
+    optionBuffer = 5
+else
+    optionBuffer--
+
 
 pauseDecorModifier = lerp(pauseDecorModifier, pauseOverlayAlphaTarget, decorStep)
 

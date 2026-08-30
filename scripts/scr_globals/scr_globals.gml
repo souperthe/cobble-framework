@@ -36,6 +36,10 @@ function scr_globals()
     global.panicMinutes = 0
     global.panicSeconds = 0
     
+    global.hubX = 0
+    global.hubY = 0
+    global.hubRoom = rm_test
+    
     global.secretsFound = 0
     
     global.saveFile = "save_0"

@@ -25,7 +25,7 @@ gamepadLost = function(gamepadIndex)
     instance_activate_object(obj_input_manager)
     instance_activate_object(obj_pause)
     
-    var inputStart = obj_input_manager.inputLibrary[$ "start"]
+    var inputStart = obj_input_manager.inputGet("start")
     
     inputStartListener = inputStart.signalPressed.connect(pauseExit)
     pause = true

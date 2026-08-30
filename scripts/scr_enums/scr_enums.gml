@@ -88,6 +88,27 @@ function scr_enums()
         SETTLE,
         HOLD
     }
+    
+    enum OptionType {
+        TOGGLE,
+        MULTIPLE,
+        PRESS,
+        SLIDE,
+        HEADER
+    }
+    
+    enum MenuType {
+        OPTIONS,
+        AUDIO,
+        VIDEO,
+        GAME,
+        CONTROLS
+    }
+    
+    enum MenuAnchor {
+        CENTER,
+        LEFT
+    }
 
     return;
 }

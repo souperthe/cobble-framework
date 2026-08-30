@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_pause_options",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_pause_options",
+  "parent":{
+    "name":"PauseOptions",
+    "path":"folders/Scripts/PauseOptions.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

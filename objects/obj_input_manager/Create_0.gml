@@ -1,24 +1,5 @@
 scr_globals_keys();
 
-/// @param {Array<Constant.VirtualKey|Real>} targetKeys
-/// @param {Array<Constant.GamepadButton>} targetButtons
-/// @param {Real} targetIndex
-function InputData(targetKeys, targetButtons = [], targetIndex = 0) constructor
-{
-    pressed = false
-    held = false
-    released = false
-    keys = targetKeys
-    buttons = targetButtons
-    buttonIndex = targetIndex
-    
-    signalPressed = new Signal()
-    signalReleased = new Signal()
-    return
-}
-
-
-
 inputLibrary = {}
 inputStickDeadzone = 0.6
 inputStickPrevious = {}
@@ -40,6 +21,13 @@ inputRegister = function(name, inputsKeyboard, inputsController = [], inputIndex
 }
 
 scr_input_entry()
+
+/// @param {String} inputName
+/// @return {Struct.InputData}
+inputGet = function(inputName)
+{
+    return inputLibrary[$ inputName]
+}
 
 inputCheck = function(inputName, held)
 {

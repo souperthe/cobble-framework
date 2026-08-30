@@ -62,10 +62,11 @@ function scr_player_state_machroll_step()
         sprite_index = spriteGet("dive")
         image_speed = 0.8
         
-        if moveSpeed < 12
-            moveSpeed = 12
-        
         var diveSpeed = 10
+        
+        if moveSpeed < diveSpeed
+            moveSpeed = diveSpeed
+        
         var speedCurrent = moveSpeed
         
         if speedCurrent > diveSpeed

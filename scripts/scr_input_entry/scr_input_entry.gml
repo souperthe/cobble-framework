@@ -16,6 +16,7 @@ function scr_input_entry()
     inputRegister("right", [global.keyRight], [gp_padr, gp_stick_left_right])
     inputRegister("pause", [global.keyPause], [gp_start])
     inputRegister("enter", [global.keyEnter, global.keyJump], [gp_select, gp_face1])
-    inputRegister("start", [global.keyEnter], [gp_start])
+    inputRegister("start", [global.keyEnter], [gp_start]) 
+    inputRegister("back", [global.keyPause, global.keyAttack], [gp_face3])
     return
 }

@@ -36,6 +36,7 @@ function scr_level_rank()
     var savePath = saveDirectory + saveName + ".cobbledata"
     var saveAttempts = 1
     var saveLevelTime = (get_timer() - global.levelTimeStart) / 1000000
+    var dontSave = false
     
     if file_exists(savePath)
     {
@@ -47,14 +48,31 @@ function scr_level_rank()
             
             saveAttempts = saveFileOldParsed.attempts + 1
             
+            if saveFileOldParsed.score >= global.collect
+            {
+                dontSave = true
+            }
+            
+            if saveFileOldParsed.rankIndex >= global.levelRankIndex
+            {
+                dontSave = true
+            }
         }
-        
+    }
+    
+    if dontSave
+    {
+        return
+    }
+    
+    if file_exists(savePath)
+    {
         file_delete(savePath)
     }
     
     var saveData = {
         score : global.collect,
-        rank: global.levelRankLetter,
+        rankIndex: global.levelRankIndex,
         toppins : global.toppinFollowers,
         secrets : global.secretsFound,
         comboBreaks : global.comboBreaks,
