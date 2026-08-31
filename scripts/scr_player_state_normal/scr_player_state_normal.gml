@@ -45,6 +45,10 @@ function scr_player_state_normal_step()
     var accel = 0.5;
     var deccel = 0.1;
     
+    
+    var spriteIdle = spriteGet("idle")
+    var spriteMove = spriteGet("move")
+    
     if array_contains(landAnimations, sprite_index)
     {
         landing = !is_sprite_finished()
@@ -86,7 +90,7 @@ function scr_player_state_normal_step()
             else
                 image_speed = 0.6
                 
-            sprite_index = spriteGet("move")
+            sprite_index = spriteMove
         }
             
             
@@ -97,7 +101,7 @@ function scr_player_state_normal_step()
         machCrazy = false
         if !landing
         { 
-            sprite_index = spriteGet("idle")
+            sprite_index = spriteIdle
             image_speed = 0.35
         }
     }

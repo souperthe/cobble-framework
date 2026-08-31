@@ -27,7 +27,7 @@ function scr_player_destructibles()
     
     if array_contains(destructibleStates, stateCurrentEnum)
     {
-        destructibleCheck = [x + (scaleX * moveSpeed), y]
+        destructibleCheck = [x + velocityX, y]
     }
     
     if array_contains(destructibleStatesVerical, stateCurrentEnum)

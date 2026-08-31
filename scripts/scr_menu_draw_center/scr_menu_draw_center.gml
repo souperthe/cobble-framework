@@ -3,6 +3,9 @@
 /// @self obj_option
 function scr_menu_draw_center(menu)
 {
+    draw_set_halign(fa_center)
+    draw_set_valign(fa_middle)
+    
     var guiWidth = obj_screensizer.hudWidth
     var guiHeight = obj_screensizer.hudHeight
     
@@ -30,8 +33,6 @@ function scr_menu_draw_center(menu)
             optionColor = c_white
         }
         
-        if option.type == OptionType.HEADER 
-            optionColor = c_white
         
         
         var optionText = string_upper(option.name)
@@ -66,24 +67,6 @@ function scr_menu_draw_center(menu)
         }
         continue
     }
-
-    return
-}
-
-/// @param {Struct.Menu} menu
-/// @self obj_option
-function scr_menu_draw_left(menu)
-{
-    var guiWidth = obj_screensizer.hudWidth
-    var guiHeight = obj_screensizer.hudHeight
-    
-    var menuOptions = menu.options
-    var menuOptionsLength = array_length(menuOptions)
-    var menuOptionsSize = (string_height("A") * menuOptionsLength) + (menuOptionsLength * menu.padY)
-    var menuPad = 150
-
-    var centerX = guiHeight / 2
-    var centerY = guiWidth / 2 - (menuOptionsSize / 4)
 
     return
 }

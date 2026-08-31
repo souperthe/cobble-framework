@@ -26,3 +26,28 @@ for (var index = 0; index < optionIconNamesLength; index++)
     continue
 }
 
+for (var index = 0; index < backgroundAlphaLength; index++)
+{
+    
+    var targetStep = 0.05
+    var targetValue = 0
+    
+    if index == menuCurrent
+    {
+        targetValue = 1
+    }
+    
+    var backgroundAlphaCurrent = backgroundAlpha[index]
+    
+    backgroundAlpha[index] = approach(backgroundAlphaCurrent, targetValue, targetStep)
+    continue
+}
+
+var menu = menus[menuCurrent]
+var menuOption = menu.options[optionCurrent]
+
+with menuOption
+{
+    menuOption.step()
+}
+

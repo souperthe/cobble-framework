@@ -13,9 +13,10 @@ function Menu(targetType, targetAnchor, targetPadX, targetPadY, targetReturnMenu
     padY = targetPadY
     alpha = 1
     options = scr_menu_options_init()
+    returnMenu = targetReturnMenu
     
     
-    /// @param {Struct.MenuOption} option
+    /// @param {Struct.Option} option
     static optionAdd = function(option)
     {
         
@@ -32,76 +33,33 @@ function Menu(targetType, targetAnchor, targetPadX, targetPadY, targetReturnMenu
         var optionPress = new OptionPress(targetOptionId, targetName, targetCallable)
         
         optionAdd(optionPress)
-        return
+        
+        return optionPress
     }
-    return
-}
-
-/// @param {Enum.OptionType} targetType
-/// @param {Real} targetOptionId
-/// @param {String} targetName
-function Option(targetType, targetOptionId, targetName) constructor
-{
-    type = targetType
-    optionId = targetOptionId
-    name = targetName
-    return
-}
-
-/// @param {Real} targetOptionId
-/// @param {String} targetName
-/// @param {Function} targetCallable
-function OptionPress(targetOptionId, targetName, targetCallable) : Option(OptionType.PRESS, targetOptionId, targetName) constructor 
-{
-    callable = targetCallable
-    return
-}
-
-/// @param {Real} targetOptionId
-/// @param {String} targetName
-/// @param {Asset.GMSprite} targetIcon
-function OptionHeader(targetOptionId, targetName, targetIcon): Option(OptionType.HEADER, targetOptionId, targetName) constructor 
-{
-    icon = targetIcon
-    return
-}
-
-/// @param {Real} targetOptionId
-/// @param {String} targetName
-/// @param {Function} targetOnChanged
-function OptionToggle(targetOptionId, targetName, targetOnChanged): Option(OptionType.TOGGLE, targetOptionId, targetName) constructor 
-{
-    value = false
-    onChanged = targetOnChanged
-    return
-}
-
-/// @param {Real} targetOptionId
-/// @param {String} targetName
-/// @param {Function} targetOnChanged
-/// @param {Array} targetValues
-function OptionMultiple(targetOptionId, targetName, targetOnChanged, targetValues): Option(OptionType.MULTIPLE, targetOptionId, targetName) constructor 
-{
-    value = 0
-    values = targetValues
-    onChanged = targetOnChanged
-    return
-}
-
-/// @param {Real} targetOptionId
-/// @param {String} targetName
-/// @param {Function} targetOnMove
-/// @param {Function} targetOnChanged
-/// @param {Asset.GMSound} targetSound
-function OptionSlider(targetOptionId, targetName, targetOnMove, targetOnChanged, targetSound): Option(OptionType.SLIDE, targetOptionId, targetName) constructor 
-{
-    value = 100
-    sound = targetSound
-    slideCount = 0
-    moving = false
     
-    onMove = targetOnMove
-    onChanged = targetOnChanged
+    /// @param {Real} targetOptionId
+    /// @param {String} targetName
+    /// @param {Function} targetOnMove
+    /// @param {Function} targetOnChanged
+    /// @param {Asset.GMSound} targetSound
+    static optionAddSlide = function(targetOptionId, targetName, targetOnMove, targetOnChanged, targetSound)
+    {
+        var optionSlide = new OptionSlider(targetOptionId, targetName, targetOnMove, targetOnChanged, targetSound)
+        
+        optionAdd(optionSlide)
+        
+        return optionSlide
+    }
+    
+    static optionAddToggle = function(targetOptionId, targetName, targetOnChanged)
+    {
+        var optionToggle = new OptionToggle(targetOptionId, targetName, targetOnChanged)
+        
+        optionAdd(optionToggle)
+        
+        return optionToggle
+    }
+    
     return
 }
 
@@ -110,3 +68,4 @@ function scr_menu_options_init()
 {
     return []
 }
+

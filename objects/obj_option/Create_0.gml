@@ -3,6 +3,11 @@ depth = -5
 /// @param {MenuType} menuType
 menuGoto = function(menuType)
 {
+    
+    var menuTarget = menus[menuType]
+    
+    menuCurrent = menuType
+    optionCurrent = 0
     return
 }
 
@@ -12,7 +17,8 @@ menusInit = function()
     
     var menus = []
     
-    array_push(menus, scr_menu_option())
+    menus[MenuType.OPTIONS] = scr_menu_option()
+    menus[MenuType.AUDIO] = scr_menu_audio()
     
     return menus
 }
@@ -38,6 +44,7 @@ textY = 0
 
 optionCurrent = 0
 optionCurrentOld = optionCurrent
+optionDisabled = false
 
 optionIcons = {}
 optionIcons[$ "audio"] = new OptionIcon(4)
@@ -48,6 +55,18 @@ optionIcons[$ "controls"] = new OptionIcon(7, spr_pause_icons, 8, 8)
 optionIconNames = struct_get_names(optionIcons)
 optionIconNamesLength = array_length(optionIconNames)
 optionIconHighlight = optionIcons[$ "audio"]
+
+soundSelect = [sfx_menuselect_1, sfx_menuselect_2, sfx_menuselect_3]
+soundSelectCurrent = -1
+soundSelectPlay = function()
+{
+    var sound = array_random(soundSelect)
+    
+    audio_stop_sound(soundSelectCurrent)
+    
+    soundSelectCurrent = audio_play_sound(sound, 0, false, 1, 0, 1)
+    return
+}
 
 
 clampSelection = function()
@@ -67,6 +86,11 @@ clampSelection = function()
 
 onInputUp = function()
 {
+    if optionDisabled
+    {
+        return
+    }
+    
     optionCurrent--
     clampSelection()
     return
@@ -74,6 +98,11 @@ onInputUp = function()
 
 onInputDown = function()
 {
+    if optionDisabled
+    {
+        return
+    }
+    
     optionCurrent++
     clampSelection()
     return
@@ -81,6 +110,11 @@ onInputDown = function()
 
 onBack = function()
 {
+    if optionDisabled
+    {
+        return
+    }
+    
     var menu = menus[menuCurrent]
     
     audio_play_sound(sfx_menuback, 0, false)
@@ -90,6 +124,8 @@ onBack = function()
         instance_destroy()
         return
     }
+    
+    menuGoto(menu.returnMenu)
     
     return
 }

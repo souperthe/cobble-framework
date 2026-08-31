@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"scr_menu_draw",
+  "%Name":"scr_option",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scr_menu_draw",
+  "name":"scr_option",
   "parent":{
-    "name":"Utilities",
-    "path":"folders/Scripts/Utilities.yy",
+    "name":"Structs",
+    "path":"folders/Scripts/Structs.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

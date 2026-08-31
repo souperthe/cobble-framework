@@ -31,3 +31,29 @@ function scr_menu_option()
     
     return options
 }
+
+/// @self obj_option
+function scr_menu_audio()
+{
+    
+    var audio = new Menu(MenuType.AUDIO, MenuAnchor.LEFT, 150, 40)
+    
+    var optionBack = function()
+    {
+        menuGoto(MenuType.OPTIONS)
+        return
+    }
+    
+    var optionMasterOnMove = function()
+    {
+        return
+    }
+    
+    audio.optionAddPress(0, "back", optionBack)
+    audio.optionAddSlide(2, "master", optionMasterOnMove, optionMasterOnMove, sfx_knightslide)
+    audio.optionAddSlide(3, "sfx", optionMasterOnMove, optionMasterOnMove, sfx_knightslide)
+    audio.optionAddSlide(4, "music", optionMasterOnMove, optionMasterOnMove, sfx_knightslide)
+    audio.optionAddToggle(5, "unfocused mute", optionMasterOnMove)
+    
+    return audio
+}

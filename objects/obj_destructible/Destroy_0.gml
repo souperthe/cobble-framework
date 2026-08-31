@@ -9,7 +9,7 @@ repeat (debrisAmount)
     
     debris.velocityX = random_range(-5, 5)
     debris.velocityY = random_range(-10, 10)
-    debris.animateSpeed = 0.35
+    debris.animateSpeed = random_range(0.1, 0.7)
     debris.animate = true
     continue
 }

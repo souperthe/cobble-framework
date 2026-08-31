@@ -14,6 +14,7 @@ barSurface = 0
 barFillX = 0
 
 showtimeTimer = 100
+showtimeSprites = [spr_timer_pizzaface2, spr_timer_pizzaface3]
 
 panicStarted = function()
 {

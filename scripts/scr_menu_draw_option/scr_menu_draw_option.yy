@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"scr_menus",
+  "%Name":"scr_menu_draw_option",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scr_menus",
+  "name":"scr_menu_draw_option",
   "parent":{
     "name":"Menu",
     "path":"folders/Scripts/Menu.yy",

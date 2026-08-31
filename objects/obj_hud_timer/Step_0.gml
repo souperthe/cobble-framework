@@ -12,6 +12,12 @@ if instance_exists(obj_ghostcollectibles)
     targetPosition = timerYOffsetHidden
 }
 
+if array_contains(showtimeSprites, pizzaFaceSprite)
+{
+    targetStep = 0.5
+    targetPosition = timerYOffsetVisible - 18
+}
+
 if showtimeTimer < 0
 {
     targetStep = 1

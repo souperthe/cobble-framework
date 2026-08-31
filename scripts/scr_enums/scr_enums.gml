@@ -94,7 +94,6 @@ function scr_enums()
         MULTIPLE,
         PRESS,
         SLIDE,
-        HEADER
     }
     
     enum MenuType {

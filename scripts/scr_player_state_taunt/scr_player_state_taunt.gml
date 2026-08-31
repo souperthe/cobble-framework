@@ -53,10 +53,9 @@ function scr_player_state_taunt_step()
     effectTaunt.x = x
     effectTaunt.y = y
     
-    if check_input("up", true)
+    if check_input("up", false)
     {
-        global.combo += 5
-        global.comboTime = global.comboTimeMax
+        paletteIndex++
     }
     
     if tauntTimer > 0

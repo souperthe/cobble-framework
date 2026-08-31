@@ -1,0 +1,86 @@
+
+/// @param {Struct.Menu} menu
+/// @param {Struct.OptionToggle} option
+/// @param {Real} optionY
+/// @param {Real | Constant.Color} color
+function scr_menu_draw_option_toggle(menu, option, optionY, color, rightMargin)
+{
+    var guiWidth = obj_screensizer.hudWidth
+    
+    draw_set_halign(fa_right)
+    
+    var toggleText = option.value ? "ON" : "OFF"
+    var toggleName = string_upper(option.name)
+    
+    draw_text_colour_simple(guiWidth - menu.padX, optionY, toggleText, color, 1)
+    
+    draw_set_halign(fa_left)
+    draw_text_colour_simple(menu.padX, optionY, toggleName, color, 1)
+    return
+}
+
+/// @param {Struct.Menu} menu
+/// @param {Struct.OptionSlider} option
+/// @param {Real} optionY
+/// @param {Real | Constant.Color} color
+function scr_menu_draw_option_slide(menu, option, optionY, color)
+{
+    
+    var guiWidth = obj_screensizer.hudWidth
+    
+    var slideWidth = 200
+    var slideHeight = 5
+    
+    
+    var fillWidth = slideWidth * (option.value / 100)
+       
+    var sliderX = guiWidth - menu.padX - slideWidth
+    var sliderY = optionY
+    var sliderSprite = spr_slider_icon_normal
+    var sliderIndex = 0
+    
+    var shakeRange = 0.4
+    var shakeX = 0
+    var shakeY = 0
+    
+    if menu.type == MenuType.AUDIO
+    {
+        sliderSprite = spr_slider_icon_scream
+        
+        if option.moving
+        {
+            sliderIndex = 1
+            shakeX = random_range(-shakeRange, shakeRange)
+            shakeY = random_range(-shakeRange, shakeRange)
+        }
+        
+    }
+    
+    
+    var handleX = sliderX + fillWidth + shakeX
+    var handleY = sliderY + shakeY
+    
+    draw_sprite_ext(spr_slider, 0, sliderX, sliderY, 1, 1, 0, color, 1)
+    
+    draw_sprite(sliderSprite, sliderIndex, handleX, handleY)
+    
+    var optionName = string_upper(option.name)
+    
+    draw_text_colour_simple(menu.padX, optionY, optionName, color, 1)
+    
+    return
+}
+
+/// @param {Struct.Menu} menu
+/// @param {Struct.OptionSlider} option
+/// @param {Real} optionY
+/// @param {Real | Constant.Color} color
+function scr_menu_draw_option_press(menu, option, optionY, color)
+{
+    
+    var optionText = string_upper(option.name)
+    
+    draw_text_colour_simple(menu.padX, optionY, optionText, color, 1)
+    
+    return
+}
