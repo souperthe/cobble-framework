@@ -73,15 +73,31 @@ clampSelection = function()
 {
     var menu = menus[menuCurrent]
     var menuOptions = array_length(menu.options)
+    var optionBlacklist = [OptionType.HEADER, OptionType.NEWLINE]
+    
+    var selectionDirection = sign(optionCurrent - optionCurrentOld)
+    
+    if (selectionDirection == 0) 
+        selectionDirection = 1
     
     optionCurrent = clamp(optionCurrent, 0, menuOptions - 1)
     
-    if optionCurrentOld != optionCurrent
+    while (array_contains(optionBlacklist, menu.options[optionCurrent].type))
+    {
+        var nextOption = optionCurrent + selectionDirection
+        if (nextOption < 0 || nextOption >= menuOptions)
+        {
+            break
+        }
+        
+        optionCurrent = nextOption
+    }
+    
+    if (optionCurrentOld != optionCurrent)
     {
         audio_play_sound(sfx_step, 0, false, 1, 0, random_pitch())
         optionCurrentOld = optionCurrent
     }
-    return
 }
 
 onInputUp = function()

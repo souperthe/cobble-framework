@@ -13,9 +13,6 @@ function scr_menu_draw_option_toggle(menu, option, optionY, color, rightMargin)
     var toggleName = string_upper(option.name)
     
     draw_text_colour_simple(guiWidth - menu.padX, optionY, toggleText, color, 1)
-    
-    draw_set_halign(fa_left)
-    draw_text_colour_simple(menu.padX, optionY, toggleName, color, 1)
     return
 }
 
@@ -39,7 +36,7 @@ function scr_menu_draw_option_slide(menu, option, optionY, color)
     var sliderSprite = spr_slider_icon_normal
     var sliderIndex = 0
     
-    var shakeRange = 0.4
+    var shakeRange = 1
     var shakeX = 0
     var shakeY = 0
     
@@ -66,8 +63,6 @@ function scr_menu_draw_option_slide(menu, option, optionY, color)
     
     var optionName = string_upper(option.name)
     
-    draw_text_colour_simple(menu.padX, optionY, optionName, color, 1)
-    
     return
 }
 
@@ -77,10 +72,7 @@ function scr_menu_draw_option_slide(menu, option, optionY, color)
 /// @param {Real | Constant.Color} color
 function scr_menu_draw_option_press(menu, option, optionY, color)
 {
-    
-    var optionText = string_upper(option.name)
-    
-    draw_text_colour_simple(menu.padX, optionY, optionText, color, 1)
+
     
     return
 }

@@ -20,7 +20,7 @@ function Menu(targetType, targetAnchor, targetPadX, targetPadY, targetReturnMenu
     static optionAdd = function(option)
     {
         
-        array_push(options, option)
+        options[option.optionId] = option
         
         return option
     }
@@ -58,6 +58,15 @@ function Menu(targetType, targetAnchor, targetPadX, targetPadY, targetReturnMenu
         optionAdd(optionToggle)
         
         return optionToggle
+    }
+    
+    static optionAddNewLine = function(targetOptionId)
+    {
+        var option = new Option(OptionType.NEWLINE, targetOptionId, "")
+        
+        optionAdd(option)
+        
+        return option
     }
     
     return

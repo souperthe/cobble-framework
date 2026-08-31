@@ -47,6 +47,10 @@ function scr_globals()
     
     global.busMusic = audio_bus_create()
     global.busSound = audio_bus_create()
+    
+    global.volumeMaster = 1
+    global.volumeMusic = 1
+    global.volumeSound = 1
 
     scr_level_data_init()
     return;

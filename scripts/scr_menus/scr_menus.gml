@@ -44,16 +44,47 @@ function scr_menu_audio()
         return
     }
     
-    var optionMasterOnMove = function()
+    static optionMasterSet = function(value)
+    {
+        var volume = value / 100
+        global.volumeMaster = volume
+        scr_apply_volume()
+        return
+    }
+    static optionSetMusic = function(value)
+    {
+        var volume = value / 100
+        global.volumeMusic = volume
+        scr_apply_volume()
+        return
+    }
+    static optionSetSound = function(value)
+    {
+        var volume = value / 100
+        global.volumeSound = volume
+        scr_apply_volume()
+        return
+    }
+    static optionSetFocusMute = function(value)
     {
         return
     }
     
     audio.optionAddPress(0, "back", optionBack)
-    audio.optionAddSlide(2, "master", optionMasterOnMove, optionMasterOnMove, sfx_knightslide)
-    audio.optionAddSlide(3, "sfx", optionMasterOnMove, optionMasterOnMove, sfx_knightslide)
-    audio.optionAddSlide(4, "music", optionMasterOnMove, optionMasterOnMove, sfx_knightslide)
-    audio.optionAddToggle(5, "unfocused mute", optionMasterOnMove)
+    
+    audio.optionAddNewLine(1)
+    
+    var sliderMaster = audio.optionAddSlide(2, "master", optionMasterSet, optionMasterSet, sfx_knightslide)
+    var sliderMusic = audio.optionAddSlide(3, "music", optionSetMusic, optionSetMusic, sfx_knightslide)
+    var sliderSound = audio.optionAddSlide(4, "sfx", optionSetSound, optionSetSound, sfx_knightslide)
+    
+    sliderSound.value = global.volumeSound * 100
+    sliderMusic.value = global.volumeMusic * 100
+    sliderMaster.value = global.volumeMaster * 100
+    
+    audio.optionAddNewLine(5)
+    
+    audio.optionAddToggle(6, "unfocused mute", optionSetFocusMute)
     
     return audio
 }

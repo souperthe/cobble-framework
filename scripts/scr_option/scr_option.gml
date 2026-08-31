@@ -59,7 +59,7 @@ function OptionToggle(targetOptionId, targetName, targetOnChanged): Option(Optio
         
         value = !value
         obj_option.soundSelectPlay()
-        onChanged()
+        onChanged(value)
         return
     }
     return
@@ -109,6 +109,7 @@ function OptionSlider(targetOptionId, targetName, targetOnMove, targetOnChanged,
             slideBuffer = 1
             
             value = clamp(value, 0, 100)
+            onMove(value)
         }
         
         if move != 0
@@ -120,6 +121,7 @@ function OptionSlider(targetOptionId, targetName, targetOnMove, targetOnChanged,
         {
         	moving = false
             obj_option.optionDisabled = false
+            onChanged(value)
         }
         return
     }

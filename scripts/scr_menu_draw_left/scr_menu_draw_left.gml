@@ -26,21 +26,21 @@ function scr_menu_draw_left(menu)
         
         var option = menuOptions[index]
         var optionColor = c_white
+        var optionText = string_upper(option.name)
         var optionY = centerY + (menu.padY * index) + centerYPlus
-        var newLine = false
-        
-        if option.name == "back"
-            newLine = true
         
         if index != optionCurrent
             optionColor = c_gray
         
         var optionDraw = optionDraws[option.type]
         
-        optionDraw(menu, option, optionY, optionColor)
+        if optionDraw != undefined
+        {
+            optionDraw(menu, option, optionY, optionColor)
+        }
         
-        if newLine
-            centerYPlus += 16
+        draw_set_halign(fa_left)
+        draw_text_colour_simple(menu.padX, optionY, optionText, optionColor, 1)
         
         continue
     }
@@ -49,9 +49,10 @@ function scr_menu_draw_left(menu)
 }
 
 
+
 function scr_menu_option_draws()
 {
-    var draws = []
+    var draws = array_create(OptionType._length, undefined)
     
     draws[OptionType.PRESS] = scr_menu_draw_option_press
     draws[OptionType.SLIDE] = scr_menu_draw_option_slide
