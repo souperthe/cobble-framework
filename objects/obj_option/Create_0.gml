@@ -1,5 +1,35 @@
 depth = -5
 
+    
+sliderStart = function(value)
+{
+    var volume = value / 100
+    
+    if obj_option.soundSlider == -1
+    {
+        obj_option.soundSlider = audio_play_sound(sfx_slider, 0, true, volume)
+        audio_sound_loop_start(obj_option.soundSlider, 0.374)
+        audio_sound_loop_end(obj_option.soundSlider, 0.549)
+    }
+    
+    audio_sound_gain(obj_option.soundSlider, volume * global.volumeMaster)
+    
+    return
+}
+    
+sliderEnd = function()
+{
+    
+    if obj_option.soundSlider == -1
+    {
+        return
+    }
+    
+    audio_stop_sound(obj_option.soundSlider)
+    obj_option.soundSlider = -1
+    return
+}
+
 /// @param {MenuType} menuType
 menuGoto = function(menuType)
 {
@@ -58,6 +88,7 @@ optionIconHighlight = optionIcons[$ "audio"]
 
 soundSelect = [sfx_menuselect_1, sfx_menuselect_2, sfx_menuselect_3]
 soundSelectCurrent = -1
+soundSlider = -1
 soundSelectPlay = function()
 {
     var sound = array_random(soundSelect)
@@ -145,6 +176,7 @@ onBack = function()
     
     return
 }
+
 
 inputDown = obj_input_manager.inputGet("down")
 inputUp = obj_input_manager.inputGet("up")

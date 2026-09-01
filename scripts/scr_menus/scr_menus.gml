@@ -49,6 +49,7 @@ function scr_menu_audio()
         var volume = value / 100
         global.volumeMaster = volume
         scr_apply_volume()
+        obj_option.sliderStart(value)
         return
     }
     static optionSetMusic = function(value)
@@ -56,6 +57,7 @@ function scr_menu_audio()
         var volume = value / 100
         global.volumeMusic = volume
         scr_apply_volume()
+        obj_option.sliderStart(value)
         return
     }
     static optionSetSound = function(value)
@@ -63,6 +65,7 @@ function scr_menu_audio()
         var volume = value / 100
         global.volumeSound = volume
         scr_apply_volume()
+        obj_option.sliderStart(value)
         return
     }
     static optionSetFocusMute = function(value)
@@ -74,9 +77,9 @@ function scr_menu_audio()
     
     audio.optionAddNewLine(1)
     
-    var sliderMaster = audio.optionAddSlide(2, "master", optionMasterSet, optionMasterSet, sfx_knightslide)
-    var sliderMusic = audio.optionAddSlide(3, "music", optionSetMusic, optionSetMusic, sfx_knightslide)
-    var sliderSound = audio.optionAddSlide(4, "sfx", optionSetSound, optionSetSound, sfx_knightslide)
+    var sliderMaster = audio.optionAddSlide(2, "master", optionMasterSet, obj_option.sliderEnd, sfx_knightslide)
+    var sliderMusic = audio.optionAddSlide(3, "music", optionSetMusic, obj_option.sliderEnd, sfx_knightslide)
+    var sliderSound = audio.optionAddSlide(4, "sfx", optionSetSound, obj_option.sliderEnd, sfx_knightslide)
     
     sliderSound.value = global.volumeSound * 100
     sliderMusic.value = global.volumeMusic * 100

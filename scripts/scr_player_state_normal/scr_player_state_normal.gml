@@ -3,6 +3,9 @@
 function scr_player_state_normal_enter(enterMessage)
 {
     uppercutAllow = true
+    idleTimer = 0
+    idleAnimationCurrent = undefined
+    
     if enterMessage == "fromsprite"
     {
         image_index = 0
@@ -35,6 +38,33 @@ function scr_player_state_normal_exit()
 }
 
 /// @self obj_player
+function scr_player_idle_animation()
+{
+    
+    if array_length(idleAnimationsPity) == 0
+        idleAnimationsPity = variable_clone(idleAnimations)
+    
+    var idleAnimation = array_random(idleAnimationsPity)
+    var idleAnimationIndex = array_get_index(idleAnimationsPity, idleAnimation)
+    
+    
+    var voiceRandom = irandom(100)
+    
+    if voiceRandom <= 25
+        super_sound_oneshot_emitter_list(emitter, voiceIdle, random_pitch())
+    
+    idleTimer = random_range(-100, 0)
+       
+    array_delete(idleAnimationsPity, idleAnimationIndex, 1)
+    
+    idleAnimationCurrent = spriteGet(idleAnimation)
+    
+    sprite_index = idleAnimationCurrent
+    image_index = 0
+    return
+}
+
+/// @self obj_player
 function scr_player_state_normal_step()
 {
     static landAnimations = [spriteGet("land"), spriteGet("land2")]
@@ -48,6 +78,33 @@ function scr_player_state_normal_step()
     
     var spriteIdle = spriteGet("idle")
     var spriteMove = spriteGet("move")
+    
+    if global.combo >= 25 && global.combo < 50
+    {
+        spriteIdle = spriteGet("3hpidle")
+        spriteMove = spriteGet("3hpwalk")
+    }
+    
+    if global.combo >= 50
+    {
+        spriteIdle = spriteGet("rageidle")
+        spriteMove = spriteGet("ragemove")
+    }
+    
+    if global.panic
+    {
+        
+        if global.panicTime > 0
+        {
+            spriteIdle = spriteGet("panic")
+        }
+        else 
+        { 
+            spriteIdle = spriteGet("hurtidle")
+            spriteMove = spriteGet("hurtwalk")
+        }
+    }
+    
     
     if array_contains(landAnimations, sprite_index)
     {
@@ -99,11 +156,29 @@ function scr_player_state_normal_step()
     	moveSpeed = 0
         stepTime = 12;
         machCrazy = false
-        if !landing
+        
+        idleTimer++
+        
+        if idleTimer >= 150
+        {
+            scr_player_idle_animation()
+        }
+        
+        if !landing && idleAnimationCurrent == undefined
         { 
             sprite_index = spriteIdle
             image_speed = 0.35
         }
+        
+        if idleAnimationCurrent != undefined && is_sprite_finished()
+        {
+            idleAnimationCurrent = undefined
+            sprite_index = spriteIdle
+            image_speed = 0.35
+        }
+            
+        
+        
     }
     
     if moveSpeed > walkSpeed

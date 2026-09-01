@@ -24,6 +24,7 @@ function scr_globals()
     
     global.hitstunShake = 4
     global.soundBlockBreak = -4
+    
     global.roomStartX = 0
     global.roomStartY = 0
     

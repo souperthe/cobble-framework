@@ -167,6 +167,7 @@ function scr_player_state_mach2_step()
     
     if (grounded && velocityY > 0) && (sprite_index == spriteGet("secondjump2") || sprite_index == spriteGet("secondjump1"))
     {
+        trace("hi")
         sprite_index = spriteGet("mach")
         soundMach = super_sound_loop_emitter(emitter, sfx_mach2)
         speedlinesActive = true

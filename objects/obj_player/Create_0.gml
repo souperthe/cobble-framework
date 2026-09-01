@@ -89,6 +89,25 @@ scaleVisual = 1
 
 followers = []
 
+        
+idleAnimations = [
+    "idledance",
+    "idlefrown",
+    "handgesture1",
+    "handgesture2", 
+    "handgesture3", 
+    "handgesture4"
+]
+idleAnimationsPity = variable_clone(idleAnimations)
+idleAnimationCurrent = undefined
+idleTimer = 0
+
+voiceOk = [sfx_pep_ok1, sfx_pep_ok2, sfx_pep_ok3]
+voiceHurt = [sfx_pep_hurt1, sfx_pep_hurt2]
+voiceIdle = [sfx_pep_ok1, sfx_pep_ok2, sfx_pep_ok3]
+voiceTransfoOut = [sfx_pep_outtransfo1, sfx_pep_outtransfo1, sfx_pep_outtransfo3]
+voiceTransfoIn = [sfx_pep_transfo1, sfx_pep_transfo1, sfx_pep_transfo1]
+
 /// @param {enum.PlayerStates} targetState
 /// @param {string} enterMessage
 stateSwitch = function(targetState, enterMessage = "")

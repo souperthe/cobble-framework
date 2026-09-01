@@ -44,7 +44,7 @@ function scr_menu_draw_option_slide(menu, option, optionY, color)
     {
         sliderSprite = spr_slider_icon_scream
         
-        if option.moving
+        if option.moving && option.value > 0
         {
             sliderIndex = 1
             shakeX = random_range(-shakeRange, shakeRange)
