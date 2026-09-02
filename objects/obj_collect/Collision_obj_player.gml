@@ -24,7 +24,14 @@ obj_hud_score.collectCreate(x, y, sprite_index, collectAmount)
 obj_hud_score.smallNumber(x, y, collectAmount)
 
 if collectExpression != undefined
+{
     obj_hud_tv.tvForceExpression(collectExpression, 100)
+    
+    var voiceRandom = irandom(100)
+    
+    if voiceRandom < 25
+        super_sound_oneshot_emitter_list(other.emitter, other.voiceOk, other.voicePitch())
+}
 
 
 scr_save_room_register(id)

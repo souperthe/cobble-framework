@@ -4,6 +4,11 @@ function scr_collide()
 {
     grounded = false;
     
+    if !moveAndCollide
+    {
+        return
+    }
+    
     var tempVelocityY = velocityY
     var tempVelocityX = velocityX
     

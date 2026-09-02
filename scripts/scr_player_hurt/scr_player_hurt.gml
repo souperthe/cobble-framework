@@ -18,14 +18,9 @@ function scr_player_hurt(hazard)
     if scaleX == -scaleXOld
         hurtMessage = "behind"
     
-    if transformationDebris != undefined
+    if transformationCurrent != ""
     {
-        var debris = scr_debris_create(x, y, transformationDebris)
-        debris.velocityY = random_range(-5, -10)
-        debris.velocityX = random_range(-5, 5)
-        super_sound_oneshot_emitter(emitter, sfx_transform_exit, random_pitch())
-        transformationDebris = undefined
-        transformationCurrent = ""
+        signalTransformationExit.fire()
     }
     
     scr_effect_create("bangeffect", x, y)

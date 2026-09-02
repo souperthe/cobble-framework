@@ -6,6 +6,7 @@ super_sound_oneshot_global(sfx_tvswitch_exit, random_pitch())
 with (obj_player)
 {
     stateSwitch(PlayerStates.NORMAL)
+    moveAndCollide = true
     x = global.roomStartX
     y = global.roomStartY
 }

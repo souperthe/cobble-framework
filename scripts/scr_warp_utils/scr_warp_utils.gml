@@ -4,9 +4,15 @@ function get_touching_door()
 
     if doorMeeting == noone
         return ""
+    
+    return get_door(doorMeeting)
+}
 
-    var doorName = object_get_name(doorMeeting.object_index)
+/// @param {Asset.GMObject | Id.Instance} doorObject
+function get_door(doorObject)
+{
+    var doorName = object_get_name(doorObject.object_index)
     var doorTarget = string_replace_all(doorName, "obj_door_", "")
-
+    
     return doorTarget
 }

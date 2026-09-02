@@ -50,10 +50,14 @@ function scr_player_idle_animation()
     
     var voiceRandom = irandom(100)
     
-    if voiceRandom <= 25
-        super_sound_oneshot_emitter_list(emitter, voiceIdle, random_pitch())
+    if voiceRandom <= 60
+    {
+        var voiceSound = array_random(voiceIdle)
+        trace(voiceSound)
+        super_sound_oneshot_emitter(emitter, voiceSound, voicePitch())
+    }
     
-    idleTimer = random_range(-100, 0)
+    idleTimer = random_range(-600, 0)
        
     array_delete(idleAnimationsPity, idleAnimationIndex, 1)
     

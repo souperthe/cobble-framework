@@ -8,6 +8,7 @@ visited = true
 
 global.warpDoor = targetDoor
 global.warpRoom = targetRoom
+global.warpBox = false
 global.warpHallway = true
 global.warpHallwayDirection = image_xscale
 

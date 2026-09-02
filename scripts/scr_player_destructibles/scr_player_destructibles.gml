@@ -17,10 +17,6 @@ function scr_player_destructibles()
         PlayerStates.WALLCLIMB,
         PlayerStates.FREEFALL
     ]
-    static destructibleStatesUp = [
-        PlayerStates.JUMP,
-        PlayerStates.UPPERCUT
-    ]
     
     static destructibleCheckDefault = [0, 0]
     var destructibleCheck = destructibleCheckDefault
@@ -35,9 +31,14 @@ function scr_player_destructibles()
         destructibleCheck = [x, y + velocityY]
     }
     
-    if array_contains(destructibleStatesUp, stateCurrentEnum)
+    if stateCurrentEnum == PlayerStates.JUMP
     {
         destructibleCheck = [x, y - 1]
+    }
+    
+    if stateCurrentEnum == PlayerStates.UPPERCUT && velocityY < 0
+    {
+        destructibleCheck = [x, y + velocityY]
     }
     
     if sprite_index = spriteGet("dive") || stateCurrentEnum == PlayerStates.TRICKJUMP

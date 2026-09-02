@@ -12,6 +12,7 @@ function scr_pause_restart()
     
     global.warpDoor = "A"
     global.warpHallway = false
+    global.warpBox = false
     global.warpVerticalHallway = false
     global.warpRoom = global.levelCurrent.roomFirst
     

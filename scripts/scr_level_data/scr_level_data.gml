@@ -21,8 +21,8 @@ function LevelEntry(targetColorIndex, targetTitleIndex, targetMinutes, targetSec
 function scr_level_data_init()
 {
     var levelData = {}
-    
-    levelData[$ "example_level"] = new LevelEntry(1, 0, 2, 40, rm_example_1, 18320)
+     
+    levelData[$ "example_level"] = new LevelEntry(11, 0, 3, 5, rm_example_1, 18320)
     
     global.levelData = levelData
     return

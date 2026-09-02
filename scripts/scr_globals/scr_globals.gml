@@ -118,12 +118,14 @@ function scr_globals_warp()
     global.warpHallwayDirection = 1;
     global.warpHallway = false;
     global.warpBox = false
+    global.warpBoxDirection = "down"
     global.warpVerticalHallway = false;
     global.warpVerticalFlip = 1;
     global.warpVerticalHallwayPosition = 0
     global.warpVerticalHallwaySide = 1
     global.warpSecretId = -1
     global.warpSecretLastRoom = rm_test
+    global.warpObject = obj_null
     return;
 }
 

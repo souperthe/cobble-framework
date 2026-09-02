@@ -49,6 +49,7 @@ states[1] = function()
         visible = true
         velocityX = 0
         velocityY = 0
+        moveAndCollide = true
         stateSwitch(PlayerStates.NORMAL)
         collide = true
     }

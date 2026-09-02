@@ -10,6 +10,7 @@ if !check_input("up", false)
 global.warpDoor = targetDoor
 global.warpRoom = targetRoom
 global.warpHallway = false
+global.warpBox = false
 playerTouching.stateSwitch(PlayerStates.DOOR, "enter")
 super_sound_oneshot_global(sfx_door)
 

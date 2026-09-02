@@ -105,5 +105,17 @@ function scr_player_state_machslide_step()
         stateSwitch(PlayerStates.MACH2, "turn")
         return
     }
+    
+    if grounded
+    {
+        
+        effectDashCloudTimer--
+        
+        if effectDashCloudTimer < 0
+        {
+            scr_effect_create("smalldashcloud", x, y, scaleX)
+            effectDashCloudTimer = 10
+        }
+    }
     return;
 }

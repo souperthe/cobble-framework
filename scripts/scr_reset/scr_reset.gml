@@ -64,6 +64,9 @@ function scr_reset()
         }
         
         scaleVisual = 1
+        moveAndCollide = true
+        velocityX = 0
+        velocityY = 0
         visible = true
     }
     

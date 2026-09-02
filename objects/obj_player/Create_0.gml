@@ -8,7 +8,9 @@ scr_player_get_state_library()
 
 signalStateChanged = new Signal()
 signalPlacedAtDoor = new Signal()
-
+signalTransformationEnter = new Signal()
+signalTransformationExit = new Signal()
+signalPerformedCollide = new Signal()
 
 moveSpeed = 0;
 scaleX = 1;
@@ -104,9 +106,13 @@ idleTimer = 0
 
 voiceOk = [sfx_pep_ok1, sfx_pep_ok2, sfx_pep_ok3]
 voiceHurt = [sfx_pep_hurt1, sfx_pep_hurt2]
-voiceIdle = [sfx_pep_ok1, sfx_pep_ok2, sfx_pep_ok3]
+voiceIdle = [sfx_pep_ok1, sfx_pep_ok2, sfx_pep_ok3, sfx_pep_outtransfo3, sfx_pep_outtransfo1, sfx_pep_transfo1]
 voiceTransfoOut = [sfx_pep_outtransfo1, sfx_pep_outtransfo1, sfx_pep_outtransfo3]
-voiceTransfoIn = [sfx_pep_transfo1, sfx_pep_transfo1, sfx_pep_transfo1]
+voiceTransfoIn = [sfx_pep_transfo1, sfx_pep_transfo2, sfx_pep_transfo3]
+voicePitch = function()
+{
+    return random_range(0.775, 1.225)
+}
 
 /// @param {enum.PlayerStates} targetState
 /// @param {string} enterMessage
@@ -149,3 +155,6 @@ spriteGet = function(targetSpriteName)
 
 
 stateSwitch(PlayerStates.NORMAL)
+signalTransformationEnter.connect(scr_player_transformation_enter, false, id)
+signalTransformationExit.connect(scr_player_transformation_exit, false, id)
+signalPerformedCollide.connect(obj_camera.runStates, false, obj_camera)

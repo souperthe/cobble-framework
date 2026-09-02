@@ -31,6 +31,7 @@ states[0] = function()
     touchingPlayer.velocityX = 0
     touchingPlayer.velocityY = 0
     touchingPlayer.moveSpeed = 0
+    touchingPlayer.moveAndCollide = false
     
     super_sound_oneshot(x, y, sfx_secretenter)
     super_sound_oneshot(x, y, sfx_lapenter)

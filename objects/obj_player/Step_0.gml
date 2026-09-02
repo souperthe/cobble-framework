@@ -21,7 +21,6 @@ if bufferVertical > 0
 
 jumpAllow = (grounded && velocityY > 0) || (coyoteTime && velocityY > 0)
 
-scr_collide()
 scr_player_ratblock()
 scr_player_metalblock()
 scr_player_spikecheck()

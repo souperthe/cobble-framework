@@ -16,6 +16,7 @@ function scr_player_technicaldifficulty()
     
     velocityX = 0
     velocityY = 0
+    moveSpeed = false
     moveAndCollide = false
     stateSwitch(PlayerStates.UNINITIALIZED)
     

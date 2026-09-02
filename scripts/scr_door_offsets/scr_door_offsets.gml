@@ -20,6 +20,9 @@ function get_door_offset_y()
     
     if global.warpVerticalHallway
         return -global.warpVerticalFlip * 100
+    
+    if global.warpBox && global.warpBoxDirection == "down"
+        return 32
 
     return -14
 }

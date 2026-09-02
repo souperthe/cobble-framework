@@ -20,6 +20,7 @@ onEnter = function()
     
     global.warpDoor = "A"
     global.warpHallway = false
+    global.warpBox = false
     global.warpVerticalHallway = false
     global.warpRoom = level.roomFirst
     

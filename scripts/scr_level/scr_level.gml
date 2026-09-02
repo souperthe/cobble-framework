@@ -5,6 +5,8 @@ function scr_level_enter(levelData)
     scr_set_collect_requirements(levelData.rankS)
     audio_stop_sound(obj_music.musicInstanceCurrent)
     scr_reset()
+    
+    obj_hud_tv.tvBackroundFrame = levelData.colorIndex
     global.levelEntering = false
     global.levelTimeStart = get_timer()
     return
