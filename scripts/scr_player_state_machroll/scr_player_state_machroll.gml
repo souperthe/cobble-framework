@@ -8,6 +8,7 @@ function scr_player_state_machroll_enter(enterMessage)
     diving = false
     mask_index = spr_player_crouchmask
     effectDashCloudTimer = 0
+    backslide = 10
     
     if enterMessage == "crouchslip"
     {
@@ -97,21 +98,22 @@ function scr_player_state_machroll_step()
         audio_sound_gain(soundRoll, 0.5)
         audio_sound_pitch(soundRoll, spriteSpeed)
         image_speed = spriteSpeed
+        backslide--
     }
     
     
-    /// BACKSLIDE STUFF - IF FOR WHATEVER REASON YOU WANT IT
-    //if (is_sprite_finished() && sprite_index == spriteGet("machroll") && moveSpeed > 12)
-    //{
-        //sprite_index = spriteGet("backslideland")
-        //image_index = 0
-        //image_speed = 0.35
-    //}
-    //
-    //if sprite_index == spriteGet("backslideland") && is_sprite_finished()
-    //{
-        //sprite_index = spriteGet("backslide")
-    //}
+    
+    if (is_sprite_finished() && sprite_index == spriteGet("machroll") && moveSpeed > 12 && backslide < 0)
+    {
+        sprite_index = spriteGet("backslideland")
+        image_index = 0
+        image_speed = 0.35
+    }
+    
+    if sprite_index == spriteGet("backslideland") && is_sprite_finished()
+    {
+        sprite_index = spriteGet("backslide")
+    }
     
     
     if scr_slope()

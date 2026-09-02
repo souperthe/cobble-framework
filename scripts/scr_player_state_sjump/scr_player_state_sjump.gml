@@ -67,7 +67,7 @@ function scr_player_state_sjump_step()
     
     velocitySuperJump -= 0.1
     
-    if bufferVertical <= 0 && place_meeting(x, y - 1, obj_solid)
+    if bufferVertical <= 0 && place_meeting(x, y - 1, obj_solid) && !place_meeting(x, y - 1, obj_destructible)
     {
         stateSwitch(PlayerStates.SJUMPLAND)
         return
