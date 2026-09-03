@@ -9,6 +9,12 @@ function scr_player_state_suplexdash_enter(enterMessage)
     else
         sprite_index = spriteGet("suplexgrabjumpstart")
     
+    if check_input("jump", false)
+    { 
+        sprite_index = spriteGet("suplexgrabjumpstart")
+        velocityY = -11
+    }
+    
     image_index = 0
     
     if moveSpeed < 12
@@ -73,6 +79,8 @@ function scr_player_state_suplexdash_step()
         stateSwitch(PlayerStates.BUMP, "suplex")
         return
     }
+    
+    scr_player_jump_stop()
         
     
     if (is_sprite_finished())
