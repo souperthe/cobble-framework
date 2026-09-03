@@ -57,4 +57,4 @@ depth = playerNearest.depth - 1
 
 obj_camera.lock = true
 
-super_sound_oneshot(x, y, sfx_box)
+super_sound_oneshot_emitter(playerNearest.emitter, sfx_box)

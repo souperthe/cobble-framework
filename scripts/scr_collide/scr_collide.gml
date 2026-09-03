@@ -1,107 +1,76 @@
-
 /// @self obj_rigid_body
 function scr_collide()
 {
     grounded = false;
     
-    if !moveAndCollide
+    if (!moveAndCollide) return;
+    
+    if (!collide)
     {
-        return
+        y += velocityY;
+        x += velocityX;
+        return;
     }
     
-    var tempVelocityY = velocityY
-    var tempVelocityX = velocityX
+    var currentVelocityX = velocityX;
+    var currentVelocityY = velocityY;
+    var absoluteVelocityX = abs(currentVelocityX);
+    var absoluteVelocityY = abs(currentVelocityY);
     
-    if !collide
+    repeat (ceil(absoluteVelocityX))
     {
-        y += velocityY
-        x += velocityX
-        return
-    }
-    
-    var tempAbsoluteVelocityY = abs(tempVelocityY)
-    var tempAbsoluteVelocityX = abs(tempVelocityX)
-    
-    repeat (ceil(tempAbsoluteVelocityY))
-    {
-        var velocityDirection = clamp(tempVelocityY, -1, 1)
+        var horizontalDirection = sign(currentVelocityX);
+        if (horizontalDirection == 0) break;
         
-        if (!scr_solid(x, y + velocityDirection))
+        var maximumSlopeClimbHeight = 4;
+        for (var slopeAscentStep = 1; slopeAscentStep <= maximumSlopeClimbHeight; slopeAscentStep++)
         {
-            y += velocityDirection
-            tempVelocityY -= velocityDirection
+            if (scr_solid(x + horizontalDirection, y) && !scr_solid(x + horizontalDirection, y - slopeAscentStep))
+            {
+                y -= slopeAscentStep;
+                break;
+            }
+        }
+        
+        for (var slopeDescentStep = 1; slopeDescentStep <= maximumSlopeClimbHeight; slopeDescentStep++)
+        {
+            if (!scr_solid(x + horizontalDirection, y) && !scr_solid(x + horizontalDirection, y + 1) && scr_solid(x + horizontalDirection, y + (slopeDescentStep + 1)))
+            {
+                y += slopeDescentStep;
+                break;
+            }
+        }
+        
+        if (!scr_solid(x + horizontalDirection, y))
+        {
+            x += horizontalDirection;
         }
         else 
         {
-        	velocityY = 0
+            velocityX = 0;
             break;
         }
-        
-        continue
     }
     
-    repeat (ceil(tempAbsoluteVelocityX))
+    repeat (ceil(absoluteVelocityY))
     {
-        var velocityDirection = clamp(tempVelocityX, -1, 1);
-        var collisionDefault = scr_solid(x + velocityDirection, y)
-        var collisionSkip = false
-        var snap = 0
-        var originalY = y;
+        var verticalDirection = sign(currentVelocityY);
+        if (verticalDirection == 0) break;
         
-        if (collisionDefault)
+        if (!scr_solid(x, y + verticalDirection))
         {
-            while (collisionDefault && snap <= snapMaxUp)
-            {
-                y -= snapPrecision
-                snap += snapPrecision
-                collisionDefault = scr_solid(x + velocityDirection, y)
-            }
-        
-            if (collisionDefault)
-            {
-                y = originalY
-                collisionSkip = false
-            }
-            else
-            {
-                collisionSkip = true
-            }
+            y += verticalDirection;
         }
         else 
         {
-        	collisionSkip = true;
-            
-            while (!scr_solid(x + velocityDirection, y + snapPrecision))
-            {
-                y += snapPrecision
-                snap += snapPrecision
-                
-                if snap > snapMaxDown
-                {
-                    y = originalY
-                    break;
-                }
-                continue
-            }
+            velocityY = 0;
+            break;
         }
-        
-        if collisionSkip
-        {
-            x += velocityDirection
-            tempVelocityX -= velocityDirection
-        }
-        else 
-        {
-        	velocityX = 0
-            break
-        }
-        
-        continue
     }
     
-    if velocityY < gravMax
-        velocityY += grav
+    if (velocityY < gravMax)
+        velocityY += grav;
     
-    grounded |= scr_solid(x, y + 1)
-    return;
+    grounded |= scr_solid(x, y + 1);
+    return
 }

@@ -57,7 +57,7 @@ function scr_player_state_wallclimb_step()
         return
     }
     
-    if bufferVertical <= 0 && place_meeting(x, y - 1, obj_solid)
+    if bufferVertical <= 0 && scr_solid(x, y - 1)
     {
         stateSwitch(PlayerStates.SJUMPLAND)
         return

@@ -16,4 +16,4 @@ other.dir = other.scaleX
 other.stateSwitch(PlayerStates.MACH3, "dashpad")
 
 
-playerBuffers[$ playerKey] = 10
+playerBuffers[$ playerKey] = playerBufferTime
