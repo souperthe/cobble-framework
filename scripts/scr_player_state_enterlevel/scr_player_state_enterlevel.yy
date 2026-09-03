@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scr_player_state_enterlevel",
   "parent":{
-    "name":"Grounded",
-    "path":"folders/Scripts/Player/States/Grounded.yy",
+    "name":"Actor",
+    "path":"folders/Scripts/Player/States/Actor.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

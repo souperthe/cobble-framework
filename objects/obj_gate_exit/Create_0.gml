@@ -23,5 +23,8 @@ playerCanEnter = function(player)
     if !player.grounded
         return false
     
+    if !global.panic
+        return false
+    
     return true
 }

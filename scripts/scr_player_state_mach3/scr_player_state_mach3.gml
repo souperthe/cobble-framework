@@ -52,6 +52,8 @@ function scr_player_state_mach3_enter(enterMessage)
             velocityX = (scaleX * moveSpeed)
         }
         
+        velocityY = 0
+        
         sprite_index = spriteGet("dashpad")
         image_index = 0
         

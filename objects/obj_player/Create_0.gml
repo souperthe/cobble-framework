@@ -154,7 +154,7 @@ spriteGet = function(targetSpriteName)
 }
 
 
-stateSwitch(PlayerStates.NORMAL)
+stateSwitch(PlayerStates.ENTERLEVEL)
 signalTransformationEnter.connect(scr_player_transformation_enter, false, id)
 signalTransformationExit.connect(scr_player_transformation_exit, false, id)
 signalPerformedCollide.connect(obj_camera.runStates, false, obj_camera)
