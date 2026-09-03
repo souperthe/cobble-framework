@@ -22,6 +22,7 @@ function scr_player_state_mach2_enter(enterMessage)
     else if enterMessage == "walljump"
     {
         moveSpeed = 10
+        jumpStop = false
         super_sound_oneshot_emitter(emitter, sfx_jump)
         velocityY = -11
         scaleX *= -1
