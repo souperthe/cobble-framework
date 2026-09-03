@@ -41,6 +41,9 @@ function scr_player_state_mach3_enter(enterMessage)
     }
     else if enterMessage == "dashpad"
     {
+        
+        var touchingPad = instance_place(x, y, obj_dashpad)
+        
         if moveSpeed < 14
         {
             moveSpeed = 14
@@ -48,7 +51,7 @@ function scr_player_state_mach3_enter(enterMessage)
         }
         else
         {
-            moveSpeed += 0.5
+            moveSpeed += touchingPad.speedAdd
             velocityX = (scaleX * moveSpeed)
         }
         
