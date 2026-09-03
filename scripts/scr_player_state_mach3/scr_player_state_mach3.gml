@@ -39,7 +39,25 @@ function scr_player_state_mach3_enter(enterMessage)
         image_index = 0
         return
     }
-    
+    else if enterMessage == "dashpad"
+    {
+        if moveSpeed < 14
+        {
+            moveSpeed = 14
+            velocityX = (scaleX * moveSpeed)
+        }
+        else
+        {
+            moveSpeed += 0.5
+            velocityX = (scaleX * moveSpeed)
+        }
+        
+        sprite_index = spriteGet("dashpad")
+        image_index = 0
+        
+        return
+    }
+
     return;
 }
 
@@ -65,7 +83,7 @@ function scr_player_state_mach3_step()
     var accel = 0.025
     var accelMach4 = 0.1
     var machRollSpeed = 10;
-    static overrideAnimations = [spriteGet("rollgetup"), spriteGet("mach3hit")]
+    static overrideAnimations = [spriteGet("rollgetup"), spriteGet("mach3hit"), spriteGet("dashpad")]
     
     chargeActive = true
     speedlinesActive = true

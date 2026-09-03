@@ -9,6 +9,7 @@ function scr_level_enter(levelData)
     obj_hud_tv.tvBackroundFrame = levelData.colorIndex
     global.levelEntering = false
     global.levelTimeStart = get_timer()
+    global.signalLevelEnter.fire()
     return
 }
 

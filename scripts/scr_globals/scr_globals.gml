@@ -70,6 +70,8 @@ function scr_global_signals()
     
     global.signalPanic = new Signal()
     global.signalCollected = new Signal()
+    global.signalLevelEnter = new Signal()
+    global.signalLevelReset = new Signal()
     
     return
 }

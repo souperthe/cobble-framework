@@ -96,6 +96,8 @@ function scr_reset()
     global.panicSeconds = 0
     
     global.secretsFound = 0
+    
+    global.signalLevelReset.fire()
 
     return
 }
