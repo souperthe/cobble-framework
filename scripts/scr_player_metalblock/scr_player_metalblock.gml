@@ -21,7 +21,7 @@ function scr_player_metalblock()
     {
         
         if freeFallProgress > 10
-            metalBlockDirection = [x, y + 1]
+            metalBlockDirection = [x, y + velocityY]
         
     }
     
@@ -36,8 +36,14 @@ function scr_player_metalblock()
     var metalBlockDirectionY = metalBlockDirection[1]
     var metalBlockTouching = instance_place(metalBlockDirectionX, metalBlockDirectionY, obj_metalblock)
     
-    if metalBlockTouching
-        instance_destroy(metalBlockTouching)
+    if !metalBlockTouching
+        exit;
+    
+    if stateCurrentEnum == PlayerStates.FREEFALL
+        stateSwitch(PlayerStates.FREEFALLLAND)
+        
+    
+    instance_destroy(metalBlockTouching)
     
     return
 }

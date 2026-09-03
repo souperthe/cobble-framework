@@ -3,7 +3,10 @@
 function scr_player_state_trickjump_enter(enterMessage)
 {
     velocityY = -12
-    moveSpeed = 14
+    
+    if moveSpeed < 14
+        moveSpeed = 14
+    
     trickJumpBuffer = 16
     
     sprite_index = spriteGet("rampjump")
