@@ -7,7 +7,7 @@ statesDown = [
     PlayerStates.FREEFALLLAND, 
     PlayerStates.MACHROLL
 ]
-statesDownForce = [PlayerStates.FREEFALL]
+statesDownForce = [PlayerStates.FREEFALL, PlayerStates.FREEFALLLAND]
 
 statesUp = [
     PlayerStates.NORMAL, 

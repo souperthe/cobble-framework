@@ -73,7 +73,8 @@ function scr_player_state_machroll_step()
         if speedCurrent > diveSpeed
             diveSpeed = speedCurrent
         
-        velocityY = speedCurrent
+        if velocityY < speedCurrent
+            velocityY = speedCurrent
         
         if !diving
         {
