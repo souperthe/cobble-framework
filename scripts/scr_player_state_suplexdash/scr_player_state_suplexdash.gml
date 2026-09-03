@@ -13,6 +13,7 @@ function scr_player_state_suplexdash_enter(enterMessage)
     { 
         sprite_index = spriteGet("suplexgrabjumpstart")
         velocityY = -11
+        super_sound_oneshot_emitter(emitter, sfx_jump)
     }
     
     image_index = 0
