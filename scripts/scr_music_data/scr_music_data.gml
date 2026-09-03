@@ -4,6 +4,8 @@ function scr_music_data()
     
     musicLibraryAddEntry(rm_example_1, mu_solidhouse, false)
     musicLibraryAddEntry(rm_test, mu_hub, false)
+    musicLibraryAddEntry(rm_test_2, mu_hub, true)
+    musicLibraryAddEntry(rm_test_4, mu_hub3, true)
     musicLibraryAddSecretEntry(rm_test_secret, mu_secret_solidhouse, false)
     
     musicLibraryAddSecretEntry(rm_example_secret_1, mu_secret_solidhouse, false)

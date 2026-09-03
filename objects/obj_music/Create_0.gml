@@ -48,7 +48,8 @@ scr_music_magnets_data()
 
 lapMusic = [
     mu_pizzatime,
-    mu_lap2
+    mu_lap2,
+    mu_tarragon
 ]
 
 musicPanicStart = function()
