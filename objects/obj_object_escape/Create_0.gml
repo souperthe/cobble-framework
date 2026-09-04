@@ -14,15 +14,15 @@ states = []
 states[EscapeSpawnState.WAITING] = function()
 {
     
-    if !global.panic || !global.roomPlaced
-    {
-        visible = false
-        exit;
-    }
-    
     visible = false
     image_index = 0
     instance_deactivate_object(objectId)
+    
+    if !global.panic
+        return;
+    
+    if !global.roomPlaced
+        return;
     
     var playerDistance = distance_to_object(obj_player)
     
