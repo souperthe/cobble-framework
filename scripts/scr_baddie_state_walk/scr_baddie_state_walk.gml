@@ -23,7 +23,7 @@ function scr_baddie_state_walk()
     }
     
     var moveAbsolute = abs(moveSpeed)
-    var reach  = max(1, moveAbsolute)
+    var reach  = moveAbsolute * 8
     var probeX = (scaleX > 0) ? bbox_right + reach : bbox_left  - reach
     
     

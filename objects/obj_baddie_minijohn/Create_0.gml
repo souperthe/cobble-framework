@@ -71,12 +71,7 @@ stateLibrary[BaddieStates.ATTACK] = function()
     velocityX = punchSpeed * scaleX
     
     
-    var forkX = x + (21 * scaleX)
-    var forkY = y + 28
-    var forkPlayer = collision_circle(x, y, 70, obj_player, false, true)
-
-    with forkPlayer
-        scr_player_hurt(other.id)
+    scr_baddie_hurtbox(30, 28, 40)
     
     var touchingDestructible = instance_place(x + velocityX, y, obj_destructible)
     

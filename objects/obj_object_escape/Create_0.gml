@@ -24,9 +24,14 @@ states[EscapeSpawnState.WAITING] = function()
     if !global.roomPlaced
         return;
     
-    var playerDistance = distance_to_object(obj_player)
+    var playerCloseset = instance_nearest(x, y, obj_player)
+    var playerDistanceX = abs(x - playerCloseset.x)
+    var playerDistanceY = abs(y - playerCloseset.y)
     
-    if playerDistance > 500
+    if playerDistanceX > 500
+        return;
+    
+    if playerDistanceY > 250
         return;
     
     stateCurrent = EscapeSpawnState.SPIT

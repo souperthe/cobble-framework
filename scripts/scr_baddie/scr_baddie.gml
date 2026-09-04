@@ -185,6 +185,22 @@ function scr_get_hit_animations()
 }
 
 
+/// @self obj_baddie
+/// @param {Real} offsetX
+/// @param {Real} offsetY
+/// @param {Real} radius
+function scr_baddie_hurtbox(offsetX, offsetY, radius)
+{
+    
+    var boxX = x + (scaleX * offsetX)
+    var boxY = y + offsetY
+    var boxPlayer = collision_circle(boxX, boxY, radius, obj_player, false, true)
+    
+    with boxPlayer
+        scr_player_hurt(other.id)
+    return
+}
+
 /// @param {Asset.GMObject} player
 /// @param {Asset.GMObject} baddie
 function scr_baddie_throw(player, baddie)
