@@ -1052,6 +1052,8 @@
     {"id":{"name":"spr_timer_pizzaface3","path":"sprites/spr_timer_pizzaface3/spr_timer_pizzaface3.yy",},},
     {"id":{"name":"spr_titlecard_backround","path":"sprites/spr_titlecard_backround/spr_titlecard_backround.yy",},},
     {"id":{"name":"spr_titlecard_title","path":"sprites/spr_titlecard_title/spr_titlecard_title.yy",},},
+    {"id":{"name":"spr_toggle_check","path":"sprites/spr_toggle_check/spr_toggle_check.yy",},},
+    {"id":{"name":"spr_toggle","path":"sprites/spr_toggle/spr_toggle.yy",},},
     {"id":{"name":"spr_tomatocollect","path":"sprites/spr_tomatocollect/spr_tomatocollect.yy",},},
     {"id":{"name":"spr_toppin_help","path":"sprites/spr_toppin_help/spr_toppin_help.yy",},},
     {"id":{"name":"spr_toppincheese_intro","path":"sprites/spr_toppincheese_intro/spr_toppincheese_intro.yy",},},

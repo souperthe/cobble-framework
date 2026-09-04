@@ -36,9 +36,10 @@ function scr_camera_state_normal()
     {
         
         var offsetTarget = 80
+        
         if target.machCrazy
         {
-            offsetTarget = 150
+            offsetTarget = 200
         }
         
         offsetXTarget = offsetTarget * target.scaleX

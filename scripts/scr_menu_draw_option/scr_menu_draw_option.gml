@@ -9,10 +9,10 @@ function scr_menu_draw_option_toggle(menu, option, optionY, color, rightMargin)
     
     draw_set_halign(fa_right)
     
-    var toggleText = option.value ? "ON" : "OFF"
-    var toggleName = string_upper(option.name)
+    draw_sprite_ext(spr_toggle, 0, guiWidth - menu.padX, optionY, 1, 1, 0, color, 1)
     
-    draw_text_colour_simple(guiWidth - menu.padX, optionY, toggleText, color, 1)
+    if option.value == true
+        draw_sprite(spr_toggle_check, 0, guiWidth - menu.padX, optionY)
     return
 }
 

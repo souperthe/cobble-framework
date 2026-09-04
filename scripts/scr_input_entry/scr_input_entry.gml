@@ -6,6 +6,7 @@
 /// @self obj_input_manager
 function scr_input_entry()
 {
+    
     inputRegister("jump", [global.keyJump], [gp_face1])
     inputRegister("dash", [global.keyDash], [gp_shoulderrb, gp_shoulderlb])
     inputRegister("attack", [global.keyAttack], [gp_face3])
@@ -18,5 +19,6 @@ function scr_input_entry()
     inputRegister("enter", [global.keyEnter, global.keyJump], [gp_select, gp_face1])
     inputRegister("start", [global.keyEnter], [gp_start]) 
     inputRegister("back", [global.keyPause, global.keyAttack], [gp_face3])
+    
     return
 }
