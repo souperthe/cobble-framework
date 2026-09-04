@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Destructibles",
-    "path":"folders/Objects/LevelStructure/Destructibles.yy",
+    "path":"folders/Objects/LevelStructure/Collect/Destructibles.yy",
   },
   "parentObjectId":{
     "name":"obj_solid",

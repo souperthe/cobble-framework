@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Secret",
-    "path":"folders/Objects/LevelStructure/Destructibles/Secret.yy",
+    "path":"folders/Objects/LevelStructure/Collect/Destructibles/Secret.yy",
   },
   "parentObjectId":{
     "name":"obj_metalblock",

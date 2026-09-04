@@ -44,6 +44,7 @@ function scr_baddie_state_walk()
     if spriteTurn != -1 
     {
         image_index = 0
+        scaleX = -scaleX
         sprite_index = spriteTurn
         stateCurrent = BaddieStates.TURN
         return

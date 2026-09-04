@@ -21,7 +21,7 @@ function scr_menu_draw_option_toggle(menu, option, optionY, color, rightMargin)
 /// @param {Real} optionY
 /// @param {Real | Constant.Color} color
 function scr_menu_draw_option_slide(menu, option, optionY, color)
-{
+{ 
     
     var guiWidth = obj_screensizer.hudWidth
     
