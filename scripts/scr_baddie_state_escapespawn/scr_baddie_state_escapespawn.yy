@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_baddie_state_escapespawn",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_baddie_state_escapespawn",
+  "parent":{
+    "name":"Baddie",
+    "path":"folders/Scripts/Baddie.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

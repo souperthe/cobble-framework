@@ -282,6 +282,7 @@
     {"id":{"name":"scr_background","path":"scripts/scr_background/scr_background.yy",},},
     {"id":{"name":"scr_baddie_state_blank","path":"scripts/scr_baddie_state_blank/scr_baddie_state_blank.yy",},},
     {"id":{"name":"scr_baddie_state_chase","path":"scripts/scr_baddie_state_chase/scr_baddie_state_chase.yy",},},
+    {"id":{"name":"scr_baddie_state_escapespawn","path":"scripts/scr_baddie_state_escapespawn/scr_baddie_state_escapespawn.yy",},},
     {"id":{"name":"scr_baddie_state_grabbed","path":"scripts/scr_baddie_state_grabbed/scr_baddie_state_grabbed.yy",},},
     {"id":{"name":"scr_baddie_state_scream","path":"scripts/scr_baddie_state_scream/scr_baddie_state_scream.yy",},},
     {"id":{"name":"scr_baddie_state_staggered","path":"scripts/scr_baddie_state_staggered/scr_baddie_state_staggered.yy",},},

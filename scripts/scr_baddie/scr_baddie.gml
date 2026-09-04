@@ -85,6 +85,7 @@ function scr_baddie_define_states()
     stateLibrary[BaddieStates.THROWN] = scr_baddie_state_thrown
     stateLibrary[BaddieStates.SCREAM] = scr_baddie_state_scream
     stateLibrary[BaddieStates.STAGGERED] = scr_baddie_state_staggered
+    stateLibrary[BaddieStates.ESCAPESPAWN] = scr_baddie_state_escapespawn
     
     return
 }
@@ -250,12 +251,11 @@ function scr_baddie_instakill(player, baddie)
     player.tauntImageSpeed = player.image_speed
     player.tauntSprite = player.sprite_index
     player.tauntImageIndex = player.image_index
-    player.stateCurrent = player.stateLibrary[PlayerStates.HITSUN]
-    player.stateCurrentEnum = PlayerStates.HITSUN
     player.hitstunX = player.x
     player.hitstunY = player.y
     player.hitstunTime = 3
     player.hitstunBaddie = baddie
+    player.stateSwitch(PlayerStates.HITSUN)
     
         
     var hitAnimations = scr_get_hit_animations()

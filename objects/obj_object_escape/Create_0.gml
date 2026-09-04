@@ -54,9 +54,8 @@ states[EscapeSpawnState.SPIT] = function()
         
         if objectId.escapeStun
         {
-            objectId.staggeredTimer = 20
             objectId.sprite_index = objectId.spriteStun
-            objectId.stateCurrent = BaddieStates.STAGGERED
+            objectId.stateCurrent = BaddieStates.ESCAPESPAWN
         }
         stateCurrent = EscapeSpawnState.LEAVE
     }

@@ -55,7 +55,8 @@ function scr_enums()
         SCREAM,
         THROWN,
         CHASE,
-        ATTACK
+        ATTACK,
+        ESCAPESPAWN
     }
     
     enum BackgroundType {
