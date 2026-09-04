@@ -37,7 +37,12 @@ menuGoto = function(menuType)
     var menuTarget = menus[menuType]
     
     menuCurrent = menuType
-    optionCurrent = 0
+    
+    if menuType == MenuType.OPTIONS
+        optionCurrent = optionCurrentOption
+    else 
+        optionCurrent = 0
+    
     return
 }
 
@@ -49,6 +54,9 @@ menusInit = function()
     
     menus[MenuType.OPTIONS] = scr_menu_option()
     menus[MenuType.AUDIO] = scr_menu_audio()
+    menus[MenuType.VIDEO] = scr_menu_video()
+    menus[MenuType.GAME] = scr_menu_game()
+    menus[MenuType.CONTROLS] = scr_menu_controls()
     
     return menus
 }
@@ -73,6 +81,7 @@ textX = 0
 textY = 0
 
 optionCurrent = 0
+optionCurrentOption = 0
 optionCurrentOld = optionCurrent
 optionDisabled = false
 
@@ -123,6 +132,9 @@ clampSelection = function()
         
         optionCurrent = nextOption
     }
+    
+    if menuCurrent == MenuType.OPTIONS
+        optionCurrentOption = optionCurrent
     
     if (optionCurrentOld != optionCurrent)
     {
