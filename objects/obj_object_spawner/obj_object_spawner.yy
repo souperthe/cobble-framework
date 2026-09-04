@@ -33,7 +33,7 @@
   "properties":[
     {"$GMObjectProperty":"v2","%Name":"object","filters":[
         "GMObject",
-      ],"listItems":[],"multiselect":false,"name":"object","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"obj_cheeseslime","path":"objects/obj_cheeseslime/obj_cheeseslime.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"obj_cheeseslime","varType":5,},
+      ],"listItems":[],"multiselect":false,"name":"object","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"obj_baddie_cheeseslime","path":"objects/obj_baddie_cheeseslime/obj_baddie_cheeseslime.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"obj_baddie_cheeseslime","varType":5,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

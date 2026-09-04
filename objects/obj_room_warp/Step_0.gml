@@ -3,12 +3,13 @@ if fadeAlpha > fadeMax
 {
     fadeIn = 1
     
+    global.roomPlaced = false
+    
     if room != global.warpRoom
     {
         room_goto(global.warpRoom)
-        
-        if global.levelEntering
-            scr_level_enter(global.levelCurrent)
+        global.signalWarped.fire()
+        scr_room_changed()
     }
 }
 

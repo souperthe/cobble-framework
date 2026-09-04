@@ -1,13 +1,16 @@
 /// @param {Id.Instance} targetInstance
-function SaveObject(targetInstance) constructor
+/// @param {Bool} targetEscape
+function SaveObject(targetInstance, targetEscape) constructor
 {
     objectId = targetInstance
     objectIndex = objectId.object_index
+    objectEscape = targetEscape
     return
 } 
 
 /// @param {Id.Instance} object
-function scr_save_room_register(objectId)
+/// @param {Bool} escape
+function scr_save_room_register(objectId, escape = false)
 {
 
     var roomName = room_get_name(room)
@@ -16,7 +19,7 @@ function scr_save_room_register(objectId)
         global.levelSaveRoom[$ roomName] = []
     
     var saveRoomArray = global.levelSaveRoom[$ roomName]
-    var saveObject = new SaveObject(objectId)
+    var saveObject = new SaveObject(objectId, escape)
     
     array_push(saveRoomArray, saveObject)
     return

@@ -3,6 +3,7 @@
 function scr_baddie_create()
 {
     stateCurrent = BaddieStates.WALK
+    stateNormal = stateCurrent
     stateLibrary = []
     killedFromX = 0
     killedFromY = 0
@@ -52,6 +53,11 @@ function scr_baddie_create()
     thrownX = 0
     thrownY = 0
     thrownAfterImageTimer = 0
+    
+    momentum = 0
+    
+    escapeStun = true
+    mask_index = spr_player_mask
     return
 }
 
@@ -127,6 +133,9 @@ function scr_baddie_scream(player)
 /// @self obj_baddie
 function scr_baddie_scream_check()
 {
+    
+    if spriteScared == spr_baddie
+        return;
     
     
     var screamInstance = collision_circle(x, y, 400, obj_player, false, true)

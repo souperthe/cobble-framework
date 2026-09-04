@@ -1,12 +1,12 @@
 {
   "$GMObject":"",
-  "%Name":"obj_forknight",
+  "%Name":"obj_baddie_minijohn",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_forknight",
+  "name":"obj_baddie_minijohn",
   "overriddenProperties":[],
   "parent":{
     "name":"Baddie",
@@ -34,9 +34,12 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_forknight_idle",
-    "path":"sprites/spr_forknight_idle/spr_forknight_idle.yy",
+    "name":"spr_minijohn_charge",
+    "path":"sprites/spr_minijohn_charge/spr_minijohn_charge.yy",
   },
-  "spriteMaskId":null,
+  "spriteMaskId":{
+    "name":"spr_player_mask",
+    "path":"sprites/spr_player_mask/spr_player_mask.yy",
+  },
   "visible":true,
 }

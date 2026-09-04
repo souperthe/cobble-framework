@@ -37,6 +37,8 @@ if !validState
 if !validInput
     exit;
 
+trace(targetDoor)
+
 global.warpDoor = targetDoor
 global.warpHallway = false
 global.warpBox = true

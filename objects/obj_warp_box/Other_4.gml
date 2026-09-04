@@ -1,4 +1,4 @@
-var doorNearest = collision_circle(x, y, 400, obj_door, false, true)
+var doorNearest = instance_nearest(x, y, obj_door)
 
 if doorNearest == noone
     exit;

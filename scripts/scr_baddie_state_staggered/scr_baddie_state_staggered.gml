@@ -8,7 +8,7 @@ function scr_baddie_state_staggered()
     staggeredTimer--
     
     if staggeredTimer < 0
-        stateCurrent = BaddieStates.WALK
+        stateCurrent = stateNormal
 
     return
 }

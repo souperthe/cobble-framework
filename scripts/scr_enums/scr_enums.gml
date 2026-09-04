@@ -53,7 +53,9 @@ function scr_enums()
         STAGGERED,
         RAGE,
         SCREAM,
-        THROWN
+        THROWN,
+        CHASE,
+        ATTACK
     }
     
     enum BackgroundType {

@@ -21,4 +21,4 @@ scr_debris_explosion(6, x, y, spr_debris_slapstar, 10, 10)
 
 global.levelBaddiesKilled++
 
-scr_save_room_register(id)
+scr_save_room_register(id, escape)

@@ -36,6 +36,7 @@ x = doorTargetX
 y = doorTargetY
 global.roomStartX = doorTargetX
 global.roomStartY = doorTargetY
+global.roomPlaced = true
 
 
 signalPlacedAtDoor.fire()

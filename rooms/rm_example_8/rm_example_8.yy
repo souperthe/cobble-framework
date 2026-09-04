@@ -107,6 +107,8 @@
     {"name":"inst_112DB738","path":"rooms/rm_example_8/rm_example_8.yy",},
     {"name":"inst_3B094A80","path":"rooms/rm_example_8/rm_example_8.yy",},
     {"name":"inst_5C0B531A","path":"rooms/rm_example_8/rm_example_8.yy",},
+    {"name":"inst_62C7A001","path":"rooms/rm_example_8/rm_example_8.yy",},
+    {"name":"inst_1A19FFF","path":"rooms/rm_example_8/rm_example_8.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -222,6 +224,8 @@
           ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":544.0,"y":832.0,},
         {"$GMRInstance":"v4","%Name":"inst_3B094A80","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_3B094A80","objectId":{"name":"obj_door_b","path":"objects/obj_door_b/obj_door_b.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":576.0,"y":896.0,},
         {"$GMRInstance":"v4","%Name":"inst_5C0B531A","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_5C0B531A","objectId":{"name":"obj_spike","path":"objects/obj_spike/obj_spike.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":12.0,"x":5088.0,"y":640.0,},
+        {"$GMRInstance":"v4","%Name":"inst_62C7A001","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_62C7A001","objectId":{"name":"obj_baddie_cheeseslime","path":"objects/obj_baddie_cheeseslime/obj_baddie_cheeseslime.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":480.0,"y":352.0,},
+        {"$GMRInstance":"v4","%Name":"inst_1A19FFF","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_1A19FFF","objectId":{"name":"obj_baddie_cheeseslime","path":"objects/obj_baddie_cheeseslime/obj_baddie_cheeseslime.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":5248.0,"y":480.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRBackgroundLayer":"","%Name":"Background_1","animationFPS":30.0,"animationSpeedType":0,"colour":4294967295,"depth":300,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"hspeed":0.0,"htiled":true,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Background_1","properties":[],"resourceType":"GMRBackgroundLayer","resourceVersion":"2.0","spriteId":{"name":"bg_tower","path":"sprites/bg_tower/bg_tower.yy",},"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":false,"visible":true,"vspeed":0.0,"vtiled":true,"x":0,"y":0,},
   ],

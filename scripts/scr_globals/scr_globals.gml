@@ -27,6 +27,7 @@ function scr_globals()
     
     global.roomStartX = 0
     global.roomStartY = 0
+    global.roomPlaced = false
     
     global.toppinFollowers = []
     
@@ -72,6 +73,7 @@ function scr_global_signals()
     global.signalCollected = new Signal()
     global.signalLevelEnter = new Signal()
     global.signalLevelReset = new Signal()
+    global.signalWarped = new Signal()
     
     return
 }
