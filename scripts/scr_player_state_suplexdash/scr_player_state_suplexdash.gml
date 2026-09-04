@@ -9,7 +9,7 @@ function scr_player_state_suplexdash_enter(enterMessage)
     else
         sprite_index = spriteGet("suplexgrabjumpstart")
     
-    if check_input("jump", false)
+    if check_input("jump", false) && grounded
     { 
         sprite_index = spriteGet("suplexgrabjumpstart")
         velocityY = -11
