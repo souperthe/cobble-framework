@@ -58,6 +58,8 @@ function scr_baddie_create()
     
     escapeStun = true
     mask_index = spr_player_mask
+    
+    signalHurtPlayer = new Signal()
     return
 }
 
@@ -197,7 +199,11 @@ function scr_baddie_hurtbox(offsetX, offsetY, radius)
     var boxPlayer = collision_circle(boxX, boxY, radius, obj_player, false, true)
     
     with boxPlayer
-        scr_player_hurt(other.id)
+    {
+        
+        if scr_player_hurt(other.id)
+            other.signalHurtPlayer.fire()
+    }
     return
 }
 

@@ -70,7 +70,6 @@ stateLibrary[BaddieStates.ATTACK] = function()
     punchSpeed = approach(punchSpeed, 0, 0.25)
     velocityX = punchSpeed * scaleX
     
-    
     scr_baddie_hurtbox(30, 28, 40)
     
     var touchingDestructible = instance_place(x + velocityX, y, obj_destructible)

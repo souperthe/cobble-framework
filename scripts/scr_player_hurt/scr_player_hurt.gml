@@ -1,12 +1,13 @@
 /// @self obj_player
 /// @param {Id.Instance} hazard
+/// @return {Bool}
 function scr_player_hurt(hazard)
 {
     if stateCurrentEnum == PlayerStates.CHAINSAWPOGO
-        return
+        return false
     
     if invincibleTimer > 0
-        return
+        return false
     
     var scaleXOld = scaleX
     var hurtMessage = ""
@@ -31,5 +32,5 @@ function scr_player_hurt(hazard)
     super_sound_oneshot_emitter(emitter, sfx_pephurt, random_pitch())
     stateSwitch(PlayerStates.HURT, hurtMessage)
     invincibleTimer = 300
-    return
+    return true
 }
