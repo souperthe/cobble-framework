@@ -66,7 +66,7 @@ if (!isOpen) {
 		// delete characters from the cursor position to the preceding space or start of the line
 		var precedingSpaceIndex = 1;
 		// don't want to check for space at or before the cursor position, so start 2 back
-		for (var i = cursorPos - 2; i > 1; i-= 1 * get_delta()) {
+		for (var i = cursorPos - 2; i > 1; i--) {
 			if (string_char_at(consoleString, i) == " ") {
 				precedingSpaceIndex = i;
 				break;
@@ -81,7 +81,7 @@ if (!isOpen) {
 		// jump left to the preceding word
 		var precedingSpaceIndex = 1;
 		// don't want to check for space at or before the cursor position, so start 2 back
-		for (var i = cursorPos - 2; i > 1; i-= 1 * get_delta()) {
+		for (var i = cursorPos - 2; i > 1; i--) {
 			if (string_char_at(consoleString, i) == " ") {
 				precedingSpaceIndex = i;
 				break;
@@ -234,7 +234,7 @@ if (!isOpen) {
 				autocompleteScrollPosition = clamp(array_length(filteredSuggestions) - autocompleteMaxLines, 0, autocompleteScrollPosition);
 			}
 			if (mouse_wheel_up()) {
-				autocompleteScrollPosition-= 1 * get_delta();
+				autocompleteScrollPosition--;
 				autocompleteScrollPosition = max(autocompleteScrollPosition, 0);
 			}
 		} else if (point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), shellOriginX, shellOriginY, shellOriginX + width, shellOriginY + height)) {

@@ -277,6 +277,7 @@
     {"id":{"name":"scr_afterimage_step_mach","path":"scripts/scr_afterimage_step_mach/scr_afterimage_step_mach.yy",},},
     {"id":{"name":"scr_apply_volume","path":"scripts/scr_apply_volume/scr_apply_volume.yy",},},
     {"id":{"name":"scr_array_utils","path":"scripts/scr_array_utils/scr_array_utils.yy",},},
+    {"id":{"name":"scr_asset_utils","path":"scripts/scr_asset_utils/scr_asset_utils.yy",},},
     {"id":{"name":"scr_background_step_background","path":"scripts/scr_background_step_background/scr_background_step_background.yy",},},
     {"id":{"name":"scr_background_step_foreground","path":"scripts/scr_background_step_foreground/scr_background_step_foreground.yy",},},
     {"id":{"name":"scr_background_step_scroll","path":"scripts/scr_background_step_scroll/scr_background_step_scroll.yy",},},

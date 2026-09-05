@@ -12,7 +12,7 @@ function scr_baddie_state_grabbed()
         return
     }
     
-    static grabbedYOffset = [0, 10, 20, 30]
+    static grabbedYOffset = [0, 10, 20, 30, 35]
     
     x = grabbedBy.x
     
@@ -23,7 +23,7 @@ function scr_baddie_state_grabbed()
         
         var haulFrame = floor(grabbedBy.image_index)
         
-        if haulFrame <= image_number
+        if haulFrame <= grabbedBy.image_number
         {
             var offset = grabbedYOffset[haulFrame]
         

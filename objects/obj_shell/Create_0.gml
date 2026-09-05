@@ -372,13 +372,13 @@ function _execute_script(args, deferred = false) {
 		try {
 			response = script_execute(asset_get_index(script_get_name(script)), args);
 		} catch (_exception) {
-			response = "-= 1 * get_delta() ERROR: see debug output for details -= 1 * get_delta()";
-			show_debug_message("-= 1 * get_delta()-= 1 * get_delta() ERROR executing rt-shell command [" + args[0] + "] -= 1 * get_delta()-= 1 * get_delta()");
+			response = "-- ERROR: see debug output for details --";
+			show_debug_message("---- ERROR executing rt-shell command [" + args[0] + "] ----");
 			show_debug_message(_exception.message);
 			show_debug_message(_exception.longMessage);
 			show_debug_message(_exception.script);
 			show_debug_message(_exception.stacktrace);
-			show_debug_message("-= 1 * get_delta()-= 1 * get_delta()-= 1 * get_delta()-= 1 * get_delta()-= 1 * get_delta()-= 1 * get_delta()-= 1 * get_delta()-= 1 * get_delta()-= 1 * get_delta()-= 1 * get_delta()-= 1 * get_delta()-= 1 * get_delta()-= 1 * get_delta()-= 1 * get_delta()");
+			show_debug_message("----------------------------");
 		}
 		if (!deferred) {
 			array_push(history, consoleString);
