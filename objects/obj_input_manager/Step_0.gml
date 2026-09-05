@@ -1,3 +1,6 @@
+if instance_exists(obj_shell) && obj_shell.isOpen
+    exit;
+
 var inputLibraryNames = variable_struct_get_names(inputLibrary)
 var inputLibraryNamesLength = array_length(inputLibraryNames)
 
