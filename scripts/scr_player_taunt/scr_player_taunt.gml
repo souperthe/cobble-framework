@@ -1,8 +1,6 @@
 /// @self obj_player
 function scr_player_taunt()
 {
-    
-    tauntTimer = 20
     tauntState = stateCurrentEnum
     tauntVelocityX = velocityX
     tauntVelocityY = velocityY

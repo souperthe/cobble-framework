@@ -48,15 +48,9 @@ function scr_player_state_bump_step()
     {
         velocityY = 0
         
-        if is_sprite_finished()
-            stateSwitch(PlayerStates.NORMAL)
-        
-        return
     }
     
-    if grounded && velocityY > 0
-    {
+    if is_sprite_finished()
         stateSwitch(PlayerStates.NORMAL)
-    }
     return;
 }

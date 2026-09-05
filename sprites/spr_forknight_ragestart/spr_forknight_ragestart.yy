@@ -121,8 +121,8 @@
   "swatchColours":null,
   "swfPrecision":0.5,
   "textureGroupId":{
-    "name":"Default",
-    "path":"texturegroups/Default",
+    "name":"Baddie",
+    "path":"texturegroups/Baddie",
   },
   "type":0,
   "VTile":false,

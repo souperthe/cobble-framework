@@ -11,8 +11,8 @@
   "name":"obj_technicaldifficulty",
   "overriddenProperties":[],
   "parent":{
-    "name":"Visual",
-    "path":"folders/Objects/Visual.yy",
+    "name":"UI",
+    "path":"folders/Objects/UI.yy",
   },
   "parentObjectId":null,
   "persistent":false,

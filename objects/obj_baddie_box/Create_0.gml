@@ -7,7 +7,7 @@ playerInstaKillStates = [
     PlayerStates.CHAINSAWDASH, 
     PlayerStates.CHAINSAWATTACK,
     PlayerStates.TRICKJUMP
-]
+] 
 playerBumpStates = [PlayerStates.MACHROLL, PlayerStates.MACH2, PlayerStates.MACHSLIDE]
 
 image_blend = c_red

@@ -43,6 +43,12 @@ function scr_effects_get()
     effectsLibrary[$ "pizzablockdead_big"] = new Effect(spr_pizzablock_big_die, 0.35)
     effectsLibrary[$ "pizzablocksmall_dead"] = new Effect(spr_pizzablock_small_die, 0.35)
     
+    effectsLibrary[$ "supertaunt_1"] = new Effect(spr_effect_supertaunt_1, 0.35)
+    effectsLibrary[$ "supertaunt_2"] = new Effect(spr_effect_supertaunt_2, 0.35)
+    effectsLibrary[$ "supertaunt_3"] = new Effect(spr_effect_supertaunt_3, 0.35)
+    effectsLibrary[$ "supertaunt_4"] = new Effect(spr_effect_supertaunt_4, 0.35)
+    effectsLibrary[$ "supertaunt_5"] = new Effect(spr_effect_supertaunt_5, 0.35)
+    
     return effectsLibrary
 }
 

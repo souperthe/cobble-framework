@@ -14,13 +14,13 @@
   "exportDir":"",
   "name":"sfx_supertaunt",
   "parent":{
-    "name":"Taunt",
-    "path":"folders/Sound/SFX/Player/Taunt.yy",
+    "name":"SuperTaunt",
+    "path":"folders/Sound/SFX/Player/SuperTaunt.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"sfx_supertaunt.ogg",
-  "volume":1.0,
+  "volume":0.33,
 }

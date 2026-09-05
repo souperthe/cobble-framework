@@ -25,6 +25,7 @@ scr_player_ratblock()
 scr_player_metalblock()
 scr_player_spikecheck()
 scr_player_technicaldifficulty()
+scr_player_supercharge()
 
 if chargeActive
     chargeFrame += 0.5

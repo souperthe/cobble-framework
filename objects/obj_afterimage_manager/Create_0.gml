@@ -2,6 +2,7 @@ afterimageActive = []
 afterimageSteps = array_create(AfterImageType._length, -4)
 afterimageSteps[AfterImageType.MACH] = scr_afterimage_step_mach
 afterimageSteps[AfterImageType.BLUR] = scr_afterimage_step_blur
+afterimageSteps[AfterImageType.SUPERTAUNT] = scr_afterimage_step_supertaunt
 
 
 afterimageAlarm = []

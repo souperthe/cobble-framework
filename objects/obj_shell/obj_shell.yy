@@ -56,7 +56,7 @@
     {"$GMObjectProperty":"v2","%Name":"scrollbarWidth","filters":[],"listItems":[],"multiselect":false,"name":"scrollbarWidth","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"5","varType":1,},
     {"$GMObjectProperty":"v2","%Name":"autocompleteBackgroundColor","filters":[],"listItems":[],"multiselect":false,"name":"autocompleteBackgroundColor","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"c_black","varType":4,},
     {"$GMObjectProperty":"v2","%Name":"autocompletePadding","filters":[],"listItems":[],"multiselect":false,"name":"autocompletePadding","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"2","varType":0,},
-    {"$GMObjectProperty":"v2","%Name":"openKey","filters":[],"listItems":[],"multiselect":false,"name":"openKey","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"ord(\"Q\")","varType":4,},
+    {"$GMObjectProperty":"v2","%Name":"openKey","filters":[],"listItems":[],"multiselect":false,"name":"openKey","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"192","varType":4,},
     {"$GMObjectProperty":"v2","%Name":"openModifiers","filters":[],"listItems":[
         "vk_control",
         "vk_shift",

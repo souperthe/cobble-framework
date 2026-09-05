@@ -115,6 +115,13 @@ voicePitch = function()
     return random_range(0.775, 1.225)
 }
 
+
+superCharge = 0
+superChargeSound = noone
+superCharged = false
+superChargeEffect = 0
+
+
 /// @param {enum.PlayerStates} targetState
 /// @param {string} enterMessage
 stateSwitch = function(targetState, enterMessage = "")

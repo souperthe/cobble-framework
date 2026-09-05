@@ -44,6 +44,21 @@ function scr_afterimage_mach()
     return afterImageNew
 }
 
+function scr_afterimage_supertaunt()
+{
+    var afterImageManager = obj_afterimage_manager
+    var afterImageNew = new AfterImage(x, y, sprite_index, image_index, self, AfterImageType.SUPERTAUNT)
+    afterImageNew.scaleX = scaleX
+    afterImageNew.scaleY = scaleY
+    afterImageNew.blend = c_white
+    afterImageNew.shader = shd_binary_threshold
+    afterImageNew.depth = depth + 1
+    
+    array_push(afterImageManager.afterimageActive, afterImageNew)
+    
+    return afterImageNew
+}
+
 function scr_afterimage_blur()
 {
     var afterImageManager = obj_afterimage_manager

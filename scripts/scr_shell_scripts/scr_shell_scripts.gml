@@ -58,7 +58,7 @@ function meta_game_fps() {
 	}
 }
 
-function sh_player_switch_state(args)
+function sh_player_state_switch(args)
 {
     var targetState = args[1]
     var targetMessage = args[2]
@@ -70,11 +70,72 @@ function sh_player_switch_state(args)
     return
 }
 
-function meta_player_switch_state() {
+function meta_player_state_switch() {
 	return {
 		description: "switches the players state",
 		arguments: ["targetState", "targetMessage"],
 		suggestions: [global.playerStateNames],
+		argumentDescriptions: [],
+		hidden: false,
+		deferred: false
+	}
+}
+
+
+function sh_object_create(args)
+{
+    var targetObject = args[1]
+    var targetX = args[2]
+    var targetY = args[3]
+    
+    targetObject = asset_get_index(targetObject)
+    
+    if targetObject == -1
+        return;
+    
+    instance_create_depth(targetX, targetY, 0, targetObject)
+    return
+}
+
+function meta_object_create()
+{
+    return {
+		description: "creates an object",
+		arguments: ["targetObject", "targetX", "targetY"],
+		suggestions: [
+			asset_get_names(asset_object),
+            mouseArgumentType.worldX,
+            mouseArgumentType.worldY
+		],
+		argumentDescriptions: [],
+		hidden: false,
+		deferred: false
+	}
+}
+
+
+function sh_object_destroy(args)
+{
+    var targetObject = args[1]
+    
+    targetObject = asset_get_index(targetObject)
+    
+    if targetObject == -1
+        return;
+    
+    with targetObject
+        instance_destroy()
+    return
+}
+
+function meta_object_destroy()
+{
+    return {
+		description: "destroys an object",
+		arguments: ["targetObject"],
+		suggestions: [
+			asset_get_names(asset_object),
+		],
 		argumentDescriptions: [],
 		hidden: false,
 		deferred: false
@@ -117,6 +178,10 @@ function meta_object_set_var() {
                 
                 var objectName = consoleStringSplit[1]
                 var objectIndex = asset_get_index(objectName)
+                
+                if objectIndex == -1
+                    return "INVALID OBJECT"
+                
                 var objectVariables = []
                 
                 with objectIndex

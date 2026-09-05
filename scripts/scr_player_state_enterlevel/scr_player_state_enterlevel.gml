@@ -24,17 +24,22 @@ function scr_player_state_enterlevel_step()
     
     global.comboTimePause = 1
     
-    if is_sprite_finished() && sprite_index == spriteGet("entergate")
+    if touchingGate
     {
         
-        if image_speed != 0
+        if is_sprite_finished() && sprite_index == spriteGet("entergate")
         {
-            image_speed = 0
-            touchingGate.onEnter()
+            
+            if image_speed != 0
+            {
+                image_speed = 0
+                touchingGate.onEnter()
+            }
         }
+        else
+            image_speed = 0.35
+        
     }
-    else
-        image_speed = 0.35
     
     
     var touchingGateExit = instance_place(x, y, obj_gate_exit)
@@ -43,6 +48,8 @@ function scr_player_state_enterlevel_step()
     {
         
         x = touchingGateExit.x
+        
+        image_speed = 0.35
     
         if sprite_index == spriteGet("entergate")
         {

@@ -71,6 +71,7 @@ function scr_enums()
     
     enum AfterImageType {
         MACH,
+        SUPERTAUNT,
         BLUR,
         _length
     }

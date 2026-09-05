@@ -8,7 +8,7 @@ function scr_baddie_create()
     killedFromX = 0
     killedFromY = 0
     
-    boundingBox = undefined
+    boundingBox = noone
     
     moveAndCollide = true
     turnAllow = false
@@ -66,6 +66,10 @@ function scr_baddie_create()
 /// @self obj_baddie
 function scr_baddie_create_bounding_box()
 {
+    
+    if stateCurrent == BaddieStates.THROWN
+        return;
+    
     boundingBox = instance_create_depth(x, y, depth, obj_baddie_box)
     boundingBox.image_speed = 0
     boundingBox.baddieInstance = id
@@ -106,7 +110,7 @@ function scr_baddie_step()
     
     invincibleTimer--
     
-    if boundingBox == undefined
+    if !instance_exists(boundingBox)
         scr_baddie_create_bounding_box()
     
     return
