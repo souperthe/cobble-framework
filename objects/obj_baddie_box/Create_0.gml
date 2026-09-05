@@ -11,3 +11,5 @@ playerInstaKillStates = [
 playerBumpStates = [PlayerStates.MACHROLL, PlayerStates.MACH2, PlayerStates.MACHSLIDE]
 
 image_blend = c_red
+mask_index = spr_baddie_mask
+sprite_index = spr_baddie_mask

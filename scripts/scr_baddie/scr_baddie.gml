@@ -67,8 +67,6 @@ function scr_baddie_create()
 function scr_baddie_create_bounding_box()
 {
     boundingBox = instance_create_depth(x, y, depth, obj_baddie_box)
-    boundingBox.sprite_index = spriteIdle
-    boundingBox.mask_index = spriteIdle
     boundingBox.image_speed = 0
     boundingBox.baddieInstance = id
     boundingBox.depth = id.depth - 1

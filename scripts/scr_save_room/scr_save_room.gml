@@ -97,3 +97,45 @@ function scr_save_room_remove_type_all(object)
     }
     return
 }
+
+/// @param {String} room
+function scr_save_room_remove_escape_room(room)
+{
+    
+    if !struct_exists(global.levelSaveRoom, room)
+    {
+        return
+    }
+    
+    var roomArray = global.levelSaveRoom[$ room]
+    var roomArrayLength = array_length(roomArray)
+    
+    for (var index = roomArrayLength - 1; index >= 0; index--)
+    {
+        
+        var saveObject = roomArray[index]
+        
+        if !saveObject.objectEscape
+            continue;
+        
+        array_delete(roomArray, index, 1)
+        continue
+    }
+    
+    return
+}
+
+function scr_save_room_remove_escape_all()
+{
+    var roomNames = struct_get_names(global.levelSaveRoom)
+    var roomNamesLength = array_length(roomNames)
+    
+    for (var index = 0; index < roomNamesLength; index++)
+    {
+        var roomName = roomNames[index]
+        
+        scr_save_room_remove_escape_room(roomName)
+        continue
+    }
+    return
+}

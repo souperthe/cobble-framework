@@ -30,7 +30,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_baddie_mask",
+    "path":"sprites/spr_baddie_mask/spr_baddie_mask.yy",
+  },
   "spriteMaskId":null,
-  "visible":false,
+  "visible":true,
 }

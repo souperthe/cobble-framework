@@ -77,6 +77,7 @@ states[1] = function()
     
     scr_save_room_remove_type_all(obj_escapecollect)
     scr_save_room_remove_type_all(obj_escapecollect_big)
+    scr_save_room_remove_escape_all()
     
     global.warpDoor = "LAP"
     global.warpRoom = targetRoom
