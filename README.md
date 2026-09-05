@@ -21,3 +21,6 @@ Cobble-Framework is a open source rewrite of Pizza Tower built to be a starting 
 # Dependencies
 - [GameMaker LTS 2026](https://gms.yoyogames.com/GameMaker-Installer-2026.0.0.16.exe)
 ![you can also get it through steam](readme_images/lts_2026_steam.PNG)
+
+# Packages Used
+- [rt-shell](https://github.com/daikon-games/rt-shell/tree/master)
