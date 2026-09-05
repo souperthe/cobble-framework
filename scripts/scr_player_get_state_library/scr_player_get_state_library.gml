@@ -30,6 +30,9 @@ function PlayerState(targetStateName) constructor
 function scr_player_register_state(stateEnum, stateName)
 {
     stateLibrary[stateEnum] = new PlayerState(stateName)
+    
+    array_push(global.playerStateNames, stateName)
+    struct_set(global.playerStateNamesEnum, stateName, stateEnum)
     return
 }
 

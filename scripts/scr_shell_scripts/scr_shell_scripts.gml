@@ -56,3 +56,26 @@ function meta_game_fps() {
 		deferred: false
 	}
 }
+
+function sh_player_switch_state(args)
+{
+    var targetState = args[1]
+    var targetMessage = args[2]
+    
+    var targetStateEnum = global.playerStateNamesEnum[$ targetState]
+    
+    with obj_player
+        stateSwitch(targetStateEnum, targetMessage)
+    return
+}
+
+function meta_player_switch_state() {
+	return {
+		description: "switches the players state",
+		arguments: ["targetState", "targetMessage"],
+		suggestions: [global.playerStateNames],
+		argumentDescriptions: [],
+		hidden: false,
+		deferred: false
+	}
+}

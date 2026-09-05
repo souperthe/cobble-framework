@@ -1,6 +1,7 @@
 event_inherited();
 depth = -10;
 stateLibrary = []
+stateNames = []
 stateCurrentEnum = PlayerStates.UNINITIALIZED
 stateCurrent = undefined
 

@@ -53,6 +53,9 @@ function scr_globals()
     global.volumeMaster = 1
     global.volumeMusic = 1
     global.volumeSound = 1
+    
+    global.playerStateNames = []
+    global.playerStateNamesEnum = {}
 
     scr_level_data_init()
     return;
