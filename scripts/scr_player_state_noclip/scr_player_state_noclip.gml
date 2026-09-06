@@ -24,17 +24,14 @@ function scr_player_state_noclip_step()
     var moveSpeed = 8
     
     if check_input("dash", true)
-        moveSpeed = 10
+        moveSpeed = 14
     
-    noclipSpeed = approach(noclipSpeed, moveSpeed, 3)
+    noclipSpeed = approach(noclipSpeed, moveSpeed, 1)
     
     velocityX = moveX * noclipSpeed
     velocityY = -moveY * noclipSpeed
     alpha = 0.5
     collide = false
-    
-    if moveX != 0
-        scaleX = moveX
     
     image_speed = 1
     sprite_index = spriteGet("debug")
