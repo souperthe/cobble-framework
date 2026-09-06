@@ -2,7 +2,7 @@
 /// @param {String} enterMessage
 function scr_player_state_sjump_enter(enterMessage)
 {
-    velocitySuperJump = -17
+    velocitySuperJump = -12
     velocityX = 0
     sprite_index = spriteGet("superjump")
     image_speed = 0.5

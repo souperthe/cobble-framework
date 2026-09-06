@@ -30,7 +30,7 @@ function scr_player_state_chainsawattack_step()
     
     if is_sprite_finished()
     {
-        if check_input("jump", true)
+        if check_input("down", true)
             stateSwitch(PlayerStates.CHAINSAWPOGO, "nojump")
         else
             stateSwitch(PlayerStates.CHAINSAWDASH, "frompogo")
@@ -38,8 +38,15 @@ function scr_player_state_chainsawattack_step()
     
     if scr_player_wallcheck()
     {
-        stateSwitch(PlayerStates.CHAINSAWBUMP)
-        return
+		if !grounded then
+		{
+					super_sound_oneshot_emitter(emitter, sfx_killingblow, random_pitch())
+		
+			stateSwitch(PlayerStates.CHAINSAWPOGO)
+			velocityX = -scaleX * 6
+			velocityY -= 7.5
+			return
+		}
     }
     
     if scr_player_wallcheck_bump_mach()

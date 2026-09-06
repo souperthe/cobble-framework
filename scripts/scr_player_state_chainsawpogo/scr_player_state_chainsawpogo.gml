@@ -39,20 +39,28 @@ function scr_player_state_chainsawpogo_step()
     
     if grounded && velocityY > 0
     {
-        if !check_input("jump", true)
+        if !check_input("down", true)
         {
             stateSwitch(PlayerStates.CHAINSAWDASH, "frompogo")
             return
         }
         
-        velocityY = -12
+        if check_input("jump", true) then
+		{
+			velocityY = -12
+		}
+		else
+		{
+			velocityY = -5.5
+		}
+		
         sprite_index = spriteGet("chainsaw_pogobounce")
         super_sound_oneshot_emitter(emitter, sfx_killingblow, random_pitch())
         scr_effect_create("bangeffect", x, y + 50)
     }
     else 
     {
-    	velocityX = approach(velocityX, move * 15, 0.2)
+    	velocityX = approach(velocityX, move * 12, 0.25)
         
         if move != 0
             scaleX = move

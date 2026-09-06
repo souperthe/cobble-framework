@@ -237,7 +237,7 @@ function scr_baddie_throw(player, baddie)
 function scr_baddie_instakill(player, baddie)
 {
     
-    var hitstunTime = 4
+    var hitstunTime = 6
     super_sound_oneshot_emitter(player.emitter, sfx_punch, random_pitch())
     
     instance_destroy(baddie.boundingBox)

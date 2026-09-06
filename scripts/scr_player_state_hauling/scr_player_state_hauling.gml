@@ -24,7 +24,7 @@ function scr_player_state_hauling_step()
         stateSwitch(PlayerStates.FINISHINGBLOW)
         return
     }
-    
+	
     image_speed = 0.35
     
     if sprite_index == spriteGet("haulingstart")

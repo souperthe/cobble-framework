@@ -44,7 +44,7 @@ function scr_player_state_chainsawjump_step()
         return
     }
     
-    if check_input("jump", false)
+    if check_input("down", false)
     {
         stateSwitch(PlayerStates.CHAINSAWPOGO)
         return

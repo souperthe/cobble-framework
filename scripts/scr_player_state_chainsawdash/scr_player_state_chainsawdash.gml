@@ -7,7 +7,7 @@ function scr_player_state_chainsawdash_enter(enterMessage)
     chainsawSoundDash = super_sound_loop_emitter(emitter, sfx_mach2)
     if enterMessage == "start"
     {
-        chainsawDashVelocity = -scaleX * 8
+        chainsawDashVelocity = -scaleX * 4
         return
     }
     else if enterMessage == "turn"
@@ -60,7 +60,7 @@ function scr_player_state_chainsawdash_step()
         return
     }
     
-    if check_input("jump", false) && chainsawJumping
+    if check_input("down", false) && chainsawJumping
     {
         stateSwitch(PlayerStates.CHAINSAWPOGO)
         return
