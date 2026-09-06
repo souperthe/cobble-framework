@@ -120,6 +120,7 @@ superCharge = 0
 superChargeSound = noone
 superCharged = false
 superChargeEffect = 0
+superChargeFlip = false
 
 
 /// @param {enum.PlayerStates} targetState

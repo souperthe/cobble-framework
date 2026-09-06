@@ -68,6 +68,17 @@ function scr_player_supercharge_taunt()
     var effectStep = 360 / effectCount
     var effectSpeed = 0.8
     
+    var colorEven = global.colorMach1
+    var colorUneven = global.colorMach2
+    
+    superChargeFlip = !superChargeFlip
+    
+    if superChargeFlip
+    { 
+        colorEven = global.colorMach2 
+        colorUneven = global.colorMach1
+    }
+    
     for (var index = 0; index < effectCount; index++)
     {
         var angle = index * effectStep
@@ -77,11 +88,11 @@ function scr_player_supercharge_taunt()
         var effect = scr_afterimage_supertaunt()
         effect.stepX = directionX * effectSpeed
         effect.stepY = directionY * effectSpeed
-        effect.blend = global.colorMach1
+        effect.blend = colorEven
         
         if (index % 2 == 1)
         {
-            effect.blend = global.colorMach2
+            effect.blend = colorUneven
         }
         
         continue
