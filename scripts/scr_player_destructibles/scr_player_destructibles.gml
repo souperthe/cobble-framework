@@ -11,6 +11,7 @@ function scr_player_destructibles()
         PlayerStates.CHAINSAWJUMP,
         PlayerStates.CHAINSAWNORMAL,
         PlayerStates.CHAINSAWATTACK,
+        PlayerStates.NOCLIP,
     ]
     static destructibleStatesVerical = [
         PlayerStates.SJUMP,
@@ -41,7 +42,7 @@ function scr_player_destructibles()
         destructibleCheck = [x, y + velocityY]
     }
     
-    if sprite_index = spriteGet("dive") || stateCurrentEnum == PlayerStates.TRICKJUMP
+    if sprite_index = spriteGet("dive") || stateCurrentEnum == PlayerStates.TRICKJUMP || stateCurrentEnum == PlayerStates.NOCLIP
         destructibleCheck = [x + velocityX, y + velocityY]
     
     if destructibleCheck == destructibleCheckDefault

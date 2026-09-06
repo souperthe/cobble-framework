@@ -28,7 +28,7 @@ states[EscapeSpawnState.WAITING] = function()
     var playerDistanceX = abs(x - playerCloseset.x)
     var playerDistanceY = abs(y - playerCloseset.y)
     
-    if playerDistanceX > 500
+    if playerDistanceX > 650
         return;
     
     if playerDistanceY > 250

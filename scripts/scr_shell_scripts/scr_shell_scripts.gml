@@ -81,6 +81,25 @@ function meta_player_state_switch() {
 	}
 }
 
+function sh_player_noclip(args)
+{
+    
+    with obj_player
+        stateSwitch(PlayerStates.NOCLIP)
+    return
+}
+
+function meta_player_noclip() {
+	return {
+		description: "enter noclip",
+		arguments: [],
+		suggestions: [],
+		argumentDescriptions: [],
+		hidden: false,
+		deferred: false
+	}
+}
+
 
 function sh_object_create(args)
 {

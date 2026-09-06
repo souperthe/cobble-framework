@@ -17,6 +17,7 @@ moveSpeed = 0;
 scaleX = 1;
 scaleY = 1;
 angle = 0;
+alpha = 1
 dir = 1;
 momemtum = false;
 emitter = super_sound_create_emitter();

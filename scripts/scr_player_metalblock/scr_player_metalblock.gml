@@ -2,7 +2,7 @@
 function scr_player_metalblock()
 {
     
-    static metalBlockStates = [PlayerStates.MACH3, PlayerStates.FREEFALL]
+    static metalBlockStates = [PlayerStates.MACH3, PlayerStates.FREEFALL, PlayerStates.NOCLIP]
     
     if !array_contains(metalBlockStates, stateCurrentEnum)
     {
@@ -23,6 +23,10 @@ function scr_player_metalblock()
         if freeFallProgress > 10
             metalBlockDirection = [x, y + velocityY]
         
+    }
+    else if stateCurrentEnum == PlayerStates.NOCLIP
+    {
+        metalBlockDirection = [x + velocityX, y + velocityY]
     }
     
     

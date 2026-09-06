@@ -6,7 +6,8 @@ playerInstaKillStates = [
     PlayerStates.PILEDRIVER, 
     PlayerStates.CHAINSAWDASH, 
     PlayerStates.CHAINSAWATTACK,
-    PlayerStates.TRICKJUMP
+    PlayerStates.TRICKJUMP,
+    PlayerStates.NOCLIP
 ] 
 playerBumpStates = [PlayerStates.MACHROLL, PlayerStates.MACH2, PlayerStates.MACHSLIDE]
 

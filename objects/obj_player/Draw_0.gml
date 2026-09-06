@@ -12,6 +12,8 @@ if invincibleTimer >= 0
         spriteAlpha = 0.2
 }
 
+spriteAlpha = spriteAlpha * alpha
+
 if chargeActive
 {
     var chargeOffset = scaleX * 5

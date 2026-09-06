@@ -37,6 +37,7 @@ function scr_enums()
         CHAINSAWTURN,
         HURT,
         TRICKJUMP,
+        NOCLIP,
         _length
     }
     
