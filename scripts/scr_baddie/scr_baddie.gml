@@ -237,6 +237,7 @@ function scr_baddie_throw(player, baddie)
 function scr_baddie_instakill(player, baddie)
 {
     
+    var hitstunTime = 4
     super_sound_oneshot_emitter(player.emitter, sfx_punch, random_pitch())
     
     instance_destroy(baddie.boundingBox)
@@ -255,10 +256,12 @@ function scr_baddie_instakill(player, baddie)
     player.tauntImageIndex = player.image_index
     player.hitstunX = player.x
     player.hitstunY = player.y
-    player.hitstunTime = 3
+    player.hitstunTime = hitstunTime
     player.hitstunBaddie = baddie
     player.stateSwitch(PlayerStates.HITSUN)
     
+    
+    baddie.alarm[0] = hitstunTime
         
     var hitAnimations = scr_get_hit_animations()
     var hitSprite = hitAnimations[player.tauntState]

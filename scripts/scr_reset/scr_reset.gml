@@ -69,6 +69,7 @@ function scr_reset()
         velocityX = 0
         velocityY = 0
         visible = true
+        scr_player_supercharge_end()
     }
     
     obj_hud_rank.rankPrevious = 0

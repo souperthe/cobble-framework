@@ -112,6 +112,7 @@ function scr_player_supercharge_kill()
         stunY = y
         stateCurrent = BaddieStates.STUN
         alarm[0] = 25
+        other.superCharge--
         continue
     }
     return

@@ -27,7 +27,7 @@ function sh_room_goto(args)
 function meta_room_goto() {
 	return {
 		description: "go to a room",
-		arguments: ["targetRoom", "targetDoor"],
+		arguments: ["<Asset.GMRoom>", "<String>"],
 		suggestions: [
 			asset_get_names(asset_room),
 			["A", "B", "C", "D", "E", "F"]
@@ -50,7 +50,7 @@ function sh_game_fps(args)
 function meta_game_fps() {
 	return {
 		description: "sets the games speed",
-		arguments: ["targetSpeed"],
+		arguments: ["<Real>"],
 		suggestions: [],
 		argumentDescriptions: [],
 		hidden: false,
@@ -73,7 +73,7 @@ function sh_player_state_switch(args)
 function meta_player_state_switch() {
 	return {
 		description: "switches the players state",
-		arguments: ["targetState", "targetMessage"],
+		arguments: ["<String>", "<String>"],
 		suggestions: [global.playerStateNames],
 		argumentDescriptions: [],
 		hidden: false,
@@ -101,7 +101,7 @@ function meta_object_create()
 {
     return {
 		description: "creates an object",
-		arguments: ["targetObject", "targetX", "targetY"],
+		arguments: ["<Asset.GMObject>", "<Real>", "<Real>"],
 		suggestions: [
 			asset_get_names(asset_object),
             mouseArgumentType.worldX,
@@ -132,7 +132,7 @@ function meta_object_destroy()
 {
     return {
 		description: "destroys an object",
-		arguments: ["targetObject"],
+		arguments: ["<Asset.GMObject>"],
 		suggestions: [
 			asset_get_names(asset_object),
 		],
@@ -168,7 +168,7 @@ function sh_object_set_var(args)
 function meta_object_set_var() {
 	return {
 		description: "set a variable on an object",
-		arguments: ["targetObject", "targetVariableName", "targetVariableValue"],
+		arguments: ["<Asset.GMObject>", "<String>", "<Any>"],
 		suggestions: [
 			asset_get_names(asset_object),
             function()
@@ -189,6 +189,126 @@ function meta_object_set_var() {
                 
                 return objectVariables
             }
+		],
+		argumentDescriptions: [],
+		hidden: false,
+		deferred: false
+	}
+}
+
+function sh_camera_lock(args)
+{
+    var targetLock = args[1]
+    targetLock = string_lower(targetLock)
+    targetLock = convert_string_to_value(targetLock)
+    
+    var targetLockType = typeof(targetLock)
+    
+    if targetLockType != "bool"
+        return;
+    
+    obj_camera.lock = targetLock
+    return
+}
+
+function meta_camera_lock()
+{
+    return {
+		description: "locks the camera",
+		arguments: ["<Bool>"],
+		suggestions: [
+            ["true", "false"]
+		],
+		argumentDescriptions: [],
+		hidden: false,
+		deferred: false
+	}
+}
+
+function sh_set_combo(args)
+{
+    var targetCombo = real(args[1])
+    
+    trace(targetCombo)
+    
+    global.combo = targetCombo
+    global.comboTime = global.comboTimeMax
+    
+    with obj_player
+        superCharge = 10
+    return
+}
+
+function meta_set_combo()
+{
+    return {
+		description: "sets the combo",
+		arguments: ["<Real>"],
+		suggestions: [],
+		argumentDescriptions: [],
+		hidden: false,
+		deferred: false
+	}
+}
+
+function sh_set_panic(args)
+{
+    var targetEnabled = convert_string_to_value(args[1])
+    
+    if targetEnabled == false
+    {
+        global.panic = false
+        return
+    }
+    
+    var targetMinutes = real(args[2])
+    var targetSeconds = real(args[3])
+    
+    global.panic = true
+    global.panicTime = time_in_frames(targetMinutes, targetSeconds)
+    global.panicTimeMax = global.panicTime
+    global.signalPanic.fire()
+    
+    obj_music.musicPanicStart()
+    return
+}
+
+function meta_set_panic()
+{
+    return {
+		description: "enables pizza time",
+		arguments: ["<Bool>", "<Real>", "<Real>"],
+		suggestions: [
+            ["true", "false"],
+            "2",
+            "30"
+        ],
+		argumentDescriptions: [],
+		hidden: false,
+		deferred: false
+	}
+}
+
+function sh_global_set_var(args)
+{
+    var targetVariableName = args[1]
+    var targetVariableValue = args[2]
+    
+    targetVariableValue = convert_string_to_value(targetVariableValue)
+    
+    trace(targetVariableName)
+    trace(targetVariableValue)
+    
+    variable_global_set(targetVariableName, targetVariableValue)
+    return
+}
+
+function meta_global_set_var() {
+	return {
+		description: "set a variable on an object",
+		arguments: ["<String>", "<Any>"],
+		suggestions: [
+			variable_instance_get_names(global),
 		],
 		argumentDescriptions: [],
 		hidden: false,

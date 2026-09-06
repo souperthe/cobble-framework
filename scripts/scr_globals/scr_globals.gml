@@ -56,6 +56,8 @@ function scr_globals()
     
     global.playerStateNames = []
     global.playerStateNamesEnum = {}
+    
+    global.cheatAlwaysSuperTaunt = false
 
     scr_level_data_init()
     return;

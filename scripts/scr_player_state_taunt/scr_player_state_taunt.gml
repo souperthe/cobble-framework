@@ -4,14 +4,16 @@ function scr_player_state_taunt_enter(enterMessage)
 {
     var tauntSprite = spriteGet("taunt")
     var tauntSounds = [sfx_taunt_1]
+    var tauntSuper = false
     
     tauntTimer = 20
     
     soundTaunt = -1
     
-    if superCharged && check_input("up", true)
+    if (superCharged || global.cheatAlwaysSuperTaunt) && check_input("up", true)
     {
         scr_player_supercharge_taunt()
+        tauntSuper = true
     }
     else 
     {
@@ -21,7 +23,6 @@ function scr_player_state_taunt_enter(enterMessage)
         soundTaunt = super_sound_oneshot_emitter_list(emitter, tauntSounds, random_pitch())
         audio_sound_gain(soundTaunt, 0.5)
     }
-    
     
     effectTaunt = scr_effect_create("taunt", x, y)
     
@@ -37,13 +38,24 @@ function scr_player_state_taunt_enter(enterMessage)
             continue
         
         var followerTaunt = scr_effect_create(follower.tauntEffect, follower.x, follower.y)
+        followerTaunts[index] = followerTaunt
         
         follower.locked = true
+        
+        if tauntSuper
+        {
+            follower.sprite_index = follower.spriteIntro
+            follower.image_index = 0
+            follower.image_speed = 0.4
+            
+            continue
+        }
+        
+        
         follower.sprite_index = follower.spriteTaunt
         follower.image_index = irandom(sprite_get_number(follower.spriteTaunt) - 1)
         follower.image_speed = 0
         
-        followerTaunts[index] = followerTaunt
         
         continue
     }
@@ -84,11 +96,6 @@ function scr_player_state_taunt_step()
     tauntTimer--;
     effectTaunt.x = x
     effectTaunt.y = y
-    
-    if check_input("up", false)
-    {
-        paletteIndex++
-    }
     
     if tauntTimer > 0
         return

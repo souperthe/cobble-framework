@@ -24,7 +24,6 @@ function scr_player_state_hitstun_step()
         velocityY = tauntVelocityY
         x = hitstunX
         y = hitstunY
-        instance_destroy(hitstunBaddie)
         return
     }
     
