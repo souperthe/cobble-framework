@@ -22,6 +22,10 @@ function AfterImage(targetX, targetY, targetSprite, targetFrame, targetObject, t
     shader = undefined
     depth = 0
     alarm = []
+    
+    colorRed = 0.17
+    colorBlue = 0.9
+    colorGreen = 0.49
     return
 }
 
@@ -38,6 +42,27 @@ function scr_afterimage_mach()
     afterImageNew.alarm[0] = 62
     afterImageNew.alarm[1] = 6
     afterImageNew.alarm[2] = -1
+    
+    array_push(afterImageManager.afterimageActive, afterImageNew)
+    
+    return afterImageNew
+}
+
+/// @param {Real} targetRed
+/// @param {Real} targetGreen
+/// @param {Real} targetBlue
+function scr_afterimage_color(targetRed, targetGreen, targetBlue)
+{
+    var afterImageManager = obj_afterimage_manager
+    var afterImageNew = new AfterImage(x, y, sprite_index, image_index, self, AfterImageType.COLOR)
+    afterImageNew.scaleX = scaleX
+    afterImageNew.scaleY = scaleY
+    afterImageNew.shader = shd_afterimage_color
+    afterImageNew.depth = depth + 1
+    afterImageNew.alpha = 0.8
+    afterImageNew.colorRed = targetRed
+    afterImageNew.colorGreen = targetGreen
+    afterImageNew.colorBlue = targetBlue
     
     array_push(afterImageManager.afterimageActive, afterImageNew)
     

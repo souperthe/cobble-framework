@@ -28,5 +28,6 @@ gotoPlayer = function()
 targetPlayer.signalPlacedAtDoor.connect(gotoPlayer)
 scaleX = 1
 scaleY = 1
+afterImageColor = c_red
 
 alarm[0] = 1

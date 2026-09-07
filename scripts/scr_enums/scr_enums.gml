@@ -74,6 +74,7 @@ function scr_enums()
         MACH,
         SUPERTAUNT,
         BLUR,
+        COLOR,
         _length
     }
     

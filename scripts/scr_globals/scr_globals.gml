@@ -58,6 +58,12 @@ function scr_globals()
     global.playerStateNamesEnum = {}
     
     global.cheatAlwaysSuperTaunt = false
+    
+    
+    global.shaderAfterimageColor = shd_afterimage_color
+    global.shaderAfterimageColorRed = shader_get_uniform(global.shaderAfterimageColor, "red")
+    global.shaderAfterimageColorGreen = shader_get_uniform(global.shaderAfterimageColor, "green")
+    global.shaderAfterimageColorBlue = shader_get_uniform(global.shaderAfterimageColor, "blue")
 
     scr_level_data_init()
     return;

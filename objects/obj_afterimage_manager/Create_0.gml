@@ -3,6 +3,7 @@ afterimageSteps = array_create(AfterImageType._length, -4)
 afterimageSteps[AfterImageType.MACH] = scr_afterimage_step_mach
 afterimageSteps[AfterImageType.BLUR] = scr_afterimage_step_blur
 afterimageSteps[AfterImageType.SUPERTAUNT] = scr_afterimage_step_supertaunt
+afterimageSteps[AfterImageType.COLOR] = scr_afterimage_step_color
 
 
 afterimageAlarm = []
@@ -66,7 +67,14 @@ afterimageDraw = function(afterImage)
         {
             pal_swap_set(afterImage.object.paletteSprite, afterImage.object.paletteIndex)
         }
+        else if afterImage.shader = global.shaderAfterimageColor
+        {
+            shader_set_uniform_f(global.shaderAfterimageColorRed, afterImage.colorRed) 
+            shader_set_uniform_f(global.shaderAfterimageColorGreen, afterImage.colorGreen)
+            shader_set_uniform_f(global.shaderAfterimageColorBlue, afterImage.colorBlue)
+        }
     }
+    
     
     var depthOld = gpu_get_depth()
     
