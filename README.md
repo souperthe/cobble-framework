@@ -8,7 +8,7 @@ BUT, if you are creating a fangame, advanced custom levels with custom objects a
 
 What I'm trying to say is this framework will not hold your hand, if you aren't okay with that use something else.
 
-## THIS IS ALSO UNFINISHED, I DO NOT RECCOMEND THIS FOR USE UNLESS YOU KNOW WHAT YOU'RE DOING!
+## THIS IS ALSO UNFINISHED, I DO NOT RECCOMEND THIS FOR USE UNLESS YOU'RE WILLING TO ADD WHAT YOU BELEIVE IS MISSING
 
 ---
 
