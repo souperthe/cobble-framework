@@ -8,6 +8,8 @@ BUT, if you are creating a fangame, advanced custom levels with custom objects a
 
 What I'm trying to say is this framework will not hold your hand, if you aren't okay with that use something else.
 
+## THIS IS ALSO UNFINISHED, I DO NOT RECCOMEND IT FOR USE UNLESS YOU KNOW WHAT YOU'RE DOING
+
 ---
 
 Have you ever tried creating something with a Pizza Tower decomp? Ever got tied up in the base games spaghetti code? Ever got frustrated with how much unused fluff and filler populate the games files?
